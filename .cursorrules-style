@@ -1,0 +1,292 @@
+# AI Fabrix Documentation - Writing Style & Customer-Safe Guidelines
+
+This file defines the writing style, tone, and customer-safe content guidelines for AI Fabrix documentation.
+
+## Core Writing Principles
+
+### 1. Customer-First Approach
+- Write for the user's success, not internal processes
+- Focus on business value and outcomes
+- Use clear, actionable language
+- Provide copy-pastable examples
+
+### 2. Security & Compliance Focus
+- Emphasize enterprise-grade security features
+- Highlight ISO-27001 compliance capabilities
+- Showcase Azure-native security controls
+- Demonstrate data residency and privacy protection
+
+### 3. Technical Accuracy
+- Extract facts from source code and configuration
+- Cite file paths for verification
+- Keep content synchronized with implementation
+- Validate all commands and procedures
+
+## Writing Style Guidelines
+
+### Tone & Voice
+- **Professional yet approachable**: Technical but not intimidating
+- **Confident**: Demonstrate expertise without arrogance
+- **Helpful**: Anticipate user needs and questions
+- **Clear**: Use simple, direct language
+
+### Language Standards
+- **Active voice**: "Configure the setting" not "The setting should be configured"
+- **Present tense**: "AI Fabrix provides" not "AI Fabrix will provide"
+- **Consistent terminology**: Use "AI Fabrix" not "the platform" or "our solution"
+- **Gender-neutral**: Use "they/them" or restructure sentences
+
+### Sentence Structure
+- **Short sentences**: 15-20 words maximum
+- **One idea per sentence**: Avoid complex compound sentences
+- **Parallel structure**: Use consistent formatting in lists
+- **Clear transitions**: Guide readers through logical flow
+
+## Customer-Safe Content Rules
+
+### What to Include
+✅ **Customer-facing features and capabilities**
+✅ **Public APIs and interfaces**
+✅ **Configuration examples with placeholders**
+✅ **Business value and use cases**
+✅ **Security and compliance features**
+✅ **Integration patterns and best practices**
+
+### What to Exclude
+❌ **Internal secrets, keys, or credentials**
+❌ **Internal infrastructure details**
+❌ **Proprietary algorithms or implementation details**
+❌ **Internal team names or processes**
+❌ **Sensitive configuration values**
+❌ **Internal debugging information**
+
+### Placeholder Guidelines
+Use consistent placeholder patterns:
+
+```yaml
+# Environment variables
+AZURE_SUBSCRIPTION_ID: "your-subscription-id"
+ENTRA_TENANT_ID: "your-tenant-id"
+AI_FABRIX_RESOURCE_GROUP: "your-resource-group"
+
+# URLs and endpoints
+https://your-instance.aifabrix.ai
+https://your-keyvault.vault.azure.net
+
+# Resource names
+your-aifabrix-instance
+your-storage-account
+your-postgresql-server
+```
+
+## Content Structure Standards
+
+### Page Organization
+1. **Purpose** (1-2 sentences explaining the page's value)
+2. **Prerequisites** (what users need before starting)
+3. **Steps or Details** (numbered, actionable content)
+4. **Validation** (how to confirm success)
+5. **Troubleshooting** (top 3 common issues)
+6. **References** (links to related content)
+
+### Heading Hierarchy
+```markdown
+# Page Title (H1 - only one per page)
+## Major Section (H2)
+### Subsection (H3)
+#### Detail Section (H4)
+```
+
+### List Formatting
+- **Use numbered lists** for procedures and steps
+- **Use bullet points** for features and options
+- **Use consistent formatting** within lists
+- **Include action verbs** in procedure steps
+
+## Technical Writing Standards
+
+### Code Examples
+```bash
+# Always include comments explaining what each command does
+az login --tenant your-tenant-id
+az account set --subscription your-subscription-id
+
+# Validate the configuration
+az account show --query "name" --output tsv
+```
+
+### Configuration Examples
+```yaml
+# Use descriptive comments
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aifabrix-config
+data:
+  # Database connection settings
+  DATABASE_URL: "postgresql://user:password@host:5432/dbname"
+  # Redis cache configuration
+  REDIS_URL: "redis://host:6379"
+```
+
+### Command Validation
+Every command must include:
+- **Prerequisites**: What's needed before running
+- **Expected output**: What success looks like
+- **Error handling**: What to do if it fails
+- **Next steps**: What to do after success
+
+## Audience-Specific Guidelines
+
+### Executive Audience (Exec)
+- **Focus**: Business value, ROI, strategic benefits
+- **Language**: High-level, outcome-focused
+- **Content**: Use cases, competitive advantages, compliance benefits
+- **Examples**: "AI Fabrix reduces time-to-market by 60%"
+
+### Architect Audience (Architect)
+- **Focus**: Technical architecture, integration patterns
+- **Language**: Technical but accessible
+- **Content**: Design decisions, scalability, security architecture
+- **Examples**: "AI Fabrix uses Azure Private Endpoints for secure connectivity"
+
+### Developer Audience (Developer)
+- **Focus**: Implementation details, code examples
+- **Language**: Technical and specific
+- **Content**: APIs, SDKs, configuration, troubleshooting
+- **Examples**: "Use the AI Fabrix SDK to create custom connectors"
+
+### Security Audience (Security)
+- **Focus**: Security controls, compliance, risk management
+- **Language**: Security-focused, compliance-oriented
+- **Content**: Controls mapping, audit procedures, security features
+- **Examples**: "AI Fabrix implements ISO-27001 controls for data protection"
+
+## SEO and Discoverability
+
+### Title Optimization
+- **Include primary keyword**: "AI Fabrix [Topic]"
+- **Use action verbs**: "Configure", "Deploy", "Integrate"
+- **Keep under 60 characters**: For search engine display
+- **Be descriptive**: Clear about page content
+
+### Description Optimization
+- **50-160 characters**: Optimal for search snippets
+- **Include primary keyword**: Early in the description
+- **Use action language**: "Learn how to", "Discover how"
+- **Include value proposition**: What users will achieve
+
+### Content Optimization
+- **Use headings strategically**: Include keywords in H2/H3
+- **Link internally**: Connect related documentation
+- **Use alt text**: Describe images for accessibility
+- **Include FAQs**: Address common questions
+
+## Quality Assurance Checklist
+
+### Before Publishing
+- [ ] **Customer-safe**: No internal secrets or sensitive data
+- [ ] **Copy-pastable**: All commands work as written
+- [ ] **Validated**: Procedures tested and verified
+- [ ] **Linked**: Connected to related documentation
+- [ ] **Accessible**: Proper headings and alt text
+- [ ] **SEO optimized**: Title, description, keywords
+- [ ] **Audience appropriate**: Content depth matches target audience
+
+### Content Review
+- [ ] **Clear purpose**: Page value is obvious
+- [ ] **Logical flow**: Information progresses logically
+- [ ] **Complete procedures**: All steps included
+- [ ] **Validation steps**: Success criteria defined
+- [ ] **Troubleshooting**: Common issues addressed
+- [ ] **References**: Links to related content
+
+## Common Writing Mistakes to Avoid
+
+### Content Issues
+- **Internal focus**: Writing for internal teams instead of customers
+- **Missing context**: Not explaining why something is needed
+- **Incomplete procedures**: Missing steps or validation
+- **Outdated information**: Not keeping content current
+- **Technical jargon**: Using terms without explanation
+
+### Style Issues
+- **Passive voice**: "The setting should be configured"
+- **Inconsistent terminology**: Mixing "AI Fabrix" with "the platform"
+- **Long sentences**: Complex, hard-to-follow sentences
+- **Missing transitions**: Abrupt topic changes
+- **Inconsistent formatting**: Different styles within same document
+
+### Safety Issues
+- **Exposed secrets**: Real credentials or sensitive data
+- **Internal details**: Proprietary information or processes
+- **Unvalidated commands**: Commands that haven't been tested
+- **Missing error handling**: No guidance for failures
+- **Incomplete prerequisites**: Missing required setup
+
+## Brand Voice Guidelines
+
+### AI Fabrix Brand Attributes
+- **Enterprise-grade**: Professional, reliable, secure
+- **Azure-native**: Cloud-first, scalable, integrated
+- **Compliance-focused**: ISO-27001, security-first
+- **Business-oriented**: ROI-focused, practical, valuable
+- **Innovative**: Cutting-edge, forward-thinking, advanced
+
+### Messaging Pillars
+- **Beyond Copilots**: More than just AI assistance
+- **Compliance by Design**: Security built-in, not bolted-on
+- **Business-First AI**: AI that serves business objectives
+- **One Fabric**: Integrated, unified platform
+- **Azure-Native ISO27k**: Enterprise security and compliance
+
+### Voice Characteristics
+- **Authoritative**: Confident in expertise and capabilities
+- **Helpful**: Genuinely interested in user success
+- **Clear**: Direct communication without confusion
+- **Professional**: Appropriate for enterprise audience
+- **Innovative**: Forward-thinking and cutting-edge
+
+## Examples of Good vs. Poor Writing
+
+### Good Example
+```markdown
+## Configure Private Endpoints
+
+Private endpoints provide secure connectivity between AI Fabrix and your Azure resources without exposing traffic to the internet.
+
+### Prerequisites
+- Azure subscription with Contributor access
+- AI Fabrix instance deployed
+- Network security group configured
+
+### Steps
+1. Navigate to your AI Fabrix resource group
+2. Select the private endpoint resource
+3. Configure the connection settings
+4. Validate connectivity
+
+### Validation
+Test the connection using the provided validation script:
+```bash
+./validate-private-endpoint.sh
+```
+
+Expected output: "Connection successful"
+```
+
+### Poor Example
+```markdown
+## Private Endpoints
+
+You need to configure private endpoints for security.
+
+1. Go to Azure
+2. Find the resource
+3. Set it up
+4. Check if it works
+
+This is important for security.
+```
+
+Remember: Good documentation helps users succeed with AI Fabrix while maintaining security and professional standards. Every word should serve the user's success.

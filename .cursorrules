@@ -1,0 +1,180 @@
+# AI Fabrix Documentation - Cursor Rules
+
+You are an AI assistant helping to create and maintain AI Fabrix documentation. Follow these rules when working with documentation files.
+
+## Project Context
+
+- **Product**: AI Fabrix - Enterprise AI platform with Azure-native ISO27k compliance
+- **Architecture**: Multi-module platform (Miso, AI Fabrix Core, Flowise, OpenWebUI)
+- **Target**: Customer-facing knowledge base with engineering-driven content
+- **Workflow**: Doc-as-code with Cursor-assisted authoring
+
+## Core Principles
+
+### 1. Customer-Safe Content
+
+- Never expose internal secrets, IDs, or sensitive configuration
+- Use placeholder values for internal names/secrets
+- Focus on customer value and use cases
+- Avoid deployment minutiae - Miso handles provisioning
+
+### 2. Source-Driven Documentation
+
+- Extract facts directly from code/README/YAML/Bicep files
+- Cite file paths inline for editor verification
+- Keep documentation synchronized with source code
+- Use repository structure as documentation structure
+
+### 3. Audience-First Writing
+
+- Identify target audience: Exec | Architect | Developer | Security
+- Tailor content depth and technical level accordingly
+- Use clear, actionable language
+- Provide copy-pastable commands and examples
+
+## Documentation Structure
+
+### Knowledge Base Sections
+
+1. **Landing** - What is AI Fabrix, message pillars, path selection
+2. **Platform & Modules** - Overview and individual module docs
+3. **Getting Started** - Prerequisites, quickstart, FAQ
+4. **Architecture** - Azure reference architecture, networking, data layer
+5. **Security & Compliance** - ISO-27001 controls, policies, artifacts
+6. **Building Solutions** - RAG patterns, connectors, agents, workflows
+7. **Developer SDK** - Plugin development, concepts, examples
+8. **Operations** - SRE runbooks, backup/restore, change management
+9. **How-To Guides** - Step-by-step procedures
+10. **Reference** - Configuration, APIs, limits
+11. **Releases & Roadmap** - Release notes, compatibility, roadmap
+
+### Module Ownership
+
+- **Platform (Core)**: Architecture & Security
+- **Miso**: Cloud Platform / SRE  
+- **Flowise & SDK**: Engineering
+- **OpenWebUI**: Product + Engineering
+
+## File Organization
+
+### Repository Structure
+
+```yaml
+/docs/                    # Knowledge base content
+/content/                 # Marketing pages (MDX/Markdown)
+/openapi/                 # OpenAPI specifications
+/assets/                  # Images, diagrams
+/prompts/                 # Cursor prompt templates
+/.github/workflows/       # CI/CD pipelines
+/tools/                   # Transformers, validators
+```
+
+### Front-Matter Standards
+
+All documentation files must include:
+
+```yaml
+title: [Descriptive title]
+description: [Brief summary]
+audience: [Exec|Architect|Developer|Security]
+version: [stable|next]
+owner: [Module owner]
+last_reviewed: [YYYY-MM-DD]
+```
+
+## Writing Guidelines
+
+### Page Structure
+
+1. **Purpose** (1-2 sentences)
+2. **Prerequisites** (environment, permissions)
+3. **Steps or Details** (numbered, copy-paste blocks)
+4. **Validation** (what "good" looks like)
+5. **Troubleshooting** (top 3 issues)
+6. **References** (file paths, code links)
+
+### Style Rules
+
+- Use customer-safe wording; no internal secrets/IDs
+- Prefer diagrams (Mermaid) for flows; short tables for config
+- Call out *operator tasks* vs *platform controls* (ISO alignment)
+- Avoid repetition—link to Reference/How-To sections
+- Use active voice and clear, concise sentences
+- Include code examples with proper syntax highlighting
+
+### Technical Standards
+
+- All commands should be copy-pastable
+- Include validation steps for each procedure
+- Use consistent terminology (AI Fabrix, not "the platform")
+- Link to related documentation sections
+- Include troubleshooting for common issues
+
+## Cursor Workflow Patterns
+
+### Discovery Prompts
+
+When analyzing repositories, use these patterns:
+
+- "Scan this repository. List: (1) components, (2) configuration files, (3) public interfaces, (4) operational concerns, (5) security-relevant settings."
+- "From the table, identify items relevant to Platform Overview and Module pages."
+
+### Content Generation
+
+- Extract facts from source files
+- Generate customer-safe documentation
+- Include file path citations
+- Focus on user value and capabilities
+
+### Quality Assurance
+
+- Validate front-matter completeness
+- Check for customer-safe content
+- Ensure copy-pastable commands
+- Verify link integrity
+- Confirm audience appropriateness
+
+## Compliance & Security
+
+### ISO-27001 Alignment
+
+- Distinguish between operator tasks and platform controls
+- Document security controls and policies
+- Maintain audit trail through Git history
+- Ensure compliance artifacts are current
+
+### Security Guidelines
+
+- Never expose internal infrastructure details
+- Use placeholder values for sensitive data
+- Focus on customer-facing security features
+- Document security controls and guardrails
+
+## Automation Integration
+
+### CI/CD Pipeline
+
+- Validate markdown and links
+- Check front-matter completeness
+- Ensure customer-safe content
+- Generate navigation and versioning
+- Deploy to Document360 or Docusaurus
+
+### Quality Gates
+
+- Lint style and structure
+- Validate terminology consistency
+- Check SEO requirements
+- Ensure accessibility standards
+
+## When Working with This Project
+
+1. **Always** check the target audience before writing
+2. **Always** include proper front-matter
+3. **Always** cite source files when extracting information
+4. **Always** validate commands are copy-pastable
+5. **Never** expose internal secrets or sensitive data
+6. **Never** skip validation steps in procedures
+7. **Always** link to related documentation sections
+
+Remember: You're creating customer-facing documentation that helps users succeed with AI Fabrix while maintaining security and compliance standards.
