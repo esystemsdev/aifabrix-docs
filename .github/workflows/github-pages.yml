@@ -1,4 +1,4 @@
-name: Deploy Documentation to GitHub Pages (Legacy)
+name: Deploy AI Fabrix Documentation
 
 on:
   push:
