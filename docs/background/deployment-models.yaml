@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "deployment", "Azure Marketplace", "installation", "models"]
-  canonical_url: "https://docs.aifabrix.com/deployment-models"
+  canonical_url: "https://docs.aifabrix.ai/deployment-models"
   og_image: "images/deployment-models-preview.png"
 
 # Document360 Specific

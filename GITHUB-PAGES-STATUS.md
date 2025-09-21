@@ -23,7 +23,7 @@
    ```
 
 3. **Access Your Site**:
-   - URL will be: `https://[username].github.io/[repository-name]`
+   - URL will be: `https://esystemsdev.github.io/aifabrix-docs`
    - Check the Actions tab for deployment status
 
 ## 📊 Current Status

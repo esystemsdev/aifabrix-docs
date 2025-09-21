@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "modules", "components", "Miso", "Flowise", "OpenWebUI"]
-  canonical_url: "https://docs.aifabrix.com/modules-overview"
+  canonical_url: "https://docs.aifabrix.ai/modules-overview"
   og_image: "images/modules-overview-preview.png"
 
 # Document360 Specific

@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "security", "authentication", "OIDC", "enterprise", "SDK"]
-  canonical_url: "https://docs.aifabrix.com/architecture/security-authentication"
+  canonical_url: "https://docs.aifabrix.ai/architecture/security-authentication"
   og_image: "images/security-authentication-flow.png"
 
 # Document360 Specific

@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "platform", "enterprise AI", "overview", "Azure"]
-  canonical_url: "https://docs.aifabrix.com/platform-overview"
+  canonical_url: "https://docs.aifabrix.ai/platform-overview"
   og_image: "images/platform-overview-preview.png"
 
 # Document360 Specific

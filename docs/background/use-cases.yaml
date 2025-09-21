@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "use cases", "enterprise AI", "solutions", "scenarios"]
-  canonical_url: "https://docs.aifabrix.com/use-cases"
+  canonical_url: "https://docs.aifabrix.ai/use-cases"
   og_image: "images/use-cases-preview.png"
 
 # Document360 Specific

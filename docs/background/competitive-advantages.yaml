@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "competitive advantages", "value proposition", "enterprise AI"]
-  canonical_url: "https://docs.aifabrix.com/competitive-advantages"
+  canonical_url: "https://docs.aifabrix.ai/competitive-advantages"
   og_image: "images/competitive-advantages-preview.png"
 
 # Document360 Specific

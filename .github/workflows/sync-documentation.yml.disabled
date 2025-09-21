@@ -79,7 +79,7 @@ jobs:
       - name: Configure Git
         run: |
           git config --global user.name "AI Fabrix Bot"
-          git config --global user.email "bot@aifabrix.com"
+          git config --global user.email "bot@aifabrix.ai"
           
       - name: Sync documentation
         env:

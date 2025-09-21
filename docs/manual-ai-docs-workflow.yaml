@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI documentation", "workflow", "manual process", "content generation", "customer documentation"]
-  canonical_url: "https://docs.aifabrix.com/manual-ai-docs-workflow"
+  canonical_url: "https://docs.aifabrix.ai/manual-ai-docs-workflow"
   og_image: "images/ai-docs-workflow-preview.png"
 
 # Document360 Specific

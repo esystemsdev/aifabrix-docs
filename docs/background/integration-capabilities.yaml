@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "integration", "APIs", "connectors", "data sync"]
-  canonical_url: "https://docs.aifabrix.com/integration-capabilities"
+  canonical_url: "https://docs.aifabrix.ai/integration-capabilities"
   og_image: "images/integration-capabilities-preview.png"
 
 # Document360 Specific

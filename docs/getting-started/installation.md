@@ -128,5 +128,5 @@ If you encounter issues:
 
 1. Check the [Troubleshooting Guide](../troubleshooting.md)
 2. Review [FAQ](../faq.md)
-3. Contact support: <support@aifabrix.com>
+3. Contact support: <support@aifabrix.ai>
 4. Create an issue: [GitHub Issues](https://github.com/esystemsdev/aifabrix-miso/issues)

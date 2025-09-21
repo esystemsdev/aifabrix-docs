@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "architecture", "system design", "enterprise AI"]
-  canonical_url: "https://docs.aifabrix.com/architecture-overview"
+  canonical_url: "https://docs.aifabrix.ai/architecture-overview"
   og_image: "images/architecture-overview-preview.png"
 
 # Document360 Specific

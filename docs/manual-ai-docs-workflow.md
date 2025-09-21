@@ -141,7 +141,7 @@ content:
 
 seo:
   keywords: ["AI Fabrix", "architecture", "miso", "controller"]
-  canonical_url: "https://docs.aifabrix.com/architecture/miso-controller"
+  canonical_url: "https://docs.aifabrix.ai/architecture/miso-controller"
   og_image: "images/miso-controller-preview.png"
 
 document360:

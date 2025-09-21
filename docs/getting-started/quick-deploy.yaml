@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "quick deploy", "getting started", "GitHub Actions", "deployment"]
-  canonical_url: "https://docs.aifabrix.com/getting-started/quick-deploy"
+  canonical_url: "https://docs.aifabrix.ai/getting-started/quick-deploy"
   og_image: "images/quick-deploy-guide.png"
 
 # Document360 Specific

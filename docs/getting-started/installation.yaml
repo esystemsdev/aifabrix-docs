@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "installation", "Azure", "setup", "enterprise AI", "deployment"]
-  canonical_url: "https://docs.aifabrix.com/installation"
+  canonical_url: "https://docs.aifabrix.ai/installation"
   og_image: "images/installation-preview.png"
 
 # Document360 Specific

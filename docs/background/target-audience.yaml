@@ -25,7 +25,7 @@ content:
 # SEO Configuration
 seo:
   keywords: ["AI Fabrix", "audience", "users", "personas", "enterprise"]
-  canonical_url: "https://docs.aifabrix.com/target-audience"
+  canonical_url: "https://docs.aifabrix.ai/target-audience"
   og_image: "images/target-audience-preview.png"
 
 # Document360 Specific

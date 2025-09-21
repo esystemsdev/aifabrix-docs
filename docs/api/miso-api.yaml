@@ -28,7 +28,7 @@ structured_data:
   description: "API overview and quick start guide for the AI Fabrix Miso platform"
   provider:
     name: "AI Fabrix"
-    url: "https://aifabrix.com"
+    url: "https://aifabrix.ai"
   version: "1.0.0"
   license: "Proprietary"
   programming_language: "REST"
