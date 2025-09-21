@@ -1,0 +1,1083 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '*.yaml'
+      - '.github/workflows/github-pages.yml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Setup Python (for YAML validation)
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+          
+      - name: Validate documentation structure
+        run: |
+          echo "🔍 Validating documentation structure..."
+          
+          # Check if docs directory exists
+          if [ ! -d "docs" ]; then
+            echo "❌ Warning: docs directory not found"
+            exit 1
+          else
+            echo "✅ Found docs directory"
+            ls -la docs/
+          fi
+          
+          # Count documentation files
+          md_count=$(find docs -name "*.md" -type f | wc -l)
+          yaml_count=$(find docs -name "*.yaml" -type f | wc -l)
+          echo "📄 Found $md_count Markdown files"
+          echo "📋 Found $yaml_count YAML metadata files"
+          
+          # Validate YAML metadata files
+          echo "🔍 Validating YAML metadata files..."
+          for yaml_file in $(find docs -name "*.yaml" -type f); do
+            echo "  Checking: $yaml_file"
+            # Basic YAML validation
+            if ! python3 -c "import yaml; yaml.safe_load(open('$yaml_file'))" 2>/dev/null; then
+              echo "❌ Invalid YAML in $yaml_file"
+              exit 1
+            fi
+          done
+          
+          # Basic markdown validation
+          echo "🔍 Validating Markdown files..."
+          for md_file in $(find docs -name "*.md" -type f); do
+            echo "  Checking: $md_file"
+            # Basic validation - check if file is readable
+            if [ ! -r "$md_file" ]; then
+              echo "❌ Cannot read $md_file"
+              exit 1
+            fi
+          done
+          
+      - name: Build documentation site
+        run: |
+          echo "🏗️ Building documentation site..."
+          
+          # Generate sidebar navigation dynamically
+          echo "📋 Generating sidebar navigation..."
+          
+          # Create sidebar HTML
+          cat > sidebar.html << 'EOF'
+          <h2>🚀 AI Fabrix Docs</h2>
+          
+          <!-- Document360 Notice -->
+          <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 12px; margin-bottom: 20px; font-size: 0.85em;">
+              <div style="color: #856404; font-weight: bold; margin-bottom: 5px;">📋 Preview Only</div>
+              <div style="color: #856404;">Official docs at Document360 portal</div>
+          </div>
+          
+          <div class="search-box">
+              <input type="text" placeholder="Search documentation..." onkeyup="filterLinks(this.value)">
+          </div>
+          
+          <h3>📚 Getting Started</h3>
+          <ul>
+              <li><a href="docs/index.md">Main Index</a></li>
+          EOF
+          
+          # Add getting-started files
+          if [ -d "docs/getting-started" ]; then
+              for file in docs/getting-started/*.md; do
+                  if [ -f "$file" ]; then
+                      filename=$(basename "$file" .md)
+                      title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+                      echo "              <li><a href=\"$file\">$title</a></li>" >> sidebar.html
+                  fi
+              done
+          fi
+          
+          echo "          </ul>" >> sidebar.html
+          
+          # Add background files
+          echo "          <h3>🏢 Platform Overview</h3>" >> sidebar.html
+          echo "          <ul>" >> sidebar.html
+          if [ -d "docs/background" ]; then
+              for file in docs/background/*.md; do
+                  if [ -f "$file" ]; then
+                      filename=$(basename "$file" .md)
+                      title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+                      echo "              <li><a href=\"$file\">$title</a></li>" >> sidebar.html
+                  fi
+              done
+          fi
+          echo "          </ul>" >> sidebar.html
+          
+          # Add architecture files
+          echo "          <h3>🏗️ Architecture</h3>" >> sidebar.html
+          echo "          <ul>" >> sidebar.html
+          if [ -d "docs/architecture" ]; then
+              for file in docs/architecture/*.md; do
+                  if [ -f "$file" ]; then
+                      filename=$(basename "$file" .md)
+                      title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+                      echo "              <li><a href=\"$file\">$title</a></li>" >> sidebar.html
+                  fi
+              done
+          fi
+          echo "          </ul>" >> sidebar.html
+          
+          # Add user-guides files
+          echo "          <h3>👥 User Guides</h3>" >> sidebar.html
+          echo "          <ul>" >> sidebar.html
+          if [ -d "docs/user-guides" ]; then
+              for file in docs/user-guides/*.md; do
+                  if [ -f "$file" ]; then
+                      filename=$(basename "$file" .md)
+                      title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+                      echo "              <li><a href=\"$file\">$title</a></li>" >> sidebar.html
+                  fi
+              done
+          fi
+          echo "          </ul>" >> sidebar.html
+          
+          # Add API files
+          echo "          <h3>🔌 API Documentation</h3>" >> sidebar.html
+          echo "          <ul>" >> sidebar.html
+          if [ -d "docs/api" ]; then
+              for file in docs/api/*.md; do
+                  if [ -f "$file" ]; then
+                      filename=$(basename "$file" .md)
+                      title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+                      echo "              <li><a href=\"$file\">$title</a></li>" >> sidebar.html
+                  fi
+              done
+          fi
+          echo "          </ul>" >> sidebar.html
+          
+          # Add other sections
+          echo "          <h3>📊 Repository Status</h3>" >> sidebar.html
+          echo "          <ul>" >> sidebar.html
+          echo "              <li><a href=\"docs/repository-documentation-index.yaml\">Documentation Index</a></li>" >> sidebar.html
+          echo "              <li><a href=\"multi-repository-documentation-strategy.md\">Multi-Repo Strategy</a></li>" >> sidebar.html
+          echo "          </ul>" >> sidebar.html
+          
+          # Create CSS file
+          cat > styles.css << 'EOF'
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          body { 
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+              background: #f8f9fa; 
+              display: flex;
+              min-height: 100vh;
+          }
+          
+          .sidebar {
+              width: 280px;
+              background: #2c3e50;
+              color: white;
+              padding: 20px;
+              position: fixed;
+              height: 100vh;
+              overflow-y: auto;
+              z-index: 1000;
+          }
+          
+          .sidebar h2 {
+              color: #3498db;
+              margin-bottom: 20px;
+              font-size: 1.2em;
+              border-bottom: 2px solid #3498db;
+              padding-bottom: 10px;
+          }
+          
+          .sidebar h3 {
+              color: #ecf0f1;
+              margin: 15px 0 10px 0;
+              font-size: 1em;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+          }
+          
+          .sidebar ul {
+              list-style: none;
+              margin-bottom: 20px;
+          }
+          
+          .sidebar li {
+              margin: 5px 0;
+          }
+          
+          .sidebar a {
+              color: #bdc3c7;
+              text-decoration: none;
+              padding: 8px 12px;
+              display: block;
+              border-radius: 4px;
+              transition: all 0.3s ease;
+              font-size: 0.9em;
+          }
+          
+          .sidebar a:hover {
+              background: #34495e;
+              color: #3498db;
+              transform: translateX(5px);
+          }
+          
+          .sidebar a.active {
+              background: #3498db;
+              color: white;
+          }
+          
+          .main-content {
+              margin-left: 280px;
+              padding: 40px;
+              max-width: calc(100% - 280px);
+              background: white;
+              min-height: 100vh;
+          }
+          
+          .container {
+              max-width: 1000px;
+              margin: 0 auto;
+          }
+          
+          h1 { 
+              color: #2c3e50; 
+              border-bottom: 3px solid #3498db; 
+              padding-bottom: 10px; 
+              margin-bottom: 30px;
+          }
+          
+          h2 { 
+              color: #34495e; 
+              margin-top: 30px; 
+              margin-bottom: 15px;
+          }
+          
+          h3 { 
+              color: #34495e; 
+              margin-top: 25px; 
+              margin-bottom: 10px;
+          }
+          
+          p {
+              margin-bottom: 15px;
+              line-height: 1.6;
+          }
+          
+          ul, ol {
+              margin-bottom: 15px;
+              padding-left: 20px;
+          }
+          
+          li {
+              margin-bottom: 5px;
+          }
+          
+          code {
+              background: #f8f9fa;
+              padding: 2px 6px;
+              border-radius: 3px;
+              font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+              font-size: 0.9em;
+          }
+          
+          pre {
+              background: #f8f9fa;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+              margin-bottom: 15px;
+          }
+          
+          pre code {
+              background: none;
+              padding: 0;
+          }
+          
+          blockquote {
+              border-left: 4px solid #3498db;
+              padding-left: 15px;
+              margin: 15px 0;
+              color: #7f8c8d;
+          }
+          
+          table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-bottom: 15px;
+          }
+          
+          th, td {
+              padding: 8px 12px;
+              text-align: left;
+              border-bottom: 1px solid #e9ecef;
+          }
+          
+          th {
+              background: #f8f9fa;
+              font-weight: 600;
+          }
+          
+          .mobile-menu-btn {
+              display: none;
+              position: fixed;
+              top: 20px;
+              left: 20px;
+              z-index: 1001;
+              background: #3498db;
+              color: white;
+              border: none;
+              padding: 10px;
+              border-radius: 4px;
+              cursor: pointer;
+          }
+          
+          @media (max-width: 768px) {
+              .sidebar {
+                  transform: translateX(-100%);
+                  transition: transform 0.3s ease;
+              }
+              .sidebar.open {
+                  transform: translateX(0);
+              }
+              .main-content {
+                  margin-left: 0;
+                  max-width: 100%;
+              }
+              .mobile-menu-btn {
+                  display: block;
+              }
+          }
+          EOF
+          
+          # Create JavaScript file
+          cat > script.js << 'EOF'
+          function toggleSidebar() {
+              document.getElementById('sidebar').classList.toggle('open');
+          }
+          
+          function filterLinks(searchTerm) {
+              const links = document.querySelectorAll('.sidebar a');
+              const sections = document.querySelectorAll('.sidebar h3');
+              
+              links.forEach(link => {
+                  const text = link.textContent.toLowerCase();
+                  const parent = link.closest('ul');
+                  const section = parent.previousElementSibling;
+                  
+                  if (text.includes(searchTerm.toLowerCase()) || searchTerm === '') {
+                      link.style.display = 'block';
+                      parent.style.display = 'block';
+                      if (section) section.style.display = 'block';
+                  } else {
+                      link.style.display = 'none';
+                      const visibleLinks = parent.querySelectorAll('a[style*="block"], a:not([style*="none"])');
+                      if (visibleLinks.length === 0) {
+                          parent.style.display = 'none';
+                          if (section) section.style.display = 'none';
+                      }
+                  }
+              });
+          }
+          
+          function highlightCurrentPage() {
+              const currentPath = window.location.pathname;
+              const links = document.querySelectorAll('.sidebar a');
+              
+              links.forEach(link => {
+                  if (link.getAttribute('href') === currentPath || 
+                      currentPath.includes(link.getAttribute('href'))) {
+                      link.classList.add('active');
+                  }
+              });
+          }
+          
+          document.addEventListener('DOMContentLoaded', function() {
+              highlightCurrentPage();
+              
+              document.addEventListener('click', function(e) {
+                  if (window.innerWidth <= 768 && 
+                      !document.getElementById('sidebar').contains(e.target) &&
+                      !e.target.classList.contains('mobile-menu-btn')) {
+                      document.getElementById('sidebar').classList.remove('open');
+                  }
+              });
+          });
+          
+          window.addEventListener('resize', function() {
+              if (window.innerWidth > 768) {
+                  document.getElementById('sidebar').classList.remove('open');
+              }
+          });
+          EOF
+          
+          # Create main HTML with dynamic sidebar
+          cat > index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>AI Fabrix Documentation</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body { 
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                      background: #f8f9fa; 
+                      display: flex;
+                      min-height: 100vh;
+                  }
+                  
+                  /* Sidebar */
+                  .sidebar {
+                      width: 280px;
+                      background: #2c3e50;
+                      color: white;
+                      padding: 20px;
+                      position: fixed;
+                      height: 100vh;
+                      overflow-y: auto;
+                      z-index: 1000;
+                  }
+                  
+                  .sidebar h2 {
+                      color: #3498db;
+                      margin-bottom: 20px;
+                      font-size: 1.2em;
+                      border-bottom: 2px solid #3498db;
+                      padding-bottom: 10px;
+                  }
+                  
+                  .sidebar h3 {
+                      color: #ecf0f1;
+                      margin: 15px 0 10px 0;
+                      font-size: 1em;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                  }
+                  
+                  .sidebar ul {
+                      list-style: none;
+                      margin-bottom: 20px;
+                  }
+                  
+                  .sidebar li {
+                      margin: 5px 0;
+                  }
+                  
+                  .sidebar a {
+                      color: #bdc3c7;
+                      text-decoration: none;
+                      padding: 8px 12px;
+                      display: block;
+                      border-radius: 4px;
+                      transition: all 0.3s ease;
+                      font-size: 0.9em;
+                  }
+                  
+                  .sidebar a:hover {
+                      background: #34495e;
+                      color: #3498db;
+                      transform: translateX(5px);
+                  }
+                  
+                  .sidebar a.active {
+                      background: #3498db;
+                      color: white;
+                  }
+                  
+                  /* Main Content */
+                  .main-content {
+                      margin-left: 280px;
+                      padding: 40px;
+                      max-width: calc(100% - 280px);
+                      background: white;
+                      min-height: 100vh;
+                  }
+                  
+                  .container {
+                      max-width: 1000px;
+                      margin: 0 auto;
+                  }
+                  
+                  h1 { 
+                      color: #2c3e50; 
+                      border-bottom: 3px solid #3498db; 
+                      padding-bottom: 10px; 
+                      margin-bottom: 30px;
+                  }
+                  
+                  .section { 
+                      margin: 30px 0; 
+                  }
+                  
+                  .section h2 { 
+                      color: #34495e; 
+                      margin-top: 30px; 
+                      margin-bottom: 15px;
+                  }
+                  
+                  .file-list { 
+                      background: #f8f9fa; 
+                      padding: 20px; 
+                      border-radius: 8px; 
+                      margin: 15px 0; 
+                      border: 1px solid #e9ecef;
+                  }
+                  
+                  .file-item { 
+                      margin: 8px 0; 
+                      padding: 12px; 
+                      background: white; 
+                      border-radius: 6px; 
+                      border-left: 4px solid #3498db; 
+                      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                  }
+                  
+                  .file-item a { 
+                      text-decoration: none; 
+                      color: #2c3e50; 
+                      font-weight: 500; 
+                  }
+                  
+                  .file-item a:hover { 
+                      color: #3498db; 
+                  }
+                  
+                  .metadata { 
+                      font-size: 0.9em; 
+                      color: #7f8c8d; 
+                      margin-top: 5px; 
+                  }
+                  
+                  .status { 
+                      display: inline-block; 
+                      padding: 4px 8px; 
+                      border-radius: 3px; 
+                      font-size: 0.8em; 
+                      font-weight: bold; 
+                      margin-right: 8px;
+                  }
+                  
+                  .status.complete { background: #d4edda; color: #155724; }
+                  .status.pending { background: #fff3cd; color: #856404; }
+                  .status.internal { background: #f8d7da; color: #721c24; }
+                  
+                  /* Mobile Responsive */
+                  @media (max-width: 768px) {
+                      .sidebar {
+                          transform: translateX(-100%);
+                          transition: transform 0.3s ease;
+                      }
+                      .sidebar.open {
+                          transform: translateX(0);
+                      }
+                      .main-content {
+                          margin-left: 0;
+                          max-width: 100%;
+                      }
+                      .mobile-menu-btn {
+                          display: block;
+                          position: fixed;
+                          top: 20px;
+                          left: 20px;
+                          z-index: 1001;
+                          background: #3498db;
+                          color: white;
+                          border: none;
+                          padding: 10px;
+                          border-radius: 4px;
+                          cursor: pointer;
+                      }
+                  }
+                  
+                  .mobile-menu-btn {
+                      display: none;
+                  }
+                  
+                  /* Search Box */
+                  .search-box {
+                      margin-bottom: 20px;
+                  }
+                  
+                  .search-box input {
+                      width: 100%;
+                      padding: 10px;
+                      border: 1px solid #34495e;
+                      border-radius: 4px;
+                      background: #34495e;
+                      color: white;
+                      font-size: 0.9em;
+                  }
+                  
+                  .search-box input::placeholder {
+                      color: #bdc3c7;
+                  }
+              </style>
+          </head>
+          <body>
+              <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+              
+              <div class="sidebar" id="sidebar">
+                  $(cat sidebar.html)
+              </div>
+              
+              <div class="main-content">
+                  <div class="container">
+                      <!-- Document360 Notice -->
+                      <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+                          <h2 style="color: #1976d2; margin-top: 0; margin-bottom: 15px;">📋 Documentation Preview</h2>
+                          <p style="margin-bottom: 10px; color: #1565c0;">
+                              <strong>This is a preview of the AI Fabrix documentation.</strong>
+                          </p>
+                          <p style="margin-bottom: 15px; color: #1565c0;">
+                              The official documentation is published to the <strong>Document360 portal</strong> where it's properly formatted, searchable, and includes interactive features.
+                          </p>
+                          <div style="background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #2196f3;">
+                              <p style="margin: 0; color: #1976d2;">
+                                  <strong>🔗 Official Documentation:</strong> 
+                                  <a href="https://docs.aifabrix.ai" style="color: #1976d2; text-decoration: underline;">
+                                      Visit Document360 Portal →
+                                  </a>
+                              </p>
+                          </div>
+                      </div>
+                      
+                      <h1>🚀 AI Fabrix Documentation</h1>
+                      <p>Welcome to the AI Fabrix documentation preview. Use the sidebar navigation to browse all available documentation.</p>
+                  
+                  <div class="section">
+                      <h2>🎯 About This Preview</h2>
+                      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #6c757d;">
+                          <p style="margin-bottom: 15px;">
+                              <strong>This GitHub Pages site is a preview of the documentation content.</strong>
+                          </p>
+                          <p style="margin-bottom: 15px;">
+                              The official AI Fabrix documentation is published to the <strong>Document360 portal</strong>, which provides:
+                          </p>
+                          <ul style="margin-bottom: 15px;">
+                              <li>🔍 <strong>Advanced Search</strong> - Full-text search across all documentation</li>
+                              <li>📱 <strong>Mobile Optimization</strong> - Responsive design for all devices</li>
+                              <li>🎨 <strong>Professional Formatting</strong> - Enhanced styling and layout</li>
+                              <li>🔗 <strong>Interactive Features</strong> - Cross-references, tooltips, and navigation</li>
+                              <li>📊 <strong>Analytics</strong> - Usage tracking and content optimization</li>
+                              <li>🔐 <strong>Access Control</strong> - Role-based permissions and security</li>
+                          </ul>
+                          <p style="margin: 0; font-weight: bold; color: #495057;">
+                              For the best experience, visit the official Document360 portal.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>📝 Last Updated</h2>
+                      <p>Documentation last updated: <strong>$(date)</strong></p>
+                      <p>Repository: <a href="https://github.com/${{ github.repository }}">${{ github.repository }}</a></p>
+                      <p>Commit: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}">${{ github.sha }}</a></p>
+                  </div>
+              </div>
+              
+              <script>
+                  // Mobile sidebar toggle
+                  function toggleSidebar() {
+                      const sidebar = document.getElementById('sidebar');
+                      sidebar.classList.toggle('open');
+                  }
+                  
+                  // Search functionality
+                  function filterLinks(searchTerm) {
+                      const links = document.querySelectorAll('.sidebar a');
+                      const sections = document.querySelectorAll('.sidebar h3');
+                      
+                      links.forEach(link => {
+                          const text = link.textContent.toLowerCase();
+                          const parent = link.closest('ul');
+                          const section = parent.previousElementSibling;
+                          
+                          if (text.includes(searchTerm.toLowerCase()) || searchTerm === '') {
+                              link.style.display = 'block';
+                              parent.style.display = 'block';
+                              if (section) section.style.display = 'block';
+                          } else {
+                              link.style.display = 'none';
+                              // Hide section if no visible links
+                              const visibleLinks = parent.querySelectorAll('a[style*="block"], a:not([style*="none"])');
+                              if (visibleLinks.length === 0) {
+                                  parent.style.display = 'none';
+                                  if (section) section.style.display = 'none';
+                              }
+                          }
+                      });
+                  }
+                  
+                  // Highlight current page
+                  function highlightCurrentPage() {
+                      const currentPath = window.location.pathname;
+                      const links = document.querySelectorAll('.sidebar a');
+                      
+                      links.forEach(link => {
+                          if (link.getAttribute('href') === currentPath || 
+                              currentPath.includes(link.getAttribute('href'))) {
+                              link.classList.add('active');
+                          }
+                      });
+                  }
+                  
+                  // Initialize on page load
+                  document.addEventListener('DOMContentLoaded', function() {
+                      highlightCurrentPage();
+                      
+                      // Add click handlers for mobile
+                      document.addEventListener('click', function(e) {
+                          if (window.innerWidth <= 768 && 
+                              !document.getElementById('sidebar').contains(e.target) &&
+                              !e.target.classList.contains('mobile-menu-btn')) {
+                              document.getElementById('sidebar').classList.remove('open');
+                          }
+                      });
+                  });
+                  
+                  // Handle window resize
+                  window.addEventListener('resize', function() {
+                      if (window.innerWidth > 768) {
+                          document.getElementById('sidebar').classList.remove('open');
+                      }
+                  });
+              </script>
+          </body>
+          </html>
+          EOF
+          
+          # Create docs directory structure for GitHub Pages
+          mkdir -p _site/docs
+          
+          # Copy all documentation files
+          cp -r docs/* _site/docs/ 2>/dev/null || true
+          cp *.md _site/ 2>/dev/null || true
+          
+          # Create individual HTML pages for each markdown file
+          echo "📄 Creating individual HTML pages..."
+          
+          # Function to create HTML page from markdown
+          create_html_page() {
+              local md_file="$1"
+              local html_file="$2"
+              local title="$3"
+              
+              cat > "$html_file" << EOF
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>$title - AI Fabrix Documentation</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body { 
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                      background: #f8f9fa; 
+                      display: flex;
+                      min-height: 100vh;
+                  }
+                  
+                  .sidebar {
+                      width: 280px;
+                      background: #2c3e50;
+                      color: white;
+                      padding: 20px;
+                      position: fixed;
+                      height: 100vh;
+                      overflow-y: auto;
+                      z-index: 1000;
+                  }
+                  
+                  .sidebar h2 {
+                      color: #3498db;
+                      margin-bottom: 20px;
+                      font-size: 1.2em;
+                      border-bottom: 2px solid #3498db;
+                      padding-bottom: 10px;
+                  }
+                  
+                  .sidebar h3 {
+                      color: #ecf0f1;
+                      margin: 15px 0 10px 0;
+                      font-size: 1em;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                  }
+                  
+                  .sidebar ul {
+                      list-style: none;
+                      margin-bottom: 20px;
+                  }
+                  
+                  .sidebar li {
+                      margin: 5px 0;
+                  }
+                  
+                  .sidebar a {
+                      color: #bdc3c7;
+                      text-decoration: none;
+                      padding: 8px 12px;
+                      display: block;
+                      border-radius: 4px;
+                      transition: all 0.3s ease;
+                      font-size: 0.9em;
+                  }
+                  
+                  .sidebar a:hover {
+                      background: #34495e;
+                      color: #3498db;
+                      transform: translateX(5px);
+                  }
+                  
+                  .sidebar a.active {
+                      background: #3498db;
+                      color: white;
+                  }
+                  
+                  .main-content {
+                      margin-left: 280px;
+                      padding: 40px;
+                      max-width: calc(100% - 280px);
+                      background: white;
+                      min-height: 100vh;
+                  }
+                  
+                  .container {
+                      max-width: 1000px;
+                      margin: 0 auto;
+                  }
+                  
+                  h1 { 
+                      color: #2c3e50; 
+                      border-bottom: 3px solid #3498db; 
+                      padding-bottom: 10px; 
+                      margin-bottom: 30px;
+                  }
+                  
+                  h2 { 
+                      color: #34495e; 
+                      margin-top: 30px; 
+                      margin-bottom: 15px;
+                  }
+                  
+                  h3 { 
+                      color: #34495e; 
+                      margin-top: 25px; 
+                      margin-bottom: 10px;
+                  }
+                  
+                  p {
+                      margin-bottom: 15px;
+                      line-height: 1.6;
+                  }
+                  
+                  ul, ol {
+                      margin-bottom: 15px;
+                      padding-left: 20px;
+                  }
+                  
+                  li {
+                      margin-bottom: 5px;
+                  }
+                  
+                  code {
+                      background: #f8f9fa;
+                      padding: 2px 6px;
+                      border-radius: 3px;
+                      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+                      font-size: 0.9em;
+                  }
+                  
+                  pre {
+                      background: #f8f9fa;
+                      padding: 15px;
+                      border-radius: 5px;
+                      overflow-x: auto;
+                      margin-bottom: 15px;
+                  }
+                  
+                  pre code {
+                      background: none;
+                      padding: 0;
+                  }
+                  
+                  blockquote {
+                      border-left: 4px solid #3498db;
+                      padding-left: 15px;
+                      margin: 15px 0;
+                      color: #7f8c8d;
+                  }
+                  
+                  table {
+                      width: 100%;
+                      border-collapse: collapse;
+                      margin-bottom: 15px;
+                  }
+                  
+                  th, td {
+                      padding: 8px 12px;
+                      text-align: left;
+                      border-bottom: 1px solid #e9ecef;
+                  }
+                  
+                  th {
+                      background: #f8f9fa;
+                      font-weight: 600;
+                  }
+                  
+                  .mobile-menu-btn {
+                      display: none;
+                      position: fixed;
+                      top: 20px;
+                      left: 20px;
+                      z-index: 1001;
+                      background: #3498db;
+                      color: white;
+                      border: none;
+                      padding: 10px;
+                      border-radius: 4px;
+                      cursor: pointer;
+                  }
+                  
+                  @media (max-width: 768px) {
+                      .sidebar {
+                          transform: translateX(-100%);
+                          transition: transform 0.3s ease;
+                      }
+                      .sidebar.open {
+                          transform: translateX(0);
+                      }
+                      .main-content {
+                          margin-left: 0;
+                          max-width: 100%;
+                      }
+                      .mobile-menu-btn {
+                          display: block;
+                      }
+                  }
+              </style>
+          </head>
+          <body>
+              <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+              
+              <div class="sidebar" id="sidebar">
+                  $(cat sidebar.html)
+              </div>
+              
+              <div class="main-content">
+                  <div class="container">
+                      <!-- Document360 Notice -->
+                      <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+                          <h2 style="color: #1976d2; margin-top: 0; margin-bottom: 15px;">📋 Documentation Preview</h2>
+                          <p style="margin-bottom: 10px; color: #1565c0;">
+                              <strong>This is a preview of the AI Fabrix documentation.</strong>
+                          </p>
+                          <p style="margin-bottom: 15px; color: #1565c0;">
+                              The official documentation is published to the <strong>Document360 portal</strong> where it's properly formatted, searchable, and includes interactive features.
+                          </p>
+                          <div style="background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #2196f3;">
+                              <p style="margin: 0; color: #1976d2;">
+                                  <strong>🔗 Official Documentation:</strong> 
+                                  <a href="https://your-document360-portal.com" style="color: #1976d2; text-decoration: underline;">
+                                      Visit Document360 Portal →
+                                  </a>
+                          </div>
+                      </div>
+                      
+                      <h1>$title</h1>
+                      <div id="content">
+                          <!-- Markdown content will be inserted here -->
+                      </div>
+                  </div>
+              </div>
+              
+              <script>
+                  function toggleSidebar() {
+                      document.getElementById('sidebar').classList.toggle('open');
+                  }
+                  
+                  function highlightCurrentPage() {
+                      const currentPath = window.location.pathname;
+                      const links = document.querySelectorAll('.sidebar a');
+                      
+                      links.forEach(link => {
+                          if (link.getAttribute('href') === currentPath || 
+                              currentPath.includes(link.getAttribute('href'))) {
+                              link.classList.add('active');
+                          }
+                      });
+                  }
+                  
+                  document.addEventListener('DOMContentLoaded', function() {
+                      highlightCurrentPage();
+                  });
+              </script>
+          </body>
+          </html>
+          EOF
+          }
+          
+          # Create HTML pages for each markdown file
+          find docs -name "*.md" -type f | while read md_file; do
+              filename=$(basename "$md_file" .md)
+              title=$(echo "$filename" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+              html_file="_site/${md_file%.md}.html"
+              
+              # Create directory if it doesn't exist
+              mkdir -p "$(dirname "$html_file")"
+              
+              create_html_page "$md_file" "$html_file" "$title"
+              echo "  Created: $html_file"
+          done
+          
+          echo "✅ Documentation site built successfully with dynamic sidebar navigation"
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
