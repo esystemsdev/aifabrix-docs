@@ -38,12 +38,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
       - name: Setup Python (for YAML validation)
         uses: actions/setup-python@v4
         with:
@@ -51,7 +45,6 @@ jobs:
           
       - name: Install dependencies
         run: |
-          npm install
           pip install pyyaml
           
       - name: Validate documentation structure
