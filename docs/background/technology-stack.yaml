@@ -1,0 +1,37 @@
+title: "Technology Stack"
+meta_title: "AI Fabrix Technology Stack - Azure-Native Platform"
+description: "Comprehensive overview of AI Fabrix technology stack including Azure services and AI/ML technologies"
+slug: "technology-stack"
+status: "draft"
+tags: ["technology", "stack", "Azure", "AI"]
+labels: ["technical", "background"]
+related_articles: ["architecture-overview", "modules-overview", "deployment-models"]
+
+# Repository Context
+repository:
+  name: "aifabrix-docs"
+  path: "docs/background/technology-stack.md"
+  type: "background"
+  audience: ["architect", "developer", "devops"]
+
+# Content Management
+content:
+  source_file: "docs/background/technology-stack.md"
+  last_updated: "2024-01-15T10:30:00Z"
+  version: "1.0.0"
+  owner: "engineering-team"
+  reviewer: "architecture-team"
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "technology stack", "Azure", "AI", "machine learning"]
+  canonical_url: "https://docs.aifabrix.com/technology-stack"
+  og_image: "images/technology-stack-preview.png"
+
+# Document360 Specific
+document360:
+  category: "Background"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 6

@@ -1,0 +1,37 @@
+title: "Platform Overview"
+meta_title: "AI Fabrix Platform Overview - Enterprise AI Platform"
+description: "Comprehensive overview of AI Fabrix enterprise AI platform with Azure-native ISO27k compliance"
+slug: "platform-overview"
+status: "draft"
+tags: ["platform", "overview", "introduction"]
+labels: ["essential", "background"]
+related_articles: ["architecture-overview", "use-cases", "target-audience"]
+
+# Repository Context
+repository:
+  name: "aifabrix-docs"
+  path: "docs/background/platform-overview.md"
+  type: "background"
+  audience: ["executive", "architect", "developer"]
+
+# Content Management
+content:
+  source_file: "docs/background/platform-overview.md"
+  last_updated: "2024-01-15T10:30:00Z"
+  version: "1.0.0"
+  owner: "product-team"
+  reviewer: "marketing-team"
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "platform", "enterprise AI", "overview", "Azure"]
+  canonical_url: "https://docs.aifabrix.com/platform-overview"
+  og_image: "images/platform-overview-preview.png"
+
+# Document360 Specific
+document360:
+  category: "Background"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 1

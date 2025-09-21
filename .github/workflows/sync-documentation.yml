@@ -1,0 +1,187 @@
+name: Sync Documentation to Document360
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'docs/**'
+      - 'api-specs/**'
+      - '.github/workflows/sync-documentation.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'api-specs/**'
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  validate-documentation:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+      - name: Install dependencies
+        run: |
+          npm install aifabrix-d360
+          npm install -g d360
+          
+      - name: Validate front-matter
+        run: |
+          # Check for required front-matter fields
+          find docs -name "*.md" -exec grep -L "title:" {} \; | head -10
+          find docs -name "*.md" -exec grep -L "description:" {} \; | head -10
+          find docs -name "*.md" -exec grep -L "audience:" {} \; | head -10
+          
+      - name: Validate API specs
+        run: |
+          # Check API specification files
+          find api-specs -name "*.yaml" -o -name "*.yml" -o -name "*.json" | head -5
+          
+      - name: Test sync (dry run)
+        env:
+          MOCK_MODE: 'true'
+          DOCUMENT360_API_TOKEN: ${{ secrets.DOCUMENT360_API_TOKEN }}
+          DOCUMENT360_PROJECT_ID: ${{ secrets.DOCUMENT360_PROJECT_ID }}
+        run: |
+          aifabrix-d360 sync docs --dry-run
+
+  sync-documentation:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate-documentation
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for Git change detection
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+      - name: Install dependencies
+        run: |
+          npm install aifabrix-d360
+          npm install -g d360
+          
+      - name: Configure Git
+        run: |
+          git config --global user.name "AI Fabrix Bot"
+          git config --global user.email "bot@aifabrix.com"
+          
+      - name: Sync documentation
+        env:
+          DOCUMENT360_API_TOKEN: ${{ secrets.DOCUMENT360_API_TOKEN }}
+          DOCUMENT360_PROJECT_ID: ${{ secrets.DOCUMENT360_PROJECT_ID }}
+          DOCUMENT360_USER_ID: ${{ secrets.DOCUMENT360_USER_ID }}
+          DOCUMENT360_API_REF_ID: ${{ secrets.DOCUMENT360_API_REF_ID }}
+        run: |
+          # Sync regular documentation
+          aifabrix-d360 sync docs
+          
+          # Sync API specifications
+          if [ -d "api-specs" ]; then
+            for spec in api-specs/*.{yaml,yml,json}; do
+              if [ -f "$spec" ]; then
+                echo "Syncing API spec: $spec"
+                d360 apidocs:resync \
+                  --apiKey=$DOCUMENT360_API_TOKEN \
+                  --userId=$DOCUMENT360_USER_ID \
+                  --apiReferenceId=$DOCUMENT360_API_REF_ID \
+                  --path="$spec" \
+                  --publish=true
+              fi
+            done
+          fi
+          
+      - name: Create sync tag
+        run: |
+          # Create a tag to mark successful sync
+          git tag "sync-$(date +%Y-%m-%d)-$(git rev-parse --short HEAD)"
+          git push origin "sync-$(date +%Y-%m-%d)-$(git rev-parse --short HEAD)"
+          
+      - name: Update sync status
+        run: |
+          # Update a status file or send notification
+          echo "Documentation synced successfully at $(date)" > sync-status.txt
+          git add sync-status.txt
+          git commit -m "Update sync status" || true
+          git push origin main || true
+
+  sync-api-specs:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+      - name: Install d360 CLI
+        run: npm install -g d360
+        
+      - name: Sync API specifications
+        env:
+          DOCUMENT360_API_TOKEN: ${{ secrets.DOCUMENT360_API_TOKEN }}
+          DOCUMENT360_PROJECT_ID: ${{ secrets.DOCUMENT360_PROJECT_ID }}
+          DOCUMENT360_USER_ID: ${{ secrets.DOCUMENT360_USER_ID }}
+          DOCUMENT360_API_REF_ID: ${{ secrets.DOCUMENT360_API_REF_ID }}
+        run: |
+          # Sync each API specification file
+          for spec in api-specs/*.{yaml,yml,json}; do
+            if [ -f "$spec" ]; then
+              echo "Syncing API spec: $spec"
+              
+              # Check if this is a new import or resync
+              if [ -n "$DOCUMENT360_API_REF_ID" ]; then
+                d360 apidocs:resync \
+                  --apiKey=$DOCUMENT360_API_TOKEN \
+                  --userId=$DOCUMENT360_USER_ID \
+                  --apiReferenceId=$DOCUMENT360_API_REF_ID \
+                  --path="$spec" \
+                  --publish=true
+              else
+                d360 apidocs \
+                  --apiKey=$DOCUMENT360_API_TOKEN \
+                  --userId=$DOCUMENT360_USER_ID \
+                  --versionId=$DOCUMENT360_PROJECT_ID \
+                  --path="$spec" \
+                  --publish=true
+              fi
+            fi
+          done
+
+  notify-completion:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [sync-documentation, sync-api-specs]
+    
+    steps:
+      - name: Notify success
+        if: needs.sync-documentation.result == 'success' && needs.sync-api-specs.result == 'success'
+        run: |
+          echo "✅ Documentation sync completed successfully"
+          # Add Slack/Teams notification here if needed
+          
+      - name: Notify failure
+        if: needs.sync-documentation.result == 'failure' || needs.sync-api-specs.result == 'failure'
+        run: |
+          echo "❌ Documentation sync failed"
+          # Add Slack/Teams notification here if needed
+          exit 1

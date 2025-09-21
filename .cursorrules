@@ -167,14 +167,72 @@ When analyzing repositories, use these patterns:
 - Check SEO requirements
 - Ensure accessibility standards
 
+## Markdown Formatting Requirements
+
+### Code Blocks (MD040)
+
+- **Always specify language**: Use `bash`, `json`, `yaml`, `javascript`, `typescript`, `python`, `csharp`, `java`, `sql`, `xml`, `html`, `css`, `scss`, `dockerfile`, `powershell`, `shell`, `text`
+- **Never use plain code blocks**: Always include language specification after ```
+- **Examples**:
+
+  ```bash
+  # Correct
+  curl -X POST "https://api.example.com/endpoint"
+  ```
+
+  ```markdown
+  # Incorrect - no language specified
+  curl -X POST "https://api.example.com/endpoint"
+  ```
+
+### Headers (MD036)
+
+- **Use proper markdown headers**: # ## ### #### ##### ######
+- **Never use emphasis for headers**: Avoid **bold** or *italic* for section titles
+- **Blank lines around headers**: Always add blank lines before and after headers (MD022)
+- **Examples**:
+
+  ```markdown
+  # Correct
+  ## Authentication
+  
+  # Incorrect
+  **Authentication**
+  ```
+
+### Code Blocks (MD040)
+
+- **Always specify language**: Use `bash`, `json`, `yaml`, `javascript`, `typescript`, `python`, `csharp`, `java`, `sql`, `xml`, `html`, `css`, `scss`, `dockerfile`, `powershell`, `shell`, `text`
+- **Never use plain code blocks**: Always include language specification after ```
+- **Blank lines around code blocks**: Always add blank lines before and after fenced code blocks (MD031)
+- **Examples**:
+
+  ```bash
+  # Correct
+  curl -X POST "https://api.example.com/endpoint"
+  ```
+
+  ```markdown
+  # Incorrect - no language specified
+  curl -X POST "https://api.example.com/endpoint"
+  ```
+
+### List Formatting
+
+- **Add blank lines**: Between sections and before/after lists
+- **Consistent bullet points**: Use - for unordered lists
+- **Blank lines around lists**: Always add blank lines before and after lists (MD032)
+- **Proper spacing**: Ensure content is well-structured
+
 ## When Working with This Project
 
 1. **Always** check the target audience before writing
 2. **Always** include proper front-matter
 3. **Always** cite source files when extracting information
 4. **Always** validate commands are copy-pastable
-5. **Never** expose internal secrets or sensitive data
-6. **Never** skip validation steps in procedures
-7. **Always** link to related documentation sections
+5. **Always** use proper markdown formatting (MD040, MD036)
+6. **Never** expose internal secrets or sensitive data
+7. **Never** skip validation steps in procedures
+8. **Always** link to related documentation sections
 
 Remember: You're creating customer-facing documentation that helps users succeed with AI Fabrix while maintaining security and compliance standards.

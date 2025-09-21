@@ -1,0 +1,173 @@
+name: Sync Documentation to Document360
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '*.yaml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '*.yaml'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Perform a dry run (no actual sync)'
+        required: false
+        default: false
+        type: boolean
+      force_sync:
+        description: 'Force sync even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for change detection
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install aifabrix-d360
+      run: |
+        # Clone or install the aifabrix-d360 package
+        cd ..
+        if [ ! -d "aifabrix-d360" ]; then
+          echo "aifabrix-d360 package not found. Please ensure it's available."
+          exit 1
+        fi
+        cd aifabrix-d360
+        npm install
+        npm run build
+    
+    - name: Validate documentation structure
+      run: |
+        echo "Validating documentation structure..."
+        
+        # Check if docs directory exists
+        if [ ! -d "docs" ]; then
+          echo "Warning: docs directory not found"
+        else
+          echo "Found docs directory"
+          ls -la docs/
+        fi
+        
+        # Check for YAML metadata files
+        yaml_count=$(find . -name "*.yaml" -type f | wc -l)
+        echo "Found $yaml_count YAML files"
+        
+        # Check for API specifications
+        api_specs=$(find . -name "*.yaml" -path "*/api/*" -type f | wc -l)
+        echo "Found $api_specs API specification files"
+    
+    - name: Create environment file
+      run: |
+        cat > .env << EOF
+        DOCUMENT360_API_TOKEN=${{ secrets.DOCUMENT360_API_TOKEN }}
+        DOCUMENT360_PROJECT_ID=${{ secrets.DOCUMENT360_PROJECT_ID }}
+        DOCUMENT360_BASE_URL=${{ secrets.DOCUMENT360_BASE_URL || 'https://api.document360.com' }}
+        SYNC_SOURCE_PATH=./docs
+        SYNC_BATCH_SIZE=10
+        SYNC_RETRY_ATTEMPTS=3
+        SYNC_RETRY_DELAY=1000
+        LOG_LEVEL=info
+        LOG_CONSOLE=true
+        EOF
+    
+    - name: Run documentation sync
+      run: |
+        # Make scripts executable
+        chmod +x sync-docs.sh
+        
+        # Build sync command
+        SYNC_CMD="./sync-docs.sh"
+        
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          SYNC_CMD="$SYNC_CMD --dry-run"
+          echo "Running in dry-run mode for pull request"
+        elif [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+          SYNC_CMD="$SYNC_CMD --dry-run"
+          echo "Running in dry-run mode (manual trigger)"
+        fi
+        
+        if [ "${{ github.event.inputs.force_sync }}" = "true" ]; then
+          SYNC_CMD="$SYNC_CMD --force"
+          echo "Force sync enabled"
+        fi
+        
+        # Add verbose output
+        SYNC_CMD="$SYNC_CMD --verbose"
+        
+        echo "Executing: $SYNC_CMD"
+        $SYNC_CMD
+    
+    - name: Upload sync report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: sync-report-${{ github.run_number }}
+        path: sync-report-*.txt
+        retention-days: 30
+    
+    - name: Comment on PR (if applicable)
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Look for sync report files
+          const reportFiles = fs.readdirSync('.').filter(file => 
+            file.startsWith('sync-report-') && file.endsWith('.txt')
+          );
+          
+          if (reportFiles.length > 0) {
+            const reportContent = fs.readFileSync(reportFiles[0], 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 📚 Documentation Sync Report (Dry Run)
+              
+              \`\`\`
+              ${reportContent}
+              \`\`\`
+              
+              This was a dry run - no actual changes were made to Document360.
+              `
+            });
+          }
+    
+    - name: Notify on failure
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## ❌ Documentation Sync Failed
+              
+              The documentation sync process failed. Please check the logs for details.
+              
+              **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              `
+          });
+
