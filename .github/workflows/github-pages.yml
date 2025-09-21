@@ -1,0 +1,290 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '*.yaml'
+      - '.github/workflows/github-pages.yml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          npm install -g @docusaurus/core @docusaurus/preset-classic
+          npm install -g markdownlint-cli
+          
+      - name: Validate documentation structure
+        run: |
+          echo "🔍 Validating documentation structure..."
+          
+          # Check if docs directory exists
+          if [ ! -d "docs" ]; then
+            echo "❌ Warning: docs directory not found"
+            exit 1
+          else
+            echo "✅ Found docs directory"
+            ls -la docs/
+          fi
+          
+          # Count documentation files
+          md_count=$(find docs -name "*.md" -type f | wc -l)
+          yaml_count=$(find docs -name "*.yaml" -type f | wc -l)
+          echo "📄 Found $md_count Markdown files"
+          echo "📋 Found $yaml_count YAML metadata files"
+          
+          # Validate YAML metadata files
+          echo "🔍 Validating YAML metadata files..."
+          for yaml_file in $(find docs -name "*.yaml" -type f); do
+            echo "  Checking: $yaml_file"
+            # Basic YAML validation
+            if ! python3 -c "import yaml; yaml.safe_load(open('$yaml_file'))" 2>/dev/null; then
+              echo "❌ Invalid YAML in $yaml_file"
+              exit 1
+            fi
+          done
+          
+          # Validate markdown files
+          echo "🔍 Validating Markdown files..."
+          if command -v markdownlint >/dev/null 2>&1; then
+            markdownlint docs/**/*.md || echo "⚠️ Markdown linting issues found (non-blocking)"
+          fi
+          
+      - name: Build documentation site
+        run: |
+          echo "🏗️ Building documentation site..."
+          
+          # Create a simple index.html for GitHub Pages
+          cat > index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>AI Fabrix Documentation</title>
+              <style>
+                  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f8f9fa; }
+                  .container { max-width: 1200px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+                  h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+                  .section { margin: 30px 0; }
+                  .section h2 { color: #34495e; margin-top: 30px; }
+                  .file-list { background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 15px 0; }
+                  .file-item { margin: 8px 0; padding: 8px; background: white; border-radius: 3px; border-left: 4px solid #3498db; }
+                  .file-item a { text-decoration: none; color: #2c3e50; font-weight: 500; }
+                  .file-item a:hover { color: #3498db; }
+                  .metadata { font-size: 0.9em; color: #7f8c8d; margin-top: 5px; }
+                  .status { display: inline-block; padding: 4px 8px; border-radius: 3px; font-size: 0.8em; font-weight: bold; }
+                  .status.complete { background: #d4edda; color: #155724; }
+                  .status.pending { background: #fff3cd; color: #856404; }
+                  .status.internal { background: #f8d7da; color: #721c24; }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>🚀 AI Fabrix Documentation</h1>
+                  <p>Welcome to the AI Fabrix documentation hub. This site contains customer-facing documentation for the AI Fabrix platform.</p>
+                  
+                  <div class="section">
+                      <h2>📚 Documentation Structure</h2>
+                      <div class="file-list">
+                          <div class="file-item">
+                              <a href="docs/index.md">📖 Main Documentation Index</a>
+                              <div class="metadata">Entry point for all documentation</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/background/platform-overview.md">🏢 Platform Overview</a>
+                              <div class="metadata">Executive summary of AI Fabrix platform</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/background/architecture-overview.md">🏗️ Architecture Overview</a>
+                              <div class="metadata">Technical architecture and design</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>🎯 Getting Started</h2>
+                      <div class="file-list">
+                          <div class="file-item">
+                              <a href="docs/getting-started/installation.md">⚙️ Installation Guide</a>
+                              <div class="metadata">Step-by-step installation instructions</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/getting-started/quick-deploy.md">🚀 Quick Deploy</a>
+                              <div class="metadata">Quick deployment guide for applications</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>🏗️ Architecture & Development</h2>
+                      <div class="file-list">
+                          <div class="file-item">
+                              <a href="docs/architecture/miso-controller.md">🎛️ Miso Controller</a>
+                              <div class="metadata">Enterprise controller architecture</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/architecture/portal-architecture.md">🌐 Portal Architecture</a>
+                              <div class="metadata">AI Fabrix Setup Portal design</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/architecture/security-authentication.md">🔒 Security & Authentication</a>
+                              <div class="metadata">Security architecture and authentication</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>👥 User Guides</h2>
+                      <div class="file-list">
+                          <div class="file-item">
+                              <a href="docs/user-guides/portal-usage.md">🌐 Portal Usage Guide</a>
+                              <div class="metadata">How to use the AI Fabrix Portal</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>🔌 API Documentation</h2>
+                      <div class="file-list">
+                          <div class="file-item">
+                              <a href="docs/api/miso-api.md">📡 Miso API</a>
+                              <div class="metadata">API overview and OpenAPI documentation</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/api/api-overview.md">📋 API Overview</a>
+                              <div class="metadata">API introduction and concepts</div>
+                          </div>
+                          <div class="file-item">
+                              <a href="docs/api/authentication.md">🔐 Authentication</a>
+                              <div class="metadata">API authentication methods</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>📊 Repository Status</h2>
+                      <p>Documentation coverage across AI Fabrix repositories:</p>
+                      <div class="file-list">
+                          <div class="file-item">
+                              <span class="status complete">Complete</span> <strong>aifabrix-docs</strong> - Main documentation hub
+                          </div>
+                          <div class="file-item">
+                              <span class="status pending">Pending</span> <strong>aifabrix-miso</strong> - Core platform (~50 files)
+                          </div>
+                          <div class="file-item">
+                              <span class="status pending">Pending</span> <strong>aifabrix-core</strong> - Enterprise Flowise (~30 files)
+                          </div>
+                          <div class="file-item">
+                              <span class="status pending">Pending</span> <strong>openwebui-template</strong> - UI/UX (~10 files)
+                          </div>
+                          <div class="file-item">
+                              <span class="status pending">Pending</span> <strong>flowise-template</strong> - Templates (~5 files)
+                          </div>
+                          <div class="file-item">
+                              <span class="status pending">Pending</span> <strong>aifabrix-plugins</strong> - SDK (~5 files)
+                          </div>
+                          <div class="file-item">
+                              <span class="status internal">Internal</span> <strong>aifabrix-mori</strong> - Backend services (~20 files)
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>🔄 Documentation Process</h2>
+                      <p>This documentation is generated using AI-powered analysis of internal repositories and transformed into customer-facing content. The process includes:</p>
+                      <ul>
+                          <li>📖 <strong>Source Analysis</strong> - Reading internal documentation from AI Fabrix repositories</li>
+                          <li>🤖 <strong>AI Generation</strong> - Transforming internal content into customer-facing documentation</li>
+                          <li>✅ <strong>Quality Control</strong> - Human validation and improvement</li>
+                          <li>🔄 <strong>Change Detection</strong> - Automatic updates when source content changes</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>📝 Last Updated</h2>
+                      <p>Documentation last updated: <strong>$(date)</strong></p>
+                      <p>Repository: <a href="https://github.com/${{ github.repository }}">${{ github.repository }}</a></p>
+                      <p>Commit: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}">${{ github.sha }}</a></p>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+          
+          # Create docs directory structure for GitHub Pages
+          mkdir -p _site/docs
+          
+          # Copy all documentation files
+          cp -r docs/* _site/docs/ 2>/dev/null || true
+          cp *.md _site/ 2>/dev/null || true
+          
+          # Create a simple navigation
+          cat > _site/navigation.md << 'EOF'
+          # AI Fabrix Documentation Navigation
+          
+          ## Quick Links
+          - [Main Index](index.html)
+          - [Platform Overview](docs/background/platform-overview.md)
+          - [Architecture Overview](docs/background/architecture-overview.md)
+          - [Getting Started](docs/getting-started/installation.md)
+          - [API Documentation](docs/api/miso-api.md)
+          
+          ## Repository Status
+          - [Documentation Index](docs/repository-documentation-index.yaml)
+          - [Multi-Repository Strategy](multi-repository-documentation-strategy.md)
+          EOF
+          
+          echo "✅ Documentation site built successfully"
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
