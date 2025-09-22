@@ -6,12 +6,11 @@ audience:
 version: stable
 owner: product-team
 last_reviewed: '2025-09-22'
-layout: doc
-date: '2025-09-22T16:46:42.449Z'
+date: '2025-09-22T19:22:15.866Z'
 toc: true
 custom_links:
-  - text: Site
-    url: /docs/site/
+  - text: Docs
+    url: /docs/docs/
     submenu: []
 seo:
   keywords:
@@ -28,3 +27,4 @@ document360:
   searchable: true
   featured: false
   order: 20
+layout: doc

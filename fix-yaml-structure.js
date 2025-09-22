@@ -14,7 +14,6 @@ const getYamlTemplate = (title, description, category = 'general') => {
         version: "stable",
         owner: "product-team",
         last_reviewed: new Date().toISOString().split('T')[0],
-        layout: "doc",
         date: new Date().toISOString(),
         toc: true,
         custom_links: [],
@@ -29,7 +28,8 @@ const getYamlTemplate = (title, description, category = 'general') => {
             searchable: true,
             featured: false,
             order: 1
-        }
+        },
+        layout: "doc"
     };
 
     return baseTemplate;

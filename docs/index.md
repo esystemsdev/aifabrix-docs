@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 
 # AI Fabrix Documentation Hub
 

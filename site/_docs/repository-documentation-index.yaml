@@ -7,12 +7,11 @@ audience:
 version: 1.0.0
 owner: documentation-team
 last_reviewed: '2025-09-22'
-layout: doc
-date: '2025-09-22T16:46:42.464Z'
+date: '2025-09-22T19:22:15.868Z'
 toc: true
 custom_links:
-  - text: Site
-    url: /docs/site/
+  - text: Docs
+    url: /docs/docs/
     submenu: []
 seo:
   keywords:
@@ -26,3 +25,4 @@ document360:
   searchable: true
   featured: false
   order: 1
+layout: doc

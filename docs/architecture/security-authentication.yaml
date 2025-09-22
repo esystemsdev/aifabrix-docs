@@ -6,8 +6,7 @@ audience:
 version: stable
 owner: security-team
 last_reviewed: '2024-01-15'
-layout: doc
-date: '2025-09-22T19:07:59.985Z'
+date: '2025-09-22T19:22:22.864Z'
 toc: true
 custom_links:
   - text: Docs
@@ -29,3 +28,4 @@ document360:
   searchable: true
   featured: true
   order: 3
+layout: doc

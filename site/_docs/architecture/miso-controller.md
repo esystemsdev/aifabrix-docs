@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 
 # Miso Controller Architecture
 

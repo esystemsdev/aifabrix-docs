@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 
 # Manual AI Documentation Generation Workflow
 

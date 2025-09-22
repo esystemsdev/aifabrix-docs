@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 
 # Technology Stack
 

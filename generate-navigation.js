@@ -84,13 +84,17 @@ function generateNavigation() {
                     const data = yaml.load(yamlContent);
                     
                     if (data && data.title) {
-                        // Extract relative path from site/_docs
-                        const relativePath = fullPath.replace('site\\_docs\\', '').replace('site/_docs/', '').replace('.yaml', '').replace(/\\/g, '/');
+                        // Extract relative path from docs directory
+                        const relativePath = fullPath.replace('docs\\', '').replace('docs/', '').replace('.yaml', '').replace(/\\/g, '/');
                         const url = `${BASEURL}/docs/${relativePath}/`;
+                        
+                        console.log(`Processing: ${relativePath} -> ${url}`);
                         
                         // Determine which main section this belongs to
                         const pathParts = relativePath.split('/');
                         const mainSection = pathParts[0];
+                        
+                        console.log(`Main section: ${mainSection}, available: ${Object.keys(mainSections).join(', ')}`);
                         
                         if (mainSections[mainSection]) {
                             // Add to main section submenu
@@ -101,6 +105,9 @@ function generateNavigation() {
                             
                             // Add directly to main section submenu (no nested submenus)
                             mainSections[mainSection].submenu.push(menuItem);
+                            console.log(`Added to ${mainSection}: ${data.title}`);
+                        } else {
+                            console.log(`No main section found for: ${mainSection}`);
                         }
                     }
                 } catch (error) {

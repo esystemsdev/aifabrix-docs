@@ -7,8 +7,7 @@ audience:
 version: 1.0.0
 owner: documentation-team
 last_reviewed: '2025-09-22'
-layout: doc
-date: '2025-09-22T19:08:00.084Z'
+date: '2025-09-22T19:22:22.909Z'
 toc: true
 custom_links:
   - text: Docs
@@ -26,3 +25,4 @@ document360:
   searchable: true
   featured: false
   order: 1
+layout: doc

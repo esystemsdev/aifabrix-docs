@@ -34,13 +34,13 @@
 					{% endif %}
 
 					<li class="{{ active }}{% if link.submenu %} themeix-dropdown has-children{% endif %}">
-						<a href="{{ link.url | relative_url }}">{{ link.text }}</a>
+						<a href="{{ link.url }}">{{ link.text }}</a>
 
 						{% if link.submenu %}						
 							<ul class="themeix-dropdown-item" role="menu">
 								{% for sublink in link.submenu %}
 									<li {% if page.url contains sublink.url %}class="active"{% endif %}>
-										<a href="{{ sublink.url | relative_url }}">{{ sublink.text }}</a>
+										<a href="{{ sublink.url }}">{{ sublink.text }}</a>
 									</li>
 								{% endfor %}
 							</ul>

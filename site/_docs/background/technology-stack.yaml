@@ -6,12 +6,11 @@ audience:
 version: stable
 owner: engineering-team
 last_reviewed: '2024-01-15'
-layout: doc
-date: '2025-09-22T16:46:42.410Z'
+date: '2025-09-22T19:22:15.854Z'
 toc: true
 custom_links:
-  - text: Site
-    url: /docs/site/
+  - text: Docs
+    url: /docs/docs/
     submenu: []
 seo:
   keywords:
@@ -28,3 +27,4 @@ document360:
   searchable: true
   featured: true
   order: 6
+layout: doc

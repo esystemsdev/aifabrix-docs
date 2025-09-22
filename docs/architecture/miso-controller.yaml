@@ -6,8 +6,7 @@ audience:
 version: stable
 owner: architecture-team
 last_reviewed: '2024-01-15'
-layout: doc
-date: '2025-09-22T19:07:59.967Z'
+date: '2025-09-22T19:22:22.859Z'
 toc: true
 custom_links:
   - text: Docs
@@ -29,3 +28,4 @@ document360:
   searchable: true
   featured: true
   order: 1
+layout: doc
