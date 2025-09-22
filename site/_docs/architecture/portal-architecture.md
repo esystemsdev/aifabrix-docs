@@ -1,8 +1,18 @@
 ---
 layout: doc
-title: "Portal Architecture"
-date: 2024-01-15
+title: Portal Architecture
+date: 2024-01-15T00:00:00.000Z
 toc: true
+custom_links:
+  - text: Architecture
+    url: /docs/architecture/
+    submenu:
+      - text: Miso Controller
+        url: /docs/architecture/miso-controller/
+      - text: Portal Architecture
+        url: /docs/architecture/portal-architecture/
+      - text: Security Authentication
+        url: /docs/architecture/security-authentication/
 ---
 
 # Portal Architecture

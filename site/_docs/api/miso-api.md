@@ -1,8 +1,14 @@
 ---
 layout: doc
-title: "Miso Api"
-date: 2024-01-15
+title: Miso Api
+date: 2024-01-15T00:00:00.000Z
 toc: true
+custom_links:
+  - text: API Documentation
+    url: /docs/api/
+    submenu:
+      - text: Miso API
+        url: /docs/api/miso-api/
 ---
 
 # AI Fabrix Miso API
