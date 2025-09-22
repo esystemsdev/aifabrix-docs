@@ -1,0 +1,37 @@
+title: "Competitive Advantages"
+meta_title: "AI Fabrix Competitive Advantages - Why Choose AI Fabrix"
+description: "Overview of AI Fabrix competitive advantages and unique value propositions in the enterprise AI market"
+slug: "competitive-advantages"
+status: "draft"
+tags: ["competitive", "advantages", "value", "differentiation"]
+labels: ["business", "background"]
+related_articles: ["platform-overview", "use-cases", "compliance-requirements"]
+
+# Repository Context
+repository:
+  name: "aifabrix-docs"
+  path: "docs/background/competitive-advantages.md"
+  type: "background"
+  audience: ["executive", "sales", "marketing"]
+
+# Content Management
+content:
+  source_file: "docs/background/competitive-advantages.md"
+  last_updated: "2024-01-15T10:30:00Z"
+  version: "1.0.0"
+  owner: "product-team"
+  reviewer: "marketing-team"
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "competitive advantages", "value proposition", "enterprise AI"]
+  canonical_url: "https://docs.aifabrix.ai/competitive-advantages"
+  og_image: "images/competitive-advantages-preview.png"
+
+# Document360 Specific
+document360:
+  category: "Background"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 10

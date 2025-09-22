@@ -1,0 +1,37 @@
+title: "Target Audience"
+meta_title: "AI Fabrix Target Audience - Who Uses AI Fabrix"
+description: "Overview of AI Fabrix target audience including executives, architects, developers, and end users"
+slug: "target-audience"
+status: "draft"
+tags: ["audience", "users", "personas"]
+labels: ["business", "background"]
+related_articles: ["use-cases", "platform-overview", "competitive-advantages"]
+
+# Repository Context
+repository:
+  name: "aifabrix-docs"
+  path: "docs/background/target-audience.md"
+  type: "background"
+  audience: ["executive", "product", "marketing"]
+
+# Content Management
+content:
+  source_file: "docs/background/target-audience.md"
+  last_updated: "2024-01-15T10:30:00Z"
+  version: "1.0.0"
+  owner: "product-team"
+  reviewer: "marketing-team"
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "audience", "users", "personas", "enterprise"]
+  canonical_url: "https://docs.aifabrix.ai/target-audience"
+  og_image: "images/target-audience-preview.png"
+
+# Document360 Specific
+document360:
+  category: "Background"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 5

@@ -1,0 +1,49 @@
+title: "AI Fabrix Miso API"
+description: "API overview and quick start guide for the AI Fabrix Miso platform. Links to complete OpenAPI documentation with interactive explorer, SDK downloads, and comprehensive endpoint reference."
+keywords: ["API", "Miso", "AI Fabrix", "OpenAPI", "REST", "SDK", "authentication", "quick start"]
+audience: ["developer", "architect"]
+version: "stable"
+owner: "engineering"
+last_reviewed: "2024-01-15"
+category: "api"
+tags: ["api", "miso", "openapi", "rest", "sdk", "authentication", "quick-start"]
+document360:
+  category_id: "api"
+  visibility: "public"
+  published: true
+  featured: true
+seo:
+  meta_title: "AI Fabrix Miso API - Quick Start & OpenAPI Documentation"
+  meta_description: "Get started with the AI Fabrix Miso API. Quick start guide, authentication, and links to complete OpenAPI documentation with interactive explorer and SDK downloads."
+  canonical_url: "/api/miso-api"
+  og_title: "AI Fabrix Miso API - Quick Start Guide"
+  og_description: "Get started with the AI Fabrix Miso API. Quick start guide, authentication, and links to complete OpenAPI documentation."
+  og_image: "/images/api/miso-api-og.png"
+  twitter_title: "AI Fabrix Miso API - Quick Start"
+  twitter_description: "Get started with the AI Fabrix Miso API. Quick start guide and OpenAPI documentation."
+  twitter_image: "/images/api/miso-api-twitter.png"
+structured_data:
+  type: "APIReference"
+  name: "AI Fabrix Miso API"
+  description: "API overview and quick start guide for the AI Fabrix Miso platform"
+  provider:
+    name: "AI Fabrix"
+    url: "https://aifabrix.ai"
+  version: "1.0.0"
+  license: "Proprietary"
+  programming_language: "REST"
+  api_type: "REST"
+  authentication: "OIDC"
+  base_url: "https://your-miso-instance.com/api"
+  documentation_url: "/api/miso-api"
+  openapi_url: "https://your-miso-instance.com/api/docs"
+  examples:
+    - name: "Quick Start Authentication"
+      description: "Get access token for API calls"
+      code: "POST /auth/token"
+    - name: "List Applications"
+      description: "Retrieve all applications"
+      code: "GET /applications"
+    - name: "Create Application"
+      description: "Deploy a new application"
+      code: "POST /applications"

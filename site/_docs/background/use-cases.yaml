@@ -1,0 +1,37 @@
+title: "Use Cases"
+meta_title: "AI Fabrix Use Cases - Enterprise AI Solutions"
+description: "Primary use cases and scenarios for AI Fabrix enterprise AI platform"
+slug: "use-cases"
+status: "draft"
+tags: ["use-cases", "scenarios", "solutions"]
+labels: ["business", "background"]
+related_articles: ["platform-overview", "target-audience", "competitive-advantages"]
+
+# Repository Context
+repository:
+  name: "aifabrix-docs"
+  path: "docs/background/use-cases.md"
+  type: "background"
+  audience: ["executive", "architect", "business"]
+
+# Content Management
+content:
+  source_file: "docs/background/use-cases.md"
+  last_updated: "2024-01-15T10:30:00Z"
+  version: "1.0.0"
+  owner: "product-team"
+  reviewer: "sales-team"
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "use cases", "enterprise AI", "solutions", "scenarios"]
+  canonical_url: "https://docs.aifabrix.ai/use-cases"
+  og_image: "images/use-cases-preview.png"
+
+# Document360 Specific
+document360:
+  category: "Background"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 4

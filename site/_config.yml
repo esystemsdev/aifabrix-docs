@@ -50,8 +50,7 @@ collections:
     permalink: /testimonials/:path/
   docs:
     output: true
-    permalink: /docs/:title/
-    source: ../docs
+    permalink: /docs/:path/
 
 
 ############################################################

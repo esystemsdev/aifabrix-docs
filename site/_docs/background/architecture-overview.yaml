@@ -1,0 +1,37 @@
+title: "Architecture Overview"
+meta_title: "AI Fabrix Architecture Overview - System Design"
+description: "High-level architecture overview of AI Fabrix enterprise AI platform"
+slug: "architecture-overview"
+status: "draft"
+tags: ["architecture", "design", "system"]
+labels: ["technical", "background"]
+related_articles: ["platform-overview", "modules-overview", "technology-stack"]
+
+# Repository Context
+repository:
+  name: "aifabrix-docs"
+  path: "docs/background/architecture-overview.md"
+  type: "background"
+  audience: ["architect", "developer", "devops"]
+
+# Content Management
+content:
+  source_file: "docs/background/architecture-overview.md"
+  last_updated: "2024-01-15T10:30:00Z"
+  version: "1.0.0"
+  owner: "architecture-team"
+  reviewer: "engineering-team"
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "architecture", "system design", "enterprise AI"]
+  canonical_url: "https://docs.aifabrix.ai/architecture-overview"
+  og_image: "images/architecture-overview-preview.png"
+
+# Document360 Specific
+document360:
+  category: "Background"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 2
