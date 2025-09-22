@@ -15,16 +15,16 @@ keywords: "AI Fabrix, enterprise AI, Azure, ISO27001, documentation, Miso, Flowi
 baseurl: "/aifabrix-docs" # the subpath of your site, e.g. /blog
 url: "https://esystemsdev.github.io/aifabrix-docs/"
 cover_image: "https://esystemsdev.github.io/aifabrix-docs/assets/images/aifabrix-og-image.png" # Image will Display in Social Media When share the website
-facebook: "https://www.facebook.com/esystemsnordic"
-twitter: "https://www.twitter.com/esystemsnordic"
-instagram: "https://www.instagram.com/esystemsnordic"
-github: "https://github.com/esystemsdev"
-linkedin: "https://www.linkedin.com/company/esystems-nordic"
+facebook: "https://www.facebook.com/esystemsnordic/"
+instagram: "https://www.instagram.com/esystems.nordic/"
+linkedin: "https://fi.linkedin.com/company/esystems-fi"
+twitter: ""
+github: ""
 behance: ""
 reddit: ""
 vimeo: ""
 dribble: ""
-youtube: "https://www.youtube.com/esystemsnordic"
+youtube: ""
 
 ## Theme Options
 animated_header: ""  #true 
