@@ -4,19 +4,13 @@ const yaml = require('js-yaml');
 
 // Configuration
 const DOCS_DIR = 'site/_docs';
-const NAVIGATION_FILE = 'site/_docs/navigation.yaml';
+const NAVIGATION_FILE = 'site/_data/navigation.yml';
 
 // Read all YAML files and generate navigation
 function generateNavigation() {
     console.log('🔍 Scanning YAML files for navigation generation...');
     
-    const navigation = {
-        title: "AI Fabrix Documentation Navigation",
-        description: "Main navigation structure for AI Fabrix documentation site",
-        version: "stable",
-        last_updated: new Date().toISOString().split('T')[0],
-        navigation: []
-    };
+    const navigation = [];
 
     // Define the main navigation structure based on directory structure
     const mainSections = {
@@ -130,7 +124,7 @@ function generateNavigation() {
     }
 
     // Add Home link
-    navigation.navigation.push({
+    navigation.push({
         text: "Home",
         url: "/"
     });
@@ -141,7 +135,7 @@ function generateNavigation() {
     // Add all main sections to navigation
     Object.values(mainSections).forEach(section => {
         if (section.submenu.length > 0) {
-            navigation.navigation.push(section);
+            navigation.push(section);
         }
     });
 
@@ -156,11 +150,11 @@ function generateNavigation() {
     fs.writeFileSync(NAVIGATION_FILE, yamlContent);
     
     console.log(`✅ Navigation generated successfully!`);
-    console.log(`📁 Main sections: ${navigation.navigation.length - 1}`);
+    console.log(`📁 Main sections: ${navigation.length - 1}`);
     
     // Count total items
     let totalItems = 0;
-    navigation.navigation.forEach(section => {
+    navigation.forEach(section => {
         if (section.submenu) {
             totalItems += section.submenu.length;
             section.submenu.forEach(sub => {

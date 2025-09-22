@@ -71,11 +71,11 @@
 }
 
 .bg-cover1{
-    background:url(../images/bg-pattern.svg) 50% no-repeat,linear-gradient(60deg,$hover-color,lighten($hover-color, 20%));
+    background: linear-gradient(60deg,$hover-color,lighten($hover-color, 20%));
 	
 }
 .bg-cover2{
-     background:url(../images/bg-pattern2.svg) 50% no-repeat,linear-gradient(0deg,$hover-color,darken($hover-color, 20%));
+     background: linear-gradient(0deg,$hover-color,darken($hover-color, 20%));
 
 	 
 }
@@ -122,15 +122,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e60c62af', e
     position: relative;
     padding: 15px 30px;
     font-weight: $font-weight-semi;
-    color: $font-color2;
+    color: $font-color4;
     border-radius: $border-radius;
-    background-color:$button-bg;
+    background-color: $button-bg;
     border: $border-solid $button-bg;
     overflow: hidden;
     &:hover, &:focus, &:active {
-      color: $font-color3;
-      background-color:$button-bg;
-    border: $border-solid $button-bg2;
+      color: $font-color4;
+      background-color: darken($button-bg, 10%);
+      border: $border-solid darken($button-bg, 10%);
     }
   }
 
@@ -188,13 +188,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e60c62af', e
     font-weight: $font-weight-semi;
     color: $font-color4;
     border-radius: $border-radius-round;
-    background-color:$button-bg2;
+    background-color: $button-bg;
     border: $border-solid $button-bg;
     overflow: hidden;
     &:hover, &:focus, &:active {
-      color: $font-color3!important;
-      background-color:$button-bg;
-    border: $border-solid $button-bg2;
+      color: $font-color4;
+      background-color: darken($button-bg, 10%);
+      border: $border-solid darken($button-bg, 10%);
     }
   }
 .btn-style1{
