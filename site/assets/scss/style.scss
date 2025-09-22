@@ -57,6 +57,7 @@ INDEX SASS
     left: 0;
     right:0;
     padding-top: $padding-small;
+    background: #1a1a2e; /* Dark navy blue background like eSystems website */
     @include mobile{
         padding-top: 10px;
     }
@@ -108,7 +109,7 @@ INDEX SASS
              position: absolute;
              left: 0;
              right: 0;
-             background: $bg-color-default;
+             background: #1a1a2e; /* Dark navy blue background */
              padding: 0 $margin-small;
              top: 83px;
              @include mobile{
@@ -121,7 +122,7 @@ INDEX SASS
              position: absolute;
              left: 0;
              right: 0;
-             background: $bg-color-default;
+             background: #1a1a2e; /* Dark navy blue background */
              padding: 0 $margin-small;
              top: 83px;
              @include mobile{
@@ -150,15 +151,15 @@ INDEX SASS
                     font-size: $font-size-default;
                     line-height: $line-height-default;
                     padding: $margin-small;
-                     color:$font-color4;
+                     color:$font-color4; /* White text */
                      font-weight: $font-weight-default;
                      @include desktop{
                       padding: 10px 15px 10px 15px;
-                      color:$font-color-default;
+                      color:$font-color4; /* White text on dark background */
                     }
                      @include tablet{
                       padding: 10px 15px 10px 15px;
-                      color:$font-color-default;
+                      color:$font-color4; /* White text on dark background */
                     }
                      &:hover,&:focus{
                        background-color:transparent;
@@ -195,12 +196,12 @@ INDEX SASS
                        @include desktop{
                          position: relative;
                          left:0;
-                         background-color:$bg-color-default;
+                         background-color:#1a1a2e; /* Dark navy blue background */
                        }
                        @include tablet{
                          position: relative;
                          left:0;
-                         background-color:$bg-color-default;
+                         background-color:#1a1a2e; /* Dark navy blue background */
                        }
                        li{
                            
@@ -213,7 +214,7 @@ INDEX SASS
                           a{
                               padding: 10px $margin-small;
                               border-bottom: $border-solid $border-color;
-                              color: $font-color-default;
+                              color: $font-color4; /* White text on dark background */
                           }
                           &:hover{
                               border-left: 4px solid $border-color;
