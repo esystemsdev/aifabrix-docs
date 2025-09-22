@@ -6,9 +6,15 @@ const yaml = require('js-yaml');
 const DOCS_DIR = 'site/_docs';
 const NAVIGATION_FILE = 'site/_data/navigation.yml';
 
+// Get baseurl from environment or use default
+const BASEURL = process.env.JEKYLL_BASEURL || process.env.BASEURL || '/aifabrix-docs';
+const CUSTOM_DOMAIN = process.env.CUSTOM_DOMAIN || process.env.JEKYLL_URL || 'https://esystemsdev.github.io';
+
 // Read all YAML files and generate navigation
 function generateNavigation() {
     console.log('🔍 Scanning YAML files for navigation generation...');
+    console.log(`📁 Base URL: ${BASEURL}`);
+    console.log(`🌐 Custom Domain: ${CUSTOM_DOMAIN}`);
     
     const navigation = [];
 
@@ -16,47 +22,47 @@ function generateNavigation() {
     const mainSections = {
         'getting-started': {
             text: 'Getting Started',
-            url: '/docs/getting-started/quick-deploy/',
+            url: `${BASEURL}/docs/getting-started/quick-deploy/`,
             submenu: []
         },
         'background': {
             text: 'Platform Overview',
-            url: '/docs/background/platform-overview/',
+            url: `${BASEURL}/docs/background/platform-overview/`,
             submenu: []
         },
         'architecture': {
             text: 'Architecture',
-            url: '/docs/architecture/miso-controller/',
+            url: `${BASEURL}/docs/architecture/miso-controller/`,
             submenu: []
         },
         'miso-controller': {
             text: 'Miso Controller',
-            url: '/docs/miso-controller/overview/',
+            url: `${BASEURL}/docs/miso-controller/overview/`,
             submenu: []
         },
         'flowise': {
             text: 'Flowise',
-            url: '/docs/flowise/overview/',
+            url: `${BASEURL}/docs/flowise/overview/`,
             submenu: []
         },
         'openwebui': {
             text: 'OpenWebUI',
-            url: '/docs/openwebui/overview/',
+            url: `${BASEURL}/docs/openwebui/overview/`,
             submenu: []
         },
         'user-guides': {
             text: 'User Guides',
-            url: '/docs/user-guides/',
+            url: `${BASEURL}/docs/user-guides/`,
             submenu: []
         },
         'api': {
             text: 'API Reference',
-            url: '/docs/api/miso-api/',
+            url: `${BASEURL}/docs/api/miso-api/`,
             submenu: []
         },
         'support': {
             text: 'Support',
-            url: '/docs/support/',
+            url: `${BASEURL}/docs/support/`,
             submenu: []
         }
     };
@@ -80,7 +86,7 @@ function generateNavigation() {
                     if (data && data.title) {
                         // Extract relative path from site/_docs
                         const relativePath = fullPath.replace('site\\_docs\\', '').replace('site/_docs/', '').replace('.yaml', '').replace(/\\/g, '/');
-                        const url = `/docs/${relativePath}/`;
+                        const url = `${BASEURL}/docs/${relativePath}/`;
                         
                         // Determine which main section this belongs to
                         const pathParts = relativePath.split('/');
@@ -93,27 +99,8 @@ function generateNavigation() {
                                 url: url
                             };
                             
-                            // Check if it's a subdirectory item
-                            if (pathParts.length > 1) {
-                                const subDir = pathParts[1];
-                                
-                                // Find or create subdirectory group
-                                let subGroup = mainSections[mainSection].submenu.find(item => 
-                                    item.text === subDir.charAt(0).toUpperCase() + subDir.slice(1).replace(/-/g, ' ')
-                                );
-                                
-                                if (!subGroup) {
-                                    subGroup = {
-                                        text: subDir.charAt(0).toUpperCase() + subDir.slice(1).replace(/-/g, ' '),
-                                        submenu: []
-                                    };
-                                    mainSections[mainSection].submenu.push(subGroup);
-                                }
-                                
-                                subGroup.submenu.push(menuItem);
-                            } else {
-                                mainSections[mainSection].submenu.push(menuItem);
-                            }
+                            // Add directly to main section submenu (no nested submenus)
+                            mainSections[mainSection].submenu.push(menuItem);
                         }
                     }
                 } catch (error) {

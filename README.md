@@ -238,6 +238,33 @@ npm run fix-yaml
 npm run setup-docs
 ```
 
+### Environment Configuration
+
+The navigation generation supports environment variables for different deployment scenarios:
+
+```bash
+# Default (GitHub Pages with /aifabrix-docs baseurl)
+npm run generate-nav
+
+# Custom domain (e.g., docs.aifabrix.ai)
+npm run generate-nav:custom
+
+# Custom baseurl via environment variable
+JEKYLL_BASEURL=/custom-path npm run generate-nav
+
+# Custom domain via environment variable
+CUSTOM_DOMAIN=https://docs.aifabrix.ai npm run generate-nav
+```
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `JEKYLL_BASEURL` | `/aifabrix-docs` | Base URL path for the site |
+| `CUSTOM_DOMAIN` | `https://esystemsdev.github.io` | Custom domain for the site |
+| `BASEURL` | `/aifabrix-docs` | Alternative to JEKYLL_BASEURL |
+| `JEKYLL_URL` | `https://esystemsdev.github.io` | Alternative to CUSTOM_DOMAIN |
+
 ### Available Scripts
 
 | Script | Purpose | When to Use |

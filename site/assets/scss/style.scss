@@ -413,8 +413,8 @@ INDEX SASS
     }
     .btn{
         padding: 15px 30px;
-        background-color: $bg-color-default;
-        color: $font-color2;
+        background-color: $button-bg;
+        color: $font-color4;
     }
 } 
 /**
@@ -1101,8 +1101,8 @@ transition:all 0.5s ease 0s;
               color: $font-color4;
           }
           .btn{
-              background-color: $bg-color-default;
-              color: $hover-color;
+              background-color: $button-bg;
+              color: $font-color4;
           }
     }
 }

@@ -1,28 +1,42 @@
-<!-- Start Looking For  Area -->
+<!-- Start Support Area -->
 <section class="looking-for-area bg-color3">
     <div class="looking-for-wrapper section-spacing bminus-30">
         <div class="container">
             <div class="section-title text-center">
-            <h2 class="heading-2">Didn't find what you were looking for?</h2>
-            <p>Lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit</p>
+            <h2 class="heading-2">Still no luck? We can help!</h2>
+            <p>Our team is ready to assist you with any questions or support needs</p>
             </div>
             <div class="row">
-                {% for support in site.data.supports %}
-                    <div class="col-md-6">
-                        <article class="looking-for-service wow {{support.animation}}" data-wow-duration="1s">
-                            <header class="looking-for-logo">
-                                <a href="{{support.url}}"><img src="{{support.icon | relative_url }}" alt="{{support.name}}"></a>
-                            </header>
-                            <footer class="looking-for-content">
-                                <h4 class="heading-4"><a href="{{support.url}}">{{support.name}}</a></h4>
-                                <p> {{support.description}}</p>
-                                <a href="{{support.url}}" class="btn-style3 btn mt-3">{{support.button_label}}</a>
-                            </footer>
-                        </article>
-                    </div>
-                {% endfor %}
+                <div class="col-md-6">
+                    <article class="looking-for-service wow fadeInLeft" data-wow-duration="1s">
+                        <header class="looking-for-logo">
+                            <a href="https://www.esystems.fi/en/contact-us" target="_blank">
+                                <i class="fa fa-envelope" style="font-size: 48px; color: #1E3A8A;"></i>
+                            </a>
+                        </header>
+                        <footer class="looking-for-content">
+                            <h4 class="heading-4"><a href="https://www.esystems.fi/en/contact-us" target="_blank">Submit a Request</a></h4>
+                            <p>Get personalized support from our technical team</p>
+                            <a href="https://www.esystems.fi/en/contact-us" target="_blank" class="btn-style3 btn mt-3">Contact Support</a>
+                        </footer>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article class="looking-for-service wow fadeInRight" data-wow-duration="1s">
+                        <header class="looking-for-logo">
+                            <a href="/aifabrix-docs/docs/support/">
+                                <i class="fa fa-book" style="font-size: 48px; color: #1E3A8A;"></i>
+                            </a>
+                        </header>
+                        <footer class="looking-for-content">
+                            <h4 class="heading-4"><a href="/aifabrix-docs/docs/support/">Documentation</a></h4>
+                            <p>Browse our comprehensive documentation and guides</p>
+                            <a href="/aifabrix-docs/docs/support/" class="btn-style3 btn mt-3">View Docs</a>
+                        </footer>
+                    </article>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!-- End Looking For Area -->
+<!-- End Support Area -->

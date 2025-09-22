@@ -9,7 +9,9 @@
     "build": "npm run jekyll-build",
     "fix-yaml": "node fix-yaml-structure.js",
     "generate-nav": "node generate-navigation.js",
-    "setup-docs": "npm run fix-yaml && npm run generate-nav"
+    "generate-nav:custom": "CUSTOM_DOMAIN=https://docs.aifabrix.ai node generate-navigation.js",
+    "setup-docs": "npm run fix-yaml && npm run generate-nav",
+    "setup-docs:custom": "npm run fix-yaml && npm run generate-nav:custom"
   },
   "keywords": [
     "documentation",

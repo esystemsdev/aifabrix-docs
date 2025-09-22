@@ -71,7 +71,7 @@
 }
 
 .bg-cover1{
-    background: linear-gradient(60deg,$hover-color,lighten($hover-color, 20%));
+    background: $bg-color2; /* eSystems Primary Blue - solid color */
 	
 }
 .bg-cover2{
@@ -186,15 +186,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e60c62af', e
     position: relative;
     padding: 12px 30px;
     font-weight: $font-weight-semi;
-    color: $font-color4;
+    color: $font-color4 !important;
     border-radius: $border-radius-round;
-    background-color: $button-bg;
-    border: $border-solid $button-bg;
+    background-color: $button-bg !important;
+    border: $border-solid $button-bg !important;
     overflow: hidden;
     &:hover, &:focus, &:active {
-      color: $font-color4;
-      background-color: darken($button-bg, 10%);
-      border: $border-solid darken($button-bg, 10%);
+      color: $font-color4 !important;
+      background-color: darken($button-bg, 10%) !important;
+      border: $border-solid darken($button-bg, 10%) !important;
     }
   }
 .btn-style1{

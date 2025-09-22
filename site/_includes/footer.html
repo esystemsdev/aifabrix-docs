@@ -22,13 +22,22 @@
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="footer-widget wow fadeIn" data-wow-duration="3s">
-                        <h5 class="footer-title heading-5">Get Help</h5>
+                        <h5 class="footer-title heading-5">Company</h5>
                         <ul class="footer-category list-inline">
-                            <li><a href="/pages/support">Support</a></li>
-                            <li><a href="/pages/submit-ticket">Supmit Ticket</a></li>
-                            <li><a href="/pages/register">Register</a></li>
-                            <li><a href="/pages/login">Login</a></li>
+                            <li><a href="https://www.esystems.fi/en/about" target="_blank">About Us</a></li>
+                            <li><a href="https://www.esystems.fi/en/agilenow-contact" target="_blank">Contact Us</a></li>
                         </ul>
+                        <div class="footer-contact mt-3">
+                            <h6 class="footer-subtitle heading-6">Sales and Support</h6>
+                            <p class="contact-item">
+                                <i class="fa fa-phone" style="color: #1E3A8A; margin-right: 8px;"></i>
+                                <a href="tel:+358103411100">+358 1034 11100</a>
+                            </p>
+                            <p class="contact-item">
+                                <i class="fa fa-envelope" style="color: #1E3A8A; margin-right: 8px;"></i>
+                                <a href="mailto:info@esystems.fi">info@esystems.fi</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -41,6 +50,10 @@
 
                             {% if site.twitter %}
                                 <li class="list-inline-item"><a href="{{site.twitter}}"><i class="fa fa-twitter"></i></a></li>
+                            {% endif %}
+
+                            {% if site.facebook %}
+                                <li class="list-inline-item"><a href="{{site.facebook}}"><i class="fa fa-facebook"></i></a></li>
                             {% endif %}
 
                             {% if site.instagram %}
