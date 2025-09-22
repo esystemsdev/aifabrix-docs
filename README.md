@@ -286,3 +286,4 @@ CUSTOM_DOMAIN=https://docs.aifabrix.ai npm run generate-nav
 
 **Maintained by**: eSystems Nordic Oy  
 **Last Updated**: 2024-01-15
+# Trigger deployment
