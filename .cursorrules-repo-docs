@@ -24,7 +24,7 @@ This file defines rules for generating customer-facing documentation from intern
 
 - **Consistent structure**: Follow established documentation patterns
 - **Complete metadata**: Include all required YAML metadata fields
-- **Cross-references**: Link to related customer-facing documentation in `/docs/`
+- **Cross-references**: Link to related customer-facing documentation in `/site/_docs/`
 - **Audience targeting**: Tailor content depth to target audience (executive, architect, developer, user)
 
 ## Repository Documentation Mapping
