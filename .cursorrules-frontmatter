@@ -4,17 +4,26 @@ This file defines the front-matter (YAML metadata) standards for all AI Fabrix d
 
 ## Required Front-Matter Fields
 
-All documentation files MUST include these fields:
+All documentation files in `/docs/` MUST include Jekyll frontmatter (auto-added by dynamic sync):
 
 ```yaml
 ---
+layout: doc
+title: "Descriptive Title for the Page"
+date: "YYYY-MM-DD"
+toc: true
+---
+```
+
+Additional metadata can be added via corresponding `.yaml` files in `/docs/`:
+
+```yaml
 title: "Descriptive Title for the Page"
 description: "Brief summary of what this page covers (50-160 characters)"
 audience: "Exec|Architect|Developer|Security"
 version: "stable|next"
 owner: "Module owner or team"
 last_reviewed: "YYYY-MM-DD"
----
 ```
 
 ## Field Definitions

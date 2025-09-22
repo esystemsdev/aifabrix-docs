@@ -1,0 +1,43 @@
+# AI Fabrix Documentation Navigation
+
+- text: Home
+  url: /
+- text: Getting Started
+  url: /docs/getting-started/
+  submenu:
+  - text: Quick Deploy
+    url: /docs/getting-started/quick-deploy/
+  - text: Installation Guide
+    url: /docs/getting-started/installation/
+- text: Platform Overview
+  url: /docs/background/
+  submenu:
+  - text: What is AI Fabrix
+    url: /docs/background/platform-overview/
+  - text: Architecture Overview
+    url: /docs/background/architecture-overview/
+  - text: Use Cases
+    url: /docs/background/use-cases/
+  - text: Target Audience
+    url: /docs/background/target-audience/
+- text: Architecture
+  url: /docs/architecture/
+  submenu:
+  - text: Miso Controller
+    url: /docs/architecture/miso-controller/
+  - text: Portal Architecture
+    url: /docs/architecture/portal-architecture/
+  - text: Security Authentication
+    url: /docs/architecture/security-authentication/
+- text: User Guides
+  url: /docs/user-guides/
+  submenu:
+  - text: Portal Usage
+    url: /docs/user-guides/portal-usage/
+- text: API Documentation
+  url: /docs/api/
+  submenu:
+  - text: Miso API
+    url: /docs/api/miso-api/
+- text: Support
+  url: /pages/support

@@ -1,0 +1,19 @@
+{
+  "name": "aifabrix-docs",
+  "version": "1.0.0",
+  "description": "AI Fabrix documentation with Jekyll and GitHub Pages",
+  "scripts": {
+    "jekyll-serve": "cd site && bundle exec jekyll serve --livereload",
+    "jekyll-build": "cd site && bundle exec jekyll build",
+    "dev": "npm run jekyll-serve",
+    "build": "npm run jekyll-build"
+  },
+  "keywords": [
+    "documentation",
+    "jekyll",
+    "aifabrix",
+    "github-pages"
+  ],
+  "author": "eSystems Nordic Oy",
+  "license": "MIT"
+}

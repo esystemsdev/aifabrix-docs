@@ -21,7 +21,7 @@ From the table, identify items relevant to the Platform Overview and Module page
 ### C. Module Page Generation
 
 ```text
-From these files: [paste list/paths], draft a customer-safe Module page with sections: *What it is* · *What it does* · *Why it matters* · *Key capabilities* · *Who uses it*. Cite file paths inline for editor verification. Exclude deployment minutiae—Miso handles that.
+From these files: [paste list/paths], draft a customer-safe Module page with sections: *What it is* · *What it does* · *Why it matters* · *Key capabilities* · *Who uses it*. Create the file in `/docs/` directory. Cite file paths inline for editor verification. Exclude deployment minutiae—Miso handles that.
 ```
 
 ### D. Module-Specific Prompts

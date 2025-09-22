@@ -4,7 +4,7 @@
 
 - **Purpose**: Generate and maintain customer-facing documentation using AI analysis of internal source repositories
 - **Source Repos**: aifabrix-miso, esystems-token-service, Flowise, openwebui-template
-- **Target**: Customer-safe documentation in aifabrix-docs repository
+- **Target**: Customer-safe documentation in aifabrix-docs repository (`/docs/` source files)
 - **Process**: Manual AI generation → Human validation → Document360 sync
 
 ## Source Repository Analysis

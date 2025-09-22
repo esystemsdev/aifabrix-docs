@@ -1,0 +1,9 @@
+
+- title: "<span>AI Fabrix</span> - Enterprise AI platform with Azure-native ISO27k compliance"
+  button_label: "Get Started"
+  button_link: "/docs/getting-started/quick-deploy/"
+
+- title: "<span>Complete Documentation</span> for developers, architects, and users"
+  button_label: "Explore Docs"
+  button_link: "/docs/background/platform-overview/"
+

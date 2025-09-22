@@ -1,57 +1,161 @@
 # AI Fabrix Documentation
 
-Welcome to the AI Fabrix documentation hub. This repository contains customer-facing documentation for the AI Fabrix platform.
+Welcome to the AI Fabrix documentation hub. This repository contains customer-facing documentation for the AI Fabrix platform with automated deployment to GitHub Pages.
 
-## 🚀 GitHub Pages Setup
+## 🚀 Features
 
-This repository is configured to automatically deploy to GitHub Pages when changes are pushed to the `main` or `master` branch.
+- **Jekyll Integration**: Direct integration with Jekyll static site generator
+- **GitHub Actions**: Automated deployment on file changes
+- **Document360 Sync**: Optional sync to Document360 platform
+- **Brand Assets**: eSystems brand integration
+- **Single Source**: Edit files in `/docs/` only - no sync needed
 
-### 📋 Prerequisites
+## 📁 Directory Structure
 
-1. **GitHub Pages enabled** in repository settings
-2. **Actions permissions** enabled for Pages deployment
-3. **Source set to GitHub Actions** in Pages settings
-
-### 🔧 Configuration Steps
-
-1. Go to **Settings** → **Pages** in your GitHub repository
-2. Under **Source**, select **GitHub Actions**
-3. The workflow will automatically deploy when you push changes
-
-### 📁 Documentation Structure
-
-```
-docs/
-├── index.md                    # Main documentation index
-├── background/                 # Platform background information
-│   ├── platform-overview.md
-│   ├── architecture-overview.md
-│   └── ...
-├── getting-started/           # Getting started guides
-│   ├── installation.md
-│   └── quick-deploy.md
-├── architecture/              # Architecture documentation
-│   ├── miso-controller.md
-│   ├── portal-architecture.md
-│   └── security-authentication.md
-├── user-guides/               # User guides
-│   └── portal-usage.md
-├── api/                       # API documentation
-│   ├── miso-api.md
-│   ├── api-overview.md
-│   └── authentication.md
-└── *.yaml                     # YAML metadata files
+```yaml
+aifabrix-docs/
+├── docs/                          # Documentation files (edit here - single source)
+│   ├── getting-started/
+│   ├── background/
+│   ├── architecture/
+│   ├── user-guides/
+│   └── api/
+├── site/                          # Jekyll site configuration
+│   ├── _config.yml                # Jekyll configuration (reads from ../docs)
+│   ├── _data/                     # Jekyll data files
+│   ├── assets/images/             # Brand assets
+│   └── _includes/                 # Jekyll templates
+├── temp/                          # Temporary files and migration scripts
+├── sync-docs.ps1                  # PowerShell sync script for Document360
+├── sync-docs.sh                   # Bash sync script for Document360
+└── package.json                   # Node.js dependencies (minimal)
 ```
 
-### 🔄 Workflow
+## 🛠️ Setup
 
-The GitHub Pages workflow (`github-pages.yml`) will:
+### 1. Install Dependencies
 
-1. **Validate** documentation structure
-2. **Build** a static site with navigation
-3. **Deploy** to GitHub Pages automatically
+```bash
+# Install Ruby dependencies (for Jekyll)
+cd site
+bundle install
+cd ..
+```
 
-### 📊 Repository Status
+### 2. Configure Brand Assets
+
+Copy your eSystems brand assets to `site/assets/images/`:
+
+- Favicons from `02 - Favicon/` folder
+- Logos from `01 - Logo/` folder
+
+## 🚀 Usage
+
+### Development Mode
+
+```bash
+# Start Jekyll development server (requires Ruby)
+cd site && bundle exec jekyll serve --livereload
+
+# Or use GitHub Actions for testing (no local setup needed)
+git add . && git commit -m "Test changes" && git push origin main
+```
+
+### Build for Production
+
+```bash
+# Build Jekyll site (requires Ruby)
+cd site && bundle exec jekyll build
+
+# Or use GitHub Actions for automatic deployment
+git add . && git commit -m "Update documentation" && git push origin main
+```
+
+### Document360 Sync
+
+```bash
+# PowerShell (Windows)
+.\sync-docs.ps1
+
+# Bash (Linux/macOS)
+./sync-docs.sh
+
+# With options
+.\sync-docs.ps1 -DryRun -Verbose
+./sync-docs.sh --dry-run --verbose
+```
+
+## 📝 How It Works
+
+### 1. Single Source of Truth
+
+- **Edit files in `/docs/`** - This is your only documentation location
+- **Jekyll reads directly** from `/docs/` directory
+- **No sync needed** - Jekyll handles everything
+
+### 2. Jekyll Configuration
+
+Jekyll is configured to:
+
+- Read documentation from `/docs/` collection
+- Generate navigation automatically
+- Build static site for GitHub Pages
+
+### 3. GitHub Actions
+
+The system includes automated deployment:
+
+- **Trigger**: Push to `main`/`master` branch
+- **Process**:
+  1. Build Jekyll site
+  2. Deploy to GitHub Pages
+- **Path**: `https://esystemsdev.github.io/aifabrix-docs/`
+
+## 📋 File Operations
+
+### Adding New Documentation
+
+1. Add `.md` file to appropriate `docs/` subdirectory
+2. Jekyll automatically:
+   - Processes the file
+   - Updates navigation
+   - Includes in site build
+
+### Updating Brand Assets
+
+1. Update files in `site/assets/images/`
+2. Changes are immediately available in the site
+
+### Deleting Files
+
+1. Delete file from `docs/` directory
+2. Jekyll automatically:
+   - Removes from site
+   - Updates navigation
+
+## 🎨 Customization
+
+### Brand Colors
+
+Update `site/assets/scss/base/_variable.scss`:
+
+```scss
+$font-color3: #1E3A8A;  /* eSystems Blue */
+$bg-color2: #1E3A8A;    /* eSystems Primary Blue */
+$hover-color: #1E3A8A;  /* Hover color */
+```
+
+### Site Configuration
+
+Update `site/_config.yml`:
+
+```yaml
+title: "AI Fabrix Documentation"
+description: "AI Fabrix - Enterprise AI platform with Azure-native ISO27k compliance"
+url: "https://esystemsdev.github.io/aifabrix-docs/"
+```
+
+## 📊 Repository Status
 
 | Repository | Status | Description |
 |------------|--------|-------------|
@@ -63,30 +167,49 @@ The GitHub Pages workflow (`github-pages.yml`) will:
 | **aifabrix-plugins** | 🔄 Pending | SDK (~5 files) |
 | **aifabrix-mori** | 🔒 Internal | Backend services (~20 files) |
 
-### 🛠️ Development
+## 🐛 Troubleshooting
 
-To add new documentation:
+### Common Issues
 
-1. Create `.md` files in the appropriate `docs/` subdirectory
-2. Create corresponding `.yaml` metadata files
-3. Follow the markdown formatting rules (MD040, MD036, MD022, MD031, MD032)
-4. Push changes to trigger automatic deployment
+1. **Jekyll build fails**: Run `cd site && bundle install`
+2. **Navigation not updating**: Check file structure in `/docs/`
+3. **Brand assets not showing**: Check `site/assets/images/` directory
 
-### 📝 Document360 Sync
+### Debug Mode
 
-**Note**: Document360 sync workflows have been **disabled** for GitHub Pages deployment. The workflows are available as `.disabled` files if needed later:
+```bash
+# Run Jekyll with verbose output
+cd site && bundle exec jekyll serve --verbose
+```
 
-- `.github/workflows/sync-docs.yml.disabled`
-- `.github/workflows/sync-documentation.yml.disabled`
+## 📚 Documentation Structure
 
-### 🔗 Links
+The system expects this structure in `docs/`:
 
-- **Live Site**: [GitHub Pages URL will appear here after first deployment]
-- **Repository**: [GitHub Repository URL]
-- **Issues**: [GitHub Issues URL]
+```yaml
+docs/
+├── getting-started/
+│   ├── quick-deploy.md
+│   └── installation.md
+├── background/
+│   ├── platform-overview.md
+│   └── architecture-overview.md
+├── architecture/
+│   ├── miso-controller.md
+│   └── portal-architecture.md
+├── user-guides/
+│   └── portal-usage.md
+└── api/
+    └── miso-api.md
+```
+
+## 🔗 Links
+
+- **Live Site**: <https://esystemsdev.github.io/aifabrix-docs/>
+- **GitHub Repository**: <https://github.com/esystemsdev/aifabrix-docs>
+- **Jekyll Documentation**: <https://jekyllrb.com/docs/>
 
 ---
 
-**Last Updated**: $(date)  
-**Repository**: ${{ github.repository }}  
-**Commit**: ${{ github.sha }}
+**Maintained by**: eSystems Nordic Oy  
+**Last Updated**: 2024-01-15
