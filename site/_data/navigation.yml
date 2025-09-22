@@ -25,6 +25,20 @@
   submenu:
   - text: Miso Controller
     url: /docs/architecture/miso-controller/
+  - text: Miso Container Deployment
+    url: /docs/architecture/miso-container-deployment/
+  - text: Miso Container Configuration
+    url: /docs/architecture/miso-container-configuration/
+  - text: Miso Container Troubleshooting
+    url: /docs/architecture/miso-container-troubleshooting/
+  - text: Miso Container Security
+    url: /docs/architecture/miso-container-security/
+  - text: Miso Container Monitoring & Logging
+    url: /docs/architecture/miso-container-monitoring/
+  - text: Miso Container API Reference
+    url: /docs/architecture/miso-container-api/
+  - text: Miso Container Development Guide
+    url: /docs/architecture/miso-container-development/
   - text: Portal Architecture
     url: /docs/architecture/portal-architecture/
   - text: Security Authentication
