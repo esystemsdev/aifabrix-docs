@@ -1,10 +1,3 @@
----
-layout: doc
-title: "Manual Ai Docs Workflow"
-date: 2024-01-15
-toc: true
----
-
 # Manual AI Documentation Generation Workflow
 
 ## Overview

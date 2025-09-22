@@ -36,6 +36,21 @@ jobs:
         run: |
           cd site && bundle install
           
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install Node dependencies
+        run: |
+          npm install
+          
+      - name: Generate navigation
+        run: |
+          echo "🔧 Generating navigation from YAML files..."
+          npm run setup-docs
+          echo "✅ Navigation generation completed"
+          
       - name: Build Jekyll site
         run: |
           echo "🏗️ Building Jekyll site..."

@@ -1,37 +1,30 @@
-title: "Integration Capabilities"
-meta_title: "AI Fabrix Integration Capabilities - APIs and Connectors"
-description: "Comprehensive overview of AI Fabrix integration capabilities including APIs, connectors, and data synchronization"
-slug: "integration-capabilities"
-status: "draft"
-tags: ["integration", "APIs", "connectors", "data"]
-labels: ["technical", "background"]
-related_articles: ["modules-overview", "technology-stack", "deployment-models"]
-
-# Repository Context
-repository:
-  name: "aifabrix-docs"
-  path: "docs/background/integration-capabilities.md"
-  type: "background"
-  audience: ["architect", "developer", "devops"]
-
-# Content Management
-content:
-  source_file: "docs/background/integration-capabilities.md"
-  last_updated: "2024-01-15T10:30:00Z"
-  version: "1.0.0"
-  owner: "engineering-team"
-  reviewer: "architecture-team"
-
-# SEO Configuration
+title: Integration Capabilities
+description: Comprehensive overview of AI Fabrix integration capabilities including APIs, connectors, and data synchronization
+audience:
+  - end-user
+  - admin
+version: stable
+owner: engineering-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T16:46:42.340Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
 seo:
-  keywords: ["AI Fabrix", "integration", "APIs", "connectors", "data sync"]
-  canonical_url: "https://docs.aifabrix.ai/integration-capabilities"
-  og_image: "images/integration-capabilities-preview.png"
-
-# Document360 Specific
+  keywords:
+    - AI Fabrix
+    - integration
+    - APIs
+    - connectors
+    - data sync
+  canonical_url: https://docs.aifabrix.ai/integration-capabilities
+  og_image: images/integration-capabilities-preview.png
 document360:
-  category: "Background"
-  visibility: "public"
+  category: Background
+  visibility: public
   searchable: true
   featured: true
   order: 8

@@ -1,37 +1,31 @@
-title: "Modules Overview"
-meta_title: "AI Fabrix Modules Overview - Core Components"
-description: "Overview of AI Fabrix core modules including Miso, Core, Flowise, and OpenWebUI"
-slug: "modules-overview"
-status: "draft"
-tags: ["modules", "components", "architecture"]
-labels: ["technical", "background"]
-related_articles: ["architecture-overview", "platform-overview", "integration-capabilities"]
-
-# Repository Context
-repository:
-  name: "aifabrix-docs"
-  path: "docs/background/modules-overview.md"
-  type: "background"
-  audience: ["architect", "developer", "devops"]
-
-# Content Management
-content:
-  source_file: "docs/background/modules-overview.md"
-  last_updated: "2024-01-15T10:30:00Z"
-  version: "1.0.0"
-  owner: "engineering-team"
-  reviewer: "architecture-team"
-
-# SEO Configuration
+title: Modules Overview
+description: Overview of AI Fabrix core modules including Miso, Core, Flowise, and OpenWebUI
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2025-09-22'
+layout: doc
+date: '2025-09-22T16:46:42.381Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
 seo:
-  keywords: ["AI Fabrix", "modules", "components", "Miso", "Flowise", "OpenWebUI"]
-  canonical_url: "https://docs.aifabrix.ai/modules-overview"
-  og_image: "images/modules-overview-preview.png"
-
-# Document360 Specific
+  keywords:
+    - AI Fabrix
+    - modules
+    - components
+    - Miso
+    - Flowise
+    - OpenWebUI
+  canonical_url: https://docs.aifabrix.ai/modules-overview
+  og_image: images/modules-overview-preview.png
 document360:
-  category: "Background"
-  visibility: "public"
+  category: Background
+  visibility: public
   searchable: true
   featured: true
   order: 3

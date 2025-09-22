@@ -1,18 +1,3 @@
----
-layout: doc
-title: Installation
-date: 2024-01-15T00:00:00.000Z
-toc: true
-custom_links:
-  - text: Getting Started
-    url: /docs/getting-started/
-    submenu:
-      - text: Quick Deploy
-        url: /docs/getting-started/quick-deploy/
-      - text: Installation Guide
-        url: /docs/getting-started/installation/
----
-
 # Installation Guide
 
 This guide provides step-by-step instructions for installing AI Fabrix on your Azure infrastructure.

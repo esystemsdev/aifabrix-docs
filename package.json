@@ -6,7 +6,10 @@
     "jekyll-serve": "cd site && bundle exec jekyll serve --livereload",
     "jekyll-build": "cd site && bundle exec jekyll build",
     "dev": "npm run jekyll-serve",
-    "build": "npm run jekyll-build"
+    "build": "npm run jekyll-build",
+    "fix-yaml": "node fix-yaml-structure.js",
+    "generate-nav": "node generate-navigation.js",
+    "setup-docs": "npm run fix-yaml && npm run generate-nav"
   },
   "keywords": [
     "documentation",
@@ -15,5 +18,8 @@
     "github-pages"
   ],
   "author": "eSystems Nordic Oy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
 }

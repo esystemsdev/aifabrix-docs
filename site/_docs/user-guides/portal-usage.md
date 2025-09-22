@@ -1,15 +1,3 @@
----
-layout: doc
-title: Portal Usage
-date: 2024-01-15T00:00:00.000Z
-toc: true
-custom_links:
-  - text: User Guides
-    url: /docs/user-guides/
-    submenu:
-      - text: Portal Usage
-        url: /docs/user-guides/portal-usage/
----
 
 # Portal Usage Guide
 

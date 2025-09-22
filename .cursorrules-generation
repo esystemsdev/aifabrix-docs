@@ -1,0 +1,225 @@
+# AI Fabrix Documentation - Generation Rules
+
+This file defines rules for AI-powered documentation generation from internal repositories.
+
+## Repository Analysis
+
+### Source Repositories
+
+1. **aifabrix-miso** - Core platform architecture and user guides
+2. **aifabrix-core** - AI Fabrix Enterprise Flowise
+3. **aifabrix-flowise** - Flowise user guides and workflows
+4. **aifabrix-openwebui** - OpenWebUI user guides
+5. **aifabrix-plugins** - Plugin development and extensions
+6. **aifabrix-mori** - Backend services and subscription management (internal only)
+
+### Content Categories
+
+#### Include
+- **Architecture documentation** (system design, components, integrations)
+- **API references** (endpoints, schemas, examples)
+- **User guides** (getting started, tutorials, workflows)
+- **Configuration guides** (setup, deployment, configuration)
+- **Security documentation** (authentication, RBAC, compliance)
+
+#### Exclude (Internal Only)
+- **Plans folders** (`docs/plans/`, `docs/development/`)
+- **Internal specifications** (development specs, implementation details)
+- **Project management docs** (task lists, implementation plans)
+- **Internal reports** (validation reports, analysis documents)
+- **Development workflows** (internal CI/CD, developer processes)
+
+## Content Transformation Rules
+
+### Architecture Documentation
+- **Source**: Internal architecture docs, design documents
+- **Target**: End-user workflow documentation and business outcomes
+- **Transform**: Focus on what users can accomplish, not how systems work
+- **Add**: User workflows, business value, step-by-step guides
+
+### User Guides
+- **Source**: Internal user guides, admin documentation
+- **Target**: End-user guides focused on business outcomes
+- **Transform**: Focus on user workflows and business value
+- **Add**: Step-by-step guides, visual examples, business outcomes
+
+### API Documentation
+- **Source**: Internal API references, technical specifications
+- **Target**: End-user API documentation focused on business workflows
+- **Transform**: Focus on what users can accomplish with APIs
+- **Add**: Business use cases, workflow examples, outcome-focused documentation
+
+### Getting Started Guides
+- **Source**: Internal setup guides, deployment documentation
+- **Target**: End-user quick start guides focused on business outcomes
+- **Transform**: Focus on what users can accomplish quickly
+- **Add**: Business value examples, user workflows, outcome validation
+
+## Repository-Specific Rules
+
+### aifabrix-miso Repository
+- **Focus**: End-user workflows for AI orchestration and environment management
+- **User Guides**: How to manage environments, deploy applications, monitor performance
+- **Remove**: Internal token service, admin interfaces, technical implementation
+- **Add**: Business workflows, user outcomes, step-by-step guides
+
+### aifabrix-core Repository
+- **Focus**: End-user workflows for AI services and data management
+- **User Guides**: How to use AI services, manage data, create workflows
+- **Remove**: Internal service communication, technical implementation
+- **Add**: Business AI use cases, user workflows, outcome-focused guides
+
+### aifabrix-flowise Repository
+- **Focus**: End-user workflows for AI automation and agent creation
+- **User Guides**: How to create workflows, build AI agents, automate processes
+- **Remove**: Internal deployment, technical implementation
+- **Add**: Business automation examples, user workflows, outcome-focused guides
+
+### aifabrix-openwebui Repository
+- **Focus**: End-user workflows for AI chat and interface management
+- **User Guides**: How to use chat interface, manage workspaces, collaborate
+- **Remove**: Internal deployment, technical implementation
+- **Add**: Business collaboration examples, user workflows, outcome-focused guides
+
+### aifabrix-plugins Repository
+- **Focus**: End-user workflows for plugin and extension management
+- **User Guides**: How to use plugins, extend functionality, integrate custom solutions
+- **Remove**: Internal plugin development, technical implementation
+- **Add**: Business integration examples, user workflows, outcome-focused guides
+
+### aifabrix-mori Repository (Internal Only)
+- **Focus**: End-user workflows for subscription and billing management
+- **User Guides**: How to manage subscriptions, view billing, monitor service status
+- **Remove**: Internal service communication, technical implementation
+- **Add**: Business subscription examples, user workflows, outcome-focused guides
+
+## Content Generation Process
+
+### 1. Source Analysis
+```yaml
+Analyze the source repository documentation:
+- Identify documentation files and their purposes
+- Extract key technical information
+- Identify customer-relevant content
+- Note internal references to remove
+```
+
+### 2. Content Transformation
+```yaml
+Transform internal content to customer-facing:
+- Remove internal URLs, credentials, team references
+- Simplify technical language for target audience
+- Add customer context and examples
+- Structure content by customer workflows
+```
+
+### 3. Quality Assurance
+```yaml
+Ensure customer safety and quality:
+- Verify no internal information is exposed
+- Check technical accuracy is maintained
+- Validate content is accessible to target audience
+- Confirm cross-references are correct
+```
+
+### 4. Metadata Generation
+**CRITICAL**: All metadata must be in separate `.yaml` files, NOT in markdown frontmatter.
+
+```yaml
+Generate complete YAML metadata:
+- Create separate .yaml file for each .md file
+- Set appropriate audience targeting
+- Add relevant tags and keywords
+- Configure SEO settings
+- Set Document360 category and visibility
+- Include custom_links for sidebar navigation
+- NO frontmatter in markdown files
+```
+
+## Prompt Templates
+
+### Repository Discovery
+```text
+Scan this repository. List: (1) components, (2) configuration files, (3) public interfaces, (4) operational concerns, (5) security-relevant settings. Output a table with file paths and 1–2 line descriptions.
+```
+
+### Module Page Generation
+```text
+From these files: [paste list/paths], draft a customer-safe Module page with sections: *What it is* · *What it does* · *Why it matters* · *Key capabilities* · *Who uses it*. Create the file in `/site/_docs/` directory. Cite file paths inline for editor verification. Exclude deployment minutiae—Miso handles that.
+```
+
+### User Guide Generation
+```text
+Generate user guide documentation from source content:
+- Focus on step-by-step procedures
+- Include screenshots and examples
+- Add troubleshooting and common issues
+- Emphasize business outcomes
+- Keep content customer-safe
+```
+
+### Architecture Documentation
+```text
+Generate architecture documentation from source content:
+- Focus on what users can accomplish
+- Include business value and outcomes
+- Add user workflows and step-by-step guides
+- Remove internal implementation details
+- Keep content customer-safe
+```
+
+## Content Safety Checklist
+
+### Before Publishing
+- [ ] No internal URLs or credentials exposed
+- [ ] No internal team names or references
+- [ ] No internal deployment details
+- [ ] No sensitive configuration information
+- [ ] All examples use placeholder values
+- [ ] Content focuses on customer value
+- [ ] Technical accuracy is maintained
+- [ ] Content is accessible to target audience
+
+### Content Quality Checklist
+- [ ] Clear, actionable language
+- [ ] Complete examples and use cases
+- [ ] Proper cross-references
+- [ ] Consistent terminology
+- [ ] Complete YAML metadata
+- [ ] Appropriate audience targeting
+- [ ] SEO optimization
+- [ ] Document360 configuration
+
+## Examples
+
+### Good Transformation
+**Source**: "The Miso controller uses internal token service at mori.aifabrix.ai for authentication"
+**Target**: "AI Fabrix uses OIDC authentication for secure API access"
+
+### Bad Transformation
+**Source**: "The Miso controller uses internal token service at mori.aifabrix.ai for authentication"
+**Target**: "The Miso controller uses internal token service at mori.aifabrix.ai for authentication" (exposes internal URL)
+
+### Good Addition
+**Source**: "POST /applications"
+**Target**: "POST /applications - Deploy a new application to AI Fabrix with configuration options"
+
+### Bad Addition
+**Source**: "POST /applications"
+**Target**: "POST /applications - Deploy a new application to AI Fabrix using internal deployment pipeline" (exposes internal process)
+
+## CRITICAL RULES - NEVER VIOLATE
+
+### Git Commit Rules
+- **NEVER commit without explicit user confirmation**
+- **ALWAYS ask "Should I commit these changes?" before running git commands**
+- **ALWAYS show what will be committed before asking for confirmation**
+- **ALWAYS wait for user approval before executing git add/commit/push**
+- **If user says no, do NOT proceed with commit**
+
+### Data Protection Rules
+- **NEVER delete files without explicit user permission**
+- **ALWAYS explain what will be deleted before deletion**
+- **ALWAYS ask for confirmation before destructive operations**
+- **ALWAYS preserve user's work and changes**
+

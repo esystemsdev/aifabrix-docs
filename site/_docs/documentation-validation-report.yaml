@@ -1,0 +1,29 @@
+title: Documentation Validation Report
+description: Comprehensive validation report of AI Fabrix documentation status and quality
+audience:
+  - admin
+  - developer
+version: stable
+owner: documentation-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T16:46:42.422Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
+seo:
+  keywords:
+    - AI Fabrix
+    - documentation
+    - validation
+    - quality
+  canonical_url: https://docs.aifabrix.ai/documentation-validation-report
+  og_image: images/documentation-validation.png
+document360:
+  category: Documentation
+  visibility: public
+  searchable: true
+  featured: false
+  order: 1

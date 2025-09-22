@@ -1,10 +1,3 @@
----
-layout: doc
-title: "Documentation Validation Report"
-date: 2024-01-15
-toc: true
----
-
 # Documentation Validation Report
 
 ## Current Status

@@ -8,27 +8,31 @@ Welcome to the AI Fabrix documentation hub. This repository contains customer-fa
 - **GitHub Actions**: Automated deployment on file changes
 - **Document360 Sync**: Optional sync to Document360 platform
 - **Brand Assets**: eSystems brand integration
-- **Single Source**: Edit files in `/docs/` only - no sync needed
+- **Single Source**: Edit files in `site/_docs/` only - no sync needed
+- **Auto Navigation**: Automatic navigation generation from YAML metadata
+- **YAML Metadata**: Separated metadata from markdown content
 
 ## 📁 Directory Structure
 
 ```yaml
 aifabrix-docs/
-├── docs/                          # Documentation files (edit here - single source)
-│   ├── getting-started/
-│   ├── background/
-│   ├── architecture/
-│   ├── user-guides/
-│   └── api/
 ├── site/                          # Jekyll site configuration
-│   ├── _config.yml                # Jekyll configuration (reads from ../docs)
+│   ├── _docs/                     # Documentation files (edit here - single source)
+│   │   ├── getting-started/
+│   │   ├── background/
+│   │   ├── architecture/
+│   │   ├── user-guides/
+│   │   └── api/
+│   ├── _config.yml                # Jekyll configuration
 │   ├── _data/                     # Jekyll data files
 │   ├── assets/images/             # Brand assets
 │   └── _includes/                 # Jekyll templates
 ├── temp/                          # Temporary files and migration scripts
+├── generate-navigation.js         # Auto-generate navigation from YAML files
+├── fix-yaml-structure.js          # Fix YAML metadata structure
 ├── sync-docs.ps1                  # PowerShell sync script for Document360
 ├── sync-docs.sh                   # Bash sync script for Document360
-└── package.json                   # Node.js dependencies (minimal)
+└── package.json                   # Node.js dependencies
 ```
 
 ## 🛠️ Setup
@@ -36,6 +40,9 @@ aifabrix-docs/
 ### 1. Install Dependencies
 
 ```bash
+# Install Node.js dependencies (for navigation scripts)
+npm install
+
 # Install Ruby dependencies (for Jekyll)
 cd site
 bundle install
@@ -54,7 +61,8 @@ Copy your eSystems brand assets to `site/assets/images/`:
 ### Development Mode
 
 ```bash
-# Start Jekyll development server (requires Ruby)
+# Generate navigation and start Jekyll development server
+npm run setup-docs
 cd site && bundle exec jekyll serve --livereload
 
 # Or use GitHub Actions for testing (no local setup needed)
@@ -64,10 +72,11 @@ git add . && git commit -m "Test changes" && git push origin main
 ### Build for Production
 
 ```bash
-# Build Jekyll site (requires Ruby)
+# Generate navigation and build Jekyll site
+npm run setup-docs
 cd site && bundle exec jekyll build
 
-# Or use GitHub Actions for automatic deployment
+# Or use GitHub Actions for automatic deployment (includes navigation generation)
 git add . && git commit -m "Update documentation" && git push origin main
 ```
 
@@ -89,16 +98,17 @@ git add . && git commit -m "Update documentation" && git push origin main
 
 ### 1. Single Source of Truth
 
-- **Edit files in `/docs/`** - This is your only documentation location
-- **Jekyll reads directly** from `/docs/` directory
+- **Edit files in `site/_docs/`** - This is your only documentation location
+- **Jekyll reads directly** from `site/_docs/` directory
 - **No sync needed** - Jekyll handles everything
+- **YAML metadata** - Each `.md` file has a corresponding `.yaml` file for metadata
 
 ### 2. Jekyll Configuration
 
 Jekyll is configured to:
 
-- Read documentation from `/docs/` collection
-- Generate navigation automatically
+- Read documentation from `site/_docs/` collection
+- Use YAML metadata for navigation and SEO
 - Build static site for GitHub Pages
 
 ### 3. GitHub Actions
@@ -107,19 +117,22 @@ The system includes automated deployment:
 
 - **Trigger**: Push to `main`/`master` branch
 - **Process**:
-  1. Build Jekyll site
-  2. Deploy to GitHub Pages
+  1. Install Node.js dependencies
+  2. Generate navigation from YAML files
+  3. Build Jekyll site
+  4. Deploy to GitHub Pages
 - **Path**: `https://esystemsdev.github.io/aifabrix-docs/`
 
 ## 📋 File Operations
 
 ### Adding New Documentation
 
-1. Add `.md` file to appropriate `docs/` subdirectory
-2. Jekyll automatically:
-   - Processes the file
-   - Updates navigation
-   - Includes in site build
+1. Add `.md` file to appropriate `site/_docs/` subdirectory
+2. Add corresponding `.yaml` file with metadata
+3. Run `npm run setup-docs` to:
+   - Fix YAML structure
+   - Generate navigation
+   - Update site
 
 ### Updating Brand Assets
 
@@ -128,10 +141,8 @@ The system includes automated deployment:
 
 ### Deleting Files
 
-1. Delete file from `docs/` directory
-2. Jekyll automatically:
-   - Removes from site
-   - Updates navigation
+1. Delete `.md` and `.yaml` files from `site/_docs/` directory
+2. Run `npm run setup-docs` to update navigation
 
 ## 🎨 Customization
 
@@ -172,8 +183,9 @@ url: "https://esystemsdev.github.io/aifabrix-docs/"
 ### Common Issues
 
 1. **Jekyll build fails**: Run `cd site && bundle install`
-2. **Navigation not updating**: Check file structure in `/docs/`
-3. **Brand assets not showing**: Check `site/assets/images/` directory
+2. **Navigation not updating**: Run `npm run setup-docs`
+3. **YAML structure issues**: Run `npm run fix-yaml`
+4. **Brand assets not showing**: Check `site/assets/images/` directory
 
 ### Debug Mode
 
@@ -184,24 +196,57 @@ cd site && bundle exec jekyll serve --verbose
 
 ## 📚 Documentation Structure
 
-The system expects this structure in `docs/`:
+The system expects this structure in `site/_docs/`:
 
 ```yaml
-docs/
+site/_docs/
 ├── getting-started/
 │   ├── quick-deploy.md
-│   └── installation.md
+│   ├── quick-deploy.yaml
+│   ├── installation.md
+│   └── installation.yaml
 ├── background/
 │   ├── platform-overview.md
-│   └── architecture-overview.md
+│   ├── platform-overview.yaml
+│   ├── architecture-overview.md
+│   └── architecture-overview.yaml
 ├── architecture/
 │   ├── miso-controller.md
-│   └── portal-architecture.md
+│   ├── miso-controller.yaml
+│   ├── portal-architecture.md
+│   └── portal-architecture.yaml
 ├── user-guides/
-│   └── portal-usage.md
+│   ├── portal-usage.md
+│   └── portal-usage.yaml
 └── api/
-    └── miso-api.md
+    ├── miso-api.md
+    └── miso-api.yaml
 ```
+
+## 🤖 Automation Scripts
+
+### Navigation Management
+
+```bash
+# Generate navigation from all YAML files
+npm run generate-nav
+
+# Fix all YAML files with correct structure
+npm run fix-yaml
+
+# Run both scripts (recommended)
+npm run setup-docs
+```
+
+### Available Scripts
+
+| Script | Purpose | When to Use |
+|--------|---------|-------------|
+| `npm run setup-docs` | Fix YAML + Generate navigation | Before development, after adding files |
+| `npm run fix-yaml` | Fix YAML metadata structure | When YAML files have issues |
+| `npm run generate-nav` | Generate navigation only | When only navigation needs updating |
+| `npm run jekyll-serve` | Start development server | For local testing |
+| `npm run jekyll-build` | Build production site | For production builds |
 
 ## 🔗 Links
 

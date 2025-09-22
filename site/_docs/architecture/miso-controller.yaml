@@ -1,37 +1,31 @@
-title: "Miso Controller Architecture"
-meta_title: "AI Fabrix Miso Controller - Enterprise AI Orchestration Platform"
-description: "Comprehensive overview of Miso controller architecture, the central orchestration platform for AI Fabrix enterprise AI deployments"
-slug: "miso-controller"
-status: "draft"
-tags: ["architecture", "miso", "controller", "orchestration", "enterprise"]
-labels: ["architecture", "core"]
-related_articles: ["portal-architecture", "security-authentication", "quick-deploy", "portal-usage"]
-
-# Repository Context
-repository:
-  name: "aifabrix-docs"
-  path: "docs/architecture/miso-controller.md"
-  type: "architecture"
-  audience: ["architect", "developer", "executive"]
-
-# Content Management
-content:
-  source_file: "docs/architecture/miso-controller.md"
-  last_updated: "2024-01-15T10:30:00Z"
-  version: "1.0.0"
-  owner: "architecture-team"
-  reviewer: "product-team"
-
-# SEO Configuration
+title: Miso Controller Architecture
+description: Comprehensive overview of Miso controller architecture, the central orchestration platform for AI Fabrix enterprise AI deployments
+audience:
+  - end-user
+  - admin
+version: stable
+owner: architecture-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T16:46:42.275Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
 seo:
-  keywords: ["AI Fabrix", "Miso", "controller", "architecture", "enterprise AI", "orchestration"]
-  canonical_url: "https://docs.aifabrix.ai/architecture/miso-controller"
-  og_image: "images/miso-controller-architecture.png"
-
-# Document360 Specific
+  keywords:
+    - AI Fabrix
+    - Miso
+    - controller
+    - architecture
+    - enterprise AI
+    - orchestration
+  canonical_url: https://docs.aifabrix.ai/architecture/miso-controller
+  og_image: images/miso-controller-architecture.png
 document360:
-  category: "Architecture"
-  visibility: "public"
+  category: Architecture
+  visibility: public
   searchable: true
   featured: true
   order: 1

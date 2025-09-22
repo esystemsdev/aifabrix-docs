@@ -1,22 +1,3 @@
----
-layout: doc
-title: Technology Stack
-date: 2024-01-15T00:00:00.000Z
-toc: true
-custom_links:
-  - text: Platform Overview
-    url: /docs/background/
-    submenu:
-      - text: What is AI Fabrix
-        url: /docs/background/platform-overview/
-      - text: Architecture Overview
-        url: /docs/background/architecture-overview/
-      - text: Use Cases
-        url: /docs/background/use-cases/
-      - text: Target Audience
-        url: /docs/background/target-audience/
----
-
 # Technology Stack
 
 AI Fabrix is engineered to run entirely inside the customer’s Azure tenant with a modular, cloud-native stack. The platform favors open standards (OpenAPI, OpenTelemetry, SCIM, OAuth2/OIDC) and a plugin-first approach to integrations.

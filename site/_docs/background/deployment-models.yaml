@@ -1,37 +1,30 @@
-title: "Deployment Models"
-meta_title: "AI Fabrix Deployment Models - Azure Marketplace and Manual"
-description: "Overview of AI Fabrix deployment options including Azure Marketplace and manual installation"
-slug: "deployment-models"
-status: "draft"
-tags: ["deployment", "Azure", "installation", "models"]
-labels: ["technical", "background"]
-related_articles: ["technology-stack", "architecture-overview", "integration-capabilities"]
-
-# Repository Context
-repository:
-  name: "aifabrix-docs"
-  path: "docs/background/deployment-models.md"
-  type: "background"
-  audience: ["architect", "devops", "developer"]
-
-# Content Management
-content:
-  source_file: "docs/background/deployment-models.md"
-  last_updated: "2024-01-15T10:30:00Z"
-  version: "1.0.0"
-  owner: "devops-team"
-  reviewer: "engineering-team"
-
-# SEO Configuration
+title: Deployment Models
+description: Overview of AI Fabrix deployment options including Azure Marketplace and manual installation
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2025-09-22'
+layout: doc
+date: '2025-09-22T16:46:42.333Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
 seo:
-  keywords: ["AI Fabrix", "deployment", "Azure Marketplace", "installation", "models"]
-  canonical_url: "https://docs.aifabrix.ai/deployment-models"
-  og_image: "images/deployment-models-preview.png"
-
-# Document360 Specific
+  keywords:
+    - AI Fabrix
+    - deployment
+    - Azure Marketplace
+    - installation
+    - models
+  canonical_url: https://docs.aifabrix.ai/deployment-models
+  og_image: images/deployment-models-preview.png
 document360:
-  category: "Background"
-  visibility: "public"
+  category: Background
+  visibility: public
   searchable: true
   featured: true
   order: 7

@@ -1,37 +1,31 @@
-title: "Portal Architecture"
-meta_title: "AI Fabrix Portal Architecture - Self-Service Deployment Interface"
-description: "Detailed architecture overview of the AI Fabrix Setup Portal, a modern web application for managing AI Fabrix deployments"
-slug: "portal-architecture"
-status: "draft"
-tags: ["architecture", "portal", "ui", "deployment", "self-service"]
-labels: ["architecture", "ui"]
-related_articles: ["miso-controller", "security-authentication", "quick-deploy", "portal-usage"]
-
-# Repository Context
-repository:
-  name: "aifabrix-docs"
-  path: "docs/architecture/portal-architecture.md"
-  type: "architecture"
-  audience: ["architect", "developer"]
-
-# Content Management
-content:
-  source_file: "docs/architecture/portal-architecture.md"
-  last_updated: "2024-01-15T10:30:00Z"
-  version: "1.0.0"
-  owner: "architecture-team"
-  reviewer: "ui-team"
-
-# SEO Configuration
+title: Portal Architecture
+description: Detailed architecture overview of the AI Fabrix Setup Portal, a modern web application for managing AI Fabrix deployments
+audience:
+  - end-user
+  - admin
+version: stable
+owner: architecture-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T16:46:42.282Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
 seo:
-  keywords: ["AI Fabrix", "portal", "architecture", "deployment", "self-service", "Next.js"]
-  canonical_url: "https://docs.aifabrix.ai/architecture/portal-architecture"
-  og_image: "images/portal-architecture-diagram.png"
-
-# Document360 Specific
+  keywords:
+    - AI Fabrix
+    - portal
+    - architecture
+    - deployment
+    - self-service
+    - Next.js
+  canonical_url: https://docs.aifabrix.ai/architecture/portal-architecture
+  og_image: images/portal-architecture-diagram.png
 document360:
-  category: "Architecture"
-  visibility: "public"
+  category: Architecture
+  visibility: public
   searchable: true
   featured: true
   order: 2

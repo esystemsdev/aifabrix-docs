@@ -1,4 +1,4 @@
-# AI Fabrix Documentation - Cursor Rules
+# AI Fabrix Documentation - Core Rules
 
 You are an AI assistant helping to create and maintain AI Fabrix documentation. Follow these rules when working with documentation files.
 
@@ -6,7 +6,7 @@ You are an AI assistant helping to create and maintain AI Fabrix documentation. 
 
 - **Product**: AI Fabrix - Enterprise AI platform with Azure-native ISO27k compliance
 - **Architecture**: Multi-module platform (Miso, AI Fabrix Core, Flowise, OpenWebUI)
-- **Target**: Customer-facing knowledge base with engineering-driven content
+- **Target**: Customer-facing knowledge base with end-user focused content
 - **Workflow**: Doc-as-code with Cursor-assisted authoring
 
 ## Core Principles
@@ -18,35 +18,38 @@ You are an AI assistant helping to create and maintain AI Fabrix documentation. 
 - Focus on customer value and use cases
 - Avoid deployment minutiae - Miso handles provisioning
 
-### 2. Source-Driven Documentation
+### 2. End-User Documentation Focus
+
+- **What users can do** (not how it's built)
+- **Business workflows** (not technical processes)
+- **User outcomes** (not system architecture)
+- **Step-by-step guides** (not code examples)
+- **Visual examples** (not technical diagrams)
+- **User experience** (not developer experience)
+- **Business value** (not technical implementation)
+
+### 3. Source-Driven Documentation
 
 - Extract facts directly from code/README/YAML/Bicep files
 - Cite file paths inline for editor verification
 - Keep documentation synchronized with source code
 - Use repository structure as documentation structure
 
-### 3. Audience-First Writing
-
-- Identify target audience: Exec | Architect | Developer | Security
-- Tailor content depth and technical level accordingly
-- Use clear, actionable language
-- Provide copy-pastable commands and examples
-
 ## Documentation Structure
 
-### Knowledge Base Sections
+### Module-Based Organization
 
-1. **Landing** - What is AI Fabrix, message pillars, path selection
-2. **Platform & Modules** - Overview and individual module docs
-3. **Getting Started** - Prerequisites, quickstart, FAQ
-4. **Architecture** - Azure reference architecture, networking, data layer
-5. **Security & Compliance** - ISO-27001 controls, policies, artifacts
-6. **Building Solutions** - RAG patterns, connectors, agents, workflows
-7. **Developer SDK** - Plugin development, concepts, examples
-8. **Operations** - SRE runbooks, backup/restore, change management
-9. **How-To Guides** - Step-by-step procedures
-10. **Reference** - Configuration, APIs, limits
-11. **Releases & Roadmap** - Release notes, compatibility, roadmap
+```
+site/_docs/
+├── getting-started/          # Getting started guides
+├── platform-overview/       # What is AI Fabrix
+├── miso-controller/         # Miso controller user guides
+├── flowise/                 # Flowise user guides
+├── openwebui/               # OpenWebUI user guides
+├── user-guides/             # General user guides
+├── api/                     # API documentation
+└── support/                 # Support and troubleshooting
+```
 
 ### Module Ownership
 
@@ -59,9 +62,9 @@ You are an AI assistant helping to create and maintain AI Fabrix documentation. 
 
 ### Repository Structure
 
-```yaml
-/docs/                    # Documentation files (edit here - single source of truth)
+```
 /site/                    # Jekyll site configuration
+  /_docs/                 # Documentation files (edit here - single source of truth)
   /_data/                 # Jekyll data files (navigation, etc.)
   /assets/images/         # Brand assets (logos, favicons)
   /_config.yml           # Jekyll configuration
@@ -74,28 +77,64 @@ You are an AI assistant helping to create and maintain AI Fabrix documentation. 
 /tools/                   # Transformers, validators
 ```
 
-### Front-Matter Standards
+### Metadata Standards
 
-All documentation files in `/docs/` must include Jekyll frontmatter:
+**CRITICAL**: All metadata must be in separate `.yaml` files, NOT in markdown frontmatter.
 
-```yaml
----
-layout: doc
-title: "[Descriptive title]"
-date: [YYYY-MM-DD]
-toc: true
----
+#### Markdown Files
+- **NO frontmatter**: Markdown files should contain only content, no `---` sections
+- **Clean content**: Start directly with the content, no metadata blocks
+- **Pure markdown**: Only use markdown syntax for content formatting
+
+#### YAML Metadata Files
+- **Separate files**: Each `.md` file must have a corresponding `.yaml` file
+- **Complete metadata**: All document metadata goes in the `.yaml` file
+- **Naming convention**: `document.md` → `document.yaml`
+
+Example structure:
+```
+site/_docs/
+├── getting-started/
+│   ├── installation.md          # Pure markdown content
+│   ├── installation.yaml        # All metadata here
+│   ├── quick-deploy.md          # Pure markdown content
+│   └── quick-deploy.yaml        # All metadata here
 ```
 
-Additional metadata can be added via corresponding `.yaml` files in `/docs/`:
+#### Required YAML Metadata Structure
 
 ```yaml
-title: [Descriptive title]
-description: [Brief summary]
-audience: [Exec|Architect|Developer|Security]
-version: [stable|next]
-owner: [Module owner]
-last_reviewed: [YYYY-MM-DD]
+title: "[Descriptive title]"
+description: "[Brief summary]"
+audience: ["end-user", "admin"]
+version: "stable"
+owner: "[Module owner]"
+last_reviewed: "[YYYY-MM-DD]"
+layout: "doc"
+date: "[YYYY-MM-DD]"
+toc: true
+custom_links:
+  - text: "Module Name"
+    url: /docs/module/
+    submenu:
+      - text: "Document 1"
+        url: /docs/module/document1/
+      - text: "Document 2"
+        url: /docs/module/document2/
+
+# SEO Configuration
+seo:
+  keywords: ["AI Fabrix", "module", "user-guide"]
+  canonical_url: "https://docs.aifabrix.ai/module/document"
+  og_image: "images/module-document.png"
+
+# Document360 Specific
+document360:
+  category: "Module Name"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 1
 ```
 
 ## Writing Guidelines
@@ -112,11 +151,13 @@ last_reviewed: [YYYY-MM-DD]
 ### Style Rules
 
 - Use customer-safe wording; no internal secrets/IDs
-- Prefer diagrams (Mermaid) for flows; short tables for config
+- Focus on user workflows and business outcomes
+- Prefer visual examples (screenshots, diagrams) over code examples
+- Use business language, avoid technical jargon
 - Call out *operator tasks* vs *platform controls* (ISO alignment)
 - Avoid repetition—link to Reference/How-To sections
 - Use active voice and clear, concise sentences
-- Include code examples with proper syntax highlighting
+- Include step-by-step user guides with clear outcomes
 
 ### Technical Standards
 
@@ -138,13 +179,15 @@ When analyzing repositories, use these patterns:
 ### Content Generation
 
 - Extract facts from source files
-- Generate customer-safe documentation
+- Generate customer-safe documentation focused on end-users
 - Include file path citations
-- Focus on user value and capabilities
+- Focus on user workflows and business outcomes
+- Create step-by-step guides for common tasks
+- Emphasize what users can accomplish, not how systems work
 
 ### Quality Assurance
 
-- Validate front-matter completeness
+- Validate YAML metadata completeness
 - Check for customer-safe content
 - Ensure copy-pastable commands
 - Verify link integrity
@@ -171,7 +214,7 @@ When analyzing repositories, use these patterns:
 ### CI/CD Pipeline
 
 - Validate markdown and links
-- Check front-matter completeness
+- Check YAML metadata completeness
 - Ensure customer-safe content
 - Generate navigation and versioning
 - Deploy to Document360 or Docusaurus
@@ -183,67 +226,10 @@ When analyzing repositories, use these patterns:
 - Check SEO requirements
 - Ensure accessibility standards
 
-## Markdown Formatting Requirements
-
-### Code Blocks (MD040)
-
-- **Always specify language**: Use `bash`, `json`, `yaml`, `javascript`, `typescript`, `python`, `csharp`, `java`, `sql`, `xml`, `html`, `css`, `scss`, `dockerfile`, `powershell`, `shell`, `text`
-- **Never use plain code blocks**: Always include language specification after ```
-- **Examples**:
-
-  ```bash
-  # Correct
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-
-  ```markdown
-  # Incorrect - no language specified
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-
-### Headers (MD036)
-
-- **Use proper markdown headers**: # ## ### #### ##### ######
-- **Never use emphasis for headers**: Avoid **bold** or *italic* for section titles
-- **Blank lines around headers**: Always add blank lines before and after headers (MD022)
-- **Examples**:
-
-  ```markdown
-  # Correct
-  ## Authentication
-  
-  # Incorrect
-  **Authentication**
-  ```
-
-### Code Blocks (MD040)
-
-- **Always specify language**: Use `bash`, `json`, `yaml`, `javascript`, `typescript`, `python`, `csharp`, `java`, `sql`, `xml`, `html`, `css`, `scss`, `dockerfile`, `powershell`, `shell`, `text`
-- **Never use plain code blocks**: Always include language specification after ```
-- **Blank lines around code blocks**: Always add blank lines before and after fenced code blocks (MD031)
-- **Examples**:
-
-  ```bash
-  # Correct
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-
-  ```markdown
-  # Incorrect - no language specified
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-
-### List Formatting
-
-- **Add blank lines**: Between sections and before/after lists
-- **Consistent bullet points**: Use - for unordered lists
-- **Blank lines around lists**: Always add blank lines before and after lists (MD032)
-- **Proper spacing**: Ensure content is well-structured
-
 ## When Working with This Project
 
 1. **Always** check the target audience before writing
-2. **Always** include proper front-matter
+2. **Always** include proper YAML metadata files
 3. **Always** cite source files when extracting information
 4. **Always** validate commands are copy-pastable
 5. **Always** use proper markdown formatting (MD040, MD036)
@@ -265,7 +251,7 @@ When analyzing repositories, use these patterns:
 - **Source Files**: Edit in `/site/_docs/` directory only (single source of truth)
 - **Jekyll Site**: Reads directly from `/site/_docs/` directory
 - **Brand Assets**: Manually copied to `/site/assets/images/`
-- **Navigation**: Auto-generated by Jekyll from `/site/_docs/` structure
+- **Navigation**: Defined in `/site/_docs/navigation.yaml` file
 
 ### Cleanup Rules
 
@@ -273,5 +259,22 @@ When analyzing repositories, use these patterns:
 - **After Migration**: Move migration scripts to `/temp/`
 - **After Testing**: Move test files to `/temp/`
 - **Keep Root Clean**: Only essential files in root directory
+
+## CRITICAL RULES - NEVER VIOLATE
+
+### Git Commit Rules
+
+- **NEVER commit without explicit user confirmation**
+- **ALWAYS ask "Should I commit these changes?" before running git commands**
+- **ALWAYS show what will be committed before asking for confirmation**
+- **ALWAYS wait for user approval before executing git add/commit/push**
+- **If user says no, do NOT proceed with commit**
+
+### Data Protection Rules
+
+- **NEVER delete files without explicit user permission**
+- **ALWAYS explain what will be deleted before deletion**
+- **ALWAYS ask for confirmation before destructive operations**
+- **ALWAYS preserve user's work and changes**
 
 Remember: You're creating customer-facing documentation that helps users succeed with AI Fabrix while maintaining security and compliance standards.

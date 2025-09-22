@@ -1,37 +1,30 @@
-title: "Quick Deploy Guide"
-meta_title: "AI Fabrix Quick Deploy - Deploy Your First Application in 5 Minutes"
-description: "Step-by-step guide to deploy your first AI Fabrix application using GitHub Actions in just 5 minutes"
-slug: "quick-deploy"
-status: "draft"
-tags: ["quick-deploy", "getting-started", "github-actions", "deployment"]
-labels: ["getting-started", "quick-start"]
-related_articles: ["first-application", "portal-usage", "miso-controller", "security-authentication"]
-
-# Repository Context
-repository:
-  name: "aifabrix-docs"
-  path: "docs/getting-started/quick-deploy.md"
-  type: "getting-started"
-  audience: ["developer", "user"]
-
-# Content Management
-content:
-  source_file: "docs/getting-started/quick-deploy.md"
-  last_updated: "2024-01-15T10:30:00Z"
-  version: "1.0.0"
-  owner: "product-team"
-  reviewer: "developer-team"
-
-# SEO Configuration
+title: Quick Deploy Guide
+description: Step-by-step guide to deploy your first AI Fabrix application using GitHub Actions in just 5 minutes
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T16:46:42.436Z'
+toc: true
+custom_links:
+  - text: Site
+    url: /docs/site/
+    submenu: []
 seo:
-  keywords: ["AI Fabrix", "quick deploy", "getting started", "GitHub Actions", "deployment"]
-  canonical_url: "https://docs.aifabrix.ai/getting-started/quick-deploy"
-  og_image: "images/quick-deploy-guide.png"
-
-# Document360 Specific
+  keywords:
+    - AI Fabrix
+    - quick deploy
+    - getting started
+    - GitHub Actions
+    - deployment
+  canonical_url: https://docs.aifabrix.ai/getting-started/quick-deploy
+  og_image: images/quick-deploy-guide.png
 document360:
-  category: "Getting Started"
-  visibility: "public"
+  category: Getting Started
+  visibility: public
   searchable: true
   featured: true
   order: 1

@@ -1,48 +1,22 @@
-# AI Fabrix Documentation - Writing Style & Customer-Safe Guidelines
+# AI Fabrix Documentation - Style & Formatting Rules
 
-This file defines the writing style, tone, and customer-safe content guidelines for AI Fabrix documentation.
-
-## Core Writing Principles
-
-### 1. Customer-First Approach
-
-- Write for the user's success, not internal processes
-- Focus on business value and outcomes
-- Use clear, actionable language
-- Provide copy-pastable examples
-
-### 2. Security & Compliance Focus
-
-- Emphasize enterprise-grade security features
-- Highlight ISO-27001 compliance capabilities
-- Showcase Azure-native security controls
-- Demonstrate data residency and privacy protection
-
-### 3. Technical Accuracy
-
-- Extract facts from source code and configuration
-- Cite file paths for verification
-- Keep content synchronized with implementation
-- Validate all commands and procedures
+This file defines writing style, tone, and formatting standards for AI Fabrix documentation.
 
 ## Writing Style Guidelines
 
 ### Tone & Voice
-
 - **Professional yet approachable**: Technical but not intimidating
 - **Confident**: Demonstrate expertise without arrogance
 - **Helpful**: Anticipate user needs and questions
 - **Clear**: Use simple, direct language
 
 ### Language Standards
-
 - **Active voice**: "Configure the setting" not "The setting should be configured"
 - **Present tense**: "AI Fabrix provides" not "AI Fabrix will provide"
 - **Consistent terminology**: Use "AI Fabrix" not "the platform" or "our solution"
 - **Gender-neutral**: Use "they/them" or restructure sentences
 
 ### Sentence Structure
-
 - **Short sentences**: 15-20 words maximum
 - **One idea per sentence**: Avoid complex compound sentences
 - **Parallel structure**: Use consistent formatting in lists
@@ -51,7 +25,6 @@ This file defines the writing style, tone, and customer-safe content guidelines 
 ## Customer-Safe Content Rules
 
 ### What to Include
-
 ✅ **Customer-facing features and capabilities**
 ✅ **Public APIs and interfaces**
 ✅ **Configuration examples with placeholders**
@@ -60,7 +33,6 @@ This file defines the writing style, tone, and customer-safe content guidelines 
 ✅ **Integration patterns and best practices**
 
 ### What to Exclude
-
 ❌ **Internal secrets, keys, or credentials**
 ❌ **Internal infrastructure details**
 ❌ **Proprietary algorithms or implementation details**
@@ -69,7 +41,6 @@ This file defines the writing style, tone, and customer-safe content guidelines 
 ❌ **Internal debugging information**
 
 ### Placeholder Guidelines
-
 Use consistent placeholder patterns:
 
 ```yaml
@@ -91,7 +62,6 @@ your-postgresql-server
 ## Content Structure Standards
 
 ### Page Organization
-
 1. **Purpose** (1-2 sentences explaining the page's value)
 2. **Prerequisites** (what users need before starting)
 3. **Steps or Details** (numbered, actionable content)
@@ -100,7 +70,6 @@ your-postgresql-server
 6. **References** (links to related content)
 
 ### Heading Hierarchy
-
 ```markdown
 # Page Title (H1 - only one per page)
 ## Major Section (H2)
@@ -109,74 +78,77 @@ your-postgresql-server
 ```
 
 ### List Formatting
-
 - **Use numbered lists** for procedures and steps
 - **Use bullet points** for features and options
 - **Use consistent formatting** within lists
 - **Include action verbs** in procedure steps
 
-## Technical Writing Standards
+## End-User Documentation Examples
 
-### Code Examples
+### User Workflow Examples
+```markdown
+## Create Your First AI Workflow
 
-```bash
-# Always include comments explaining what each command does
-az login --tenant your-tenant-id
-az account set --subscription your-subscription-id
+### Step 1: Access AI Fabrix Portal
+1. Log into your AI Fabrix portal
+2. Navigate to the Workflow section
+3. Click "Create New Workflow"
 
-# Validate the configuration
-az account show --query "name" --output tsv
+### Step 2: Choose Your Template
+1. Select from pre-built templates
+2. Choose "Customer Support Automation"
+3. Review the workflow steps
+
+### Step 3: Configure Your Workflow
+1. Set your business rules
+2. Define customer interaction points
+3. Configure response templates
+4. Test the workflow
+
+### Step 4: Deploy and Monitor
+1. Deploy to your environment
+2. Monitor performance metrics
+3. Review customer satisfaction scores
 ```
 
-### Configuration Examples
+### Business Outcome Examples
+```markdown
+## What You'll Achieve
 
-```yaml
-# Use descriptive comments
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: aifabrix-config
-data:
-  # Database connection settings
-  DATABASE_URL: "postgresql://user:password@host:5432/dbname"
-  # Redis cache configuration
-  REDIS_URL: "redis://host:6379"
+- **60% faster response times** for customer inquiries
+- **Automated routing** of complex issues to specialists
+- **Consistent customer experience** across all channels
+- **Reduced manual workload** for your support team
 ```
 
-### Command Validation
-
-Every command must include:
-
-- **Prerequisites**: What's needed before running
-- **Expected output**: What success looks like
-- **Error handling**: What to do if it fails
-- **Next steps**: What to do after success
+### User Guide Validation
+Every user guide must include:
+- **Prerequisites**: What users need before starting
+- **Expected outcomes**: What success looks like
+- **Troubleshooting**: What to do if something goes wrong
+- **Next steps**: What users can do after completing the task
 
 ## Audience-Specific Guidelines
 
 ### Executive Audience (Exec)
-
 - **Focus**: Business value, ROI, strategic benefits
 - **Language**: High-level, outcome-focused
 - **Content**: Use cases, competitive advantages, compliance benefits
 - **Examples**: "AI Fabrix reduces time-to-market by 60%"
 
 ### Architect Audience (Architect)
-
 - **Focus**: Technical architecture, integration patterns
 - **Language**: Technical but accessible
 - **Content**: Design decisions, scalability, security architecture
 - **Examples**: "AI Fabrix uses Azure Private Endpoints for secure connectivity"
 
 ### Developer Audience (Developer)
-
-- **Focus**: Implementation details, code examples
-- **Language**: Technical and specific
-- **Content**: APIs, SDKs, configuration, troubleshooting
-- **Examples**: "Use the AI Fabrix SDK to create custom connectors"
+- **Focus**: End-user workflows and business outcomes
+- **Language**: Business-focused, outcome-oriented
+- **Content**: User guides, workflow documentation, business value
+- **Examples**: "Use AI Fabrix to accelerate your AI initiatives by 60%"
 
 ### Security Audience (Security)
-
 - **Focus**: Security controls, compliance, risk management
 - **Language**: Security-focused, compliance-oriented
 - **Content**: Controls mapping, audit procedures, security features
@@ -185,30 +157,80 @@ Every command must include:
 ## SEO and Discoverability
 
 ### Title Optimization
-
 - **Include primary keyword**: "AI Fabrix [Topic]"
 - **Use action verbs**: "Configure", "Deploy", "Integrate"
 - **Keep under 60 characters**: For search engine display
 - **Be descriptive**: Clear about page content
 
 ### Description Optimization
-
 - **50-160 characters**: Optimal for search snippets
 - **Include primary keyword**: Early in the description
 - **Use action language**: "Learn how to", "Discover how"
 - **Include value proposition**: What users will achieve
 
 ### Content Optimization
-
 - **Use headings strategically**: Include keywords in H2/H3
 - **Link internally**: Connect related documentation
 - **Use alt text**: Describe images for accessibility
 - **Include FAQs**: Address common questions
 
+## Markdown Formatting Standards
+
+### Code Blocks (MD040)
+- **Always specify language**: Use `bash`, `json`, `yaml`, `javascript`, `typescript`, `python`, `csharp`, `java`, `sql`, `xml`, `html`, `css`, `scss`, `dockerfile`, `powershell`, `shell`, `text`
+- **Never use plain code blocks**: Always include language specification after ```
+- **Blank lines around code blocks**: Always add blank lines before and after fenced code blocks (MD031)
+
+Examples:
+```bash
+# Correct - specifies language with spacing
+curl -X POST "https://api.example.com/endpoint"
+```
+
+```markdown
+# Incorrect - no language specified
+curl -X POST "https://api.example.com/endpoint"
+```
+
+### Headers (MD036)
+- **Use proper markdown headers**: # ## ### #### ##### ######
+- **Never use emphasis for headers**: Avoid **bold** or *italic* for section titles
+- **Blank lines around headers**: Always add blank lines before and after headers (MD022)
+
+Examples:
+```markdown
+# Correct - proper header with spacing
+## Authentication
+
+Content goes here.
+
+## Configuration
+
+More content.
+```
+
+### List Formatting (MD032)
+- **Consistent bullet points**: Use - for unordered lists
+- **Blank lines around lists**: Always add blank lines before and after lists
+- **Proper spacing**: Add blank lines between sections
+
+Examples:
+```markdown
+# Correct - proper spacing
+## Features
+
+- Feature 1
+- Feature 2
+
+## Configuration
+
+- Config 1
+- Config 2
+```
+
 ## Quality Assurance Checklist
 
 ### Before Publishing
-
 - [ ] **Customer-safe**: No internal secrets or sensitive data
 - [ ] **Copy-pastable**: All commands work as written
 - [ ] **Validated**: Procedures tested and verified
@@ -218,7 +240,6 @@ Every command must include:
 - [ ] **Audience appropriate**: Content depth matches target audience
 
 ### Content Review
-
 - [ ] **Clear purpose**: Page value is obvious
 - [ ] **Logical flow**: Information progresses logically
 - [ ] **Complete procedures**: All steps included
@@ -229,7 +250,6 @@ Every command must include:
 ## Common Writing Mistakes to Avoid
 
 ### Content Issues
-
 - **Internal focus**: Writing for internal teams instead of customers
 - **Missing context**: Not explaining why something is needed
 - **Incomplete procedures**: Missing steps or validation
@@ -237,7 +257,6 @@ Every command must include:
 - **Technical jargon**: Using terms without explanation
 
 ### Style Issues
-
 - **Passive voice**: "The setting should be configured"
 - **Inconsistent terminology**: Mixing "AI Fabrix" with "the platform"
 - **Long sentences**: Complex, hard-to-follow sentences
@@ -245,7 +264,6 @@ Every command must include:
 - **Inconsistent formatting**: Different styles within same document
 
 ### Safety Issues
-
 - **Exposed secrets**: Real credentials or sensitive data
 - **Internal details**: Proprietary information or processes
 - **Unvalidated commands**: Commands that haven't been tested
@@ -255,7 +273,6 @@ Every command must include:
 ## Brand Voice Guidelines
 
 ### AI Fabrix Brand Attributes
-
 - **Enterprise-grade**: Professional, reliable, secure
 - **Azure-native**: Cloud-first, scalable, integrated
 - **Compliance-focused**: ISO-27001, security-first
@@ -263,7 +280,6 @@ Every command must include:
 - **Innovative**: Cutting-edge, forward-thinking, advanced
 
 ### Messaging Pillars
-
 - **Beyond Copilots**: More than just AI assistance
 - **Compliance by Design**: Security built-in, not bolted-on
 - **Business-First AI**: AI that serves business objectives
@@ -271,7 +287,6 @@ Every command must include:
 - **Azure-Native ISO27k**: Enterprise security and compliance
 
 ### Voice Characteristics
-
 - **Authoritative**: Confident in expertise and capabilities
 - **Helpful**: Genuinely interested in user success
 - **Clear**: Direct communication without confusion
@@ -281,7 +296,6 @@ Every command must include:
 ## Examples of Good vs. Poor Writing
 
 ### Good Example
-
 ```markdown
 ## Configure Private Endpoints
 
@@ -300,13 +314,13 @@ Private endpoints provide secure connectivity between AI Fabrix and your Azure r
 
 ### Validation
 Test the connection using the provided validation script:
+
 ```bash
 ./validate-private-endpoint.sh
 ```
 
 Expected output: "Connection successful"
-
-```yaml
+```
 
 ### Poor Example
 ```markdown
@@ -322,97 +336,19 @@ You need to configure private endpoints for security.
 This is important for security.
 ```
 
-## Markdown Formatting Standards
+## CRITICAL RULES - NEVER VIOLATE
 
-### Code Blocks (MD040)
+### Git Commit Rules
+- **NEVER commit without explicit user confirmation**
+- **ALWAYS ask "Should I commit these changes?" before running git commands**
+- **ALWAYS show what will be committed before asking for confirmation**
+- **ALWAYS wait for user approval before executing git add/commit/push**
+- **If user says no, do NOT proceed with commit**
 
-- **Always specify language**: Use `bash`, `json`, `yaml`, `javascript`, `typescript`, `python`, `csharp`, `java`, `sql`, `xml`, `html`, `css`, `scss`, `dockerfile`, `powershell`, `shell`, `text`
-- **No plain code blocks**: Never use ``` without language specification
-- **Consistent formatting**: Use proper syntax highlighting for all code examples
-- **Blank lines around code blocks**: Always add blank lines before and after fenced code blocks (MD031)
-- **Examples**:
-
-  ```bash
-  # Correct - specifies language with spacing
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-  
-  ```markdown
-  # Incorrect - no language specified
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-  
-  ```markdown
-  # Incorrect - no spacing around code blocks
-  Here's some text.
-  ```bash
-  curl -X POST "https://api.example.com/endpoint"
-  ```
-
-  More text here.
-
-  ```yaml
-
-### Headers (MD036)
-
-- **Use proper markdown headers**: # ## ### #### ##### ######
-- **No emphasis headers**: Never use **bold** or *italic* for headers
-- **Consistent hierarchy**: Maintain logical header structure
-- **Blank lines around headers**: Always add blank lines before and after headers (MD022)
-- **Examples**:
-
-  ```markdown
-  # Correct - proper header with spacing
-  ## Authentication
-  
-  Content goes here.
-  
-  ## Configuration
-  
-  More content.
-  
-  # Incorrect - no spacing around headers
-  ## Authentication
-  Content goes here.
-  ## Configuration
-  More content.
-  ```
-
-### List Formatting
-
-- **Consistent bullet points**: Use - for unordered lists
-- **Proper spacing**: Add blank lines between sections
-- **No orphaned content**: Ensure all content is properly structured
-- **Blank lines around lists**: Always add blank lines before and after lists (MD032)
-- **Examples**:
-
-  ```markdown
-  # Correct - proper spacing
-  ## Features
-  
-  - Feature 1
-  - Feature 2
-  
-  ## Configuration
-  
-  - Config 1
-  - Config 2
-  
-  # Incorrect - no spacing
-  ## Features
-  - Feature 1
-  - Feature 2
-  ## Configuration
-  - Config 1
-  - Config 2
-  ```
-
-### General Markdown Rules
-
-- **Consistent formatting**: Use the same style throughout documents
-- **Proper escaping**: Escape special characters when needed
-- **Link formatting**: Use descriptive link text
-- **Image alt text**: Always include alt text for images
-- **Table formatting**: Use proper table syntax with alignment
+### Data Protection Rules
+- **NEVER delete files without explicit user permission**
+- **ALWAYS explain what will be deleted before deletion**
+- **ALWAYS ask for confirmation before destructive operations**
+- **ALWAYS preserve user's work and changes**
 
 Remember: Good documentation helps users succeed with AI Fabrix while maintaining security and professional standards. Every word should serve the user's success.
