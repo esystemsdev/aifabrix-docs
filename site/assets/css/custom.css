@@ -1,0 +1,86 @@
+/* Custom AI Fabrix Documentation Styles */
+
+/* Container width adjustment */
+.container {
+    max-width: 90% !important;
+}
+
+/* Ensure proper spacing */
+.layout-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Fix any potential layout issues */
+.tutorial-content {
+    max-width: 100%;
+}
+
+/* Ensure sidebar works properly */
+.doc-sidebar-menu {
+    position: sticky;
+    top: 20px;
+}
+
+/* Custom links styling */
+.custom-links {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.custom-links h5 {
+    color: #1E3A8A;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.custom-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-links li {
+    margin-bottom: 8px;
+}
+
+.custom-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.custom-links a:hover,
+.custom-links li.active a {
+    color: #1E3A8A;
+    font-weight: 500;
+}
+
+/* Table of contents styling */
+.doc-right-sidebar {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.doc-right-sidebar h5 {
+    color: #1E3A8A;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95% !important;
+    }
+    
+    .layout-wrapper {
+        max-width: 95%;
+    }
+}
