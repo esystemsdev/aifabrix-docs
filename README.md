@@ -16,17 +16,18 @@ Welcome to the AI Fabrix documentation hub. This repository contains customer-fa
 
 ```yaml
 aifabrix-docs/
+├── docs/                          # Documentation source files (edit here - single source)
+│   ├── getting-started/
+│   ├── background/
+│   ├── architecture/
+│   ├── user-guides/
+│   └── api/
 ├── site/                          # Jekyll site configuration
-│   ├── _docs/                     # Documentation files (edit here - single source)
-│   │   ├── getting-started/
-│   │   ├── background/
-│   │   ├── architecture/
-│   │   ├── user-guides/
-│   │   └── api/
 │   ├── _config.yml                # Jekyll configuration
 │   ├── _data/                     # Jekyll data files
 │   ├── assets/images/             # Brand assets
-│   └── _includes/                 # Jekyll templates
+│   ├── _includes/                 # Jekyll templates
+│   └── _site/                     # Generated HTML files (auto-generated)
 ├── temp/                          # Temporary files and migration scripts
 ├── generate-navigation.js         # Auto-generate navigation from YAML files
 ├── fix-yaml-structure.js          # Fix YAML metadata structure

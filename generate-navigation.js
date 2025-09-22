@@ -3,7 +3,7 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 // Configuration
-const DOCS_DIR = 'site/_docs';
+const DOCS_DIR = 'docs';
 const NAVIGATION_FILE = 'site/_data/navigation.yml';
 
 // Get baseurl from environment or use default

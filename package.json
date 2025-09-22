@@ -7,11 +7,12 @@
     "jekyll-build": "cd site && bundle exec jekyll build",
     "dev": "npm run jekyll-serve",
     "build": "npm run jekyll-build",
+    "sync-docs": "node sync-docs-to-site.js",
     "fix-yaml": "node fix-yaml-structure.js",
     "generate-nav": "node generate-navigation.js",
     "generate-nav:custom": "CUSTOM_DOMAIN=https://docs.aifabrix.ai node generate-navigation.js",
-    "setup-docs": "npm run fix-yaml && npm run generate-nav",
-    "setup-docs:custom": "npm run fix-yaml && npm run generate-nav:custom"
+    "setup-docs": "npm run sync-docs && npm run fix-yaml && npm run generate-nav",
+    "setup-docs:custom": "npm run sync-docs && npm run fix-yaml && npm run generate-nav:custom"
   },
   "keywords": [
     "documentation",

@@ -1,18 +1,17 @@
-- title: Knowledge Base
+- title: Getting Started
   icon: /assets/images/service-icon2.png
-  description: psum is simply dummy text of the pritypesetting industry Lorem Ipsum has been the industry’s standard
-  button_label: Learn More
-  url: /pages/explore-topics/
+  description: Quick deployment guides and installation instructions to get AI Fabrix running in your environment.
+  button_label: Get Started
+  url: /aifabrix-docs/docs/getting-started/quick-deploy/
   
-- title: Question Answer
+- title: Platform Overview
   icon: /assets/images/service-icon.png
-  description:  It has survived not only five centuries, but also the leap into electronic typesetting, remaining.
-  button_label: Read FAQ
-  url: /pages/faq/
+  description: Comprehensive overview of AI Fabrix architecture, features, and enterprise capabilities.
+  button_label: Learn More
+  url: /aifabrix-docs/docs/background/platform-overview/
   
-- title: Documentation
+- title: Architecture
   icon: /assets/images/service-icon3.png
-  description:  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
-  button_label: Read Docs
-  url: /docs/left-sidebar-example
-  
+  description: Deep dive into AI Fabrix technical architecture, components, and integration patterns.
+  button_label: Explore
+  url: /aifabrix-docs/docs/architecture/miso-controller/

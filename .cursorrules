@@ -39,7 +39,7 @@ You are an AI assistant helping to create and maintain AI Fabrix documentation. 
 
 ### Module-Based Organization
 
-```
+```yaml
 site/_docs/
 ├── getting-started/          # Getting started guides
 ├── platform-overview/       # What is AI Fabrix
@@ -62,7 +62,7 @@ site/_docs/
 
 ### Repository Structure
 
-```
+```yaml
 /site/                    # Jekyll site configuration
   /_docs/                 # Documentation files (edit here - single source of truth)
   /_data/                 # Jekyll data files (navigation, etc.)
@@ -82,17 +82,20 @@ site/_docs/
 **CRITICAL**: All metadata must be in separate `.yaml` files, NOT in markdown frontmatter.
 
 #### Markdown Files
+
 - **NO frontmatter**: Markdown files should contain only content, no `---` sections
 - **Clean content**: Start directly with the content, no metadata blocks
 - **Pure markdown**: Only use markdown syntax for content formatting
 
 #### YAML Metadata Files
+
 - **Separate files**: Each `.md` file must have a corresponding `.yaml` file
 - **Complete metadata**: All document metadata goes in the `.yaml` file
 - **Naming convention**: `document.md` → `document.yaml`
 
 Example structure:
-```
+
+```yaml
 site/_docs/
 ├── getting-started/
 │   ├── installation.md          # Pure markdown content
@@ -248,10 +251,10 @@ When analyzing repositories, use these patterns:
 
 ### Documentation Structure
 
-- **Source Files**: Edit in `/site/_docs/` directory only (single source of truth)
-- **Jekyll Site**: Reads directly from `/site/_docs/` directory
+- **Source Files**: Edit in `/docs/` directory only (single source of truth)
+- **Jekyll Site**: Reads from external `/docs/` directory and generates HTML in `_site/`
 - **Brand Assets**: Manually copied to `/site/assets/images/`
-- **Navigation**: Defined in `/site/_docs/navigation.yaml` file
+- **Navigation**: Defined in `/site/_data/navigation.yml` file
 
 ### Cleanup Rules
 

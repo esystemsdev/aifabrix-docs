@@ -1,0 +1,30 @@
+title: Technology Stack
+description: Comprehensive overview of AI Fabrix technology stack including Azure services and AI/ML technologies
+audience:
+  - end-user
+  - admin
+version: stable
+owner: engineering-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T19:08:00.040Z'
+toc: true
+custom_links:
+  - text: Docs
+    url: /docs/docs/
+    submenu: []
+seo:
+  keywords:
+    - AI Fabrix
+    - technology stack
+    - Azure
+    - AI
+    - machine learning
+  canonical_url: https://docs.aifabrix.ai/technology-stack
+  og_image: images/technology-stack-preview.png
+document360:
+  category: Background
+  visibility: public
+  searchable: true
+  featured: true
+  order: 6

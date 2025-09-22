@@ -3,7 +3,7 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 // Configuration
-const DOCS_DIR = 'site/_docs';
+const DOCS_DIR = 'docs';
 
 // Required YAML structure template
 const getYamlTemplate = (title, description, category = 'general') => {

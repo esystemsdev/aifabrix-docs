@@ -1,0 +1,30 @@
+title: Target Audience
+description: Overview of AI Fabrix target audience including executives, architects, developers, and end users
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T19:08:00.037Z'
+toc: true
+custom_links:
+  - text: Docs
+    url: /docs/docs/
+    submenu: []
+seo:
+  keywords:
+    - AI Fabrix
+    - audience
+    - users
+    - personas
+    - enterprise
+  canonical_url: https://docs.aifabrix.ai/target-audience
+  og_image: images/target-audience-preview.png
+document360:
+  category: Background
+  visibility: public
+  searchable: true
+  featured: false
+  order: 5

@@ -1,0 +1,30 @@
+title: Use Cases
+description: Primary use cases and scenarios for AI Fabrix enterprise AI platform
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T19:08:00.051Z'
+toc: true
+custom_links:
+  - text: Docs
+    url: /docs/docs/
+    submenu: []
+seo:
+  keywords:
+    - AI Fabrix
+    - use cases
+    - enterprise AI
+    - solutions
+    - scenarios
+  canonical_url: https://docs.aifabrix.ai/use-cases
+  og_image: images/use-cases-preview.png
+document360:
+  category: Background
+  visibility: public
+  searchable: true
+  featured: true
+  order: 4

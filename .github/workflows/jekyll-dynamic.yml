@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main, master ]
     paths:
-      - 'site/_docs/**'
+      - 'docs/**'
       - 'site/**'
   workflow_dispatch:
 
@@ -44,6 +44,12 @@ jobs:
       - name: Install Node dependencies
         run: |
           npm install
+          
+      - name: Sync docs to site
+        run: |
+          echo "🔄 Syncing docs to site directory..."
+          node sync-docs-to-site.js
+          echo "✅ Docs sync completed"
           
       - name: Generate navigation
         run: |

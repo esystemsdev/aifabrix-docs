@@ -1,0 +1,31 @@
+title: Installation Guide
+description: Step-by-step guide to install AI Fabrix enterprise AI platform on Azure infrastructure
+audience:
+  - end-user
+  - admin
+version: stable
+owner: platform-team
+last_reviewed: '2024-01-15'
+layout: doc
+date: '2025-09-22T19:08:00.063Z'
+toc: true
+custom_links:
+  - text: Docs
+    url: /docs/docs/
+    submenu: []
+seo:
+  keywords:
+    - AI Fabrix
+    - installation
+    - Azure
+    - setup
+    - enterprise AI
+    - deployment
+  canonical_url: https://docs.aifabrix.ai/installation
+  og_image: images/installation-preview.png
+document360:
+  category: Getting Started
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1

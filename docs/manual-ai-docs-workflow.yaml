@@ -1,0 +1,30 @@
+title: Manual AI Documentation Generation Workflow
+description: Step-by-step guide for generating customer-facing documentation using AI analysis of internal source repositories
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2025-09-22'
+layout: doc
+date: '2025-09-22T19:08:00.079Z'
+toc: true
+custom_links:
+  - text: Docs
+    url: /docs/docs/
+    submenu: []
+seo:
+  keywords:
+    - AI documentation
+    - workflow
+    - manual process
+    - content generation
+    - customer documentation
+  canonical_url: https://docs.aifabrix.ai/manual-ai-docs-workflow
+  og_image: images/ai-docs-workflow-preview.png
+document360:
+  category: Process Guides
+  visibility: internal
+  searchable: true
+  featured: false
+  order: 20

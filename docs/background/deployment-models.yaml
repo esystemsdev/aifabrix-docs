@@ -1,0 +1,30 @@
+title: Deployment Models
+description: Overview of AI Fabrix deployment options including Azure Marketplace and manual installation
+audience:
+  - end-user
+  - admin
+version: stable
+owner: product-team
+last_reviewed: '2025-09-22'
+layout: doc
+date: '2025-09-22T19:08:00.004Z'
+toc: true
+custom_links:
+  - text: Docs
+    url: /docs/docs/
+    submenu: []
+seo:
+  keywords:
+    - AI Fabrix
+    - deployment
+    - Azure Marketplace
+    - installation
+    - models
+  canonical_url: https://docs.aifabrix.ai/deployment-models
+  og_image: images/deployment-models-preview.png
+document360:
+  category: Background
+  visibility: public
+  searchable: true
+  featured: true
+  order: 7

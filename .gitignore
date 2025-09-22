@@ -138,3 +138,19 @@ test-data/
 
 # Performance monitoring
 .clinic/
+
+# Jekyll build output
+_site/
+site/_site/
+site/_docs/
+.jekyll-cache/
+.jekyll-metadata
+
+# Jekyll temporary files
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Jekyll bundle
+vendor/
+.bundle/

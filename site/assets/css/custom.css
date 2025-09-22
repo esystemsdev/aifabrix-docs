@@ -1,5 +1,16 @@
 /* Custom AI Fabrix Documentation Styles */
 
+/* Override background patterns with solid colors */
+.header-area {
+    background: #1E3A8A !important; /* eSystems Primary Blue - solid color */
+    background-image: none !important;
+}
+
+.slider-area.bg-cover1 {
+    background: #1E3A8A !important; /* eSystems Primary Blue - solid color */
+    background-image: none !important;
+}
+
 /* Container width adjustment */
 .container {
     max-width: 90% !important;
