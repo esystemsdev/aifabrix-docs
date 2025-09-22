@@ -3,14 +3,14 @@
 - text: Home
   url: /
 - text: Getting Started
-  url: /docs/getting-started/
+  url: /docs/getting-started/quick-deploy/
   submenu:
   - text: Quick Deploy
     url: /docs/getting-started/quick-deploy/
   - text: Installation Guide
     url: /docs/getting-started/installation/
 - text: Platform Overview
-  url: /docs/background/
+  url: /docs/background/platform-overview/
   submenu:
   - text: What is AI Fabrix
     url: /docs/background/platform-overview/
@@ -21,7 +21,7 @@
   - text: Target Audience
     url: /docs/background/target-audience/
 - text: Architecture
-  url: /docs/architecture/
+  url: /docs/architecture/miso-controller/
   submenu:
   - text: Miso Controller
     url: /docs/architecture/miso-controller/
@@ -30,12 +30,12 @@
   - text: Security Authentication
     url: /docs/architecture/security-authentication/
 - text: User Guides
-  url: /docs/user-guides/
+  url: /docs/user-guides/portal-usage/
   submenu:
   - text: Portal Usage
     url: /docs/user-guides/portal-usage/
 - text: API Documentation
-  url: /docs/api/
+  url: /docs/api/miso-api/
   submenu:
   - text: Miso API
     url: /docs/api/miso-api/

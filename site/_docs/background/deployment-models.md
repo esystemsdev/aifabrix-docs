@@ -1,8 +1,20 @@
 ---
 layout: doc
-title: "Deployment Models"
-date: 2024-01-15
+title: Deployment Models
+date: 2024-01-15T00:00:00.000Z
 toc: true
+custom_links:
+  - text: Platform Overview
+    url: /docs/background/
+    submenu:
+      - text: What is AI Fabrix
+        url: /docs/background/platform-overview/
+      - text: Architecture Overview
+        url: /docs/background/architecture-overview/
+      - text: Use Cases
+        url: /docs/background/use-cases/
+      - text: Target Audience
+        url: /docs/background/target-audience/
 ---
 
 # Deployment Models
