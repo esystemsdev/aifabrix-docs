@@ -33,7 +33,7 @@ layout: default
 					{% endif %}
 
 					<li class="subitem">
-						<a href="{{ link.url | relative_url }}">{{ link.text }}  
+						<a href="{{ link.url }}">{{ link.text }}  
 						
 						</a>{% if link.submenu %}<a class="pb-0 pt-0" href="#nav"><i class="fa fa-angle-right"></i></a> {% endif %}
 
@@ -41,7 +41,7 @@ layout: default
 							 <ul class="sub-dropdown">
 								{% for sublink in link.submenu %}
 									<li {% if page.url contains sublink.url %}class="active"{% endif %}>
-										<a href="{{ sublink.url | relative_url }}">{{ sublink.text }}</a>
+										<a href="{{ sublink.url }}">{{ sublink.text }}</a>
 									</li>
 								{% endfor %}
 							</ul>
@@ -107,4 +107,29 @@ layout: default
 
     headings[i].appendChild(anchorLink);
   }
+  
+  // Auto-expand all submenus
+  document.addEventListener('DOMContentLoaded', function() {
+    var subDropdowns = document.querySelectorAll('.sub-dropdown');
+    subDropdowns.forEach(function(dropdown) {
+      dropdown.style.display = 'block';
+    });
+  });
 </script>
+
+<style>
+  /* Auto-expand all submenus */
+  .sub-dropdown {
+    display: block !important;
+  }
+  
+  /* Style for expanded menus */
+  .sub-dropdown li {
+    padding-left: 20px;
+  }
+  
+  .sub-dropdown li.active a {
+    color: #1E3A8A;
+    font-weight: bold;
+  }
+</style>

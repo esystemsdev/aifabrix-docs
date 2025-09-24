@@ -1,0 +1,9 @@
+title: Installation Guide
+description: Navigation for Installation Guide section
+items:
+  - title: Installation Guide
+    url: installation
+    order: 999
+  - title: Quick Deploy Guide
+    url: quick-deploy
+    order: 999

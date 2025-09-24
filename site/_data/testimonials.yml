@@ -3,25 +3,25 @@
   url: https://www.esystems.fi
   rating: 5
   desc: "AI Fabrix has revolutionized our AI infrastructure. The platform's enterprise-grade security and seamless Azure integration allowed us to deploy AI solutions 3x faster than before."
-  image_url: /assets/images/testimonial-img.png
+  image_url: /aifabrix-docs/assets/images/testimonial-img.png
 
 - name: Michael Chen
   designation: AI Director, InnovateLabs
   url: https://www.esystems.fi
   rating: 5
   desc: "The ISO27k compliance and robust orchestration capabilities of AI Fabrix gave us the confidence to scale our AI operations across multiple business units."
-  image_url: /assets/images/testimonial-img2.png
+  image_url: /aifabrix-docs/assets/images/testimonial-img2.png
 
 - name: Emma Rodriguez
   designation: Head of Engineering, DataFlow Inc
   url: https://www.esystems.fi
   rating: 4
   desc: "AI Fabrix's intuitive interface and comprehensive documentation made it easy for our team to adopt and integrate AI capabilities into our existing workflows."
-  image_url: /assets/images/testimonial-img2.png
+  image_url: /aifabrix-docs/assets/images/testimonial-img2.png
 
 - name: David Thompson
   designation: VP Technology, CloudFirst
   url: https://www.esystems.fi
   rating: 5
   desc: "The platform's reliability and performance monitoring features have been game-changing for our AI operations. We've seen 40% improvement in model deployment efficiency."
-  image_url: /assets/images/testimonial-img2.png
+  image_url: /aifabrix-docs/assets/images/testimonial-img2.png

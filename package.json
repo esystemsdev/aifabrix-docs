@@ -3,25 +3,31 @@
   "version": "1.0.0",
   "description": "AI Fabrix documentation with Jekyll and GitHub Pages",
   "scripts": {
-    "jekyll-serve": "cd site && bundle exec jekyll serve --livereload",
-    "jekyll-build": "cd site && bundle exec jekyll build",
-    "dev": "npm run jekyll-serve",
-    "build": "npm run jekyll-build",
-    "sync-docs": "node sync-docs-to-site.js",
-    "fix-yaml": "node fix-yaml-structure.js",
-    "generate-nav": "node generate-navigation.js",
-    "generate-nav:custom": "CUSTOM_DOMAIN=https://docs.aifabrix.ai node generate-navigation.js",
-    "setup-docs": "npm run sync-docs && npm run fix-yaml && npm run generate-nav",
-    "setup-docs:custom": "npm run sync-docs && npm run fix-yaml && npm run generate-nav:custom"
+    "build-docs": "ts-node scripts/build-docs.ts",
+    "validate": "ts-node scripts/validate-yaml.ts",
+    "generate-nav": "ts-node scripts/generate-navigation.ts",
+    "merge-metadata": "ts-node scripts/merge-metadata.ts",
+    "build-jekyll": "ts-node scripts/build-jekyll.ts",
+    "deploy": "ts-node scripts/deploy.ts",
+    "sync-document360": "ts-node scripts/sync-document360.ts",
+    "dev": "cd site && bundle exec jekyll serve --livereload",
+    "build": "npm run build-docs"
   },
   "keywords": [
     "documentation",
     "jekyll",
     "aifabrix",
-    "github-pages"
+    "github-pages",
+    "typescript"
   ],
   "author": "eSystems Nordic Oy",
   "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/js-yaml": "^4.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
   "dependencies": {
     "js-yaml": "^4.1.0"
   }

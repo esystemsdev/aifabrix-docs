@@ -1,5 +1,5 @@
 - text: Home
-  url: /
+  url: /aifabrix-docs/
 - text: Getting Started
   url: /aifabrix-docs/docs/getting-started/quick-deploy/
   submenu:

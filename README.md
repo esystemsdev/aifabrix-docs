@@ -4,19 +4,21 @@ Welcome to the AI Fabrix documentation hub. This repository contains customer-fa
 
 ## 🚀 Features
 
+- **TypeScript Build Pipeline**: Complete CI/CD pipeline with TypeScript scripts
 - **Jekyll Integration**: Direct integration with Jekyll static site generator
 - **GitHub Actions**: Automated deployment on file changes
-- **Document360 Sync**: Optional sync to Document360 platform
+- **Document360 Sync**: Separate process for Document360 synchronization
 - **Brand Assets**: eSystems brand integration
-- **Single Source**: Edit files in `site/_docs/` only - no sync needed
+- **Single Source**: Edit files in `docs/` only - single source of truth
 - **Auto Navigation**: Automatic navigation generation from YAML metadata
 - **YAML Metadata**: Separated metadata from markdown content
+- **Pure Markdown**: Clean markdown files without frontmatter
 
 ## 📁 Directory Structure
 
 ```yaml
 aifabrix-docs/
-├── docs/                          # Documentation source files (edit here - single source)
+├── docs/                          # Documentation source files (edit here - single source of truth)
 │   ├── getting-started/
 │   ├── background/
 │   ├── architecture/
@@ -24,16 +26,21 @@ aifabrix-docs/
 │   └── api/
 ├── site/                          # Jekyll site configuration
 │   ├── _config.yml                # Jekyll configuration
-│   ├── _data/                     # Jekyll data files
+│   ├── _data/                     # Jekyll data files (navigation, etc.)
 │   ├── assets/images/             # Brand assets
 │   ├── _includes/                 # Jekyll templates
 │   └── _site/                     # Generated HTML files (auto-generated)
+├── scripts/                       # TypeScript build scripts
+│   ├── build-docs.ts              # Main build orchestrator
+│   ├── validate-yaml.ts           # YAML validation
+│   ├── generate-navigation.ts     # Navigation generation
+│   ├── merge-metadata.ts          # Merge YAML into markdown
+│   ├── build-jekyll.ts            # Jekyll build
+│   ├── deploy.ts                  # GitHub Pages deployment
+│   └── sync-document360.ts        # Document360 sync (separate process)
 ├── temp/                          # Temporary files and migration scripts
-├── generate-navigation.js         # Auto-generate navigation from YAML files
-├── fix-yaml-structure.js          # Fix YAML metadata structure
-├── sync-docs.ps1                  # PowerShell sync script for Document360
-├── sync-docs.sh                   # Bash sync script for Document360
-└── package.json                   # Node.js dependencies
+├── tsconfig.json                  # TypeScript configuration
+└── package.json                   # Node.js dependencies and scripts
 ```
 
 ## 🛠️ Setup
@@ -62,55 +69,62 @@ Copy your eSystems brand assets to `site/assets/images/`:
 ### Development Mode
 
 ```bash
-# Generate navigation and start Jekyll development server
-npm run setup-docs
-cd site && bundle exec jekyll serve --livereload
+# Install dependencies
+npm install
+cd site && bundle install && cd ..
 
-# Or use GitHub Actions for testing (no local setup needed)
-git add . && git commit -m "Test changes" && git push origin main
+# Start development server (automatically runs build pipeline)
+npm run dev
+
+# Or run individual steps
+npm run validate          # Validate YAML files
+npm run generate-nav      # Generate navigation
+npm run merge-metadata    # Merge YAML into markdown
+npm run build-jekyll      # Build Jekyll site
 ```
 
 ### Build for Production
 
 ```bash
-# Generate navigation and build Jekyll site
-npm run setup-docs
-cd site && bundle exec jekyll build
+# Complete build pipeline (recommended)
+npm run build-docs
 
-# Or use GitHub Actions for automatic deployment (includes navigation generation)
-git add . && git commit -m "Update documentation" && git push origin main
+# Or run individual steps
+npm run validate
+npm run generate-nav
+npm run merge-metadata
+npm run build-jekyll
+npm run deploy
 ```
 
-### Document360 Sync
+### Document360 Sync (Separate Process)
 
 ```bash
-# PowerShell (Windows)
-.\sync-docs.ps1
+# Sync to Document360 (requires API credentials)
+npm run sync-document360
 
-# Bash (Linux/macOS)
-./sync-docs.sh
-
-# With options
-.\sync-docs.ps1 -DryRun -Verbose
-./sync-docs.sh --dry-run --verbose
+# Or use the PowerShell script (if available)
+.\temp\sync-docs.ps1
 ```
 
 ## 📝 How It Works
 
 ### 1. Single Source of Truth
 
-- **Edit files in `site/_docs/`** - This is your only documentation location
-- **Jekyll reads directly** from `site/_docs/` directory
-- **No sync needed** - Jekyll handles everything
-- **YAML metadata** - Each `.md` file has a corresponding `.yaml` file for metadata
+- **Edit files in `docs/`** - This is your only documentation location
+- **Pure markdown files** - No frontmatter, clean content only
+- **Separate YAML metadata** - Each `.md` file has a corresponding `.yaml` file
+- **TypeScript build pipeline** - Processes and builds everything automatically
 
-### 2. Jekyll Configuration
+### 2. Build Pipeline
 
-Jekyll is configured to:
+The TypeScript build process:
 
-- Read documentation from `site/_docs/` collection
-- Use YAML metadata for navigation and SEO
-- Build static site for GitHub Pages
+1. **Validate YAML** - Ensures all metadata files are properly structured
+2. **Generate Navigation** - Creates navigation files for each folder
+3. **Merge Metadata** - Combines YAML metadata into markdown frontmatter for Jekyll
+4. **Build Jekyll** - Generates static site from processed files
+5. **Deploy** - Pushes to GitHub Pages
 
 ### 3. GitHub Actions
 
@@ -118,8 +132,8 @@ The system includes automated deployment:
 
 - **Trigger**: Push to `main`/`master` branch
 - **Process**:
-  1. Install Node.js dependencies
-  2. Generate navigation from YAML files
+  1. Install Node.js and Ruby dependencies
+  2. Run complete TypeScript build pipeline
   3. Build Jekyll site
   4. Deploy to GitHub Pages
 - **Path**: `https://esystemsdev.github.io/aifabrix-docs/`
@@ -128,12 +142,9 @@ The system includes automated deployment:
 
 ### Adding New Documentation
 
-1. Add `.md` file to appropriate `site/_docs/` subdirectory
+1. Add `.md` file to appropriate `docs/` subdirectory
 2. Add corresponding `.yaml` file with metadata
-3. Run `npm run setup-docs` to:
-   - Fix YAML structure
-   - Generate navigation
-   - Update site
+3. Run `npm run build-docs` to process and build
 
 ### Updating Brand Assets
 
@@ -142,8 +153,8 @@ The system includes automated deployment:
 
 ### Deleting Files
 
-1. Delete `.md` and `.yaml` files from `site/_docs/` directory
-2. Run `npm run setup-docs` to update navigation
+1. Delete `.md` and `.yaml` files from `docs/` directory
+2. Run `npm run build-docs` to update navigation and rebuild
 
 ## 🎨 Customization
 
@@ -183,24 +194,31 @@ url: "https://esystemsdev.github.io/aifabrix-docs/"
 
 ### Common Issues
 
-1. **Jekyll build fails**: Run `cd site && bundle install`
-2. **Navigation not updating**: Run `npm run setup-docs`
-3. **YAML structure issues**: Run `npm run fix-yaml`
-4. **Brand assets not showing**: Check `site/assets/images/` directory
+1. **TypeScript build fails**: Run `npm install` to ensure dependencies are installed
+2. **YAML validation errors**: Check YAML syntax and required fields
+3. **Navigation not updating**: Run `npm run generate-nav`
+4. **Jekyll build fails**: Run `cd site && bundle install`
+5. **Brand assets not showing**: Check `site/assets/images/` directory
 
 ### Debug Mode
 
 ```bash
+# Run individual build steps with verbose output
+npm run validate
+npm run generate-nav
+npm run merge-metadata
+npm run build-jekyll
+
 # Run Jekyll with verbose output
 cd site && bundle exec jekyll serve --verbose
 ```
 
 ## 📚 Documentation Structure
 
-The system expects this structure in `site/_docs/`:
+The system expects this structure in `docs/`:
 
 ```yaml
-site/_docs/
+docs/
 ├── getting-started/
 │   ├── quick-deploy.md
 │   ├── quick-deploy.yaml
@@ -224,57 +242,39 @@ site/_docs/
     └── miso-api.yaml
 ```
 
+### File Requirements
+
+- **Markdown files**: Pure content, no frontmatter
+- **YAML files**: Complete metadata for each markdown file
+- **Navigation files**: Auto-generated `navigation.yaml` in each folder
+
 ## 🤖 Automation Scripts
 
-### Navigation Management
+### TypeScript Build Pipeline
 
 ```bash
-# Generate navigation from all YAML files
-npm run generate-nav
+# Complete build process (recommended)
+npm run build-docs
 
-# Fix all YAML files with correct structure
-npm run fix-yaml
-
-# Run both scripts (recommended)
-npm run setup-docs
+# Individual steps
+npm run validate          # Validate YAML files
+npm run generate-nav      # Generate navigation files
+npm run merge-metadata    # Merge YAML into markdown
+npm run build-jekyll      # Build Jekyll site
+npm run deploy            # Deploy to GitHub Pages
 ```
 
-### Environment Configuration
-
-The navigation generation supports environment variables for different deployment scenarios:
+### Document360 Sync (Separate Process)
 
 ```bash
-# Default (GitHub Pages with /aifabrix-docs baseurl)
-npm run generate-nav
+# Sync to Document360
+npm run sync-document360
 
-# Custom domain (e.g., docs.aifabrix.ai)
-npm run generate-nav:custom
-
-# Custom baseurl via environment variable
-JEKYLL_BASEURL=/custom-path npm run generate-nav
-
-# Custom domain via environment variable
-CUSTOM_DOMAIN=https://docs.aifabrix.ai npm run generate-nav
+# Requires environment variables:
+# DOCUMENT360_API_TOKEN
+# DOCUMENT360_PROJECT_ID
+# DOCUMENT360_BASE_URL (optional)
 ```
-
-### Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `JEKYLL_BASEURL` | `/aifabrix-docs` | Base URL path for the site |
-| `CUSTOM_DOMAIN` | `https://esystemsdev.github.io` | Custom domain for the site |
-| `BASEURL` | `/aifabrix-docs` | Alternative to JEKYLL_BASEURL |
-| `JEKYLL_URL` | `https://esystemsdev.github.io` | Alternative to CUSTOM_DOMAIN |
-
-### Available Scripts
-
-| Script | Purpose | When to Use |
-|--------|---------|-------------|
-| `npm run setup-docs` | Fix YAML + Generate navigation | Before development, after adding files |
-| `npm run fix-yaml` | Fix YAML metadata structure | When YAML files have issues |
-| `npm run generate-nav` | Generate navigation only | When only navigation needs updating |
-| `npm run jekyll-serve` | Start development server | For local testing |
-| `npm run jekyll-build` | Build production site | For production builds |
 
 ## 🔗 Links
 
