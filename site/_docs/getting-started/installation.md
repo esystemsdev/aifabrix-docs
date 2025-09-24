@@ -78,6 +78,7 @@ document360:
 layout: doc
 ---
 
+
 # Installation Guide
 
 This guide provides step-by-step instructions for installing AI Fabrix on your Azure infrastructure.

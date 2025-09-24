@@ -9,7 +9,7 @@
     "merge-metadata": "ts-node scripts/merge-metadata.ts",
     "build-jekyll": "ts-node scripts/build-jekyll.ts",
     "deploy": "ts-node scripts/deploy.ts",
-    "sync-document360": "ts-node scripts/sync-document360.ts",
+    "remove-frontmatter": "ts-node scripts/remove-frontmatter.ts",
     "dev": "cd site && bundle exec jekyll serve --livereload",
     "build": "npm run build-docs"
   },

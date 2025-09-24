@@ -76,6 +76,7 @@ document360:
 layout: doc
 ---
 
+
 # Competitive Advantages
 
 AI Fabrix delivers an enterprise-grade platform that combines open-source flexibility with in-tenant governance on Azure. It is designed to move organisations from pilot to production with predictable cost, strong security, and clear operational guardrails.

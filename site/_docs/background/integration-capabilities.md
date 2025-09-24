@@ -77,6 +77,7 @@ document360:
 layout: doc
 ---
 
+
 # Integration Capabilities
 
 AI Fabrix provides a **governed integration fabric** for enterprise systems and data. Connectors run **inside the customer’s Azure tenant**, enforce **Entra ID / RBAC**, and respect **metadata-aware retrieval** so applications and agents only access data they are entitled to use.

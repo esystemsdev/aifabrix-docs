@@ -78,6 +78,7 @@ document360:
 layout: doc
 ---
 
+
 # Portal Architecture
 
 ## Overview

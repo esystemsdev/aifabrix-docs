@@ -77,6 +77,7 @@ document360:
 layout: doc
 ---
 
+
 # Technology Stack
 
 AI Fabrix is engineered to run entirely inside the customer’s Azure tenant with a modular, cloud-native stack. The platform favors open standards (OpenAPI, OpenTelemetry, SCIM, OAuth2/OIDC) and a plugin-first approach to integrations.

@@ -77,6 +77,7 @@ document360:
 layout: doc
 ---
 
+
 # Target Audience
 
 AI Fabrix serves multiple stakeholders across the enterprise. Each audience benefits from a platform-first approach that runs in the customer’s Azure tenant, balancing innovation speed with governance and compliance.
