@@ -6,6 +6,9 @@ on:
     paths:
       - 'docs/**'
       - 'site/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'tsconfig.json'
   workflow_dispatch:
 
 permissions:
@@ -45,24 +48,11 @@ jobs:
         run: |
           npm install
           
-      - name: Sync docs to site
+      - name: Run TypeScript Build Pipeline
         run: |
-          echo "🔄 Syncing docs to site directory..."
-          node sync-docs-to-site.js
-          echo "✅ Docs sync completed"
-          
-      - name: Generate navigation
-        run: |
-          echo "🔧 Generating navigation from YAML files..."
-          npm run setup-docs
-          echo "✅ Navigation generation completed"
-          
-      - name: Build Jekyll site
-        run: |
-          echo "🏗️ Building Jekyll site..."
-          cd site && bundle exec jekyll build --destination ../_site
-          
-          echo "✅ Build completed successfully"
+          echo "🚀 Running complete TypeScript build pipeline..."
+          npm run build-docs
+          echo "✅ Build pipeline completed successfully"
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
