@@ -43,10 +43,14 @@ async function main() {
         await buildJekyllSite();
         console.log('✅ Jekyll build completed\n');
         
-        // Step 5: Deploy to GitHub Pages
-        console.log('🚀 Step 5: Deploying to GitHub Pages...');
-        await deployToGitHubPages();
-        console.log('✅ Deployment completed\n');
+        // Step 5: Deploy to GitHub Pages (only if not in GitHub Actions)
+        if (!process.env.GITHUB_ACTIONS) {
+            console.log('🚀 Step 5: Deploying to GitHub Pages...');
+            await deployToGitHubPages();
+            console.log('✅ Deployment completed\n');
+        } else {
+            console.log('🚀 Step 5: Skipping deployment (running in GitHub Actions)\n');
+        }
         
         console.log('🎉 Documentation build process completed successfully!');
         
