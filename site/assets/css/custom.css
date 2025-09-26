@@ -72,16 +72,21 @@ section.page-title-area * {
     background-color: var(--esystems-secondary) !important;
 }
 
-/* Reduce page header height for better proportions */
+/* Fix page header spacing and positioning */
+.page-title-area .section-spacing {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+}
+
 .page-title-wrapper {
-    padding-top: 60px !important;
-    padding-bottom: 40px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
-    .page-title-wrapper {
-        padding-top: 40px !important;
-        padding-bottom: 30px !important;
+    .page-title-area .section-spacing {
+        padding-top: 60px !important;
+        padding-bottom: 40px !important;
     }
 }
 
