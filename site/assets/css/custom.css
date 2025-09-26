@@ -35,8 +35,14 @@
     background-image: none !important;
 }
 
+/* Force slider area to use secondary color */
+.slider-area {
+    background: var(--esystems-secondary) !important;
+    background-image: none !important;
+}
+
 .slider-area.bg-cover1 {
-    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
+    background: var(--esystems-secondary) !important;
     background-image: none !important;
 }
 
@@ -70,6 +76,23 @@ section.page-title-area * {
 /* Loading screen with eSystems secondary color */
 .loading-main {
     background-color: var(--esystems-secondary) !important;
+}
+
+/* Home top arrow styling */
+.home-top {
+    background-color: var(--esystems-secondary) !important;
+    color: var(--esystems-white) !important;
+    border: 2px solid var(--esystems-white) !important;
+}
+
+.home-top:hover {
+    background-color: var(--esystems-white) !important;
+    color: var(--esystems-secondary) !important;
+    border: 2px solid var(--esystems-secondary) !important;
+}
+
+.home-top i {
+    color: inherit !important;
 }
 
 /* Fix page header spacing and positioning */
