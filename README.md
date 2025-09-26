@@ -136,7 +136,7 @@ The system includes automated deployment:
   2. Run complete TypeScript build pipeline
   3. Build Jekyll site
   4. Deploy to GitHub Pages
-- **Path**: `https://esystemsdev.github.io/aifabrix-docs/`
+- **Path**: `https://docs-dev.aifabrix.ai/`
 
 ## 📋 File Operations
 
@@ -175,7 +175,7 @@ Update `site/_config.yml`:
 ```yaml
 title: "AI Fabrix Documentation"
 description: "AI Fabrix - Enterprise AI platform with Azure-native ISO27k compliance"
-url: "https://esystemsdev.github.io/aifabrix-docs/"
+url: "https://docs-dev.aifabrix.ai/"
 ```
 
 ## 📊 Repository Status
@@ -278,7 +278,7 @@ npm run sync-document360
 
 ## 🔗 Links
 
-- **Live Site**: <https://esystemsdev.github.io/aifabrix-docs/>
+- **Live Site**: <https://docs-dev.aifabrix.ai/>
 - **GitHub Repository**: <https://github.com/esystemsdev/aifabrix-docs>
 - **Jekyll Documentation**: <https://jekyllrb.com/docs/>
 

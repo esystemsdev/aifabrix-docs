@@ -12,9 +12,9 @@ title: "AI Fabrix Documentation"
 email: "info@esystems.fi"
 description: "AI Fabrix - Enterprise AI platform with Azure-native ISO27k compliance. Complete documentation for developers, architects, and users."
 keywords: "AI Fabrix, enterprise AI, Azure, ISO27001, documentation, Miso, Flowise, OpenWebUI, AI platform"
-baseurl: "/aifabrix-docs" # the subpath of your site, e.g. /blog
-url: "https://esystemsdev.github.io/aifabrix-docs/"
-cover_image: "https://esystemsdev.github.io/aifabrix-docs/assets/images/aifabrix-og-image.png" # Image will Display in Social Media When share the website
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://docs-dev.aifabrix.ai"
+cover_image: "https://docs-dev.aifabrix.ai/assets/images/aifabrix-og-image.png" # Image will Display in Social Media When share the website
 facebook: "https://www.facebook.com/esystemsnordic"
 instagram: "https://www.instagram.com/esystems.nordic"
 linkedin: "https://fi.linkedin.com/company/esystems-fi"

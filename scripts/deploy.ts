@@ -53,7 +53,7 @@ export async function deployToGitHubPages(): Promise<void> {
         execSync(`git push origin ${currentBranch}`, { stdio: 'inherit' });
         
         console.log(`✅ Deployment completed successfully`);
-        console.log(`🌐 Site should be available at: https://esystemsdev.github.io/aifabrix-docs/`);
+        console.log(`🌐 Site should be available at: https://docs-dev.aifabrix.ai/`);
         
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);

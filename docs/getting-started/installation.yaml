@@ -10,54 +10,54 @@ date: '2025-09-24T15:42:29.874Z'
 toc: true
 custom_links:
   - text: Getting Started
-    url: /aifabrix-docs/docs/getting-started/
+    url: /docs/getting-started/
     submenu:
       - text: Installation Guide
-        url: /aifabrix-docs/docs/getting-started/installation/
+        url: /docs/getting-started/installation/
       - text: Quick Deploy Guide
-        url: /aifabrix-docs/docs/getting-started/quick-deploy/
+        url: /docs/getting-started/quick-deploy/
   - text: Platform Overview
-    url: /aifabrix-docs/docs/background/
+    url: /docs/background/
     submenu:
       - text: Architecture Overview
-        url: /aifabrix-docs/docs/background/architecture-overview/
+        url: /docs/background/architecture-overview/
       - text: Competitive Advantages
-        url: /aifabrix-docs/docs/background/competitive-advantages/
+        url: /docs/background/competitive-advantages/
       - text: Compliance Requirements
-        url: /aifabrix-docs/docs/background/compliance-requirements/
+        url: /docs/background/compliance-requirements/
       - text: Deployment Models
-        url: /aifabrix-docs/docs/background/deployment-models/
+        url: /docs/background/deployment-models/
       - text: Integration Capabilities
-        url: /aifabrix-docs/docs/background/integration-capabilities/
+        url: /docs/background/integration-capabilities/
       - text: Modules Overview
-        url: /aifabrix-docs/docs/background/modules-overview/
+        url: /docs/background/modules-overview/
       - text: Platform Overview
-        url: /aifabrix-docs/docs/background/platform-overview/
+        url: /docs/background/platform-overview/
       - text: Target Audience
-        url: /aifabrix-docs/docs/background/target-audience/
+        url: /docs/background/target-audience/
       - text: Technology Stack
-        url: /aifabrix-docs/docs/background/technology-stack/
+        url: /docs/background/technology-stack/
       - text: Use Cases
-        url: /aifabrix-docs/docs/background/use-cases/
+        url: /docs/background/use-cases/
   - text: Architecture
-    url: /aifabrix-docs/docs/architecture/
+    url: /docs/architecture/
     submenu:
       - text: Miso Controller Architecture
-        url: /aifabrix-docs/docs/architecture/miso-controller/
+        url: /docs/architecture/miso-controller/
       - text: Portal Architecture
-        url: /aifabrix-docs/docs/architecture/portal-architecture/
+        url: /docs/architecture/portal-architecture/
       - text: Security Authentication
-        url: /aifabrix-docs/docs/architecture/security-authentication/
+        url: /docs/architecture/security-authentication/
   - text: User Guides
-    url: /aifabrix-docs/docs/user-guides/
+    url: /docs/user-guides/
     submenu:
       - text: Portal Usage Guide
-        url: /aifabrix-docs/docs/user-guides/portal-usage/
+        url: /docs/user-guides/portal-usage/
   - text: API Reference
-    url: /aifabrix-docs/docs/api/
+    url: /docs/api/
     submenu:
       - text: AI Fabrix Miso API
-        url: /aifabrix-docs/docs/api/miso-api/
+        url: /docs/api/miso-api/
 seo:
   keywords:
     - AI Fabrix

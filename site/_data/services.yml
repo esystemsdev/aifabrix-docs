@@ -2,16 +2,16 @@
   icon: /assets/images/service-icon2.png
   description: Quick deployment guides and installation instructions to get AI Fabrix running in your environment.
   button_label: Get Started
-  url: /aifabrix-docs/docs/getting-started/quick-deploy/
+  url: /docs/getting-started/quick-deploy/
   
 - title: Platform Overview
   icon: /assets/images/service-icon.png
   description: Comprehensive overview of AI Fabrix architecture, features, and enterprise capabilities.
   button_label: Learn More
-  url: /aifabrix-docs/docs/background/platform-overview/
+  url: /docs/background/platform-overview/
   
 - title: Architecture
   icon: /assets/images/service-icon3.png
   description: Deep dive into AI Fabrix technical architecture, components, and integration patterns.
   button_label: Explore
-  url: /aifabrix-docs/docs/architecture/miso-controller/
+  url: /docs/architecture/miso-controller/
