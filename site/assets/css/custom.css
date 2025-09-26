@@ -139,7 +139,11 @@ section.page-title-area * {
     color: var(--esystems-white) !important;
 }
 
-/* Override all button styles to match eSystems branding */
+/* Override ALL button styles to match eSystems branding */
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active,
 .btn-style1,
 .btn-style1:hover,
 .btn-style1:focus,
@@ -155,7 +159,23 @@ section.page-title-area * {
 .slider-content .btn,
 .slider-content .btn:hover,
 .slider-content .btn:focus,
-.slider-content .btn:active {
+.slider-content .btn:active,
+.looking-for-service .btn,
+.looking-for-service .btn:hover,
+.looking-for-service .btn:focus,
+.looking-for-service .btn:active,
+button,
+button:hover,
+button:focus,
+button:active,
+input[type="submit"],
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active,
+input[type="button"],
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:active {
     background-color: var(--esystems-primary) !important;
     color: var(--esystems-white) !important;
     border: 2px solid var(--esystems-primary) !important;
@@ -164,8 +184,12 @@ section.page-title-area * {
     border-radius: 6px !important;
     transition: all 0.3s ease !important;
     text-decoration: none !important;
+    cursor: pointer !important;
 }
 
+.btn:hover,
+.btn:focus,
+.btn:active,
 .btn-style1:hover,
 .btn-style1:focus,
 .btn-style1:active,
@@ -177,7 +201,19 @@ section.page-title-area * {
 .btn-style3:active,
 .slider-content .btn:hover,
 .slider-content .btn:focus,
-.slider-content .btn:active {
+.slider-content .btn:active,
+.looking-for-service .btn:hover,
+.looking-for-service .btn:focus,
+.looking-for-service .btn:active,
+button:hover,
+button:focus,
+button:active,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:active {
     background-color: var(--esystems-secondary) !important;
     color: var(--esystems-white) !important;
     border: 2px solid var(--esystems-secondary) !important;
