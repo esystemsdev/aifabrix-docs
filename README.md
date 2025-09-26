@@ -163,9 +163,9 @@ The system includes automated deployment:
 Update `site/assets/scss/base/_variable.scss`:
 
 ```scss
-$font-color3: #1E3A8A;  /* eSystems Blue */
-$bg-color2: #1E3A8A;    /* eSystems Primary Blue */
-$hover-color: #1E3A8A;  /* Hover color */
+$font-color3: #171b25;  /* eSystems Blue */
+$bg-color2: #171b25;    /* eSystems Primary Blue */
+$hover-color: #171b25;  /* Hover color */
 ```
 
 ### Site Configuration

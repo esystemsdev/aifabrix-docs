@@ -1,14 +1,77 @@
 /* Custom AI Fabrix Documentation Styles */
 
-/* Override background patterns with solid colors */
+/* Override background patterns with AI Fabrix branding colors */
 .header-area {
-    background: #1E3A8A !important; /* eSystems Primary Blue - solid color */
+    background: #171b25 !important; /* eSystems Primary Blue - solid color */
+    background-image: none !important;
+}
+
+/* Override all bg-cover1 instances with AI Fabrix colors */
+.bg-cover1 {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; /* AI Fabrix blue gradient */
     background-image: none !important;
 }
 
 .slider-area.bg-cover1 {
-    background: #1E3A8A !important; /* eSystems Primary Blue - solid color */
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; /* AI Fabrix blue gradient */
     background-image: none !important;
+}
+
+.page-title-area.bg-cover1 {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; /* AI Fabrix blue gradient */
+    background-image: none !important;
+}
+
+/* Override bg-cover2 with AI Fabrix colors */
+.bg-cover2 {
+    background: linear-gradient(135deg, #1e3a8a, #1e40af) !important; /* AI Fabrix darker blue gradient */
+    background-image: none !important;
+}
+
+/* Override old blue color (#0D65B0) with AI Fabrix colors */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:hover,
+.navbar-nav > li.active > a:focus,
+a:hover,
+a:focus,
+a:active,
+.themeix-btn,
+.themeix-btn:hover,
+.themeix-btn:focus,
+.themeix-btn:active,
+.themeix-btn.active,
+.themeix-btn-primary,
+.themeix-btn-primary:hover,
+.themeix-btn-primary:focus,
+.themeix-btn-primary:active,
+.themeix-btn-primary.active {
+    background-color: #1e3a8a !important; /* AI Fabrix primary blue */
+    border-color: #1e3a8a !important;
+    color: #ffffff !important;
+}
+
+/* Override text colors */
+a,
+.navbar-nav > li > a,
+.themeix-btn,
+.themeix-btn-primary {
+    color: #1e3a8a !important; /* AI Fabrix primary blue for text */
+}
+
+a:hover,
+a:focus,
+a:active,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-nav > li.active > a {
+    color: #3b82f6 !important; /* AI Fabrix lighter blue for hover */
 }
 
 /* Container width adjustment */
@@ -42,7 +105,7 @@
 }
 
 .custom-links h5 {
-    color: #1E3A8A;
+    color: #171b25;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -67,7 +130,7 @@
 
 .custom-links a:hover,
 .custom-links li.active a {
-    color: #1E3A8A;
+    color: #171b25;
     font-weight: 500;
 }
 
@@ -80,7 +143,7 @@
 }
 
 .doc-right-sidebar h5 {
-    color: #1E3A8A;
+    color: #171b25;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -91,7 +154,7 @@
 }
 
 .footer-subtitle {
-    color: #1E3A8A;
+    color: #171b25;
     font-weight: 600;
     margin-bottom: 10px;
 }

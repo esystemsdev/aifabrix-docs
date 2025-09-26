@@ -20,6 +20,16 @@ layout: default
             <h5>In this article</h5>         
 			  <ul class="nav navbar-nav" id="nav">
 			{% for link in page.custom_links %}
+				{% comment %} Only show the section that contains the current page {% endcomment %}
+				{% assign show_section = false %}
+				{% for sublink in link.submenu %}
+					{% if page.url contains sublink.url %}
+						{% assign show_section = true %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+				
+				{% if show_section %}
 					{% assign active = nil %}
 
 					{% for sublink in link.submenu %}
@@ -47,7 +57,8 @@ layout: default
 							</ul>
 						{% endif %}
 					</li>
-				{% endfor %}
+				{% endif %}
+			{% endfor %}
 			</ul>			
           </div>
         </div>
@@ -129,7 +140,7 @@ layout: default
   }
   
   .sub-dropdown li.active a {
-    color: #1E3A8A;
+    color: #171b25;
     font-weight: bold;
   }
 </style>
