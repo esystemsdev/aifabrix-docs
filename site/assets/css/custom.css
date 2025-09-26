@@ -441,7 +441,7 @@ body {
 
 /* Search modal close button margins */
 .modal-header .close {
-    margin-top: 8px !important;
+    margin-top: -2px !important;
     margin-right: 8px !important;
     padding: 8px !important;
     background-color: var(--esystems-primary) !important;
