@@ -114,16 +114,16 @@ section.page-title-area * {
 
 /*Spacing*/
 .section-spacing {
-    padding-top: 30x;
+    padding-top: 30px;
   }
   @media (min-width: 768px) and (max-width: 991px) {
     .section-spacing {
-      padding-top: 30x;
+      padding-top: 30px;
     }
   }
   @media (max-width: 768px) {
     .section-spacing {
-      padding-top: 30x;
+      padding-top: 30px;
     }
   }
 
