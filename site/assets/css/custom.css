@@ -1,47 +1,61 @@
-/* Custom AI Fabrix Documentation Styles */
+/* Custom AI Fabrix Documentation Styles - eSystems Branding */
 
-/* Override background patterns with AI Fabrix branding colors */
-.header-area {
-    background: #171b25 !important; /* eSystems Primary Blue - solid color */
-    background-image: none !important;
+/* eSystems Color Palette */
+:root {
+    --esystems-primary: #2c5aa0;      /* eSystems primary blue */
+    --esystems-secondary: #1a365d;    /* eSystems dark blue */
+    --esystems-accent: #4299e1;       /* eSystems light blue */
+    --esystems-text: #2d3748;         /* eSystems text color */
+    --esystems-light: #f7fafc;        /* eSystems light background */
+    --esystems-white: #ffffff;        /* White */
 }
 
-/* Override all bg-cover1 instances with AI Fabrix colors */
+/* Header styling with eSystems branding */
+.header-area {
+    background: var(--esystems-primary) !important;
+    background-image: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Navigation styling */
+.navigation-navbar ul li a {
+    color: var(--esystems-white) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation-navbar ul li a:hover,
+.navigation-navbar ul li.active a {
+    color: var(--esystems-accent) !important;
+}
+
+/* Override all background patterns with eSystems colors */
 .bg-cover1 {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; /* AI Fabrix blue gradient */
+    background: linear-gradient(135deg, var(--esystems-primary), var(--esystems-accent)) !important;
     background-image: none !important;
 }
 
 .slider-area.bg-cover1 {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; /* AI Fabrix blue gradient */
+    background: linear-gradient(135deg, var(--esystems-primary), var(--esystems-accent)) !important;
     background-image: none !important;
 }
 
 .page-title-area.bg-cover1 {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; /* AI Fabrix blue gradient */
+    background: linear-gradient(135deg, var(--esystems-primary), var(--esystems-accent)) !important;
     background-image: none !important;
 }
 
-/* Override bg-cover2 with AI Fabrix colors */
 .bg-cover2 {
-    background: linear-gradient(135deg, #1e3a8a, #1e40af) !important; /* AI Fabrix darker blue gradient */
+    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
 }
 
-/* Override old blue color (#0D65B0) with AI Fabrix colors */
+/* Button styling with eSystems colors */
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus,
-.navbar-nav > li.active > a,
-.navbar-nav > li.active > a:hover,
-.navbar-nav > li.active > a:focus,
-a:hover,
-a:focus,
-a:active,
 .themeix-btn,
 .themeix-btn:hover,
 .themeix-btn:focus,
@@ -52,26 +66,51 @@ a:active,
 .themeix-btn-primary:focus,
 .themeix-btn-primary:active,
 .themeix-btn-primary.active {
-    background-color: #1e3a8a !important; /* AI Fabrix primary blue */
-    border-color: #1e3a8a !important;
-    color: #ffffff !important;
+    background-color: var(--esystems-primary) !important;
+    border-color: var(--esystems-primary) !important;
+    color: var(--esystems-white) !important;
 }
 
-/* Override text colors */
-a,
-.navbar-nav > li > a,
-.themeix-btn,
-.themeix-btn-primary {
-    color: #1e3a8a !important; /* AI Fabrix primary blue for text */
+/* Link colors */
+a {
+    color: var(--esystems-primary) !important;
+    transition: color 0.3s ease;
 }
 
 a:hover,
 a:focus,
-a:active,
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus,
-.navbar-nav > li.active > a {
-    color: #3b82f6 !important; /* AI Fabrix lighter blue for hover */
+a:active {
+    color: var(--esystems-accent) !important;
+}
+
+/* Page content styling */
+body {
+    color: var(--esystems-text) !important;
+    background-color: var(--esystems-white) !important;
+}
+
+/* Main content area */
+.layout-area {
+    background-color: var(--esystems-white) !important;
+}
+
+/* Sidebar styling */
+.custom-links {
+    background: var(--esystems-light) !important;
+    border: 1px solid #e2e8f0;
+}
+
+.custom-links h5 {
+    color: var(--esystems-primary) !important;
+}
+
+.doc-right-sidebar {
+    background: var(--esystems-light) !important;
+    border: 1px solid #e2e8f0;
+}
+
+.doc-right-sidebar h5 {
+    color: var(--esystems-primary) !important;
 }
 
 /* Container width adjustment */

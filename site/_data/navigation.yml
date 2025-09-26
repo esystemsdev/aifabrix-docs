@@ -1,12 +1,12 @@
 - text: Home
   url: /
 - text: Getting Started
-  url: /docs/getting-started/
+  url: /docs/getting-started/quick-deploy/
 - text: Platform Overview
-  url: /docs/background/
+  url: /docs/background/platform-overview/
 - text: Architecture
-  url: /docs/architecture/
+  url: /docs/architecture/miso-controller/
 - text: User Guides
-  url: /docs/user-guides/
+  url: /docs/user-guides/portal-usage/
 - text: API Reference
-  url: /docs/api/
+  url: /docs/api/miso-api/
