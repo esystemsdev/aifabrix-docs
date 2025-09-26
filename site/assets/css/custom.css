@@ -72,6 +72,19 @@ section.page-title-area * {
     background-color: var(--esystems-secondary) !important;
 }
 
+/* Reduce page header height for better proportions */
+.page-title-wrapper {
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+}
+
+@media (max-width: 768px) {
+    .page-title-wrapper {
+        padding-top: 40px !important;
+        padding-bottom: 30px !important;
+    }
+}
+
 .bg-cover2 {
     background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
