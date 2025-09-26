@@ -1,3 +1,18 @@
-title: Security
-description: Navigation for Security section
-items: []
+title: Access Control
+description: Navigation for Access Control section
+items:
+  - title: Access Control
+    url: access-control
+    order: 999
+  - title: Audit Logging
+    url: audit-logging
+    order: 999
+  - title: Compliance Framework
+    url: compliance-framework
+    order: 999
+  - title: Data Protection
+    url: data-protection
+    order: 999
+  - title: Security Overview
+    url: security-overview
+    order: 999
