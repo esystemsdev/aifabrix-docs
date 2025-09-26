@@ -376,7 +376,7 @@ body {
 .footer-category a:hover,
 .footer-contact a:hover,
 .footer-socials a:hover {
-    color: var(--esystems-white) !important;
+    color: var(--esystems-text) !important;
 }
 
 .footer-socials a {
