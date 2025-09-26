@@ -45,6 +45,28 @@
     background-image: none !important;
 }
 
+/* Ensure page title text is visible */
+.page-title-area .page-title,
+.page-title-area .heading-1,
+.page-title-area h1 {
+    color: var(--esystems-white) !important;
+}
+
+.page-title-area .white-text {
+    color: var(--esystems-white) !important;
+}
+
+/* Force page title area background */
+section.page-title-area {
+    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
+    background-image: none !important;
+}
+
+/* Ensure all text in page title area is white */
+section.page-title-area * {
+    color: var(--esystems-white) !important;
+}
+
 .bg-cover2 {
     background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
