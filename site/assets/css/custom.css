@@ -324,17 +324,20 @@ body {
 }
 
 .custom-links a {
-    color: #333;
+    color: var(--esystems-text);
     text-decoration: none;
     padding: 5px 0;
     display: block;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .custom-links a:hover,
 .custom-links li.active a {
     color: var(--esystems-secondary);
     font-weight: 500;
+    border-left: 3px solid var(--esystems-primary);
+    padding-left: 12px;
 }
 
 /* Table of contents styling */
