@@ -396,6 +396,23 @@ body {
     margin-bottom: 20px;
 }
 
+/* Search modal close button margins */
+.modal-header .close {
+    margin-top: 8px !important;
+    margin-right: 8px !important;
+    padding: 8px !important;
+    background-color: var(--esystems-primary) !important;
+    color: var(--esystems-white) !important;
+    border-radius: 4px !important;
+    border: none !important;
+    opacity: 1 !important;
+}
+
+.modal-header .close:hover {
+    background-color: var(--esystems-secondary) !important;
+    color: var(--esystems-white) !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
