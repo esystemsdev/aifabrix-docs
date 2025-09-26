@@ -432,16 +432,16 @@ body {
     margin-bottom: 20px;
 }
 
-.looking-for-content a {
+.looking-for-content h4 {
     color: var(--esystems-text) !important;
 }
-.looking-for-content:hover a {
+.looking-for-content:hover h4 {
     color: var(--esystems-white) !important;
 }
 
 /* Search modal close button margins */
 .modal-header .close {
-    margin-top: -12px !important;
+    margin-top: -2px !important;
     margin-right: 8px !important;
     padding: 8px !important;
     background-color: var(--esystems-primary) !important;
