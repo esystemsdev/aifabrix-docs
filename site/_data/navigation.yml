@@ -6,6 +6,8 @@
   url: /docs/background/platform-overview/
 - text: Architecture
   url: /docs/architecture/miso-controller/
+- text: Security
+  url: /docs/security/security-overview/
 - text: User Guides
   url: /docs/user-guides/portal-usage/
 - text: API Reference
