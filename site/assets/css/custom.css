@@ -156,13 +156,14 @@ section.page-title-area * {
 .slider-content .btn:hover,
 .slider-content .btn:focus,
 .slider-content .btn:active {
-    background-color: var(--esystems-white) !important;
-    color: var(--esystems-primary) !important;
-    border: 2px solid var(--esystems-white) !important;
+    background-color: var(--esystems-primary) !important;
+    color: var(--esystems-white) !important;
+    border: 2px solid var(--esystems-primary) !important;
     font-weight: 600 !important;
     padding: 12px 24px !important;
     border-radius: 6px !important;
     transition: all 0.3s ease !important;
+    text-decoration: none !important;
 }
 
 .btn-style1:hover,
@@ -177,9 +178,11 @@ section.page-title-area * {
 .slider-content .btn:hover,
 .slider-content .btn:focus,
 .slider-content .btn:active {
-    background-color: transparent !important;
+    background-color: var(--esystems-secondary) !important;
     color: var(--esystems-white) !important;
-    border: 2px solid var(--esystems-white) !important;
+    border: 2px solid var(--esystems-secondary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
 }
 
 /* Link colors */
