@@ -47,7 +47,6 @@
 }
 
 .page-title-area.bg-cover1 {
-    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
 }
 
@@ -97,7 +96,7 @@ section.page-title-area * {
 
 /* Fix page header spacing and positioning - reduce top padding */
 .page-title-area .section-spacing {
-    padding-top: 40px !important;
+    padding-top: 100px !important;
     padding-bottom: 40px !important;
 }
 
@@ -108,10 +107,25 @@ section.page-title-area * {
 
 @media (max-width: 768px) {
     .page-title-area .section-spacing {
-        padding-top: 30px !important;
+        padding-top: 90px !important;
         padding-bottom: 30px !important;
     }
 }
+
+/*Spacing*/
+.section-spacing {
+    padding-top: 30x;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .section-spacing {
+      padding-top: 30x;
+    }
+  }
+  @media (max-width: 768px) {
+    .section-spacing {
+      padding-top: 30x;
+    }
+  }
 
 .bg-cover2 {
     background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
