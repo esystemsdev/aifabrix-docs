@@ -67,6 +67,11 @@ section.page-title-area * {
     color: var(--esystems-white) !important;
 }
 
+/* Loading screen with eSystems secondary color */
+.loading-main {
+    background-color: var(--esystems-secondary) !important;
+}
+
 .bg-cover2 {
     background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
