@@ -62,9 +62,9 @@
     color: var(--esystems-white) !important;
 }
 
-/* Force page title area background */
+/* Force page title area background - use solid secondary color */
 section.page-title-area {
-    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
+    background: var(--esystems-secondary) !important;
     background-image: none !important;
 }
 
@@ -95,10 +95,10 @@ section.page-title-area * {
     color: inherit !important;
 }
 
-/* Fix page header spacing and positioning */
+/* Fix page header spacing and positioning - reduce top padding */
 .page-title-area .section-spacing {
-    padding-top: 80px !important;
-    padding-bottom: 60px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
 }
 
 .page-title-wrapper {
@@ -108,8 +108,8 @@ section.page-title-area * {
 
 @media (max-width: 768px) {
     .page-title-area .section-spacing {
-        padding-top: 60px !important;
-        padding-bottom: 40px !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
     }
 }
 
@@ -214,8 +214,8 @@ input[type="submit"]:active,
 input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="button"]:active {
-    background-color: var(--esystems-secondary) !important;
-    color: var(--esystems-white) !important;
+    background-color: var(--esystems-white) !important;
+    color: var(--esystems-secondary) !important;
     border: 2px solid var(--esystems-secondary) !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
