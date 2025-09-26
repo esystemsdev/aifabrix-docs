@@ -396,6 +396,20 @@ body {
     margin-bottom: 20px;
 }
 
+.looking-for-content a {
+    margin-bottom: 20px;
+    color: var(--esystems-text) !important;
+}
+
+.looking-for-service:hover {
+    background-color: var(--esystems-primary) !important;
+    box-shadow: 0 0 20px 5px rgba(44, 90, 160, 0.1);
+}
+
+.looking-for-service:hover a {
+    color: var(--esystems-white) !important;
+}
+
 /* Search modal close button margins */
 .modal-header .close {
     margin-top: 8px !important;

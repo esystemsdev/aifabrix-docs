@@ -2858,7 +2858,7 @@ div#modal {
   margin-bottom: 30px;
 }
 .custom-links ul {
-  border-left: 1px solid #hover-color;
+  border-left: 1px solid #ccc;
   margin-top: 18px;
 }
 .custom-links ul .display-dropdown .sub-dropdown {
