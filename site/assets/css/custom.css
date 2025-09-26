@@ -12,7 +12,7 @@
 
 /* Header styling with eSystems branding */
 .header-area {
-    background: var(--esystems-primary) !important;
+    background: var(--esystems-secondary) !important;
     background-image: none !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -31,17 +31,17 @@
 
 /* Override all background patterns with eSystems colors */
 .bg-cover1 {
-    background: linear-gradient(135deg, var(--esystems-primary), var(--esystems-accent)) !important;
+    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
 }
 
 .slider-area.bg-cover1 {
-    background: linear-gradient(135deg, var(--esystems-primary), var(--esystems-accent)) !important;
+    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
 }
 
 .page-title-area.bg-cover1 {
-    background: linear-gradient(135deg, var(--esystems-primary), var(--esystems-accent)) !important;
+    background: linear-gradient(135deg, var(--esystems-secondary), var(--esystems-primary)) !important;
     background-image: none !important;
 }
 
