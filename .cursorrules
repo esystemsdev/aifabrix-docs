@@ -41,12 +41,16 @@ You are an AI assistant helping to create and maintain AI Fabrix documentation. 
 
 ```yaml
 docs/
-├── getting-started/          # Getting started guides
-├── background/              # Platform overview and background
-├── architecture/            # Technical architecture
-├── user-guides/             # General user guides
-├── api/                     # API documentation
-└── support/                 # Support and troubleshooting
+├── overview/                # Platform overview and introduction
+├── evaluation/             # Evaluation guide and assessment
+├── core-components/         # Core platform components
+├── enterprise-features/     # Enterprise features and capabilities
+├── use-cases/              # Use cases and applications
+├── deployment-operations/   # Deployment and operations
+├── customer-success/        # Customer success and best practices
+├── roadmap/               # Product roadmap and future plans
+├── modules-documentation/  # Modules and documentation
+└── resources/              # Support resources and materials
 ```
 
 ### Module Ownership

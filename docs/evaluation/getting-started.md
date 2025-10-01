@@ -37,3 +37,4 @@ Explore AI Fabrix capabilities:
 ## Next Steps
 
 Ready to dive deeper? Explore our [Core Components](../core-components/) to understand the technical foundation of AI Fabrix.
+
