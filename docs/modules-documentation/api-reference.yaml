@@ -1,0 +1,29 @@
+title: API Reference Documentation
+description: Comprehensive API reference for AI Fabrix platform components and services
+audience: ["developer", "admin", "end-user"]
+version: stable
+owner: engineering-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Modules & Documentation
+    url: /docs/modules-documentation/
+    submenu:
+      - text: API Reference
+        url: /docs/modules-documentation/api-reference/
+  - text: Resources
+    url: /docs/resources/
+  - text: Core Components
+    url: /docs/core-components/
+seo:
+  keywords: ["AI Fabrix", "API reference", "documentation", "SDK", "developer"]
+  canonical_url: "https://docs.aifabrix.ai/modules-documentation/api-reference"
+  og_image: "images/api-reference.png"
+document360:
+  category: Modules & Documentation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

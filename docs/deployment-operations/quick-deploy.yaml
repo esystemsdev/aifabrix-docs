@@ -1,0 +1,29 @@
+title: Quick Deploy Guide
+description: Streamlined deployment guide for getting AI Fabrix up and running quickly
+audience: ["admin", "developer"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+    submenu:
+      - text: Quick Deploy Guide
+        url: /docs/deployment-operations/quick-deploy/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+seo:
+  keywords: ["AI Fabrix", "deployment", "quick start", "Azure", "AKS"]
+  canonical_url: "https://docs.aifabrix.ai/deployment-operations/quick-deploy"
+  og_image: "images/quick-deploy.png"
+document360:
+  category: Deployment & Operations
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

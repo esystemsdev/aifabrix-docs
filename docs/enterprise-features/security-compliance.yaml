@@ -1,0 +1,29 @@
+title: Enterprise Security & Compliance
+description: Enterprise-grade security and compliance features for AI Fabrix platform
+audience: ["admin", "security-team", "compliance-officer"]
+version: stable
+owner: security-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+    submenu:
+      - text: Security & Compliance
+        url: /docs/enterprise-features/security-compliance/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+seo:
+  keywords: ["AI Fabrix", "enterprise security", "compliance", "ISO27001", "GDPR", "SOC2"]
+  canonical_url: "https://docs.aifabrix.ai/enterprise-features/security-compliance"
+  og_image: "images/enterprise-security.png"
+document360:
+  category: Enterprise Features
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

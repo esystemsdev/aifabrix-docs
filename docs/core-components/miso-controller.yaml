@@ -1,0 +1,29 @@
+title: Miso Controller
+description: Enterprise AI orchestration platform for managing AI workloads and resources
+audience: ["admin", "developer", "end-user"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Core Components
+    url: /docs/core-components/
+    submenu:
+      - text: Miso Controller
+        url: /docs/core-components/miso-controller/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+seo:
+  keywords: ["AI Fabrix", "Miso Controller", "AI orchestration", "enterprise AI", "workload management"]
+  canonical_url: "https://docs.aifabrix.ai/core-components/miso-controller"
+  og_image: "images/miso-controller.png"
+document360:
+  category: Core Components
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

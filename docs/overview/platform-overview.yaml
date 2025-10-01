@@ -1,0 +1,40 @@
+title: AI Fabrix Platform Overview
+description: Comprehensive overview of AI Fabrix enterprise AI platform with Azure-native ISO27001 compliance
+audience: ["end-user", "admin", "business-stakeholder"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - "What Is AI Fabrix?"
+  - "Why It Matters"
+  - "Synergy with Microsoft"
+  - "Who Benefits"
+  - "Challenge We Solve"
+  - "Getting Started"
+custom_links:
+  - text: Overview
+    url: /docs/overview/
+    submenu:
+      - text: Platform Overview
+        url: /docs/overview/platform-overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+  - text: Use Cases
+    url: /docs/use-cases/
+seo:
+  keywords: ["AI Fabrix", "enterprise AI", "Azure", "ISO27001", "platform overview"]
+  canonical_url: "https://docs.aifabrix.ai/overview/platform-overview"
+  og_image: "images/platform-overview.png"
+document360:
+  category: Overview
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

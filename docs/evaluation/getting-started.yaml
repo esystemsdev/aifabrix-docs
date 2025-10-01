@@ -1,0 +1,31 @@
+title: AI Fabrix Evaluation Guide
+description: Comprehensive guide for evaluating AI Fabrix for your organization's needs
+audience: ["business-stakeholder", "admin", "end-user"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Overview
+    url: /docs/overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+    submenu:
+      - text: Getting Started
+        url: /docs/evaluation/getting-started/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+seo:
+  keywords: ["AI Fabrix", "evaluation", "assessment", "business case", "ROI"]
+  canonical_url: "https://docs.aifabrix.ai/evaluation/getting-started"
+  og_image: "images/evaluation-guide.png"
+document360:
+  category: Evaluation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

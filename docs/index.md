@@ -3,55 +3,45 @@
 
 Welcome to the AI Fabrix documentation hub. This is the central location for all AI Fabrix platform documentation.
 
-## 🚀 Getting Started
+## 1. Overview
 
-- [Quick Deploy Guide](getting-started/quick-deploy.md) - Deploy your first application in 5 minutes
-- [Installation Guide](getting-started/installation.md) - Complete setup instructions
-- [First Application](getting-started/first-application.md) - Detailed application setup
+- [Platform Overview](overview/platform-overview.md) - Comprehensive overview of AI Fabrix enterprise AI platform
 
-## 🏗️ Architecture
+## 2. Evaluation Guide
 
-- [Miso Controller](architecture/miso-controller.md) - Enterprise AI orchestration platform
-- [Miso Container Deployment](architecture/miso-container-deployment.md) - Container deployment guide
-- [Miso Container Configuration](architecture/miso-container-configuration.md) - Configuration management
-- [Miso Container Troubleshooting](architecture/miso-container-troubleshooting.md) - Common issues and solutions
-- [Miso Container Security](architecture/miso-container-security.md) - Security best practices
-- [Miso Container Monitoring & Logging](architecture/miso-container-monitoring.md) - Observability guide
-- [Miso Container API Reference](architecture/miso-container-api.md) - Complete API documentation
-- [Miso Container Development Guide](architecture/miso-container-development.md) - Developer guide
-- [Portal Architecture](architecture/portal-architecture.md) - Self-service deployment interface
-- [Security Authentication](architecture/security-authentication.md) - Enterprise-grade authentication system
+- [Getting Started](evaluation/getting-started.md) - Structured approach to evaluating AI Fabrix for your organization
 
-## 👥 User Guides
+## 3. Core Components
 
-- [Portal Usage Guide](user-guides/portal-usage.md) - Navigate and manage applications
-- [Application Management](user-guides/application-management.md) - Manage deployed applications
-- [Environment Management](user-guides/environment-management.md) - Manage dev/test/production environments
+- [Miso Controller](core-components/miso-controller.md) - Enterprise AI orchestration platform
 
-## 📡 API Documentation
+## 4. Enterprise Features
 
-- [Miso API](api/miso-api.md) - API overview and OpenAPI documentation
-- [API Overview](api/api-overview.md) - API introduction and concepts
-- [Authentication](api/authentication.md) - API authentication methods
+- [Security & Compliance](enterprise-features/security-compliance.md) - Enterprise-grade security and compliance features
 
-## 📋 Background Information
+## 5. Use Cases
 
-- [Platform Overview](background/platform-overview.md) - What AI Fabrix is and does
-- [Architecture Overview](background/architecture-overview.md) - High-level system design
-- [Modules Overview](background/modules-overview.md) - Core components and modules
-- [Use Cases](background/use-cases.md) - Primary scenarios and applications
-- [Target Audience](background/target-audience.md) - Who uses AI Fabrix
-- [Technology Stack](background/technology-stack.md) - Azure services and technologies
-- [Deployment Models](background/deployment-models.md) - Installation and deployment options
-- [Integration Capabilities](background/integration-capabilities.md) - APIs and connectors
-- [Compliance Requirements](background/compliance-requirements.md) - ISO27001 and security
-- [Competitive Advantages](background/competitive-advantages.md) - Why choose AI Fabrix
+- [AI Workload Use Cases](use-cases/ai-workloads.md) - Common AI use cases and applications supported by AI Fabrix
 
-## 📚 Additional Resources
+## 6. Deployment & Operations
 
-- [Troubleshooting](troubleshooting.md) - Common issues and solutions
-- [FAQ](faq.md) - Frequently asked questions
-- [Glossary](glossary.md) - Terms and definitions
+- [Quick Deploy Guide](deployment-operations/quick-deploy.md) - Streamlined deployment guide for getting AI Fabrix up and running
+
+## 7. Customer Success
+
+- [Best Practices](customer-success/best-practices.md) - Proven best practices for successful AI Fabrix implementation
+
+## 8. Roadmap
+
+- [Platform Roadmap](roadmap/platform-roadmap.md) - Planned evolution of AI Fabrix platform capabilities
+
+## 9. Modules & Documentation
+
+- [API Reference](modules-documentation/api-reference.md) - Comprehensive API reference for AI Fabrix platform
+
+## 10. Resources
+
+- [Support Resources](resources/support-resources.md) - Comprehensive support resources for users and administrators
 
 ---
 
