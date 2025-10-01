@@ -1,0 +1,35 @@
+title: Competitive Comparison
+description: Competitive analysis of AI Fabrix vs other solutions
+audience: ["business-stakeholder", "admin", "end-user"]
+version: stable
+owner: product-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+    submenu:
+      - text: Key Criteria
+        url: /docs/evaluation/key-criteria/
+      - text: Proof of Concept
+        url: /docs/evaluation/proof-of-concept/
+      - text: Security Checklist
+        url: /docs/evaluation/security-checklist/
+      - text: Cost & Sizing
+        url: /docs/evaluation/cost-sizing/
+      - text: Competitive Comparison
+        url: /docs/evaluation/competitive-comparison/
+      - text: Pilot & Rollout
+        url: /docs/evaluation/pilot-rollout/
+seo:
+  keywords: ["AI Fabrix", "competitive", "comparison", "vs", "alternatives"]
+  canonical_url: "https://docs.aifabrix.ai/evaluation/competitive-comparison"
+  og_image: "images/competitive-comparison.png"
+document360:
+  category: Evaluation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 5
+layout: doc

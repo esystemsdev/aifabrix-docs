@@ -1,0 +1,35 @@
+title: Pilot & Rollout Playbook
+description: Step-by-step guide for piloting and rolling out AI Fabrix
+audience: ["admin", "business-stakeholder", "end-user"]
+version: stable
+owner: customer-success-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+    submenu:
+      - text: Key Criteria
+        url: /docs/evaluation/key-criteria/
+      - text: Proof of Concept
+        url: /docs/evaluation/proof-of-concept/
+      - text: Security Checklist
+        url: /docs/evaluation/security-checklist/
+      - text: Cost & Sizing
+        url: /docs/evaluation/cost-sizing/
+      - text: Competitive Comparison
+        url: /docs/evaluation/competitive-comparison/
+      - text: Pilot & Rollout
+        url: /docs/evaluation/pilot-rollout/
+seo:
+  keywords: ["AI Fabrix", "pilot", "rollout", "playbook", "implementation"]
+  canonical_url: "https://docs.aifabrix.ai/evaluation/pilot-rollout"
+  og_image: "images/pilot-rollout.png"
+document360:
+  category: Evaluation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 6
+layout: doc

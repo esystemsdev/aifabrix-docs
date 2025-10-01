@@ -1,0 +1,35 @@
+title: 30-Day Proof-of-Concept Plan
+description: Structured 30-day plan for evaluating AI Fabrix
+audience: ["business-stakeholder", "admin", "end-user"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+    submenu:
+      - text: Key Criteria
+        url: /docs/evaluation/key-criteria/
+      - text: Proof of Concept
+        url: /docs/evaluation/proof-of-concept/
+      - text: Security Checklist
+        url: /docs/evaluation/security-checklist/
+      - text: Cost & Sizing
+        url: /docs/evaluation/cost-sizing/
+      - text: Competitive Comparison
+        url: /docs/evaluation/competitive-comparison/
+      - text: Pilot & Rollout
+        url: /docs/evaluation/pilot-rollout/
+seo:
+  keywords: ["AI Fabrix", "proof of concept", "evaluation", "30-day plan"]
+  canonical_url: "https://docs.aifabrix.ai/evaluation/proof-of-concept"
+  og_image: "images/proof-of-concept.png"
+document360:
+  category: Evaluation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 2
+layout: doc
