@@ -1,5 +1,5 @@
-title: OpenWebUI — Secure UX for Chat & Case Building
-description: Secure user interface for chat and case building workflows
+title: Chat Interface — Microsoft Teams, Slack & Beyond
+description: Integration of AI Fabrix with Microsoft Teams, Slack, and other collaboration platforms
 audience: ["end-user", "admin", "developer"]
 version: stable
 owner: platform-team
@@ -7,11 +7,11 @@ last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Role of OpenWebUI"
-  - "Enterprise Chat Experience"
-  - "Case Building & Collaboration"
-  - "Integration with Microsoft 365"
-  - "Security & Compliance Features"
+  - "Role of Chat Interfaces"
+  - "Microsoft Teams Integration"
+  - "Slack Integration"
+  - "Beyond Teams & Slack"
+  - "Security & Governance"
   - "Enterprise Benefits"
 custom_links:
   - text: Core Components
@@ -27,14 +27,16 @@ custom_links:
         url: /docs/core-components/openwebui-secure-ux/
       - text: SDK & Plugins
         url: /docs/core-components/sdk-plugins/
+      - text: Chat Interface
+        url: /docs/core-components/chat-interface/
 seo:
-  keywords: ["AI Fabrix", "OpenWebUI", "secure UX", "chat", "case building"]
-  canonical_url: "https://docs.aifabrix.ai/core-components/openwebui-secure-ux"
-  og_image: "images/openwebui-secure-ux.png"
+  keywords: ["AI Fabrix", "chat interface", "Microsoft Teams", "Slack", "collaboration", "ChatOps"]
+  canonical_url: "https://docs.aifabrix.ai/core-components/chat-interface"
+  og_image: "images/chat-interface.png"
 document360:
   category: Core Components
   visibility: public
   searchable: true
   featured: true
-  order: 4
+  order: 6
 layout: doc
