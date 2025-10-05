@@ -1,0 +1,32 @@
+title: Case Studies
+description: Real-world examples of AI Fabrix implementations across industries demonstrating compliance, governance, and business value
+audience: ["business-stakeholder", "cio", "cto", "admin", "end-user"]
+version: stable
+owner: customer-success-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - "Case Study Framework"
+  - "Example Patterns"
+  - "Value Demonstrated"
+  - "Next Steps"
+custom_links:
+  - text: Customer Success
+    url: /docs/customer-success/
+    submenu:
+      - text: Customer Success Overview
+        url: /docs/customer-success/overview/
+      - text: Case Studies
+        url: /docs/customer-success/case-studies/
+seo:
+  keywords: ["AI Fabrix", "case studies", "customer success", "enterprise AI", "compliance", "governance"]
+  canonical_url: "https://docs.aifabrix.ai/customer-success/case-studies"
+  og_image: "images/case-studies.png"
+document360:
+  category: Customer Success
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc
