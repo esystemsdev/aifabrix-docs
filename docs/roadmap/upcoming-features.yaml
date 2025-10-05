@@ -1,0 +1,34 @@
+title: Upcoming Features
+description: Near-term roadmap priorities for AI Fabrix connector expansion, SDK enhancements, and governance improvements
+audience: ["business-stakeholder", "admin", "developer", "cio", "cto"]
+version: stable
+owner: product-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - "Connector Expansion"
+  - "SDK & Plugin Enhancements"
+  - "Policy Pack Advancements"
+  - "Observability & Economics"
+  - "Release Planning"
+  - "Summary"
+custom_links:
+  - text: Roadmap
+    url: /docs/roadmap/
+    submenu:
+      - text: Roadmap Overview
+        url: /docs/roadmap/overview/
+      - text: Upcoming Features
+        url: /docs/roadmap/upcoming-features/
+seo:
+  keywords: ["AI Fabrix", "upcoming features", "roadmap", "connectors", "SDK", "governance"]
+  canonical_url: "https://docs.aifabrix.ai/roadmap/upcoming-features"
+  og_image: "images/upcoming-features.png"
+document360:
+  category: Roadmap
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

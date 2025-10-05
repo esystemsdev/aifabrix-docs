@@ -1,0 +1,53 @@
+title: AI Fabrix Roadmap
+description: Continuous evolution of AI Fabrix to meet enterprise priorities of security, compliance, governance, and scalability
+audience: ["business-stakeholder", "admin", "end-user", "cio", "cto"]
+version: stable
+owner: product-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - "Strategic Direction"
+  - "What's Next"
+custom_links:
+  - text: Overview
+    url: /docs/overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+  - text: Use Cases
+    url: /docs/use-cases/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+  - text: Customer Success
+    url: /docs/customer-success/
+  - text: Roadmap
+    url: /docs/roadmap/
+    submenu:
+      - text: Roadmap Overview
+        url: /docs/roadmap/overview/
+      - text: Upcoming Features
+        url: /docs/roadmap/upcoming-features/
+      - text: Multi-Cloud & Hybrid Support
+        url: /docs/roadmap/multi-cloud-hybrid-support/
+      - text: Expanded Compliance & Observability
+        url: /docs/roadmap/expanded-compliance-observability/
+seo:
+  keywords:
+    - AI Fabrix roadmap
+    - platform evolution
+    - feature development
+    - enterprise AI roadmap
+    - strategic direction
+  canonical_url: "https://docs.aifabrix.ai/roadmap/overview"
+  og_image: images/roadmap-overview-preview.png
+document360:
+  category: Roadmap
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc
