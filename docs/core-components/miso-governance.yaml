@@ -1,0 +1,33 @@
+title: Miso — Governance & Deployment
+description: Central governance and deployment platform for AI Fabrix
+audience: ["admin", "developer", "end-user"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Core Components
+    url: /docs/core-components/
+    submenu:
+      - text: Miso — Governance & Deployment
+        url: /docs/core-components/miso-governance/
+      - text: Core Platform Services
+        url: /docs/core-components/core-platform-services/
+      - text: Flowise — Orchestration
+        url: /docs/core-components/flowise-orchestration/
+      - text: OpenWebUI — Secure UX
+        url: /docs/core-components/openwebui-secure-ux/
+      - text: SDK & Plugins
+        url: /docs/core-components/sdk-plugins/
+seo:
+  keywords: ["AI Fabrix", "Miso", "governance", "deployment", "orchestration"]
+  canonical_url: "https://docs.aifabrix.ai/core-components/miso-governance"
+  og_image: "images/miso-governance.png"
+document360:
+  category: Core Components
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc
