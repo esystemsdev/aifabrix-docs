@@ -9,39 +9,39 @@ Welcome to the AI Fabrix documentation hub. This is the central location for all
 
 ## 2. Evaluation Guide
 
-- [Getting Started](evaluation/getting-started.md) - Structured approach to evaluating AI Fabrix for your organization
+- [Evaluation Guide Overview](evaluation/overview.md) - Structured approach to evaluating AI Fabrix for your organization
 
 ## 3. Core Components
 
-- [Miso Controller](core-components/miso-controller.md) - Enterprise AI orchestration platform
+- [Core Components Overview](core-components/overview.md) - Detailed breakdown of the main platform layers of AI Fabrix
 
 ## 4. Enterprise Features
 
-- [Security & Compliance](enterprise-features/security-compliance.md) - Enterprise-grade security and compliance features
+- [Enterprise Features Overview](enterprise-features/overview.md) - Features that make AI Fabrix enterprise-ready for secure, governed, and scalable AI adoption
 
 ## 5. Use Cases
 
-- [AI Workload Use Cases](use-cases/ai-workloads.md) - Common AI use cases and applications supported by AI Fabrix
+- [Use Cases Overview](use-cases/overview.md) - Enterprise-ready AI use cases for secure, policy-aware solutions on Microsoft services
 
 ## 6. Deployment & Operations
 
-- [Quick Deploy Guide](deployment-operations/quick-deploy.md) - Streamlined deployment guide for getting AI Fabrix up and running
+- [Deployment & Operations Overview](deployment-operations/overview.md) - Comprehensive guide for deploying and operating AI Fabrix in enterprise environments
 
 ## 7. Customer Success
 
-- [Best Practices](customer-success/best-practices.md) - Proven best practices for successful AI Fabrix implementation
+- [Customer Success Overview](customer-success/overview.md) - Framework for understanding how AI Fabrix delivers measurable business value and enterprise-wide transformation
 
 ## 8. Roadmap
 
-- [Platform Roadmap](roadmap/platform-roadmap.md) - Planned evolution of AI Fabrix platform capabilities
+- [Roadmap Overview](roadmap/overview.md) - Continuous evolution of AI Fabrix to meet enterprise priorities of security, compliance, governance, and scalability
 
 ## 9. Modules & Documentation
 
-- [API Reference](modules-documentation/api-reference.md) - Comprehensive API reference for AI Fabrix platform
+- [Modules & Documentation Overview](modules-documentation/overview.md) - Comprehensive documentation for each AI Fabrix module covering governance, retrieval, orchestration, and developer tools
 
 ## 10. Resources
 
-- [Support Resources](resources/support-resources.md) - Comprehensive support resources for users and administrators
+- [Resources Overview](resources/overview.md) - Supporting materials, templates, and tools for successful AI Fabrix evaluation, deployment, and operation
 
 ---
 

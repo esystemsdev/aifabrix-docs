@@ -1,4 +1,4 @@
-# 6. Deployment & Operations
+# Deployment & Operations
 
 AI Fabrix is designed for predictable, secure, and flexible deployment inside the customer's Azure tenant. This section explains how Fabrix is installed, how it scales, and how enterprises can operate it with confidence.
 

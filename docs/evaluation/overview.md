@@ -1,4 +1,4 @@
-# 2. Evaluation Guide
+# Evaluation Guide
 
 AI Fabrix provides a clear evaluation path that helps enterprises move from proof-of-concept to production with confidence. This section explains how to evaluate the platform, what criteria to use, and how to structure a 30-day proof-of-concept. It also includes sizing guidance, security checklists, and competitive comparisons to support informed decision-making.
 

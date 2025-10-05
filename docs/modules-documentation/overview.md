@@ -1,4 +1,4 @@
-# 9. Modules & Documentation
+# Modules & Documentation
 
 AI Fabrix is a modular platform. Each component has a specific role, from **governance and security** to **retrieval and orchestration**. This section provides structured documentation for each module, covering both **user-facing guidance** and **developer/operations practices**.
 

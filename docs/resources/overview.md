@@ -1,4 +1,4 @@
-# 10. Resources — Overview
+# Resources — Overview
 
 The **Resources** section provides the supporting material enterprises need to successfully evaluate, deploy, and operate **AI Fabrix**.
 While the core documentation explains the *what* and *why*, these resources focus on the *how* — delivering templates, diagrams, and starter kits that accelerate adoption without compromising governance or compliance.

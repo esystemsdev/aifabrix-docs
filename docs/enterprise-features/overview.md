@@ -1,4 +1,4 @@
-# 4. Enterprise Features
+# Enterprise Features
 
 AI Fabrix is designed for enterprises that need **more than raw AI infrastructure**. While Microsoft provides the foundation—Azure, Entra ID, and AI services—Fabrix adds the **enterprise layer** that ensures AI adoption is **secure, governed, and scalable**.
 

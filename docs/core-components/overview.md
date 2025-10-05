@@ -1,4 +1,4 @@
-# 3. Core Components
+# Core Components
 
 AI Fabrix is built from modular components that together form a secure, governed, and extensible enterprise AI platform. Each component has a clear responsibility and integrates seamlessly with Microsoft Azure services. This section introduces the core layers of Fabrix and explains their role in delivering enterprise-grade AI.
 

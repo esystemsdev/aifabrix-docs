@@ -1,4 +1,4 @@
-# 5. Use Cases
+# Use Cases
 
 AI Fabrix enables enterprises to build secure, policy-aware AI solutions on top of Microsoft services. Its in-tenant design, metadata-aware retrieval, and governance features make it ideal for scenarios where compliance and business value must go hand in hand.
 

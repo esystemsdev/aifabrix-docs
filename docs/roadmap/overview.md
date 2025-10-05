@@ -1,4 +1,4 @@
-# 8. Roadmap
+# Roadmap
 
 AI Fabrix is not a static platform—it is continuously evolving to meet the **enterprise priorities of security, compliance, governance, and scalability**.
 This section provides an overview of the roadmap, outlining near-term feature expansions, mid-term architectural extensions, and long-term strategic directions.

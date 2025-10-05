@@ -9,55 +9,118 @@ last_reviewed: '2024-01-15'
 date: '2025-09-24T15:42:29.881Z'
 toc: true
 custom_links:
-  - text: Getting Started
-    url: /docs/getting-started/
+  - text: Overview
+    url: /docs/overview/
     submenu:
-      - text: Installation Guide
-        url: /docs/getting-started/installation/
-      - text: Quick Deploy Guide
-        url: /docs/getting-started/quick-deploy/
-  - text: Platform Overview
-    url: /docs/background/
-    submenu:
-      - text: Architecture Overview
-        url: /docs/background/architecture-overview/
-      - text: Competitive Advantages
-        url: /docs/background/competitive-advantages/
-      - text: Compliance Requirements
-        url: /docs/background/compliance-requirements/
-      - text: Deployment Models
-        url: /docs/background/deployment-models/
-      - text: Integration Capabilities
-        url: /docs/background/integration-capabilities/
-      - text: Modules Overview
-        url: /docs/background/modules-overview/
       - text: Platform Overview
-        url: /docs/background/platform-overview/
-      - text: Target Audience
-        url: /docs/background/target-audience/
-      - text: Technology Stack
-        url: /docs/background/technology-stack/
-      - text: Use Cases
-        url: /docs/background/use-cases/
-  - text: Architecture
-    url: /docs/architecture/
+        url: /docs/overview/platform-overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
     submenu:
-      - text: Miso Controller Architecture
-        url: /docs/architecture/miso-controller/
-      - text: Portal Architecture
-        url: /docs/architecture/portal-architecture/
-      - text: Security Authentication
-        url: /docs/architecture/security-authentication/
-  - text: User Guides
-    url: /docs/user-guides/
+      - text: Evaluation Guide Overview
+        url: /docs/evaluation/overview/
+      - text: Key Criteria
+        url: /docs/evaluation/key-criteria/
+      - text: Proof-of-Concept Plan
+        url: /docs/evaluation/proof-of-concept/
+      - text: Security Checklist
+        url: /docs/evaluation/security-checklist/
+      - text: Cost & Sizing
+        url: /docs/evaluation/cost-sizing/
+      - text: Competitive Comparison
+        url: /docs/evaluation/competitive-comparison/
+      - text: Pilot & Rollout Playbook
+        url: /docs/evaluation/pilot-rollout/
+  - text: Core Components
+    url: /docs/core-components/
     submenu:
-      - text: Portal Usage Guide
-        url: /docs/user-guides/portal-usage/
-  - text: API Reference
-    url: /docs/api/
+      - text: Core Components Overview
+        url: /docs/core-components/overview/
+      - text: Miso — Governance & Deployment
+        url: /docs/core-components/miso-governance/
+      - text: Core Platform Services
+        url: /docs/core-components/core-platform-services/
+      - text: Flowise — Orchestration
+        url: /docs/core-components/flowise-orchestration/
+      - text: OpenWebUI — Secure UX
+        url: /docs/core-components/openwebui-secure-ux/
+      - text: SDK & Plugins
+        url: /docs/core-components/sdk-plugins/
+      - text: Chat Interface
+        url: /docs/core-components/chat-interface/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
     submenu:
-      - text: AI Fabrix Miso API
-        url: /docs/api/miso-api/
+      - text: Enterprise Features Overview
+        url: /docs/enterprise-features/overview/
+      - text: Identity & Access Management
+        url: /docs/enterprise-features/identity-access-management/
+      - text: Governance & Policy Packs
+        url: /docs/enterprise-features/governance-policy-packs/
+      - text: Compliance & Auditability
+        url: /docs/enterprise-features/compliance-auditability/
+      - text: Scalability & Observability
+        url: /docs/enterprise-features/scalability-observability/
+  - text: Use Cases
+    url: /docs/use-cases/
+    submenu:
+      - text: Use Cases Overview
+        url: /docs/use-cases/overview/
+      - text: Microsoft 365 Knowledge Retrieval
+        url: /docs/use-cases/microsoft-365-knowledge-retrieval/
+      - text: Policy-Aware Assistants
+        url: /docs/use-cases/policy-aware-assistants/
+      - text: Secure Case Building & Collaboration
+        url: /docs/use-cases/secure-case-building-collaboration/
+      - text: Sales & Project Workspaces
+        url: /docs/use-cases/sales-project-workspaces/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+    submenu:
+      - text: Deployment & Operations Overview
+        url: /docs/deployment-operations/overview/
+      - text: Installation Options
+        url: /docs/deployment-operations/installation-options/
+      - text: Infrastructure Sizing & Scaling
+        url: /docs/deployment-operations/infrastructure-sizing-scaling/
+      - text: Subscription Tiers
+        url: /docs/deployment-operations/subscription-tiers/
+      - text: Support & SLAs
+        url: /docs/deployment-operations/support-slas/
+      - text: Exit Path & Open Foundation
+        url: /docs/deployment-operations/exit-path-open-foundation/
+  - text: Customer Success
+    url: /docs/customer-success/
+    submenu:
+      - text: Customer Success Overview
+        url: /docs/customer-success/overview/
+      - text: Case Studies
+        url: /docs/customer-success/case-studies/
+      - text: ROI & KPI Library
+        url: /docs/customer-success/roi-kpi-library/
+      - text: Pilot → Production Playbook
+        url: /docs/customer-success/pilot-production-playbook/
+  - text: Roadmap
+    url: /docs/roadmap/
+    submenu:
+      - text: Roadmap Overview
+        url: /docs/roadmap/overview/
+      - text: Upcoming Features
+        url: /docs/roadmap/upcoming-features/
+      - text: Multi-Cloud & Hybrid Support
+        url: /docs/roadmap/multi-cloud-hybrid-support/
+      - text: Expanded Compliance & Observability
+        url: /docs/roadmap/expanded-compliance-observability/
+  - text: Modules & Documentation
+    url: /docs/modules-documentation/
+    submenu:
+      - text: Modules & Documentation Overview
+        url: /docs/modules-documentation/overview/
+  - text: Resources
+    url: /docs/resources/
+    submenu:
+      - text: Resources Overview
+        url: /docs/resources/overview/
 seo:
   keywords:
     - AI Fabrix

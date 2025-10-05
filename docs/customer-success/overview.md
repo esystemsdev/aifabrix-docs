@@ -1,4 +1,4 @@
-# 7. Customer Success — Overview
+# Customer Success — Overview
 
 AI Fabrix enables enterprises to move beyond isolated pilots and adopt AI at scale with confidence. Success is defined not only by technical feasibility, but by **measurable business value, compliance alignment, and predictable economics**.
 
