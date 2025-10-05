@@ -1,0 +1,51 @@
+title: AI Fabrix Use Cases — Overview
+description: Enterprise-ready AI use cases that balance business impact with compliance and security
+audience: ["business-stakeholder", "end-user", "admin"]
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - "Microsoft 365 Knowledge Retrieval"
+  - "Policy-Aware Assistants"
+  - "Secure Case Building & Collaboration"
+  - "Sales & Project Workspaces"
+  - "Generic Chatbots vs. Fabrix Use Cases"
+  - "Use Cases — Summary & Enterprise Outcomes"
+  - "Conclusion"
+custom_links:
+  - text: Overview
+    url: /docs/overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+  - text: Use Cases
+    url: /docs/use-cases/
+    submenu:
+      - text: Use Cases Overview
+        url: /docs/use-cases/overview/
+      - text: Microsoft 365 Knowledge Retrieval
+        url: /docs/use-cases/microsoft-365-knowledge-retrieval/
+      - text: Policy-Aware Assistants
+        url: /docs/use-cases/policy-aware-assistants/
+      - text: Secure Case Building & Collaboration
+        url: /docs/use-cases/secure-case-building-collaboration/
+      - text: Sales & Project Workspaces
+        url: /docs/use-cases/sales-project-workspaces/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+seo:
+  keywords: ["AI Fabrix", "use cases", "Microsoft 365", "knowledge retrieval", "policy-aware", "case building", "sales workspaces"]
+  canonical_url: "https://docs.aifabrix.ai/use-cases/overview"
+  og_image: "images/use-cases-overview.png"
+document360:
+  category: Use Cases
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc
