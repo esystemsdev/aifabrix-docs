@@ -22,11 +22,44 @@
     color: var(--esystems-white) !important;
     font-weight: 500;
     transition: color 0.3s ease;
+    white-space: nowrap;
+    padding: 8px 12px;
 }
 
 .navigation-navbar ul li a:hover,
 .navigation-navbar ul li.active a {
     color: var(--esystems-accent) !important;
+}
+
+/* Fix navigation layout for more items */
+.navigation-navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.navigation-navbar ul li {
+    margin: 0 2px;
+}
+
+/* Ensure navigation doesn't wrap awkwardly */
+.header-navigation {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navigation-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Override all background patterns with eSystems colors */
@@ -94,9 +127,9 @@ section.page-title-area * {
     color: inherit !important;
 }
 
-/* Fix page header spacing and positioning - reduce top padding */
+/* Fix page header spacing and positioning - increase top padding to avoid navigation overlap */
 .page-title-area .section-spacing {
-    padding-top: 100px !important;
+    padding-top: 140px !important;
     padding-bottom: 40px !important;
 }
 
@@ -105,10 +138,19 @@ section.page-title-area * {
     padding-bottom: 0 !important;
 }
 
+/* Ensure page title doesn't overlap with navigation */
+.page-title-area {
+    margin-top: 80px !important;
+}
+
 @media (max-width: 768px) {
     .page-title-area .section-spacing {
-        padding-top: 90px !important;
+        padding-top: 120px !important;
         padding-bottom: 30px !important;
+    }
+    
+    .page-title-area {
+        margin-top: 70px !important;
     }
 }
 
