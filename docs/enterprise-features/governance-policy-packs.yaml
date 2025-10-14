@@ -1,18 +1,20 @@
 title: Governance & Policy Packs
 description: Governance by design with policy packs for enterprise AI control and compliance
-audience: ["admin", "business-stakeholder", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Policy Packs"
-  - "Usage & Cost Guardrails"
-  - "Egress & Data Controls"
-  - "Auditable Governance"
-  - "Benefits"
-  - "Conclusion"
+  - Policy Packs
+  - Usage & Cost Guardrails
+  - Egress & Data Controls
+  - Auditable Governance
+  - Benefits
+  - Conclusion
 custom_links:
   - text: Enterprise Features
     url: /docs/enterprise-features/
@@ -26,9 +28,15 @@ custom_links:
       - text: Security & Compliance
         url: /docs/enterprise-features/security-compliance/
 seo:
-  keywords: ["AI Fabrix", "governance", "policy packs", "compliance", "audit", "enterprise control"]
-  canonical_url: "https://docs.aifabrix.ai/enterprise-features/governance-policy-packs"
-  og_image: "images/governance-policy-packs.png"
+  keywords:
+    - AI Fabrix
+    - governance
+    - policy packs
+    - compliance
+    - audit
+    - enterprise control
+  canonical_url: https://docs.aifabrix.ai/enterprise-features/governance-policy-packs
+  og_image: images/governance-policy-packs.png
 document360:
   category: Enterprise Features
   visibility: public

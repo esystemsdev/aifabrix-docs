@@ -1,16 +1,19 @@
 title: ROI & KPI Library
 description: Structured framework for measuring AI Fabrix success, ROI, and business value across enterprise deployments
-audience: ["business-stakeholder", "cio", "cto", "admin", "it-manager"]
+audience:
+  - admin
+  - architect
+  - end-user
 version: stable
 owner: customer-success-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Why KPIs Matter"
-  - "KPI Categories"
-  - "ROI Dimensions"
-  - "Next Steps"
+  - Why KPIs Matter
+  - KPI Categories
+  - ROI Dimensions
+  - Next Steps
 custom_links:
   - text: Customer Success
     url: /docs/customer-success/
@@ -22,9 +25,15 @@ custom_links:
       - text: ROI & KPI Library
         url: /docs/customer-success/roi-kpi-library/
 seo:
-  keywords: ["AI Fabrix", "ROI", "KPIs", "business value", "metrics", "enterprise AI"]
-  canonical_url: "https://docs.aifabrix.ai/customer-success/roi-kpi-library"
-  og_image: "images/roi-kpi-library.png"
+  keywords:
+    - AI Fabrix
+    - ROI
+    - KPIs
+    - business value
+    - metrics
+    - enterprise AI
+  canonical_url: https://docs.aifabrix.ai/customer-success/roi-kpi-library
+  og_image: images/roi-kpi-library.png
 document360:
   category: Customer Success
   visibility: public

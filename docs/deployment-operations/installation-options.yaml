@@ -1,18 +1,21 @@
 title: Installation Options
 description: Guided two-stage deployment model for AI Fabrix with enterprise control and security
-audience: ["admin", "developer", "business-stakeholder"]
+audience:
+  - admin
+  - developer
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Stage 1: Minimal Deployment (Installer + Miso Bootstrap)"
-  - "Stage 2: Full Miso Controller Environment"
-  - "Environment Deployment: Dev → Test → Prod"
-  - "Application & Container Management"
-  - "Installation Flow Diagram"
-  - "Key Takeaway"
+  - 'Stage 1: Minimal Deployment (Installer + Miso Bootstrap)'
+  - 'Stage 2: Full Miso Controller Environment'
+  - 'Environment Deployment: Dev → Test → Prod'
+  - Application & Container Management
+  - Installation Flow Diagram
+  - Key Takeaway
 custom_links:
   - text: Deployment & Operations
     url: /docs/deployment-operations/
@@ -30,9 +33,16 @@ custom_links:
       - text: Exit Path & Open Foundation
         url: /docs/deployment-operations/exit-path-open-foundation/
 seo:
-  keywords: ["AI Fabrix", "installation", "deployment", "Miso", "Azure", "bootstrap", "DevOps"]
-  canonical_url: "https://docs.aifabrix.ai/deployment-operations/installation-options"
-  og_image: "images/installation-options.png"
+  keywords:
+    - AI Fabrix
+    - installation
+    - deployment
+    - Miso
+    - Azure
+    - bootstrap
+    - DevOps
+  canonical_url: https://docs.aifabrix.ai/deployment-operations/installation-options
+  og_image: images/installation-options.png
 document360:
   category: Deployment & Operations
   visibility: public

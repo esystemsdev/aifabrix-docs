@@ -1,0 +1,21 @@
+title: AI Workload Use Cases
+description: Navigation for AI Workload Use Cases section
+items:
+  - title: AI Fabrix Use Cases — Overview
+    url: overview
+    order: 999
+  - title: AI Workload Use Cases
+    url: ai-workloads
+    order: 999
+  - title: Microsoft 365 Knowledge Retrieval
+    url: microsoft-365-knowledge-retrieval
+    order: 999
+  - title: Policy-Aware Assistants
+    url: policy-aware-assistants
+    order: 999
+  - title: Sales & Project Workspaces
+    url: sales-project-workspaces
+    order: 999
+  - title: Secure Case Building & Collaboration
+    url: secure-case-building-collaboration
+    order: 999

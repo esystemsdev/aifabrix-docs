@@ -1,16 +1,18 @@
 title: Policy-Aware Assistants
 description: Compliance-aware digital colleagues that enforce enterprise rules and regulatory obligations
-audience: ["end-user", "admin", "business-stakeholder", "compliance-officer"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Key Capabilities"
-  - "Enterprise Value"
-  - "Example Use Cases"
-  - "Diagram: Policy-Aware Assistant Workflow"
+  - Key Capabilities
+  - Enterprise Value
+  - Example Use Cases
+  - 'Diagram: Policy-Aware Assistant Workflow'
 custom_links:
   - text: Use Cases
     url: /docs/use-cases/
@@ -26,9 +28,17 @@ custom_links:
       - text: Sales & Project Workspaces
         url: /docs/use-cases/sales-project-workspaces/
 seo:
-  keywords: ["AI Fabrix", "policy-aware", "assistants", "compliance", "governance", "regulatory", "GDPR", "HIPAA"]
-  canonical_url: "https://docs.aifabrix.ai/use-cases/policy-aware-assistants"
-  og_image: "images/policy-aware-assistants.png"
+  keywords:
+    - AI Fabrix
+    - policy-aware
+    - assistants
+    - compliance
+    - governance
+    - regulatory
+    - GDPR
+    - HIPAA
+  canonical_url: https://docs.aifabrix.ai/use-cases/policy-aware-assistants
+  og_image: images/policy-aware-assistants.png
 document360:
   category: Use Cases
   visibility: public

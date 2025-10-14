@@ -1,18 +1,21 @@
 title: AI Fabrix Deployment & Operations
 description: Predictable, secure, and flexible deployment options for AI Fabrix in Azure tenant
-audience: ["admin", "developer", "business-stakeholder"]
+audience:
+  - admin
+  - developer
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Installation Options"
-  - "Infrastructure Sizing & Scaling"
-  - "Subscription Tiers"
-  - "Support & SLAs"
-  - "Exit Path & Open Foundation"
-  - "Conclusion"
+  - Installation Options
+  - Infrastructure Sizing & Scaling
+  - Subscription Tiers
+  - Support & SLAs
+  - Exit Path & Open Foundation
+  - Conclusion
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -42,9 +45,17 @@ custom_links:
   - text: Customer Success
     url: /docs/customer-success/
 seo:
-  keywords: ["AI Fabrix", "deployment", "operations", "Azure", "installation", "scaling", "subscription", "SLA"]
-  canonical_url: "https://docs.aifabrix.ai/deployment-operations/overview"
-  og_image: "images/deployment-operations-overview.png"
+  keywords:
+    - AI Fabrix
+    - deployment
+    - operations
+    - Azure
+    - installation
+    - scaling
+    - subscription
+    - SLA
+  canonical_url: https://docs.aifabrix.ai/deployment-operations/overview
+  og_image: images/deployment-operations-overview.png
 document360:
   category: Deployment & Operations
   visibility: public

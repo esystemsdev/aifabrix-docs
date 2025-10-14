@@ -1,6 +1,8 @@
 title: Pilot & Rollout Playbook
 description: Step-by-step guide for piloting and rolling out AI Fabrix
-audience: ["admin", "business-stakeholder", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: customer-success-team
 last_reviewed: '2025-01-15'
@@ -23,9 +25,14 @@ custom_links:
       - text: Pilot & Rollout
         url: /docs/evaluation/pilot-rollout/
 seo:
-  keywords: ["AI Fabrix", "pilot", "rollout", "playbook", "implementation"]
-  canonical_url: "https://docs.aifabrix.ai/evaluation/pilot-rollout"
-  og_image: "images/pilot-rollout.png"
+  keywords:
+    - AI Fabrix
+    - pilot
+    - rollout
+    - playbook
+    - implementation
+  canonical_url: https://docs.aifabrix.ai/evaluation/pilot-rollout
+  og_image: images/pilot-rollout.png
 document360:
   category: Evaluation
   visibility: public

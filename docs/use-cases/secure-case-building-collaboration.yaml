@@ -1,16 +1,18 @@
 title: Secure Case Building & Collaboration
 description: Compliance-ready workspace for teams to collect, analyse, and share evidence securely with audit trails
-audience: ["end-user", "admin", "business-stakeholder", "compliance-officer", "legal"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Key Capabilities"
-  - "Enterprise Value"
-  - "Example Use Cases"
-  - "Diagram: Secure Case Building with Fabrix"
+  - Key Capabilities
+  - Enterprise Value
+  - Example Use Cases
+  - 'Diagram: Secure Case Building with Fabrix'
 custom_links:
   - text: Use Cases
     url: /docs/use-cases/
@@ -26,9 +28,16 @@ custom_links:
       - text: Sales & Project Workspaces
         url: /docs/use-cases/sales-project-workspaces/
 seo:
-  keywords: ["AI Fabrix", "secure case building", "collaboration", "compliance", "audit trails", "evidence management", "legal"]
-  canonical_url: "https://docs.aifabrix.ai/use-cases/secure-case-building-collaboration"
-  og_image: "images/secure-case-building-collaboration.png"
+  keywords:
+    - AI Fabrix
+    - secure case building
+    - collaboration
+    - compliance
+    - audit trails
+    - evidence management
+    - legal
+  canonical_url: https://docs.aifabrix.ai/use-cases/secure-case-building-collaboration
+  og_image: images/secure-case-building-collaboration.png
 document360:
   category: Use Cases
   visibility: public

@@ -1,17 +1,20 @@
 title: Expanded Compliance & Observability
 description: Roadmap for enhanced compliance automation, observability, and cost transparency in AI Fabrix
-audience: ["business-stakeholder", "admin", "compliance-lead", "cio", "cto"]
+audience:
+  - admin
+  - architect
+  - end-user
 version: stable
 owner: product-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Compliance by Design"
-  - "Observability Enhancements"
-  - "Cost & Economics Transparency"
-  - "Roadmap Planning"
-  - "Summary"
+  - Compliance by Design
+  - Observability Enhancements
+  - Cost & Economics Transparency
+  - Roadmap Planning
+  - Summary
 custom_links:
   - text: Roadmap
     url: /docs/roadmap/
@@ -25,9 +28,15 @@ custom_links:
       - text: Expanded Compliance & Observability
         url: /docs/roadmap/expanded-compliance-observability/
 seo:
-  keywords: ["AI Fabrix", "compliance", "observability", "auditability", "transparency", "enterprise AI"]
-  canonical_url: "https://docs.aifabrix.ai/roadmap/expanded-compliance-observability"
-  og_image: "images/expanded-compliance-observability.png"
+  keywords:
+    - AI Fabrix
+    - compliance
+    - observability
+    - auditability
+    - transparency
+    - enterprise AI
+  canonical_url: https://docs.aifabrix.ai/roadmap/expanded-compliance-observability
+  og_image: images/expanded-compliance-observability.png
 document360:
   category: Roadmap
   visibility: public

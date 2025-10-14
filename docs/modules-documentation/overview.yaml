@@ -1,16 +1,20 @@
 title: AI Fabrix Modules & Documentation
 description: Comprehensive documentation for each AI Fabrix module covering governance, retrieval, orchestration, and developer tools
-audience: ["admin", "developer", "end-user", "architect", "it-manager"]
+audience:
+  - admin
+  - architect
+  - developer
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Purpose of This Section"
-  - "What You'll Find in This Section"
-  - "Key Value for Enterprises"
-  - "Conclusion"
+  - Purpose of This Section
+  - What You'll Find in This Section
+  - Key Value for Enterprises
+  - Conclusion
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -51,7 +55,7 @@ seo:
     - orchestration
     - developer tools
     - enterprise AI
-  canonical_url: "https://docs.aifabrix.ai/modules-documentation/overview"
+  canonical_url: https://docs.aifabrix.ai/modules-documentation/overview
   og_image: images/modules-documentation-overview-preview.png
 document360:
   category: Modules & Documentation

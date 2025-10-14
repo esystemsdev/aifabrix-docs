@@ -1,6 +1,8 @@
 title: Cost & Sizing Guide
 description: Cost and sizing guidance for AI Fabrix deployment
-audience: ["business-stakeholder", "admin", "finance-team"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
@@ -23,9 +25,14 @@ custom_links:
       - text: Pilot & Rollout
         url: /docs/evaluation/pilot-rollout/
 seo:
-  keywords: ["AI Fabrix", "cost", "sizing", "pricing", "subscription tiers"]
-  canonical_url: "https://docs.aifabrix.ai/evaluation/cost-sizing"
-  og_image: "images/cost-sizing.png"
+  keywords:
+    - AI Fabrix
+    - cost
+    - sizing
+    - pricing
+    - subscription tiers
+  canonical_url: https://docs.aifabrix.ai/evaluation/cost-sizing
+  og_image: images/cost-sizing.png
 document360:
   category: Evaluation
   visibility: public

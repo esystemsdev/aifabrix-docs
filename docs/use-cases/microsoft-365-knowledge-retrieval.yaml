@@ -1,16 +1,18 @@
 title: Microsoft 365 Knowledge Retrieval
 description: Permission-aware knowledge retrieval from SharePoint, Teams, and OneDrive with enterprise security
-audience: ["end-user", "admin", "business-stakeholder"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Key Capabilities"
-  - "Enterprise Value"
-  - "Example Use Cases"
-  - "Diagram: Microsoft 365 Retrieval with Fabrix"
+  - Key Capabilities
+  - Enterprise Value
+  - Example Use Cases
+  - 'Diagram: Microsoft 365 Retrieval with Fabrix'
 custom_links:
   - text: Use Cases
     url: /docs/use-cases/
@@ -26,9 +28,16 @@ custom_links:
       - text: Sales & Project Workspaces
         url: /docs/use-cases/sales-project-workspaces/
 seo:
-  keywords: ["AI Fabrix", "Microsoft 365", "SharePoint", "Teams", "OneDrive", "knowledge retrieval", "permission-aware"]
-  canonical_url: "https://docs.aifabrix.ai/use-cases/microsoft-365-knowledge-retrieval"
-  og_image: "images/microsoft-365-knowledge-retrieval.png"
+  keywords:
+    - AI Fabrix
+    - Microsoft 365
+    - SharePoint
+    - Teams
+    - OneDrive
+    - knowledge retrieval
+    - permission-aware
+  canonical_url: https://docs.aifabrix.ai/use-cases/microsoft-365-knowledge-retrieval
+  og_image: images/microsoft-365-knowledge-retrieval.png
 document360:
   category: Use Cases
   visibility: public

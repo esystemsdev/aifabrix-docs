@@ -1,0 +1,21 @@
+title: Exit Path & Open Foundation
+description: Navigation for Exit Path & Open Foundation section
+items:
+  - title: AI Fabrix Deployment & Operations
+    url: overview
+    order: 999
+  - title: Exit Path & Open Foundation
+    url: exit-path-open-foundation
+    order: 999
+  - title: Infrastructure Sizing & Scaling
+    url: infrastructure-sizing-scaling
+    order: 999
+  - title: Installation Options
+    url: installation-options
+    order: 999
+  - title: Subscription Tiers
+    url: subscription-tiers
+    order: 999
+  - title: Support & SLAs
+    url: support-slas
+    order: 999

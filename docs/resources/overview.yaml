@@ -1,16 +1,20 @@
 title: AI Fabrix Resources — Overview
 description: Supporting materials, templates, and tools for successful AI Fabrix evaluation, deployment, and operation
-audience: ["business-stakeholder", "admin", "developer", "architect", "it-manager"]
+audience:
+  - admin
+  - architect
+  - developer
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Why Resources Matter"
-  - "What's Included"
-  - "Audience"
-  - "Next Steps"
+  - Why Resources Matter
+  - What's Included
+  - Audience
+  - Next Steps
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -53,7 +57,7 @@ seo:
     - RFP templates
     - SDK starters
     - enterprise AI
-  canonical_url: "https://docs.aifabrix.ai/resources/overview"
+  canonical_url: https://docs.aifabrix.ai/resources/overview
   og_image: images/resources-overview-preview.png
 document360:
   category: Resources

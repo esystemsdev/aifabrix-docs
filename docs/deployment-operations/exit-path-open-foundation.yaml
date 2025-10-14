@@ -1,16 +1,19 @@
 title: Exit Path & Open Foundation
 description: How AI Fabrix avoids vendor lock-in through open-source foundation and in-tenant deployment
-audience: ["admin", "business-stakeholder", "cio", "cto"]
+audience:
+  - admin
+  - architect
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Open-Source Foundation"
-  - "No Lock-In by Design"
-  - "Exit Path Options"
-  - "Key Takeaway"
+  - Open-Source Foundation
+  - No Lock-In by Design
+  - Exit Path Options
+  - Key Takeaway
 custom_links:
   - text: Deployment & Operations
     url: /docs/deployment-operations/
@@ -28,9 +31,15 @@ custom_links:
       - text: Exit Path & Open Foundation
         url: /docs/deployment-operations/exit-path-open-foundation/
 seo:
-  keywords: ["AI Fabrix", "exit path", "open source", "vendor lock-in", "data sovereignty", "Azure tenant"]
-  canonical_url: "https://docs.aifabrix.ai/deployment-operations/exit-path-open-foundation"
-  og_image: "images/exit-path-open-foundation.png"
+  keywords:
+    - AI Fabrix
+    - exit path
+    - open source
+    - vendor lock-in
+    - data sovereignty
+    - Azure tenant
+  canonical_url: https://docs.aifabrix.ai/deployment-operations/exit-path-open-foundation
+  og_image: images/exit-path-open-foundation.png
 document360:
   category: Deployment & Operations
   visibility: public

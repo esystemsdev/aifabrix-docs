@@ -1,15 +1,17 @@
 title: Support & SLAs
 description: AI Fabrix support services and service level agreements aligned with enterprise requirements
-audience: ["admin", "business-stakeholder"]
-version: draft
+audience:
+  - admin
+  - end-user
+version: beta
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Support Levels"
-  - "SLA Parameters (to be defined)"
-  - "Key Takeaway"
+  - Support Levels
+  - SLA Parameters (to be defined)
+  - Key Takeaway
 custom_links:
   - text: Deployment & Operations
     url: /docs/deployment-operations/
@@ -27,9 +29,15 @@ custom_links:
       - text: Exit Path & Open Foundation
         url: /docs/deployment-operations/exit-path-open-foundation/
 seo:
-  keywords: ["AI Fabrix", "support", "SLA", "service level agreement", "enterprise support", "24/7 support"]
-  canonical_url: "https://docs.aifabrix.ai/deployment-operations/support-slas"
-  og_image: "images/support-slas.png"
+  keywords:
+    - AI Fabrix
+    - support
+    - SLA
+    - service level agreement
+    - enterprise support
+    - 24/7 support
+  canonical_url: https://docs.aifabrix.ai/deployment-operations/support-slas
+  og_image: images/support-slas.png
 document360:
   category: Deployment & Operations
   visibility: public

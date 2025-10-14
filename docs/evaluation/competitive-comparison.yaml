@@ -1,6 +1,8 @@
 title: Competitive Comparison
 description: Competitive analysis of AI Fabrix vs other solutions
-audience: ["business-stakeholder", "admin", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: product-team
 last_reviewed: '2025-01-15'
@@ -23,9 +25,14 @@ custom_links:
       - text: Pilot & Rollout
         url: /docs/evaluation/pilot-rollout/
 seo:
-  keywords: ["AI Fabrix", "competitive", "comparison", "vs", "alternatives"]
-  canonical_url: "https://docs.aifabrix.ai/evaluation/competitive-comparison"
-  og_image: "images/competitive-comparison.png"
+  keywords:
+    - AI Fabrix
+    - competitive
+    - comparison
+    - vs
+    - alternatives
+  canonical_url: https://docs.aifabrix.ai/evaluation/competitive-comparison
+  og_image: images/competitive-comparison.png
 document360:
   category: Evaluation
   visibility: public

@@ -1,6 +1,8 @@
 title: 30-Day Proof-of-Concept Plan
 description: Structured 30-day plan for evaluating AI Fabrix
-audience: ["business-stakeholder", "admin", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
@@ -23,9 +25,13 @@ custom_links:
       - text: Pilot & Rollout
         url: /docs/evaluation/pilot-rollout/
 seo:
-  keywords: ["AI Fabrix", "proof of concept", "evaluation", "30-day plan"]
-  canonical_url: "https://docs.aifabrix.ai/evaluation/proof-of-concept"
-  og_image: "images/proof-of-concept.png"
+  keywords:
+    - AI Fabrix
+    - proof of concept
+    - evaluation
+    - 30-day plan
+  canonical_url: https://docs.aifabrix.ai/evaluation/proof-of-concept
+  og_image: images/proof-of-concept.png
 document360:
   category: Evaluation
   visibility: public

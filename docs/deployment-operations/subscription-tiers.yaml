@@ -1,18 +1,20 @@
 title: Subscription Tiers
 description: AI Fabrix subscription tiers designed for different stages of enterprise AI adoption from experimentation to global production
-audience: ["admin", "business-stakeholder", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Community (Free)"
-  - "Standard"
-  - "Enterprise"
-  - "Comparison Table"
-  - "Upgrade Path"
-  - "Key Takeaway"
+  - Community (Free)
+  - Standard
+  - Enterprise
+  - Comparison Table
+  - Upgrade Path
+  - Key Takeaway
 custom_links:
   - text: Deployment & Operations
     url: /docs/deployment-operations/
@@ -30,9 +32,16 @@ custom_links:
       - text: Exit Path & Open Foundation
         url: /docs/deployment-operations/exit-path-open-foundation/
 seo:
-  keywords: ["AI Fabrix", "subscription tiers", "Community", "Standard", "Enterprise", "pricing", "features"]
-  canonical_url: "https://docs.aifabrix.ai/deployment-operations/subscription-tiers"
-  og_image: "images/subscription-tiers.png"
+  keywords:
+    - AI Fabrix
+    - subscription tiers
+    - Community
+    - Standard
+    - Enterprise
+    - pricing
+    - features
+  canonical_url: https://docs.aifabrix.ai/deployment-operations/subscription-tiers
+  og_image: images/subscription-tiers.png
 document360:
   category: Deployment & Operations
   visibility: public

@@ -1,15 +1,18 @@
 title: AI Fabrix Customer Success — Overview
 description: Framework for understanding how AI Fabrix delivers measurable business value and enterprise-wide transformation
-audience: ["admin", "business-stakeholder", "end-user", "cio", "cto"]
+audience:
+  - admin
+  - architect
+  - end-user
 version: stable
 owner: customer-success-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Why Customer Success Matters"
-  - "What This Section Covers"
-  - "Key Takeaway"
+  - Why Customer Success Matters
+  - What This Section Covers
+  - Key Takeaway
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -41,7 +44,7 @@ seo:
     - enterprise AI adoption
     - AI success metrics
     - AI training programs
-  canonical_url: "https://docs.aifabrix.ai/customer-success/overview"
+  canonical_url: https://docs.aifabrix.ai/customer-success/overview
   og_image: images/customer-success-overview-preview.png
 document360:
   category: Customer Success

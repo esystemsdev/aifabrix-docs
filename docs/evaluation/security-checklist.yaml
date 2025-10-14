@@ -1,6 +1,7 @@
 title: Architecture & Security Checklist
 description: Security and compliance checklist for AI Fabrix evaluation
-audience: ["admin", "security-team", "compliance-officer"]
+audience:
+  - admin
 version: stable
 owner: security-team
 last_reviewed: '2025-01-15'
@@ -23,9 +24,14 @@ custom_links:
       - text: Pilot & Rollout
         url: /docs/evaluation/pilot-rollout/
 seo:
-  keywords: ["AI Fabrix", "security", "compliance", "checklist", "architecture"]
-  canonical_url: "https://docs.aifabrix.ai/evaluation/security-checklist"
-  og_image: "images/security-checklist.png"
+  keywords:
+    - AI Fabrix
+    - security
+    - compliance
+    - checklist
+    - architecture
+  canonical_url: https://docs.aifabrix.ai/evaluation/security-checklist
+  og_image: images/security-checklist.png
 document360:
   category: Evaluation
   visibility: public

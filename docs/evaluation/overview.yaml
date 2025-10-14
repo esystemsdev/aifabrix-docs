@@ -1,19 +1,21 @@
 title: AI Fabrix Evaluation Guide
 description: Comprehensive guide for evaluating AI Fabrix for your organization's needs
-audience: ["business-stakeholder", "admin", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "How to Evaluate Fabrix (Key Criteria)"
-  - "30-Day Proof-of-Concept Plan"
-  - "Architecture & Security Checklist"
-  - "Cost & Sizing Guide"
-  - "Competitive Comparison"
-  - "Pilot & Rollout Playbook"
-  - "Conclusion"
+  - How to Evaluate Fabrix (Key Criteria)
+  - 30-Day Proof-of-Concept Plan
+  - Architecture & Security Checklist
+  - Cost & Sizing Guide
+  - Competitive Comparison
+  - Pilot & Rollout Playbook
+  - Conclusion
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -37,9 +39,15 @@ custom_links:
   - text: Core Components
     url: /docs/core-components/
 seo:
-  keywords: ["AI Fabrix", "evaluation", "assessment", "business case", "ROI", "proof-of-concept"]
-  canonical_url: "https://docs.aifabrix.ai/evaluation/overview"
-  og_image: "images/evaluation-overview.png"
+  keywords:
+    - AI Fabrix
+    - evaluation
+    - assessment
+    - business case
+    - ROI
+    - proof-of-concept
+  canonical_url: https://docs.aifabrix.ai/evaluation/overview
+  og_image: images/evaluation-overview.png
 document360:
   category: Evaluation
   visibility: public

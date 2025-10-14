@@ -1,19 +1,22 @@
 title: AI Fabrix Core Components
 description: Overview of the core components that make up the AI Fabrix enterprise AI platform
-audience: ["admin", "developer", "end-user", "business-stakeholder"]
+audience:
+  - admin
+  - developer
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Miso — Governance & Deployment"
-  - "Core Platform Services — Metadata-Aware Retrieval & Connectors"
-  - "Flowise — Orchestration for RAG Pipelines & Agents"
-  - "OpenWebUI — Secure UX for Chat & Case Building"
-  - "SDK & Plugins — Developer Extensions"
-  - "Chat Interface — Microsoft Teams, Slack & Beyond"
-  - "Conclusion"
+  - Miso — Governance & Deployment
+  - Core Platform Services — Metadata-Aware Retrieval & Connectors
+  - Flowise — Orchestration for RAG Pipelines & Agents
+  - OpenWebUI — Secure UX for Chat & Case Building
+  - SDK & Plugins — Developer Extensions
+  - Chat Interface — Microsoft Teams, Slack & Beyond
+  - Conclusion
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -39,9 +42,16 @@ custom_links:
   - text: Enterprise Features
     url: /docs/enterprise-features/
 seo:
-  keywords: ["AI Fabrix", "core components", "Miso", "Flowise", "OpenWebUI", "SDK", "enterprise AI"]
-  canonical_url: "https://docs.aifabrix.ai/core-components/overview"
-  og_image: "images/core-components-overview.png"
+  keywords:
+    - AI Fabrix
+    - core components
+    - Miso
+    - Flowise
+    - OpenWebUI
+    - SDK
+    - enterprise AI
+  canonical_url: https://docs.aifabrix.ai/core-components/overview
+  og_image: images/core-components-overview.png
 document360:
   category: Core Components
   visibility: public

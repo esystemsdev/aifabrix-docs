@@ -1,15 +1,17 @@
 title: AI Fabrix Enterprise Features
 description: Enterprise-grade features that ensure secure, governed, and scalable AI adoption
-audience: ["admin", "business-stakeholder", "end-user"]
+audience:
+  - admin
+  - end-user
 version: stable
 owner: platform-team
 last_reviewed: '2025-01-15'
 date: '2025-01-15'
 toc: true
 table_of_contents:
-  - "Why Enterprise Features Matter"
-  - "What You'll Find in This Section"
-  - "Key Message"
+  - Why Enterprise Features Matter
+  - What You'll Find in This Section
+  - Key Message
 custom_links:
   - text: Overview
     url: /docs/overview/
@@ -27,9 +29,15 @@ custom_links:
   - text: Use Cases
     url: /docs/use-cases/
 seo:
-  keywords: ["AI Fabrix", "enterprise features", "security", "compliance", "governance", "scalability"]
-  canonical_url: "https://docs.aifabrix.ai/enterprise-features/overview"
-  og_image: "images/enterprise-features-overview.png"
+  keywords:
+    - AI Fabrix
+    - enterprise features
+    - security
+    - compliance
+    - governance
+    - scalability
+  canonical_url: https://docs.aifabrix.ai/enterprise-features/overview
+  og_image: images/enterprise-features-overview.png
 document360:
   category: Enterprise Features
   visibility: public

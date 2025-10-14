@@ -1,0 +1,24 @@
+title: Competitive Comparison
+description: Navigation for Competitive Comparison section
+items:
+  - title: 30-Day Proof-of-Concept Plan
+    url: proof-of-concept
+    order: 999
+  - title: AI Fabrix Evaluation Guide
+    url: overview
+    order: 999
+  - title: Architecture & Security Checklist
+    url: security-checklist
+    order: 999
+  - title: Competitive Comparison
+    url: competitive-comparison
+    order: 999
+  - title: Cost & Sizing Guide
+    url: cost-sizing
+    order: 999
+  - title: How to Evaluate Fabrix (Key Criteria)
+    url: key-criteria
+    order: 999
+  - title: Pilot & Rollout Playbook
+    url: pilot-rollout
+    order: 999

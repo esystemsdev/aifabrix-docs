@@ -1,0 +1,18 @@
+title: Compliance & Auditability
+description: Navigation for Compliance & Auditability section
+items:
+  - title: AI Fabrix Enterprise Features
+    url: overview
+    order: 999
+  - title: Compliance & Auditability
+    url: compliance-auditability
+    order: 999
+  - title: Governance & Policy Packs
+    url: governance-policy-packs
+    order: 999
+  - title: Identity & Access Management
+    url: identity-access-management
+    order: 999
+  - title: Scalability & Observability
+    url: scalability-observability
+    order: 999
