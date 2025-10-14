@@ -6,6 +6,7 @@
     "build-docs": "ts-node scripts/build-docs.ts",
     "validate": "ts-node scripts/validate-yaml.ts",
     "generate-nav": "ts-node scripts/generate-navigation.ts",
+    "generate-main-nav": "ts-node scripts/generate-main-navigation.ts",
     "merge-metadata": "ts-node scripts/merge-metadata.ts",
     "build-jekyll": "ts-node scripts/build-jekyll.ts",
     "deploy": "ts-node scripts/deploy.ts",
