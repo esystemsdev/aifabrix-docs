@@ -49,7 +49,7 @@
 }
 
 .themeix-dropdown-item li a {
-    color: var(--esystems-text) !important;
+    color: #2d3748 !important;
     background-color: transparent !important;
     padding: 12px 20px !important;
     display: block !important;
@@ -64,6 +64,40 @@
     word-wrap: break-word !important;
     line-height: 1.4 !important;
     hyphens: auto !important;
+}
+
+/* Force dropdown text to be dark and visible */
+.navigation-navbar .themeix-dropdown-item li a,
+.header-navigation .themeix-dropdown-item li a,
+.themeix-dropdown .themeix-dropdown-item li a {
+    color: #2d3748 !important;
+    background-color: transparent !important;
+}
+
+/* Ensure dropdown text is never white */
+.themeix-dropdown-item a,
+.themeix-dropdown-item li a,
+.themeix-dropdown-item ul li a {
+    color: #2d3748 !important;
+}
+
+/* Override any theme styles that might be making text white */
+.slimmenu .themeix-dropdown-item li a,
+.slimmenu .themeix-dropdown-item a,
+#navigation-menu .themeix-dropdown-item li a,
+#navigation-menu .themeix-dropdown-item a {
+    color: #2d3748 !important;
+    background-color: transparent !important;
+}
+
+/* Force all dropdown links to be dark */
+.themeix-dropdown-item * {
+    color: #2d3748 !important;
+}
+
+.themeix-dropdown-item a,
+.themeix-dropdown-item li a {
+    color: #2d3748 !important;
 }
 
 .themeix-dropdown-item li a:hover,
@@ -146,13 +180,14 @@
     }
     
     .themeix-dropdown-item li a {
-        color: var(--esystems-text) !important;
+        color: #2d3748 !important;
         padding: 8px 15px !important;
         white-space: normal !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         word-wrap: break-word !important;
         line-height: 1.4 !important;
+        background-color: transparent !important;
     }
     
     .themeix-dropdown-item li a:hover {
@@ -731,4 +766,15 @@ body {
     .layout-wrapper {
         max-width: 95%;
     }
+}
+
+/* CRITICAL: Force dropdown text to be visible - maximum specificity */
+body .header-navigation .navigation-navbar .slimmenu .themeix-dropdown .themeix-dropdown-item li a,
+body .header-navigation .navigation-navbar .slimmenu .themeix-dropdown .themeix-dropdown-item a,
+body .header-navigation .navigation-navbar #navigation-menu .themeix-dropdown .themeix-dropdown-item li a,
+body .header-navigation .navigation-navbar #navigation-menu .themeix-dropdown .themeix-dropdown-item a {
+    color: #2d3748 !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
