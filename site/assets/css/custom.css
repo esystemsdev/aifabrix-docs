@@ -31,6 +31,53 @@
     color: var(--esystems-accent) !important;
 }
 
+/* Dropdown submenu styling - fix color contrast */
+.themeix-dropdown-item {
+    background-color: var(--esystems-white) !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    padding: 8px 0 !important;
+    min-width: 280px !important;
+    max-width: 350px !important;
+    width: auto !important;
+}
+
+.themeix-dropdown-item li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.themeix-dropdown-item li a {
+    color: var(--esystems-text) !important;
+    background-color: transparent !important;
+    padding: 12px 20px !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    line-height: 1.4 !important;
+    hyphens: auto !important;
+}
+
+.themeix-dropdown-item li a:hover,
+.themeix-dropdown-item li.active a {
+    color: var(--esystems-white) !important;
+    background-color: var(--esystems-primary) !important;
+    padding-left: 25px !important;
+}
+
+.themeix-dropdown-item li.active a {
+    background-color: var(--esystems-secondary) !important;
+    font-weight: 600 !important;
+}
+
 /* Fix navigation layout for more items */
 .navigation-navbar ul {
     display: flex;
@@ -60,6 +107,58 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+}
+
+/* Ensure dropdown appears above other content */
+.themeix-dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+.themeix-dropdown-item {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.themeix-dropdown:hover .themeix-dropdown-item {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Mobile dropdown adjustments */
+@media (max-width: 768px) {
+    .themeix-dropdown-item {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background-color: var(--esystems-light) !important;
+        margin-top: 5px;
+    }
+    
+    .themeix-dropdown-item li a {
+        color: var(--esystems-text) !important;
+        padding: 8px 15px !important;
+        white-space: normal !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-wrap: break-word !important;
+        line-height: 1.4 !important;
+    }
+    
+    .themeix-dropdown-item li a:hover {
+        background-color: var(--esystems-primary) !important;
+        color: var(--esystems-white) !important;
+    }
 }
 
 /* Override all background patterns with eSystems colors */
