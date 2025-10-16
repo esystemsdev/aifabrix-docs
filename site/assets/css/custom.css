@@ -144,17 +144,18 @@
 }
 
 /* Ensure dropdown appears above other content */
-/* Note: header-navigation has z-index: 2222, so dropdowns need higher values */
+/* Note: header-navigation has z-index: 2222, and flex-wrap creates multiple rows with stacking contexts */
+/* Dropdowns need very high z-index to appear above any wrapped navigation items */
 .themeix-dropdown {
     position: relative;
-    z-index: 3000;
+    z-index: 9999;
 }
 
 .themeix-dropdown-item {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 3001;
+    z-index: 10000;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -770,6 +771,7 @@ body {
 }
 
 /* CRITICAL: Force dropdown text to be visible - maximum specificity */
+/* Also ensure dropdowns appear above any wrapped navigation rows */
 body .header-navigation .navigation-navbar .slimmenu .themeix-dropdown .themeix-dropdown-item li a,
 body .header-navigation .navigation-navbar .slimmenu .themeix-dropdown .themeix-dropdown-item a,
 body .header-navigation .navigation-navbar #navigation-menu .themeix-dropdown .themeix-dropdown-item li a,
@@ -778,4 +780,16 @@ body .header-navigation .navigation-navbar #navigation-menu .themeix-dropdown .t
     background-color: transparent !important;
     opacity: 1 !important;
     visibility: visible !important;
+    z-index: 10000 !important;
+}
+
+/* Ensure dropdown containers appear above all navigation elements */
+body .header-navigation .navigation-navbar .slimmenu .themeix-dropdown,
+body .header-navigation .navigation-navbar #navigation-menu .themeix-dropdown {
+    z-index: 9999 !important;
+}
+
+body .header-navigation .navigation-navbar .slimmenu .themeix-dropdown .themeix-dropdown-item,
+body .header-navigation .navigation-navbar #navigation-menu .themeix-dropdown .themeix-dropdown-item {
+    z-index: 10000 !important;
 }
