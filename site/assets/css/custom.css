@@ -144,16 +144,17 @@
 }
 
 /* Ensure dropdown appears above other content */
+/* Note: header-navigation has z-index: 2222, so dropdowns need higher values */
 .themeix-dropdown {
     position: relative;
-    z-index: 1000;
+    z-index: 3000;
 }
 
 .themeix-dropdown-item {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1001;
+    z-index: 3001;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
