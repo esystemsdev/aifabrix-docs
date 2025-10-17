@@ -117,36 +117,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    row-gap: 0;
 }
 
 .navigation-navbar ul li {
     margin: 0 2px;
-}
-
-/* CRITICAL FIX: Second row blocks hover on first row dropdowns */
-/* Simple solution: Pull dropdowns UP with negative margin so they overlap the gap
-   and appear directly connected to parent, with very high z-index */
-
-/* Desktop only - fix wrapped navigation dropdown issues */
-@media (min-width: 769px) {
-    /* Parent positioning */
-    .navigation-navbar ul li.themeix-dropdown,
-    .navigation-navbar ul li.has-children {
-        position: relative;
-    }
-    
-    /* Pull dropdown UP to eliminate gap and overlap second row */
-    .navigation-navbar ul li.themeix-dropdown > ul,
-    .navigation-navbar ul li.has-children > ul,
-    .navigation-navbar ul li > ul.themeix-dropdown-item {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        margin-top: -5px !important;
-        padding-top: 5px !important;
-        z-index: 999999 !important;
-    }
 }
 
 /* Ensure navigation doesn't wrap awkwardly */
@@ -170,23 +144,25 @@
 }
 
 /* Ensure dropdown appears above other content */
+/* Note: header-navigation has z-index: 2222, and flex-wrap creates multiple rows with stacking contexts */
+/* Dropdowns need very high z-index to appear above any wrapped navigation items */
 .themeix-dropdown {
     position: relative;
+    z-index: 9999;
 }
 
 .themeix-dropdown-item {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 99999 !important;
+    z-index: 10000;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
 }
 
-.themeix-dropdown:hover .themeix-dropdown-item,
-.themeix-dropdown.has-children:hover .themeix-dropdown-item {
+.themeix-dropdown:hover .themeix-dropdown-item {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
