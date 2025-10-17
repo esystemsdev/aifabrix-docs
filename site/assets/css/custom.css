@@ -168,8 +168,8 @@
     transform: translateY(0);
 }
 
-/* Mobile dropdown adjustments */
-@media (max-width: 768px) {
+/* Mobile/Tablet dropdown adjustments - match hamburger menu breakpoint */
+@media (max-width: 1400px) {
     .themeix-dropdown-item {
         position: static;
         opacity: 1;
@@ -634,8 +634,8 @@ body {
     color: var(--esystems-white) !important;
 }
 
-/* Mobile navigation text color */
-@media (max-width: 768px) {
+/* Mobile/Tablet navigation text color */
+@media (max-width: 1400px) {
     .header-navigation .navigation-box #navigation-menu li a {
         color: var(--esystems-text) !important;
     }
