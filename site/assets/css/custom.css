@@ -125,55 +125,27 @@
 }
 
 /* CRITICAL FIX: Second row blocks hover on first row dropdowns */
-/* Problem: Moving cursor from first-row item to its dropdown passes through second-row items,
-   triggering their mouseenter which closes the first dropdown. 
-   Solution: Make second-row items "transparent" to mouse events when first-row has active dropdown */
+/* Simple solution: Pull dropdowns UP with negative margin so they overlap the gap
+   and appear directly connected to parent, with very high z-index */
 
 /* Desktop only - fix wrapped navigation dropdown issues */
 @media (min-width: 769px) {
-    /* All menu items need position relative */
+    /* Parent positioning */
     .navigation-navbar ul li.themeix-dropdown,
     .navigation-navbar ul li.has-children {
         position: relative;
     }
     
-    /* Dropdowns appear above everything */
+    /* Pull dropdown UP to eliminate gap and overlap second row */
     .navigation-navbar ul li.themeix-dropdown > ul,
     .navigation-navbar ul li.has-children > ul,
     .navigation-navbar ul li > ul.themeix-dropdown-item {
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
+        margin-top: -5px !important;
+        padding-top: 5px !important;
         z-index: 999999 !important;
-        pointer-events: auto !important;
-    }
-    
-    /* When ANY menu item with dropdown is hovered, create an overlay that blocks
-       pointer events to items behind it (the second row) */
-    .navigation-navbar ul li.themeix-dropdown:hover::after,
-    .navigation-navbar ul li.has-children:hover::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: transparent;
-        pointer-events: auto;
-        z-index: 99999;
-        display: block;
-    }
-    
-    /* But make sure the dropdown and its parent stay above the overlay */
-    .navigation-navbar ul li.themeix-dropdown:hover,
-    .navigation-navbar ul li.has-children:hover {
-        z-index: 999999;
-    }
-    
-    .navigation-navbar ul li.themeix-dropdown:hover > ul,
-    .navigation-navbar ul li.has-children:hover > ul {
-        z-index: 1000000;
-        position: absolute;
     }
 }
 
