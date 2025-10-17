@@ -117,10 +117,26 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    row-gap: 0;
 }
 
 .navigation-navbar ul li {
     margin: 0 2px;
+}
+
+/* CRITICAL FIX: Second row blocks hover on first row dropdowns */
+/* The issue: When flex-wrap creates a second row, moving cursor from first-row 
+   menu items down to their dropdowns passes through the second row's bounding box,
+   which breaks the :hover state. Solution: Use ::before pseudo-element to bridge the gap */
+.navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: transparent;
+    z-index: 9999;
 }
 
 /* Ensure navigation doesn't wrap awkwardly */
