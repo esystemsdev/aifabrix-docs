@@ -118,47 +118,43 @@
     flex-wrap: wrap;
     align-items: center;
     row-gap: 0;
-    position: relative;
 }
 
 .navigation-navbar ul li {
     margin: 0 2px;
-    position: relative;
 }
 
 /* CRITICAL FIX: Second row blocks hover on first row dropdowns */
-/* The issue: When flex-wrap creates a second row, those items physically overlap
-   the dropdown menus from the first row. Solution: Ensure first-row items and their
-   dropdowns have higher z-index than second-row items */
+/* The flex-wrap creates rows but all items share the same stacking context.
+   We need to isolate each dropdown in its own stacking context. */
 
-/* First row items (assuming up to 6 items in first row) */
-.navigation-navbar ul li:nth-child(-n+6) {
-    z-index: 1000;
+/* Create isolated stacking context for dropdown parents */
+.navigation-navbar ul li.themeix-dropdown {
+    position: relative;
+    isolation: isolate;
 }
 
-/* Second row and beyond items - lower z-index so dropdowns appear above them */
-.navigation-navbar ul li:nth-child(n+7) {
+/* When hovering, boost the entire parent's z-index */
+.navigation-navbar ul li.themeix-dropdown:hover {
+    z-index: 10000;
+}
+
+/* Dropdown menu positioning */
+.navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item {
+    position: absolute;
+    top: 100%;
+    left: 0;
     z-index: 1;
 }
 
-/* Ensure dropdown parent has proper stacking context */
-.navigation-navbar ul li.themeix-dropdown {
-    z-index: 1000;
-}
-
-/* Dropdown menus need even higher z-index to appear above everything */
-.navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item {
-    z-index: 10000 !important;
-}
-
-/* Add invisible bridge above dropdown to maintain hover state */
+/* Add large invisible bridge above and around dropdown to maintain hover */
 .navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item::before {
     content: '';
     position: absolute;
-    top: -60px;
-    left: -20px;
-    right: -20px;
-    height: 60px;
+    top: -70px;
+    left: -30px;
+    right: -30px;
+    height: 70px;
     background: transparent;
     pointer-events: auto;
 }
@@ -184,18 +180,21 @@
 }
 
 /* Ensure dropdown appears above other content */
-/* Note: header-navigation has z-index: 2222, and flex-wrap creates multiple rows with stacking contexts */
-/* Dropdowns need very high z-index to appear above any wrapped navigation items */
+/* Using isolation and hover-based z-index boost to ensure dropdowns appear above wrapped rows */
 .themeix-dropdown {
     position: relative;
-    z-index: 1000 !important;
+    isolation: isolate;
+}
+
+.themeix-dropdown:hover {
+    z-index: 10000 !important;
 }
 
 .themeix-dropdown-item {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10000 !important;
+    z-index: 1 !important;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
