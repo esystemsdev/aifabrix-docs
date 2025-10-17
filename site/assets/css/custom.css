@@ -125,38 +125,42 @@
 }
 
 /* CRITICAL FIX: Second row blocks hover on first row dropdowns */
-/* The flex-wrap creates rows but all items share the same stacking context.
-   We need to isolate each dropdown in its own stacking context. */
+/* The slimmenu plugin uses slideDown/slideUp on mouseenter/mouseleave
+   We need to ensure dropdowns have extremely high z-index and extend hover area */
 
-/* Create isolated stacking context for dropdown parents */
-.navigation-navbar ul li.themeix-dropdown {
-    position: relative;
-    isolation: isolate;
-}
-
-/* When hovering, boost the entire parent's z-index */
-.navigation-navbar ul li.themeix-dropdown:hover {
-    z-index: 10000;
-}
-
-/* Dropdown menu positioning */
-.navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-}
-
-/* Add large invisible bridge above and around dropdown to maintain hover */
-.navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item::before {
-    content: '';
-    position: absolute;
-    top: -70px;
-    left: -30px;
-    right: -30px;
-    height: 70px;
-    background: transparent;
-    pointer-events: auto;
+/* Desktop only - fix wrapped navigation dropdown issues */
+@media (min-width: 769px) {
+    /* Parent must be positioned */
+    .navigation-navbar ul li.themeix-dropdown,
+    .navigation-navbar ul li.has-children {
+        position: relative;
+    }
+    
+    /* Force dropdown to appear above everything with ultra-high z-index */
+    .navigation-navbar ul li.themeix-dropdown > ul,
+    .navigation-navbar ul li.has-children > ul,
+    .navigation-navbar ul li > ul.themeix-dropdown-item {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        z-index: 999999 !important;
+        display: block !important;
+    }
+    
+    /* Create massive invisible hover bridge using parent's ::before */
+    .navigation-navbar ul li.themeix-dropdown::before,
+    .navigation-navbar ul li.has-children::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: -60px;
+        right: -60px;
+        height: 150px;
+        background: transparent;
+        pointer-events: auto;
+        z-index: 999998;
+        display: block;
+    }
 }
 
 /* Ensure navigation doesn't wrap awkwardly */
@@ -180,33 +184,26 @@
 }
 
 /* Ensure dropdown appears above other content */
-/* Using isolation and hover-based z-index boost to ensure dropdowns appear above wrapped rows */
 .themeix-dropdown {
     position: relative;
-    isolation: isolate;
-}
-
-.themeix-dropdown:hover {
-    z-index: 10000 !important;
 }
 
 .themeix-dropdown-item {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1 !important;
+    z-index: 99999 !important;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    pointer-events: none;
 }
 
-.themeix-dropdown:hover .themeix-dropdown-item {
+.themeix-dropdown:hover .themeix-dropdown-item,
+.themeix-dropdown.has-children:hover .themeix-dropdown-item {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    pointer-events: auto;
 }
 
 /* Mobile dropdown adjustments */
