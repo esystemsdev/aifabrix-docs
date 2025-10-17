@@ -118,25 +118,49 @@
     flex-wrap: wrap;
     align-items: center;
     row-gap: 0;
+    position: relative;
 }
 
 .navigation-navbar ul li {
     margin: 0 2px;
+    position: relative;
 }
 
 /* CRITICAL FIX: Second row blocks hover on first row dropdowns */
-/* The issue: When flex-wrap creates a second row, moving cursor from first-row 
-   menu items down to their dropdowns passes through the second row's bounding box,
-   which breaks the :hover state. Solution: Use ::before pseudo-element to bridge the gap */
+/* The issue: When flex-wrap creates a second row, those items physically overlap
+   the dropdown menus from the first row. Solution: Ensure first-row items and their
+   dropdowns have higher z-index than second-row items */
+
+/* First row items (assuming up to 6 items in first row) */
+.navigation-navbar ul li:nth-child(-n+6) {
+    z-index: 1000;
+}
+
+/* Second row and beyond items - lower z-index so dropdowns appear above them */
+.navigation-navbar ul li:nth-child(n+7) {
+    z-index: 1;
+}
+
+/* Ensure dropdown parent has proper stacking context */
+.navigation-navbar ul li.themeix-dropdown {
+    z-index: 1000;
+}
+
+/* Dropdown menus need even higher z-index to appear above everything */
+.navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item {
+    z-index: 10000 !important;
+}
+
+/* Add invisible bridge above dropdown to maintain hover state */
 .navigation-navbar ul li.themeix-dropdown .themeix-dropdown-item::before {
     content: '';
     position: absolute;
-    top: -50px;
-    left: 0;
-    right: 0;
-    height: 50px;
+    top: -60px;
+    left: -20px;
+    right: -20px;
+    height: 60px;
     background: transparent;
-    z-index: 9999;
+    pointer-events: auto;
 }
 
 /* Ensure navigation doesn't wrap awkwardly */
@@ -164,24 +188,26 @@
 /* Dropdowns need very high z-index to appear above any wrapped navigation items */
 .themeix-dropdown {
     position: relative;
-    z-index: 9999;
+    z-index: 1000 !important;
 }
 
 .themeix-dropdown-item {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10000;
+    z-index: 10000 !important;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .themeix-dropdown:hover .themeix-dropdown-item {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 /* Mobile dropdown adjustments */
