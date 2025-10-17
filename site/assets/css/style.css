@@ -631,7 +631,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     width: 110px;
   }
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu {
     box-shadow: 0 0 20px 5px rgba(33, 107, 188, 0.03);
     position: absolute;
@@ -642,7 +642,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     top: 83px;
   }
 }
-@media (min-width: 768px) and (max-width: 1400px) and (max-width: 575px) {
+@media (min-width: 768px) and (max-width: 991px) and (max-width: 575px) {
   .header-navigation .navigation-box #navigation-menu {
     top: 63px;
   }
@@ -676,7 +676,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   top: -2px;
   position: relative;
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li .nav-search {
     display: none;
   }
@@ -693,7 +693,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   color: #ffffff;
   font-weight: 400;
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li a {
     padding: 10px 15px 10px 15px;
     color: #404040;
@@ -712,7 +712,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 .header-navigation .navigation-box #navigation-menu li.has-submenu a {
   padding: 15px 30px 15px 15px;
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li.has-submenu a {
     padding: 10px 15px 10px 15px;
   }
@@ -739,7 +739,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   border-bottom: 20px solid #ffffff;
   transition: all 0.5s ease 0s;
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li.has-submenu ul {
     position: relative;
     left: 0;
@@ -769,7 +769,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 .header-navigation .navigation-box #navigation-menu li.has-submenu ul li:hover {
   border-left: 4px solid rgba(0, 1, 1, 0.01);
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li.has-submenu ul li:hover {
     border: 0;
   }
@@ -783,7 +783,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   background: transparent;
   width: 20px;
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li .sub-toggle {
     width: 100%;
     text-align: right;
@@ -806,7 +806,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   color: #ffffff;
   font-style: normal;
 }
-@media (min-width: 768px) and (max-width: 1400px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-navigation .navigation-box #navigation-menu li .sub-toggle i:before {
     color: #404040;
   }

@@ -13,7 +13,7 @@
     }
     // Responsive menu
     $('.slimmenu').slimmenu({
-        resizeWidth: '1400',
+        resizeWidth: '992',
         collapserTitle: '',
         animSpeed: 'fast',
         easingEffect: null,
