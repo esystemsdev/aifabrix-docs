@@ -10,6 +10,7 @@
     "merge-metadata": "ts-node scripts/merge-metadata.ts",
     "build-jekyll": "ts-node scripts/build-jekyll.ts",
     "deploy": "ts-node scripts/deploy.ts",
+    "sync-document360": "ts-node scripts/sync-document360.ts",
     "remove-frontmatter": "ts-node scripts/remove-frontmatter.ts",
     "dev": "cd site && bundle exec jekyll serve --livereload",
     "build": "npm run build-docs"
@@ -24,12 +25,14 @@
   "author": "eSystems Nordic Oy",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.0.0",
     "@types/js-yaml": "^4.0.0",
+    "@types/node": "^20.0.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "aifabrix-d360": "file:../aifabrix-d360",
+    "dotenv": "^17.2.3",
     "js-yaml": "^4.1.0"
   }
 }
