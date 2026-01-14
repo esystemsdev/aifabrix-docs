@@ -154,3 +154,8 @@ site/_docs/
 # Jekyll bundle
 vendor/
 .bundle/
+
+# Document360 sync database files
+sync.db
+sync.db-shm
+sync.db-wal
