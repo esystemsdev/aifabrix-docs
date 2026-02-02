@@ -1,0 +1,48 @@
+title: Compliance & Auditability
+description: Compliance-by-default with ISO-27001 alignment and evidence-ready audits for enterprise AI
+audience:
+  - admin
+  - end-user
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - Compliance-by-Design
+  - Audit Trails
+  - Evidence & Reporting
+  - Benefits
+  - Conclusion
+custom_links:
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+    submenu:
+      - text: Enterprise Features Overview
+        url: /docs/enterprise-features/overview/
+      - text: Identity & Access Management
+        url: /docs/enterprise-features/identity-access-management/
+      - text: Governance & Policy Packs
+        url: /docs/enterprise-features/governance-policy-packs/
+      - text: Compliance & Auditability
+        url: /docs/enterprise-features/compliance-auditability/
+      - text: Security & Compliance
+        url: /docs/enterprise-features/security-compliance/
+seo:
+  keywords:
+    - AI Fabrix
+    - compliance
+    - auditability
+    - ISO-27001
+    - audit trails
+    - evidence
+    - regulatory
+  canonical_url: https://docs.aifabrix.ai/enterprise-features/compliance-auditability
+  og_image: images/compliance-auditability.png
+document360:
+  category: Enterprise Features
+  visibility: public
+  searchable: true
+  featured: true
+  order: 4
+layout: doc

@@ -1,0 +1,46 @@
+title: Sales & Project Workspaces
+description: Workspace assistants for sales and delivery teams with CRM integration and policy-aware collaboration
+audience:
+  - admin
+  - end-user
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - Key Capabilities
+  - Enterprise Value
+  - Example Use Cases
+  - 'Diagram: Sales & Project Workspaces'
+custom_links:
+  - text: Use Cases
+    url: /docs/use-cases/
+    submenu:
+      - text: Use Cases Overview
+        url: /docs/use-cases/overview/
+      - text: Microsoft 365 Knowledge Retrieval
+        url: /docs/use-cases/microsoft-365-knowledge-retrieval/
+      - text: Policy-Aware Assistants
+        url: /docs/use-cases/policy-aware-assistants/
+      - text: Secure Case Building & Collaboration
+        url: /docs/use-cases/secure-case-building-collaboration/
+      - text: Sales & Project Workspaces
+        url: /docs/use-cases/sales-project-workspaces/
+seo:
+  keywords:
+    - AI Fabrix
+    - sales workspaces
+    - project workspaces
+    - CRM integration
+    - deal acceleration
+    - collaboration
+  canonical_url: https://docs.aifabrix.ai/use-cases/sales-project-workspaces
+  og_image: images/sales-project-workspaces.png
+document360:
+  category: Use Cases
+  visibility: public
+  searchable: true
+  featured: true
+  order: 5
+layout: doc

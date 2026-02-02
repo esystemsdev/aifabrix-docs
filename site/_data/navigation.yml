@@ -1,122 +1,209 @@
 - text: Home
   url: /
 - text: Overview
-  url: /docs/overview/platform-overview/
+  url: /docs/overview/
   submenu:
-    - text: AI Fabrix Platform Overview
-      url: /docs/overview/platform-overview/
+    - text: Overview
+      url: /docs/overview/
+    - text: What AI Fabrix Is
+      url: /docs/overview/what-aifabrix-is/
+    - text: What AI Fabrix Is Not
+      url: /docs/overview/what-aifabrix-is-not/
+    - text: AI Fabrix as an AI Operating Model
+      url: /docs/overview/ai-operating-model/
+    - text: Why In-Tenant Architecture Matters
+      url: /docs/overview/in-tenant-architecture/
+    - text: Controller vs Dataplane Responsibilities
+      url: /docs/overview/controller-vs-dataplane/
+    - text: How AI Fabrix Complements Microsoft
+      url: /docs/overview/complements-microsoft/
+    - text: Target Audiences
+      url: /docs/overview/target-audiences/
+- text: Why AI Fabrix Exists
+  url: /docs/why-aifabrix-exists/
+  submenu:
+    - text: Why AI Fabrix Exists
+      url: /docs/why-aifabrix-exists/
+    - text: Why Enterprise AI Pilots Fail
+      url: /docs/why-aifabrix-exists/why-pilots-fail/
+    - text: Data Access Is the Real Bottleneck
+      url: /docs/why-aifabrix-exists/data-access-bottleneck/
+    - text: Why Service Accounts Are a Dead End
+      url: /docs/why-aifabrix-exists/service-accounts-dead-end/
+    - text: Governance by Design vs Governance by Policy
+      url: /docs/why-aifabrix-exists/governance-by-design/
+    - text: AI Cost Sprawl and Risk Containment
+      url: /docs/why-aifabrix-exists/cost-sprawl-risk/
+    - text: From Experiments to Production AI
+      url: /docs/why-aifabrix-exists/experiments-to-production/
+- text: Architecture Overview
+  url: /docs/architecture-overview/
+  submenu:
+    - text: Architecture Overview
+      url: /docs/architecture-overview/
+    - text: High-Level Architecture
+      url: /docs/architecture-overview/high-level-architecture/
+    - text: Trust Boundaries and Execution Zones
+      url: /docs/architecture-overview/trust-boundaries/
+    - text: Identity and Policy Flow
+      url: /docs/architecture-overview/identity-policy-flow/
+    - text: End-to-End Request Lifecycle
+      url: /docs/architecture-overview/request-lifecycle/
+- text: Controller Layer (Miso)
+  url: /docs/controller-layer-miso/
+  submenu:
+    - text: Controller Layer Overview
+      url: /docs/controller-layer-miso/
+    - text: Miso Overview
+      url: /docs/controller-layer-miso/miso-overview/
+    - text: Identity & Access
+      url: /docs/controller-layer-miso/identity-access/
+    - text: Policy & Governance
+      url: /docs/controller-layer-miso/policy-governance/
+    - text: Environment Lifecycle
+      url: /docs/controller-layer-miso/environment-lifecycle/
+    - text: Audit & Observability
+      url: /docs/controller-layer-miso/audit-observability/
+- text: Dataplane
+  url: /docs/dataplane/
+  submenu:
+    - text: Dataplane Overview
+      url: /docs/dataplane/
+    - text: CIP — Composable Integration Pipelines
+      url: /docs/dataplane/cip-composable-integration-pipelines/
+      submenu:
+        - text: CIP Overview
+          url: /docs/dataplane/cip-composable-integration-pipelines/
+        - text: CIP Execution Model
+          url: /docs/dataplane/cip-composable-integration-pipelines/cip-execution-model/
+        - text: Contracts and Interfaces
+          url: /docs/dataplane/cip-composable-integration-pipelines/contracts-interfaces/
+        - text: Security and Governance
+          url: /docs/dataplane/cip-composable-integration-pipelines/security-governance/
+    - text: Core Dataplane Services
+      url: /docs/dataplane/core-dataplane-services/
+- text: Orchestration Layer
+  url: /docs/orchestration-layer/
+  submenu:
+    - text: Orchestration Layer Overview
+      url: /docs/orchestration-layer/
+    - text: Orchestration Concepts
+      url: /docs/orchestration-layer/orchestration-concepts/
+    - text: Orchestration Options
+      url: /docs/orchestration-layer/orchestration-options/
+    - text: Agent and Workflow Design
+      url: /docs/orchestration-layer/agent-workflow-design/
+- text: Interface Layer
+  url: /docs/interface-layer/
+  submenu:
+    - text: Interface Layer Overview
+      url: /docs/interface-layer/
+    - text: Interface Concepts
+      url: /docs/interface-layer/interface-concepts/
+    - text: Interface Options
+      url: /docs/interface-layer/interface-options/
+    - text: Workspace and Access Models
+      url: /docs/interface-layer/workspace-access-models/
+- text: Open Standards & Contracts
+  url: /docs/open-standards-contracts/
+  submenu:
+    - text: Open Standards & Contracts
+      url: /docs/open-standards-contracts/
+    - text: OpenAPI as System Contract
+      url: /docs/open-standards-contracts/openapi-contracts/
+    - text: MCP (Model Context Protocol)
+      url: /docs/open-standards-contracts/mcp-protocol/
+    - text: Why AI Fabrix Avoids Proprietary SDKs
+      url: /docs/open-standards-contracts/why-open-standards/
+    - text: Inspectability and Exit Strategy
+      url: /docs/open-standards-contracts/inspectability-exit-strategy/
+- text: Enterprise Capabilities
+  url: /docs/enterprise-capabilities/
+  submenu:
+    - text: Enterprise Capabilities
+      url: /docs/enterprise-capabilities/
+    - text: Identity-Native Security
+      url: /docs/enterprise-capabilities/identity-native-security/
+    - text: Metadata-First Architecture
+      url: /docs/enterprise-capabilities/metadata-first-architecture/
+    - text: Policy-Aware AI Access
+      url: /docs/enterprise-capabilities/policy-aware-ai-access/
+    - text: Predictable Cost Controls
+      url: /docs/enterprise-capabilities/predictable-cost-controls/
+    - text: Regulated Workload Readiness
+      url: /docs/enterprise-capabilities/regulated-workload-readiness/
+    - text: Zero-Trust AI Architecture
+      url: /docs/enterprise-capabilities/zero-trust-ai-architecture/
 - text: Evaluation Guide
-  url: /docs/evaluation/proof-of-concept/
+  url: /docs/evaluation-guide/
   submenu:
-    - text: 30-Day Proof-of-Concept Plan
-      url: /docs/evaluation/proof-of-concept/
-    - text: AI Fabrix Evaluation Guide
-      url: /docs/evaluation/overview/
-    - text: Architecture & Security Checklist
-      url: /docs/evaluation/security-checklist/
-    - text: Competitive Comparison
-      url: /docs/evaluation/competitive-comparison/
-    - text: Cost & Sizing Guide
-      url: /docs/evaluation/cost-sizing/
-    - text: How to Evaluate Fabrix (Key Criteria)
-      url: /docs/evaluation/key-criteria/
-    - text: Pilot & Rollout Playbook
-      url: /docs/evaluation/pilot-rollout/
-- text: Core Components
-  url: /docs/core-components/overview/
-  submenu:
-    - text: AI Fabrix Core Components
-      url: /docs/core-components/overview/
-    - text: Chat Interface — Microsoft Teams, Slack & Beyond
-      url: /docs/core-components/chat-interface/
-    - text: Core Platform Services — Metadata-Aware Retrieval & Connectors
-      url: /docs/core-components/core-platform-services/
-    - text: Flowise — Orchestration for RAG Pipelines & Agents
-      url: /docs/core-components/flowise-orchestration/
-    - text: Miso — Governance & Deployment
-      url: /docs/core-components/miso-governance/
-    - text: Miso Controller
-      url: /docs/core-components/miso-controller/
-    - text: OpenWebUI — Secure UX for Chat & Case Building
-      url: /docs/core-components/openwebui-secure-ux/
-    - text: SDK & Plugins — Developer Extensions
-      url: /docs/core-components/sdk-plugins/
-- text: Enterprise Features
-  url: /docs/enterprise-features/overview/
-  submenu:
-    - text: AI Fabrix Enterprise Features
-      url: /docs/enterprise-features/overview/
-    - text: Compliance & Auditability
-      url: /docs/enterprise-features/compliance-auditability/
-    - text: Governance & Policy Packs
-      url: /docs/enterprise-features/governance-policy-packs/
-    - text: Identity & Access Management
-      url: /docs/enterprise-features/identity-access-management/
-    - text: Scalability & Observability
-      url: /docs/enterprise-features/scalability-observability/
-- text: Use Cases
-  url: /docs/use-cases/overview/
-  submenu:
-    - text: AI Fabrix Use Cases — Overview
-      url: /docs/use-cases/overview/
-    - text: AI Workload Use Cases
-      url: /docs/use-cases/ai-workloads/
-    - text: Microsoft 365 Knowledge Retrieval
-      url: /docs/use-cases/microsoft-365-knowledge-retrieval/
-    - text: Policy-Aware Assistants
-      url: /docs/use-cases/policy-aware-assistants/
-    - text: Sales & Project Workspaces
-      url: /docs/use-cases/sales-project-workspaces/
-    - text: Secure Case Building & Collaboration
-      url: /docs/use-cases/secure-case-building-collaboration/
+    - text: Evaluation Guide
+      url: /docs/evaluation-guide/
+    - text: Enterprise Evaluation Criteria
+      url: /docs/evaluation-guide/evaluation-criteria/
+    - text: Security and Compliance Checklist
+      url: /docs/evaluation-guide/security-compliance-checklist/
+    - text: Architecture Review Questions
+      url: /docs/evaluation-guide/architecture-review-questions/
+    - text: 30-Day PoC Framework
+      url: /docs/evaluation-guide/poc-framework/
+    - text: Risk and Cost Assessment
+      url: /docs/evaluation-guide/risk-cost-assessment/
 - text: Deployment & Operations
-  url: /docs/deployment-operations/overview/
+  url: /docs/deployment-operations/
   submenu:
-    - text: AI Fabrix Deployment & Operations
-      url: /docs/deployment-operations/overview/
-    - text: Exit Path & Open Foundation
-      url: /docs/deployment-operations/exit-path-open-foundation/
-    - text: Infrastructure Sizing & Scaling
-      url: /docs/deployment-operations/infrastructure-sizing-scaling/
-    - text: Installation Options
-      url: /docs/deployment-operations/installation-options/
-    - text: Subscription Tiers
-      url: /docs/deployment-operations/subscription-tiers/
-    - text: Support & SLAs
-      url: /docs/deployment-operations/support-slas/
+    - text: Deployment & Operations
+      url: /docs/deployment-operations/
+    - text: Azure-Native Deployment Models
+      url: /docs/deployment-operations/azure-deployment-models/
+    - text: Networking and Private Endpoints
+      url: /docs/deployment-operations/networking-private-endpoints/
+    - text: Scaling and Performance Profiles
+      url: /docs/deployment-operations/scaling-performance/
+    - text: DevOps and CI/CD Integration
+      url: /docs/deployment-operations/devops-cicd/
+    - text: Backup, Recovery, and DR
+      url: /docs/deployment-operations/backup-recovery-dr/
+- text: Use Cases
+  url: /docs/use-cases/
+  submenu:
+    - text: Use Cases
+      url: /docs/use-cases/
+    - text: Microsoft 365 Knowledge Assistants
+      url: /docs/use-cases/microsoft-365-knowledge-assistants/
+    - text: Secure Internal Copilots
+      url: /docs/use-cases/secure-internal-copilots/
+    - text: Policy-Aware Enterprise Search
+      url: /docs/use-cases/policy-aware-enterprise-search/
+    - text: Case and Deal Workspaces
+      url: /docs/use-cases/case-deal-workspaces/
+    - text: Regulated Data AI Scenarios
+      url: /docs/use-cases/regulated-data-ai-scenarios/
 - text: Customer Success
-  url: /docs/customer-success/overview/
+  url: /docs/customer-success/
   submenu:
-    - text: AI Fabrix Customer Success — Overview
-      url: /docs/customer-success/overview/
-    - text: Case Studies
-      url: /docs/customer-success/case-studies/
+    - text: Customer Success
+      url: /docs/customer-success/
     - text: Pilot → Production Playbook
       url: /docs/customer-success/pilot-production-playbook/
-    - text: ROI & KPI Library
-      url: /docs/customer-success/roi-kpi-library/
-- text: Modules & Documentation
-  url: /docs/modules-documentation/overview/
-  submenu:
-    - text: AI Fabrix Modules & Documentation
-      url: /docs/modules-documentation/overview/
-    - text: API Reference Documentation
-      url: /docs/modules-documentation/api-reference/
-- text: Roadmap
-  url: /docs/roadmap/overview/
-  submenu:
-    - text: AI Fabrix Roadmap
-      url: /docs/roadmap/overview/
-    - text: Expanded Compliance & Observability
-      url: /docs/roadmap/expanded-compliance-observability/
-    - text: Multi-Cloud & Hybrid Support
-      url: /docs/roadmap/multi-cloud-hybrid-support/
-    - text: Upcoming Features
-      url: /docs/roadmap/upcoming-features/
+    - text: Governance Maturity Model
+      url: /docs/customer-success/governance-maturity-model/
+    - text: KPIs and ROI Measurement
+      url: /docs/customer-success/kpis-roi-measurement/
+    - text: Operational Best Practices
+      url: /docs/customer-success/operational-best-practices/
 - text: Resources
-  url: /docs/resources/overview/
+  url: /docs/resources/
   submenu:
-    - text: AI Fabrix Resources — Overview
-      url: /docs/resources/overview/
-    - text: Support Resources
-      url: /docs/resources/support-resources/
+    - text: Resources
+      url: /docs/resources/
+    - text: Architecture Diagrams
+      url: /docs/resources/architecture-diagrams/
+    - text: CIP Examples
+      url: /docs/resources/cip-examples/
+    - text: Policy Pack Examples
+      url: /docs/resources/policy-pack-examples/
+    - text: RFP / RFI Templates
+      url: /docs/resources/rfp-rfi-templates/
+    - text: Release Notes
+      url: /docs/resources/release-notes/

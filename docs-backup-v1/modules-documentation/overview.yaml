@@ -1,0 +1,66 @@
+title: AI Fabrix Modules & Documentation
+description: Comprehensive documentation for each AI Fabrix module covering governance, retrieval, orchestration, and developer tools
+audience:
+  - admin
+  - architect
+  - developer
+  - end-user
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - Purpose of This Section
+  - What You'll Find in This Section
+  - Key Value for Enterprises
+  - Conclusion
+custom_links:
+  - text: Overview
+    url: /docs/overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+  - text: Core Components
+    url: /docs/core-components/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+  - text: Use Cases
+    url: /docs/use-cases/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+  - text: Customer Success
+    url: /docs/customer-success/
+  - text: Roadmap
+    url: /docs/roadmap/
+  - text: Modules & Documentation
+    url: /docs/modules-documentation/
+    submenu:
+      - text: Modules & Documentation Overview
+        url: /docs/modules-documentation/overview/
+      - text: Miso — Governance & Deployment
+        url: /docs/modules-documentation/miso-governance-deployment/
+      - text: Core Platform Services
+        url: /docs/modules-documentation/core-platform-services/
+      - text: Flowise Orchestration
+        url: /docs/modules-documentation/flowise-orchestration/
+      - text: OpenWebUI
+        url: /docs/modules-documentation/openwebui/
+      - text: SDK & Plugins
+        url: /docs/modules-documentation/sdk-plugins/
+seo:
+  keywords:
+    - AI Fabrix modules
+    - platform documentation
+    - governance
+    - orchestration
+    - developer tools
+    - enterprise AI
+  canonical_url: https://docs.aifabrix.ai/modules-documentation/overview
+  og_image: images/modules-documentation-overview-preview.png
+document360:
+  category: Modules & Documentation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

@@ -1,0 +1,52 @@
+title: Scalability & Observability
+description: Enterprise-scale deployment with Dev→Test→Prod lifecycle and comprehensive observability
+audience:
+  - admin
+  - developer
+  - end-user
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - Lifecycle Management
+  - Deployment Resilience
+  - Observability
+  - Cost & Usage Telemetry
+  - Benefits
+  - Conclusion
+custom_links:
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+    submenu:
+      - text: Enterprise Features Overview
+        url: /docs/enterprise-features/overview/
+      - text: Identity & Access Management
+        url: /docs/enterprise-features/identity-access-management/
+      - text: Governance & Policy Packs
+        url: /docs/enterprise-features/governance-policy-packs/
+      - text: Compliance & Auditability
+        url: /docs/enterprise-features/compliance-auditability/
+      - text: Scalability & Observability
+        url: /docs/enterprise-features/scalability-observability/
+      - text: Security & Compliance
+        url: /docs/enterprise-features/security-compliance/
+seo:
+  keywords:
+    - AI Fabrix
+    - scalability
+    - observability
+    - DevOps
+    - lifecycle
+    - monitoring
+    - telemetry
+  canonical_url: https://docs.aifabrix.ai/enterprise-features/scalability-observability
+  og_image: images/scalability-observability.png
+document360:
+  category: Enterprise Features
+  visibility: public
+  searchable: true
+  featured: true
+  order: 5
+layout: doc

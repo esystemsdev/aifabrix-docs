@@ -1,0 +1,42 @@
+title: How to Evaluate Fabrix (Key Criteria)
+description: Key enterprise criteria for evaluating AI Fabrix platform
+audience:
+  - admin
+  - end-user
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+custom_links:
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+    submenu:
+      - text: Key Criteria
+        url: /docs/evaluation/key-criteria/
+      - text: Proof of Concept
+        url: /docs/evaluation/proof-of-concept/
+      - text: Security Checklist
+        url: /docs/evaluation/security-checklist/
+      - text: Cost & Sizing
+        url: /docs/evaluation/cost-sizing/
+      - text: Competitive Comparison
+        url: /docs/evaluation/competitive-comparison/
+      - text: Pilot & Rollout
+        url: /docs/evaluation/pilot-rollout/
+seo:
+  keywords:
+    - AI Fabrix
+    - evaluation
+    - criteria
+    - enterprise
+    - assessment
+  canonical_url: https://docs.aifabrix.ai/evaluation/key-criteria
+  og_image: images/key-criteria.png
+document360:
+  category: Evaluation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc

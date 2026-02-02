@@ -1,0 +1,190 @@
+---
+title: AI Fabrix Documentation Hub
+description: Comprehensive documentation for AI Fabrix enterprise AI platform with Azure-native ISO27k compliance
+audience:
+  - end-user
+  - admin
+version: stable
+owner: platform-team
+last_reviewed: '2024-01-15'
+date: '2025-09-24T15:42:29.881Z'
+toc: true
+custom_links:
+  - text: Overview
+    url: /docs/overview/
+    submenu:
+      - text: Platform Overview
+        url: /docs/overview/platform-overview/
+  - text: Evaluation Guide
+    url: /docs/evaluation/
+    submenu:
+      - text: Evaluation Guide Overview
+        url: /docs/evaluation/overview/
+      - text: Key Criteria
+        url: /docs/evaluation/key-criteria/
+      - text: Proof-of-Concept Plan
+        url: /docs/evaluation/proof-of-concept/
+      - text: Security Checklist
+        url: /docs/evaluation/security-checklist/
+      - text: Cost & Sizing
+        url: /docs/evaluation/cost-sizing/
+      - text: Competitive Comparison
+        url: /docs/evaluation/competitive-comparison/
+      - text: Pilot & Rollout Playbook
+        url: /docs/evaluation/pilot-rollout/
+  - text: Core Components
+    url: /docs/core-components/
+    submenu:
+      - text: Core Components Overview
+        url: /docs/core-components/overview/
+      - text: Miso — Governance & Deployment
+        url: /docs/core-components/miso-governance/
+      - text: Core Platform Services
+        url: /docs/core-components/core-platform-services/
+      - text: Flowise — Orchestration
+        url: /docs/core-components/flowise-orchestration/
+      - text: OpenWebUI — Secure UX
+        url: /docs/core-components/openwebui-secure-ux/
+      - text: SDK & Plugins
+        url: /docs/core-components/sdk-plugins/
+      - text: Chat Interface
+        url: /docs/core-components/chat-interface/
+  - text: Enterprise Features
+    url: /docs/enterprise-features/
+    submenu:
+      - text: Enterprise Features Overview
+        url: /docs/enterprise-features/overview/
+      - text: Identity & Access Management
+        url: /docs/enterprise-features/identity-access-management/
+      - text: Governance & Policy Packs
+        url: /docs/enterprise-features/governance-policy-packs/
+      - text: Compliance & Auditability
+        url: /docs/enterprise-features/compliance-auditability/
+      - text: Scalability & Observability
+        url: /docs/enterprise-features/scalability-observability/
+  - text: Use Cases
+    url: /docs/use-cases/
+    submenu:
+      - text: Use Cases Overview
+        url: /docs/use-cases/overview/
+      - text: Microsoft 365 Knowledge Retrieval
+        url: /docs/use-cases/microsoft-365-knowledge-retrieval/
+      - text: Policy-Aware Assistants
+        url: /docs/use-cases/policy-aware-assistants/
+      - text: Secure Case Building & Collaboration
+        url: /docs/use-cases/secure-case-building-collaboration/
+      - text: Sales & Project Workspaces
+        url: /docs/use-cases/sales-project-workspaces/
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+    submenu:
+      - text: Deployment & Operations Overview
+        url: /docs/deployment-operations/overview/
+      - text: Installation Options
+        url: /docs/deployment-operations/installation-options/
+      - text: Infrastructure Sizing & Scaling
+        url: /docs/deployment-operations/infrastructure-sizing-scaling/
+      - text: Subscription Tiers
+        url: /docs/deployment-operations/subscription-tiers/
+      - text: Support & SLAs
+        url: /docs/deployment-operations/support-slas/
+      - text: Exit Path & Open Foundation
+        url: /docs/deployment-operations/exit-path-open-foundation/
+  - text: Customer Success
+    url: /docs/customer-success/
+    submenu:
+      - text: Customer Success Overview
+        url: /docs/customer-success/overview/
+      - text: Case Studies
+        url: /docs/customer-success/case-studies/
+      - text: ROI & KPI Library
+        url: /docs/customer-success/roi-kpi-library/
+      - text: Pilot → Production Playbook
+        url: /docs/customer-success/pilot-production-playbook/
+  - text: Roadmap
+    url: /docs/roadmap/
+    submenu:
+      - text: Roadmap Overview
+        url: /docs/roadmap/overview/
+      - text: Upcoming Features
+        url: /docs/roadmap/upcoming-features/
+      - text: Multi-Cloud & Hybrid Support
+        url: /docs/roadmap/multi-cloud-hybrid-support/
+      - text: Expanded Compliance & Observability
+        url: /docs/roadmap/expanded-compliance-observability/
+  - text: Modules & Documentation
+    url: /docs/modules-documentation/
+    submenu:
+      - text: Modules & Documentation Overview
+        url: /docs/modules-documentation/overview/
+  - text: Resources
+    url: /docs/resources/
+    submenu:
+      - text: Resources Overview
+        url: /docs/resources/overview/
+seo:
+  keywords:
+    - AI Fabrix
+    - documentation
+    - enterprise AI
+    - Azure
+    - ISO27001
+  canonical_url: https://docs.aifabrix.ai/
+  og_image: images/documentation-hub-preview.png
+document360:
+  category: Documentation
+  visibility: public
+  searchable: true
+  featured: true
+  order: 1
+layout: doc
+---
+
+
+# AI Fabrix Documentation Hub
+
+Welcome to the AI Fabrix documentation hub. This is the central location for all AI Fabrix platform documentation.
+
+## Overview
+
+- [Platform Overview](overview/platform-overview.md) - Comprehensive overview of AI Fabrix enterprise AI platform
+
+## Evaluation Guide
+
+- [Evaluation Guide Overview](evaluation/overview.md) - Structured approach to evaluating AI Fabrix for your organization
+
+## Core Components
+
+- [Core Components Overview](core-components/overview.md) - Detailed breakdown of the main platform layers of AI Fabrix
+
+## Enterprise Features
+
+- [Enterprise Features Overview](enterprise-features/overview.md) - Features that make AI Fabrix enterprise-ready for secure, governed, and scalable AI adoption
+
+## Use Cases
+
+- [Use Cases Overview](use-cases/overview.md) - Enterprise-ready AI use cases for secure, policy-aware solutions on Microsoft services
+
+## Deployment & Operations
+
+- [Deployment & Operations Overview](deployment-operations/overview.md) - Comprehensive guide for deploying and operating AI Fabrix in enterprise environments
+
+## Customer Success
+
+- [Customer Success Overview](customer-success/overview.md) - Framework for understanding how AI Fabrix delivers measurable business value and enterprise-wide transformation
+
+## Roadmap
+
+- [Roadmap Overview](roadmap/overview.md) - Continuous evolution of AI Fabrix to meet enterprise priorities of security, compliance, governance, and scalability
+
+## Modules & Documentation
+
+- [Modules & Documentation Overview](modules-documentation/overview.md) - Comprehensive documentation for each AI Fabrix module covering governance, retrieval, orchestration, and developer tools
+
+## Resources
+
+- [Resources Overview](resources/overview.md) - Supporting materials, templates, and tools for successful AI Fabrix evaluation, deployment, and operation
+
+---
+
+*This documentation is automatically synchronized with Document360 for publication.*

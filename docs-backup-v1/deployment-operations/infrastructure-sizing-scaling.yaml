@@ -1,0 +1,52 @@
+title: Infrastructure Sizing & Scaling
+description: Predictable scaling with Azure-native resources and size presets (S, M, L, XL) for enterprise workloads
+audience:
+  - admin
+  - developer
+  - end-user
+version: stable
+owner: platform-team
+last_reviewed: '2025-01-15'
+date: '2025-01-15'
+toc: true
+table_of_contents:
+  - Sizing Profiles
+  - Scaling Approach
+  - Upgrade Path
+  - Observability & Cost Control
+  - Infrastructure Scaling Diagram
+  - Key Takeaway
+custom_links:
+  - text: Deployment & Operations
+    url: /docs/deployment-operations/
+    submenu:
+      - text: Deployment & Operations Overview
+        url: /docs/deployment-operations/overview/
+      - text: Installation Options
+        url: /docs/deployment-operations/installation-options/
+      - text: Infrastructure Sizing & Scaling
+        url: /docs/deployment-operations/infrastructure-sizing-scaling/
+      - text: Subscription Tiers
+        url: /docs/deployment-operations/subscription-tiers/
+      - text: Support & SLAs
+        url: /docs/deployment-operations/support-slas/
+      - text: Exit Path & Open Foundation
+        url: /docs/deployment-operations/exit-path-open-foundation/
+seo:
+  keywords:
+    - AI Fabrix
+    - infrastructure
+    - sizing
+    - scaling
+    - Azure
+    - S/M/L/XL
+    - enterprise
+  canonical_url: https://docs.aifabrix.ai/deployment-operations/infrastructure-sizing-scaling
+  og_image: images/infrastructure-sizing-scaling.png
+document360:
+  category: Deployment & Operations
+  visibility: public
+  searchable: true
+  featured: true
+  order: 3
+layout: doc
