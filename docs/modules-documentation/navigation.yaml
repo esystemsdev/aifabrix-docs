@@ -1,9 +1,0 @@
-title: API Reference Documentation
-description: Navigation for API Reference Documentation section
-items:
-  - title: AI Fabrix Modules & Documentation
-    url: overview
-    order: 999
-  - title: API Reference Documentation
-    url: api-reference
-    order: 999

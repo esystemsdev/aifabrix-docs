@@ -1,0 +1,64 @@
+title: "Why AI Fabrix Exists"
+description: "Understanding why enterprise AI pilots fail and how AI Fabrix removes structural failure modes to enable production AI"
+audience:
+  - end-user
+  - admin
+  - architect
+  - executive
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-02"
+layout: "doc"
+date: "2026-02-02"
+toc: true
+custom_links:
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Why AI Fabrix Exists"
+    url: /docs/why-aifabrix-exists/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+# SEO Configuration
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "enterprise AI"
+    - "AI pilot failure"
+    - "data access bottleneck"
+    - "service accounts"
+    - "governance by design"
+    - "AI cost sprawl"
+    - "production AI"
+  canonical_url: "https://docs.aifabrix.ai/why-aifabrix-exists/"
+  og_image: "images/why-aifabrix-exists.png"
+
+# Document360 Specific
+document360:
+  category: "Why AI Fabrix Exists"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 2
