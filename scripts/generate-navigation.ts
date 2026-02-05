@@ -94,6 +94,15 @@ function generateNavigationForFolder(folderPath: string): void {
     const folderName = path.basename(folderPath);
     const navigationFile = path.join(folderPath, 'navigation.yaml');
     
+    // Scan for documents first
+    const items = scanFolderForDocs(folderPath);
+    
+    // Skip empty directories (V1 remnants)
+    if (items.length === 0) {
+        console.log(`⏭️  Skipping empty directory: ${folderName}`);
+        return;
+    }
+    
     // Get folder title from first YAML file or use folder name
     let folderTitle = folderName.charAt(0).toUpperCase() + folderName.slice(1).replace(/-/g, ' ');
     
@@ -114,8 +123,6 @@ function generateNavigationForFolder(folderPath: string): void {
     } catch (error) {
         // Use default title
     }
-    
-    const items = scanFolderForDocs(folderPath);
     
     const navigationConfig: NavigationConfig = {
         title: folderTitle,
