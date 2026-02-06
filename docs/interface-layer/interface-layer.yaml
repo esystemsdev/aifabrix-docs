@@ -1,0 +1,65 @@
+title: "Interface Layer"
+description: "User interaction surfaces for AI Fabrix, including OpenWebUI, Teams, Copilot, Slack, and custom portals"
+audience:
+  - developer
+  - architect
+  - admin
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-02"
+layout: "doc"
+date: "2026-02-02"
+toc: true
+custom_links:
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Why AI Fabrix Exists"
+    url: /docs/why-aifabrix-exists/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+# SEO Configuration
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Interface Layer"
+    - "OpenWebUI"
+    - "Microsoft Teams"
+    - "Microsoft Copilot"
+    - "Slack"
+    - "user interaction"
+    - "identity propagation"
+    - "case-based access"
+    - "workspace access models"
+  canonical_url: "https://docs.aifabrix.ai/interface-layer/"
+  og_image: "images/interface-layer.png"
+
+# Document360 Specific
+document360:
+  category: "Interface Layer"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 7

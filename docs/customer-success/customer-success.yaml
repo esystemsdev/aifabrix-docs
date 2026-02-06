@@ -1,0 +1,63 @@
+title: "Customer Success"
+description: "Pilot to production playbook, governance maturity model, KPIs and ROI measurement, and operational best practices for AI Fabrix"
+audience:
+  - admin
+  - executive
+  - architect
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-02"
+layout: "doc"
+date: "2026-02-02"
+toc: true
+custom_links:
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Why AI Fabrix Exists"
+    url: /docs/why-aifabrix-exists/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+# SEO Configuration
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "customer success"
+    - "pilot to production"
+    - "governance maturity"
+    - "KPIs"
+    - "ROI measurement"
+    - "operational best practices"
+    - "enterprise AI adoption"
+  canonical_url: "https://docs.aifabrix.ai/customer-success/"
+  og_image: "images/customer-success.png"
+
+# Document360 Specific
+document360:
+  category: "Customer Success"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 13

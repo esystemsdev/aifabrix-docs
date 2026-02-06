@@ -1,13 +1,15 @@
 #!/usr/bin/env ts-node
 
 /**
- * Main Navigation Generation Script
+ * Main Navigation Generation Script (V2)
  * 
  * Automatically generates the main site navigation (site/_data/navigation.yml)
- * from individual section navigation files (docs/[section]/navigation.yaml).
+ * from YAML metadata files in each section directory.
  * 
- * This ensures the main navigation stays in sync with the actual content
- * structure without manual intervention.
+ * V2 Structure:
+ * - Each section has a single .md file and corresponding .yaml metadata file
+ * - Order is determined by the `document360.order` field in YAML metadata
+ * - Navigation is generated directly from YAML metadata, not from navigation.yaml files
  * 
  * Usage: npm run generate-main-nav
  */
@@ -19,16 +21,18 @@ import * as yaml from 'js-yaml';
 const DOCS_DIR = 'docs';
 const SITE_NAV_FILE = 'site/_data/navigation.yml';
 
-interface NavigationItem {
-    title: string;
-    url: string;
-    order?: number;
-}
-
-interface SectionNavigation {
+interface YamlMetadata {
     title: string;
     description?: string;
-    items: NavigationItem[];
+    document360?: {
+        order?: number;
+        category?: string;
+    };
+    custom_links?: Array<{
+        text: string;
+        url: string;
+    }>;
+    [key: string]: any;
 }
 
 interface MainNavigationItem {
@@ -38,59 +42,35 @@ interface MainNavigationItem {
 }
 
 /**
- * Get the display name for a section
+ * Get section metadata from YAML file
  */
-function getSectionDisplayName(sectionName: string): string {
-    const displayNames: Record<string, string> = {
-        'overview': 'Overview',
-        'evaluation': 'Evaluation Guide',
-        'core-components': 'Core Components',
-        'enterprise-features': 'Enterprise Features',
-        'use-cases': 'Use Cases',
-        'deployment-operations': 'Deployment & Operations',
-        'customer-success': 'Customer Success',
-        'modules-documentation': 'Modules & Documentation',
-        'roadmap': 'Roadmap',
-        'resources': 'Resources'
-    };
-    
-    return displayNames[sectionName] || sectionName.charAt(0).toUpperCase() + sectionName.slice(1).replace(/-/g, ' ');
-}
-
-/**
- * Read and parse a section navigation file
- */
-function readSectionNavigation(sectionPath: string): SectionNavigation | null {
-    const navFile = path.join(sectionPath, 'navigation.yaml');
-    
-    if (!fs.existsSync(navFile)) {
-        console.warn(`⚠️  Warning: Navigation file not found: ${navFile}`);
-        return null;
-    }
-    
+function getSectionMetadata(sectionPath: string): { metadata: YamlMetadata; order: number } | null {
     try {
-        const content = fs.readFileSync(navFile, 'utf8');
-        const data = yaml.load(content) as SectionNavigation;
-        return data;
+        const files = fs.readdirSync(sectionPath);
+        
+        // Find the YAML metadata file (should be one per section in V2)
+        for (const file of files) {
+            if (file.endsWith('.yaml') && file !== 'navigation.yaml') {
+                const yamlPath = path.join(sectionPath, file);
+                const yamlContent = fs.readFileSync(yamlPath, 'utf8');
+                const metadata = yaml.load(yamlContent) as YamlMetadata;
+                
+                if (metadata && metadata.title) {
+                    const order = metadata.document360?.order || 999;
+                    return { metadata, order };
+                }
+            }
+        }
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        console.warn(`⚠️  Warning: Could not parse ${navFile}: ${errorMessage}`);
-        return null;
+        console.warn(`⚠️  Warning: Could not read metadata from ${sectionPath}: ${errorMessage}`);
     }
+    
+    return null;
 }
 
 /**
- * Convert section navigation items to main navigation format
- */
-function convertToMainNavigationItems(items: NavigationItem[], sectionName: string): MainNavigationItem[] {
-    return items.map(item => ({
-        text: item.title,
-        url: `/docs/${sectionName}/${item.url}/`
-    }));
-}
-
-/**
- * Generate the main navigation structure
+ * Generate the main navigation structure from V2 YAML metadata files
  */
 function generateMainNavigation(): MainNavigationItem[] {
     const mainNav: MainNavigationItem[] = [
@@ -100,48 +80,97 @@ function generateMainNavigation(): MainNavigationItem[] {
         }
     ];
     
-    // Define the order of sections
-    const sectionOrder = [
-        'overview',
-        'evaluation', 
-        'core-components',
-        'enterprise-features',
-        'use-cases',
-        'deployment-operations',
-        'customer-success',
-        'modules-documentation',
-        'roadmap',
-        'resources'
-    ];
+    // Collect all sections with their metadata
+    const sections: Array<{
+        name: string;
+        path: string;
+        metadata: YamlMetadata;
+        order: number;
+    }> = [];
     
-    for (const sectionName of sectionOrder) {
-        const sectionPath = path.join(DOCS_DIR, sectionName);
+    try {
+        const folders = fs.readdirSync(DOCS_DIR, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => ({
+                name: dirent.name,
+                path: path.join(DOCS_DIR, dirent.name)
+            }));
         
-        if (!fs.existsSync(sectionPath)) {
-            console.warn(`⚠️  Warning: Section directory not found: ${sectionPath}`);
+        for (const folder of folders) {
+            const sectionData = getSectionMetadata(folder.path);
+            
+            if (sectionData) {
+                sections.push({
+                    name: folder.name,
+                    path: folder.path,
+                    metadata: sectionData.metadata,
+                    order: sectionData.order
+                });
+            } else {
+                console.warn(`⚠️  Warning: No metadata found for section: ${folder.name}`);
+            }
+        }
+    } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        throw new Error(`Failed to scan sections: ${errorMessage}`);
+    }
+    
+    // Sort sections by order
+    sections.sort((a, b) => a.order - b.order);
+    
+    // Build navigation items
+    for (const section of sections) {
+        // Find the markdown file to generate URL
+        const files = fs.readdirSync(section.path);
+        const markdownFile = files.find(f => f.endsWith('.md'));
+        
+        if (!markdownFile) {
+            console.warn(`⚠️  Warning: No markdown file found in ${section.path}`);
             continue;
         }
         
-        const sectionNav = readSectionNavigation(sectionPath);
+        // Generate URL - for V2, use simplified URL if filename matches section name
+        const baseName = markdownFile.replace('.md', '');
+        const sectionUrl = baseName === section.name 
+            ? `/docs/${section.name}/`
+            : `/docs/${section.name}/${baseName}/`;
         
-        if (!sectionNav || !sectionNav.items || sectionNav.items.length === 0) {
-            console.warn(`⚠️  Warning: No navigation items found for section: ${sectionName}`);
-            continue;
+        // Build submenu from custom_links if available, otherwise just the main item
+        const submenu: MainNavigationItem[] = [];
+        
+        // Add main section item to submenu
+        submenu.push({
+            text: section.metadata.title,
+            url: sectionUrl
+        });
+        
+        // Add custom_links to submenu if they exist
+        if (section.metadata.custom_links && Array.isArray(section.metadata.custom_links)) {
+            for (const link of section.metadata.custom_links) {
+                // Skip self-reference
+                if (link.url === sectionUrl || link.url === `/docs/${section.name}/`) {
+                    continue;
+                }
+                submenu.push({
+                    text: link.text,
+                    url: link.url
+                });
+            }
         }
-        
-        // Get the first item as the main section URL
-        const firstItem = sectionNav.items[0];
-        const sectionDisplayName = getSectionDisplayName(sectionName);
         
         // Create main navigation item
         const mainNavItem: MainNavigationItem = {
-            text: sectionDisplayName,
-            url: `/docs/${sectionName}/${firstItem.url}/`,
-            submenu: convertToMainNavigationItems(sectionNav.items, sectionName)
+            text: section.metadata.title,
+            url: sectionUrl
         };
         
+        // Only add submenu if there are multiple items
+        if (submenu.length > 1) {
+            mainNavItem.submenu = submenu;
+        }
+        
         mainNav.push(mainNavItem);
-        console.log(`✅ Added section: ${sectionDisplayName} (${sectionNav.items.length} items)`);
+        console.log(`✅ Added section: ${section.metadata.title} (order: ${section.order})`);
     }
     
     return mainNav;
@@ -180,7 +209,7 @@ function writeMainNavigation(navigation: MainNavigationItem[]): void {
  * Main function to generate main navigation
  */
 export async function generateMainNavigationFile(): Promise<void> {
-    console.log('🧭 Generating main site navigation...\n');
+    console.log('🧭 Generating main site navigation (V2)...\n');
     
     try {
         // Generate the navigation structure

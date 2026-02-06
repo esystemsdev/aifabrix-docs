@@ -29,7 +29,7 @@ const REQUIRED_FIELDS = [
 ];
 
 // Valid values for specific fields
-const VALID_AUDIENCES = ['end-user', 'admin', 'developer', 'architect'];
+const VALID_AUDIENCES = ['end-user', 'admin', 'developer', 'architect', 'security', 'executive', 'procurement'];
 const VALID_VERSIONS = ['stable', 'beta', 'alpha', 'deprecated'];
 const VALID_LAYOUTS = ['doc', 'page', 'default'];
 

@@ -1,9 +1,6 @@
-title: AI Fabrix Resources — Overview
-description: Navigation for AI Fabrix Resources — Overview section
+title: Resources
+description: Navigation for Resources section
 items:
-  - title: AI Fabrix Resources — Overview
-    url: overview
-    order: 999
-  - title: Support Resources
-    url: support-resources
+  - title: Resources
+    url: resources
     order: 999

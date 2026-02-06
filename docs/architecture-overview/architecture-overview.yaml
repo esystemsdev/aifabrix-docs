@@ -1,0 +1,64 @@
+title: "Architecture Overview"
+description: "High-level architecture, trust boundaries, identity flow, and end-to-end request lifecycle of AI Fabrix"
+audience:
+  - architect
+  - admin
+  - developer
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-02"
+layout: "doc"
+date: "2026-02-02"
+toc: true
+custom_links:
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Why AI Fabrix Exists"
+    url: /docs/why-aifabrix-exists/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+# SEO Configuration
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "enterprise AI architecture"
+    - "in-tenant architecture"
+    - "Azure-native"
+    - "trust boundaries"
+    - "execution zones"
+    - "identity flow"
+    - "policy enforcement"
+    - "request lifecycle"
+  canonical_url: "https://docs.aifabrix.ai/architecture-overview/"
+  og_image: "images/architecture-overview.png"
+
+# Document360 Specific
+document360:
+  category: "Architecture Overview"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 3

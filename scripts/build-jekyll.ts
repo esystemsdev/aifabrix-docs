@@ -27,7 +27,20 @@ export async function buildJekyllSite(): Promise<void> {
         
         // Install Jekyll dependencies if needed
         console.log(`📦 Installing Jekyll dependencies...`);
-        execSync('bundle install', { stdio: 'inherit' });
+        // Configure bundler to use local vendor/bundle directory to avoid permission issues
+        try {
+            execSync('bundle config set --local path vendor/bundle', { stdio: 'inherit' });
+        } catch (error) {
+            // If config fails, try without --local flag
+            execSync('bundle config set path vendor/bundle', { stdio: 'inherit' });
+        }
+        execSync('bundle install', { 
+            stdio: 'inherit',
+            env: {
+                ...process.env,
+                BUNDLE_PATH: 'vendor/bundle'
+            }
+        });
         
         // Build Jekyll site
         console.log(`🔨 Running Jekyll build...`);

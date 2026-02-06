@@ -1,0 +1,15 @@
+title: Case Studies
+description: Navigation for Case Studies section
+items:
+  - title: AI Fabrix Customer Success — Overview
+    url: overview
+    order: 999
+  - title: Case Studies
+    url: case-studies
+    order: 999
+  - title: Pilot → Production Playbook
+    url: pilot-production-playbook
+    order: 999
+  - title: ROI & KPI Library
+    url: roi-kpi-library
+    order: 999
