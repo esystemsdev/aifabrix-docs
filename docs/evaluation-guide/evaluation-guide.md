@@ -1,4 +1,4 @@
-# 10. Evaluation Guide
+# Evaluation Guide
 
 ## Purpose of This Section
 
@@ -14,7 +14,7 @@ The guide supports security, architecture, and procurement teams in assessing st
 
 ---
 
-## 10.1 Enterprise Evaluation Criteria
+## Enterprise Evaluation Criteria
 
 AI Fabrix should be evaluated against platform-level criteria rather than application features.
 
@@ -34,7 +34,7 @@ Secondary criteria during evaluation include UI polish, prompt templates, pre-bu
 
 ---
 
-## 10.2 Security and Compliance Checklist
+## Security and Compliance Checklist
 
 ### Identity & Access Control
 
@@ -73,7 +73,7 @@ Secondary criteria during evaluation include UI polish, prompt templates, pre-bu
 
 ---
 
-## 10.3 Architecture Review Questions
+## Architecture Review Questions
 
 ### Control Plane (Miso)
 
@@ -112,7 +112,7 @@ Secondary criteria during evaluation include UI polish, prompt templates, pre-bu
 
 ---
 
-## 10.4 30-Day PoC Framework
+## 30-Day PoC Framework
 
 ### Guiding Principle
 
@@ -152,7 +152,7 @@ The PoC is a small-scale production deployment with no throwaway work.
 
 ---
 
-## 10.5 Risk and Cost Assessment
+## Risk and Cost Assessment
 
 ### Risk Reduction by Design
 

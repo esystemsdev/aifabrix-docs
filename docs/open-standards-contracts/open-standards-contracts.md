@@ -1,4 +1,4 @@
-# 8. Open Standards & Contracts
+# Open Standards & Contracts
 
 AI Fabrix is built on a deliberate architectural principle:
 
@@ -8,7 +8,7 @@ This separation ensures enterprise-grade inspectability, portability, and long-t
 
 ---
 
-## 8.1 OpenAPI as the System Contract
+## OpenAPI as the System Contract
 
 OpenAPI is the **system-to-system contract** of AI Fabrix.
 
@@ -38,7 +38,7 @@ All enforcement remains structural inside the Dataplane and Controller.
 
 ---
 
-## 8.2 MCP (Model Context Protocol)
+## MCP (Model Context Protocol)
 
 MCP is the **agent-to-dataplane contract** in AI Fabrix.
 
@@ -66,7 +66,7 @@ MCP does not store data or enforce governance. Those responsibilities remain wit
 
 ---
 
-## 8.3 Why AI Fabrix Avoids Proprietary SDKs
+## Why AI Fabrix Avoids Proprietary SDKs
 
 AI Fabrix deliberately avoids proprietary SDK-centric integration models.
 
@@ -91,7 +91,7 @@ This keeps execution governed, inspectable, and independent of client implementa
 
 ---
 
-## 8.4 Inspectability and Exit Strategy
+## Inspectability and Exit Strategy
 
 Inspectability is a first-class architectural requirement.
 

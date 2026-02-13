@@ -1,4 +1,4 @@
-# 4. Controller Layer (Miso)
+# Controller Layer (Miso)
 
 **Governance, identity, policy, and lifecycle**
 
@@ -41,7 +41,7 @@ Business data access and transformation occur only in the **Dataplane execution 
 
 ---
 
-## 4.1 Miso Overview
+## Miso Overview
 
 Miso is the **Controller** of AI Fabrix. It provides centralized governance for the platform without becoming a data plane.
 
@@ -102,7 +102,7 @@ Miso commonly surfaces:
 
 ---
 
-## 4.2 Identity & Access
+## Identity & Access
 
 AI Fabrix is identity-native. Miso centralizes the identity model and ensures identity context is preserved across governed AI execution.
 
@@ -182,7 +182,7 @@ Key principles:
 
 ---
 
-## 4.3 Policy & Governance
+## Policy & Governance
 
 Miso centralizes policy definition and governance controls so enforcement is consistent across tools, agents, and environments.
 
@@ -274,7 +274,7 @@ Referenced capabilities include:
 
 ---
 
-## 4.4 Environment Lifecycle
+## Environment Lifecycle
 
 Miso governs environment lifecycle to ensure AI workloads are promoted safely and reproducibly.
 
@@ -339,7 +339,7 @@ Miso includes access request and approval workflows for controlled access.
 
 ---
 
-## 4.5 Audit & Observability
+## Audit & Observability
 
 Miso provides auditability and operational visibility as first-class platform functions.
 

@@ -1,4 +1,4 @@
-# 3. Architecture Overview
+# Architecture Overview
 
 AI Fabrix is designed as an **in-tenant, Azure-native enterprise AI architecture** where identity, policy, and governance are enforced structurally across every execution path.
 
@@ -13,7 +13,7 @@ This section explains the architecture from four perspectives:
 
 ---
 
-## 3.1 High-Level Architecture
+## High-Level Architecture
 
 AI Fabrix is composed of four distinct architectural layers, each with a single, non-overlapping responsibility.
 
@@ -35,7 +35,7 @@ Each layer is independently evolvable, but **no layer can bypass another**.
 
 ---
 
-## 3.2 Trust Boundaries and Execution Zones
+## Trust Boundaries and Execution Zones
 
 AI Fabrix explicitly defines trust boundaries to prevent implicit privilege escalation and accidental data exposure.
 
@@ -63,7 +63,7 @@ This ensures compromise of one zone does not expose the others.
 
 ---
 
-## 3.3 Identity and Policy Flow
+## Identity and Policy Flow
 
 Identity is the **primary execution context** in AI Fabrix.
 
@@ -92,7 +92,7 @@ Policies are not embedded in application logic and are not re-implemented per wo
 
 ---
 
-## 3.4 End-to-End Request Lifecycle
+## End-to-End Request Lifecycle
 
 Every request—human, API, or agent—follows the same governed execution path.
 
@@ -108,22 +108,6 @@ Every request—human, API, or agent—follows the same governed execution path.
 There are no AI-specific exception paths.
 
 ```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "fontFamily": "Poppins, Arial Rounded MT Bold, Arial, sans-serif",
-    "fontSize": "15px",
-    "background": "#FFFFFF",
-    "primaryColor": "#F8FAFC",
-    "primaryTextColor": "#0B0E15",
-    "primaryBorderColor": "#E2E8F0",
-    "lineColor": "#E2E8F0",
-    "textColor": "#0B0E15",
-    "subGraphTitleColor": "#64748B",
-    "subGraphTitleFontWeight": "500"
-  }
-}}%%
-
 flowchart LR
 
 classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF;
@@ -137,3 +121,4 @@ orch["Orchestration Layer"]:::flow
 ui["Interface Layer"]:::ui
 
 miso --> data --> orch --> ui
+```

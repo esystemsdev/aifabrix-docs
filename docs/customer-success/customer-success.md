@@ -1,4 +1,4 @@
-# 13. Customer Success
+# Customer Success
 
 This section describes how enterprises successfully adopt, scale, and operationalize AI Fabrix from initial pilot to long-term production use.
 
@@ -6,7 +6,7 @@ Customer success in AI Fabrix is not driven by tooling or enablement alone. It i
 
 ---
 
-## 13.1 Pilot → Production Playbook
+## Pilot → Production Playbook
 
 This playbook describes the recommended, repeatable path for moving from initial evaluation to production deployment without architectural rework.
 
@@ -88,7 +88,7 @@ AI Fabrix becomes a stable enterprise platform rather than a project-specific so
 
 ---
 
-## 13.2 Governance Maturity Model
+## Governance Maturity Model
 
 AI Fabrix enables governance by design, but organizations still mature in how they *use* and *operate* that governance.
 
@@ -143,7 +143,7 @@ AI Fabrix enables governance by design, but organizations still mature in how th
 
 ---
 
-## 13.3 KPIs and ROI Measurement
+## KPIs and ROI Measurement
 
 AI Fabrix success is measured through operational, risk, and business indicators rather than model-centric metrics.
 
@@ -170,7 +170,7 @@ ROI should be assessed at the platform level, not per individual AI agent or mod
 
 ---
 
-## 13.4 Operational Best Practices
+## Operational Best Practices
 
 ### Platform Ownership
 - Assign clear ownership for:

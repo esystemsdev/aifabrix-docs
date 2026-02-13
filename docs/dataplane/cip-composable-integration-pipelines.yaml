@@ -1,0 +1,49 @@
+title: "CIP — Composable Integration Pipelines"
+description: "Declarative integration fabric of the Dataplane — OpenAPI, MCP, and governed pipeline execution"
+audience:
+  - architect
+  - developer
+  - admin
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Dataplane Overview"
+    url: /docs/dataplane/dataplane-overview/
+  - text: "CIP — Composable Integration Pipelines"
+    url: /docs/dataplane/cip-composable-integration-pipelines/
+  - text: "Core Dataplane Services"
+    url: /docs/dataplane/core-dataplane-services/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "CIP"
+    - "Composable Integration Pipelines"
+    - "OpenAPI"
+    - "MCP"
+    - "Model Context Protocol"
+    - "declarative pipelines"
+    - "Dataplane"
+  canonical_url: "https://docs.aifabrix.ai/dataplane/cip-composable-integration-pipelines/"
+  og_image: "images/cip.png"
+
+document360:
+  category: "Dataplane"
+  visibility: "public"
+  searchable: true
+  featured: true
+  order: 7

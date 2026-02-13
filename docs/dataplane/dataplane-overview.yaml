@@ -1,0 +1,47 @@
+title: "Dataplane Overview"
+description: "Secure execution boundary and enterprise data access — what the Dataplane is and why all data access happens here"
+audience:
+  - architect
+  - developer
+  - admin
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Dataplane Overview"
+    url: /docs/dataplane/dataplane-overview/
+  - text: "CIP — Composable Integration Pipelines"
+    url: /docs/dataplane/cip-composable-integration-pipelines/
+  - text: "Core Dataplane Services"
+    url: /docs/dataplane/core-dataplane-services/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Dataplane"
+    - "execution boundary"
+    - "enterprise data access"
+    - "identity"
+    - "policy enforcement"
+  canonical_url: "https://docs.aifabrix.ai/dataplane/dataplane-overview/"
+  og_image: "images/dataplane-overview.png"
+
+document360:
+  category: "Dataplane"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 6

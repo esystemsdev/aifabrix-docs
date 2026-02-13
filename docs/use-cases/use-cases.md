@@ -1,4 +1,4 @@
-## 12. Use Cases
+## Use Cases
 
 AI Fabrix use cases describe **how enterprises safely use AI under real constraints**: identity, permissions, auditability, and regulation.
 
@@ -8,7 +8,7 @@ Each use case exists because AI Fabrix removes structural failure modes that blo
 
 ---
 
-## 12.1 Microsoft 365 Knowledge Assistants
+## Microsoft 365 Knowledge Assistants
 
 ### Problem
 
@@ -78,7 +78,7 @@ AI never receives raw documents. It receives **scoped, explainable context**.
 
 ---
 
-## 12.2 Secure Internal Copilots
+## Secure Internal Copilots
 
 ### Problem
 
@@ -145,7 +145,7 @@ Copilots become **first-class enterprise actors**, not privileged systems.
 
 ---
 
-## 12.3 Policy-Aware Enterprise Search
+## Policy-Aware Enterprise Search
 
 ### Problem
 
@@ -212,7 +212,7 @@ Search becomes a governed dataplane function, not an app feature.
 
 ---
 
-## 12.4 Case and Deal Workspaces
+## Case and Deal Workspaces
 
 ### Problem
 
@@ -273,7 +273,7 @@ This makes AI usable in **high-trust workflows**.
 
 ---
 
-## 12.5 Regulated Data AI Scenarios
+## Regulated Data AI Scenarios
 
 ### Problem
 

@@ -1,4 +1,4 @@
-# 2. Why AI Fabrix Exists
+# Why AI Fabrix Exists
 
 Enterprise AI does not fail because models are weak.  
 It fails because enterprise constraints are ignored until it is too late.
@@ -7,7 +7,7 @@ AI Fabrix exists to remove the structural failure modes that prevent AI from mov
 
 ---
 
-## 2.1 Why Enterprise AI Pilots Fail
+## Why Enterprise AI Pilots Fail
 
 ### The Pattern Enterprises Repeatedly See
 
@@ -48,7 +48,7 @@ AI Fabrix exists to prevent these failures structurally, not mitigate them proce
 
 ---
 
-## 2.2 Data Access Is the Real Bottleneck
+## Data Access Is the Real Bottleneck
 
 ### Models Are Not the Constraint
 
@@ -93,7 +93,7 @@ This is the foundational reason AI Fabrix exists.
 
 ---
 
-## 2.3 Why Service Accounts Are a Dead End
+## Why Service Accounts Are a Dead End
 
 ### The Hidden Cost of Service Accounts
 
@@ -136,7 +136,7 @@ It is a prerequisite for enterprise AI.
 
 ---
 
-## 2.4 Governance by Design vs Governance by Policy
+## Governance by Design vs Governance by Policy
 
 ### Policy-Driven Governance Does Not Scale
 
@@ -178,7 +178,7 @@ It is something the platform *is*.
 
 ---
 
-## 2.5 AI Cost Sprawl and Risk Containment
+## AI Cost Sprawl and Risk Containment
 
 ### The Hidden Cost of AI Experimentation
 
@@ -219,7 +219,7 @@ As AI usage grows:
 
 ---
 
-## 2.6 From Experiments to Production AI
+## From Experiments to Production AI
 
 ### What Production AI Requires
 

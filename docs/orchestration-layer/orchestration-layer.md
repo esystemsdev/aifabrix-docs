@@ -1,4 +1,4 @@
-# 6. Orchestration Layer
+# Orchestration Layer
 
 The Orchestration Layer is responsible for **building AI workflows and agents** that consume governed capabilities exposed by the AI Fabrix Dataplane.
 
@@ -69,7 +69,7 @@ cip_tools --> enterprise_systems
 
 ---
 
-## 6.1 Orchestration Concepts
+## Orchestration Concepts
 
 ### What Orchestration Means in AI Fabrix
 
@@ -139,7 +139,7 @@ AI agents are **first-class governed actors**.
 
 ---
 
-## 6.2 Orchestration Options
+## Orchestration Options
 
 AI Fabrix is orchestration-agnostic by design.
 
@@ -208,7 +208,7 @@ This ensures portability, inspectability, and consistent governance.
 
 ---
 
-## 6.3 Agent and Workflow Design
+## Agent and Workflow Design
 
 ### Tool Invocation via MCP
 

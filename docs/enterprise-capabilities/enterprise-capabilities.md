@@ -1,4 +1,4 @@
-# 9. Enterprise Capabilities
+# Enterprise Capabilities
 
 Enterprise capabilities in AI Fabrix are not optional features or configurable add-ons.  
 They are **structural properties** of the platform that emerge from how identity, policy, dataplane execution, and governance are designed.
@@ -7,7 +7,7 @@ This section describes the core enterprise capabilities that allow AI Fabrix to 
 
 ---
 
-## 9.1 Identity-Native Security
+## Identity-Native Security
 
 ### What This Means
 
@@ -43,7 +43,7 @@ It is the **foundation of execution**.
 
 ---
 
-## 9.2 Metadata-First Architecture
+## Metadata-First Architecture
 
 ### What This Means
 
@@ -77,7 +77,7 @@ Metadata defines **what exists** for AI — not prompts or applications.
 
 ---
 
-## 9.3 Policy-Aware AI Access
+## Policy-Aware AI Access
 
 ### What This Means
 
@@ -116,7 +116,7 @@ Policy-aware AI access ensures:
 
 ---
 
-## 9.4 Predictable Cost Controls
+## Predictable Cost Controls
 
 ### What This Means
 
@@ -146,7 +146,7 @@ Predictable costs enable:
 
 ---
 
-## 9.5 Regulated Workload Readiness
+## Regulated Workload Readiness
 
 ### What This Means
 
@@ -180,7 +180,7 @@ AI becomes usable where it was previously prohibited.
 
 ---
 
-## 9.6 Zero-Trust AI Architecture
+## Zero-Trust AI Architecture
 
 ### What This Means
 

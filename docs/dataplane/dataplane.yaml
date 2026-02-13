@@ -11,6 +11,14 @@ layout: "doc"
 date: "2026-02-02"
 toc: true
 custom_links:
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Dataplane Overview"
+    url: /docs/dataplane/dataplane-overview/
+  - text: "CIP — Composable Integration Pipelines"
+    url: /docs/dataplane/cip-composable-integration-pipelines/
+  - text: "Core Dataplane Services"
+    url: /docs/dataplane/core-dataplane-services/
   - text: "Overview"
     url: /docs/overview/
   - text: "Why AI Fabrix Exists"
@@ -19,8 +27,6 @@ custom_links:
     url: /docs/architecture-overview/
   - text: "Controller Layer (Miso)"
     url: /docs/controller-layer-miso/
-  - text: "Dataplane"
-    url: /docs/dataplane/
   - text: "Orchestration Layer"
     url: /docs/orchestration-layer/
   - text: "Interface Layer"

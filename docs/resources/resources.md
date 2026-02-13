@@ -1,4 +1,4 @@
-# 14. Resources
+# Resources
 
 This section provides practical reference material for architects, security teams, and delivery teams working with AI Fabrix.
 
@@ -6,7 +6,7 @@ The resources here support **evaluation, design, implementation, and governance*
 
 ---
 
-## 14.1 Architecture Diagrams
+## Architecture Diagrams
 
 This subsection contains reference diagrams that describe the structural architecture of AI Fabrix and its governed execution flow.
 
@@ -48,7 +48,7 @@ flowchart LR
 
 ---
 
-## 14.2 CIP Examples
+## CIP Examples
 
 This subsection provides example Composable Integration Pipelines (CIP).
 
@@ -74,7 +74,7 @@ Placeholders:
 
 ---
 
-## 14.3 Policy Pack Examples
+## Policy Pack Examples
 
 This subsection documents example policy packs enforced by the Miso Controller.
 
@@ -102,7 +102,7 @@ Placeholders:
 
 ---
 
-## 14.4 RFP / RFI Templates
+## RFP / RFI Templates
 
 This subsection provides templates for procurement and risk evaluation.
 
@@ -129,7 +129,7 @@ Placeholders:
 
 ---
 
-## 14.5 Release Notes
+## Release Notes
 
 This subsection contains versioned release notes for AI Fabrix.
 

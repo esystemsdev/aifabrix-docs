@@ -1,0 +1,49 @@
+title: "Core Dataplane Services"
+description: "Shared Dataplane services — metadata model, permission-aware retrieval, vector search, CDC, and secure runtime"
+audience:
+  - architect
+  - developer
+  - admin
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Dataplane Overview"
+    url: /docs/dataplane/dataplane-overview/
+  - text: "CIP — Composable Integration Pipelines"
+    url: /docs/dataplane/cip-composable-integration-pipelines/
+  - text: "Core Dataplane Services"
+    url: /docs/dataplane/core-dataplane-services/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Dataplane"
+    - "metadata model"
+    - "permission-aware retrieval"
+    - "RAG"
+    - "vector search"
+    - "CDC"
+    - "ingestion"
+  canonical_url: "https://docs.aifabrix.ai/dataplane/core-dataplane-services/"
+  og_image: "images/core-dataplane-services.png"
+
+document360:
+  category: "Dataplane"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 8

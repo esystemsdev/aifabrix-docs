@@ -1,4 +1,4 @@
-# 11. Deployment & Operations
+# Deployment & Operations
 
 AI Fabrix is deployed and operated as a first-class, Azure-native enterprise platform.
 All components run entirely inside the customer's Azure tenant and follow standard enterprise operational models.
@@ -7,7 +7,7 @@ This section describes how AI Fabrix is deployed, networked, scaled, operated, a
 
 ---
 
-## 11.1 Azure-Native Deployment Models
+## Azure-Native Deployment Models
 
 ### In-Tenant Deployment (Mandatory)
 
@@ -53,7 +53,7 @@ Community Edition deployments are intentionally limited to a single Development 
 
 ---
 
-## 11.2 Networking and Private Endpoints
+## Networking and Private Endpoints
 
 ### Private-by-Default Networking
 
@@ -83,7 +83,7 @@ AI workloads do not bypass enterprise network controls.
 
 ---
 
-## 11.3 Scaling and Performance Profiles
+## Scaling and Performance Profiles
 
 ### Scale Without Architectural Change
 
@@ -124,7 +124,7 @@ Governance, identity enforcement, and audit behavior remain consistent at all sc
 
 ---
 
-## 11.4 DevOps and CI/CD Integration
+## DevOps and CI/CD Integration
 
 ### Infrastructure as Code
 
@@ -160,7 +160,7 @@ No runtime changes bypass governance.
 
 ---
 
-## 11.5 Backup, Recovery, and Disaster Recovery
+## Backup, Recovery, and Disaster Recovery
 
 ### Backup Model
 

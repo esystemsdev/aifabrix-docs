@@ -1,4 +1,4 @@
-# 7. Interface Layer
+# Interface Layer
 
 **User interaction surfaces**
 
@@ -10,7 +10,7 @@ Its responsibility is **interaction, context capture, and identity propagation**
 
 ---
 
-## 7.1 Interface Concepts
+## Interface Concepts
 
 ### Interface vs Orchestration vs Dataplane
 
@@ -55,7 +55,7 @@ Policies are enforced in the Dataplane.
 
 ---
 
-## 7.2 Interface Options
+## Interface Options
 
 ### OpenWebUI (Reference Interface)
 
@@ -105,7 +105,7 @@ All custom portals must still propagate identity and interact only through orche
 
 ---
 
-## 7.3 Workspace and Access Models
+## Workspace and Access Models
 
 ### Case-Based Access
 
