@@ -1,0 +1,15 @@
+title: CIP — Composable Integration Pipelines
+description: Navigation for CIP — Composable Integration Pipelines section
+items:
+  - title: CIP — Composable Integration Pipelines
+    url: cip-composable-integration-pipelines
+    order: 999
+  - title: Core Dataplane Services
+    url: core-dataplane-services
+    order: 999
+  - title: Dataplane
+    url: dataplane
+    order: 999
+  - title: Dataplane Overview
+    url: dataplane-overview
+    order: 999

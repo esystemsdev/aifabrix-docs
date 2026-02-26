@@ -1,0 +1,70 @@
+title: "Identity & Access"
+meta_title: "Identity & Access | Entra ID, RBAC, SCIM"
+description: "Entra ID integration, RBAC and ABAC, SCIM provisioning, and workspace and environment scoping"
+audience:
+  - architect
+  - admin
+  - security
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Miso Overview"
+    url: /docs/controller-layer-miso/miso-overview/
+  - text: "Identity & Access"
+    url: /docs/controller-layer-miso/identity-and-access/
+  - text: "Policy & Governance"
+    url: /docs/controller-layer-miso/policy-and-governance/
+  - text: "Environment Lifecycle"
+    url: /docs/controller-layer-miso/environment-lifecycle/
+  - text: "Audit & Observability"
+    url: /docs/controller-layer-miso/audit-and-observability/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Miso"
+    - "identity"
+    - "Entra ID"
+    - "RBAC"
+    - "ABAC"
+    - "SCIM"
+    - "workspace"
+  canonical_url: "https://docs.aifabrix.ai/controller-layer-miso/identity-and-access/"
+  og_image: "images/identity-and-access.png"
+
+document360:
+  category: "Controller Layer (Miso)"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 6

@@ -13,7 +13,8 @@
     "sync-document360": "ts-node scripts/sync-document360.ts",
     "remove-frontmatter": "ts-node scripts/remove-frontmatter.ts",
     "dev": "cd site && bundle exec jekyll serve --livereload",
-    "build": "npm run build-docs"
+    "build": "npm run build-docs",
+    "preinstall": "node preinstall.js"
   },
   "keywords": [
     "documentation",

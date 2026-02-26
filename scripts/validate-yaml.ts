@@ -33,9 +33,14 @@ const VALID_AUDIENCES = ['end-user', 'admin', 'developer', 'architect', 'securit
 const VALID_VERSIONS = ['stable', 'beta', 'alpha', 'deprecated'];
 const VALID_LAYOUTS = ['doc', 'page', 'default'];
 
+// Document360 Article SEO recommendations (warnings only)
+const META_TITLE_MAX_LENGTH = 70;
+const META_DESCRIPTION_RECOMMENDED_MAX = 160;
+
 interface YamlMetadata {
     title?: string;
     description?: string;
+    meta_title?: string;
     audience?: string[];
     version?: string;
     owner?: string;
@@ -47,8 +52,9 @@ interface YamlMetadata {
 /**
  * Validates a single YAML file
  */
-function validateYamlFile(filePath: string): { valid: boolean; errors: string[] } {
+function validateYamlFile(filePath: string): { valid: boolean; errors: string[]; warnings: string[] } {
     const errors: string[] = [];
+    const warnings: string[] = [];
     
     try {
         const content = fs.readFileSync(filePath, 'utf8');
@@ -56,7 +62,7 @@ function validateYamlFile(filePath: string): { valid: boolean; errors: string[] 
         
         if (!data) {
             errors.push('File is empty or invalid YAML');
-            return { valid: false, errors };
+            return { valid: false, errors, warnings };
         }
         
         // Check required fields
@@ -87,12 +93,20 @@ function validateYamlFile(filePath: string): { valid: boolean; errors: string[] 
         if (data.last_reviewed && !/^\d{4}-\d{2}-\d{2}$/.test(data.last_reviewed)) {
             errors.push(`Invalid date format for last_reviewed: ${data.last_reviewed}. Expected YYYY-MM-DD`);
         }
+
+        // Optional SEO warnings (Document360 Article SEO) — do not fail validation
+        if (data.description && data.description.length > META_DESCRIPTION_RECOMMENDED_MAX) {
+            warnings.push(`SEO: description exceeds ${META_DESCRIPTION_RECOMMENDED_MAX} chars (${data.description.length}); recommended for Meta description`);
+        }
+        if (data.meta_title && data.meta_title.length > META_TITLE_MAX_LENGTH) {
+            warnings.push(`SEO: meta_title exceeds ${META_TITLE_MAX_LENGTH} chars (${data.meta_title.length}); may be truncated in search results`);
+        }
         
-        return { valid: errors.length === 0, errors };
+        return { valid: errors.length === 0, errors, warnings };
         
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        return { valid: false, errors: [`YAML parsing error: ${errorMessage}`] };
+        return { valid: false, errors: [`YAML parsing error: ${errorMessage}`], warnings: [] };
     }
 }
 
@@ -138,10 +152,14 @@ export async function validateYamlFiles(): Promise<void> {
         
         if (result.valid) {
             console.log(`✅ ${filePath}`);
+            if (result.warnings.length > 0) {
+                result.warnings.forEach(w => console.log(`   ⚠ ${w}`));
+            }
             validCount++;
         } else {
             console.log(`❌ ${filePath}`);
             result.errors.forEach(error => console.log(`   - ${error}`));
+            result.warnings.forEach(w => console.log(`   ⚠ ${w}`));
             errorCount++;
         }
     }

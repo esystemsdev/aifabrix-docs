@@ -1,4 +1,5 @@
 title: "Orchestration Layer"
+meta_title: "Orchestration Layer | AI Workflows & Agents"
 description: "Building AI workflows and agents using governed tools from the Dataplane, without direct system access"
 audience:
   - developer
@@ -11,6 +12,14 @@ layout: "doc"
 date: "2026-02-02"
 toc: true
 custom_links:
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Orchestration Concepts"
+    url: /docs/orchestration-layer/orchestration-concepts/
+  - text: "Orchestration Options"
+    url: /docs/orchestration-layer/orchestration-options/
+  - text: "Agent and Workflow Design"
+    url: /docs/orchestration-layer/agent-and-workflow-design/
   - text: "Overview"
     url: /docs/overview/
   - text: "Why AI Fabrix Exists"
@@ -21,8 +30,6 @@ custom_links:
     url: /docs/controller-layer-miso/
   - text: "Dataplane"
     url: /docs/dataplane/
-  - text: "Orchestration Layer"
-    url: /docs/orchestration-layer/
   - text: "Interface Layer"
     url: /docs/interface-layer/
   - text: "Open Standards & Contracts"

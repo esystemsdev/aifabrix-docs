@@ -88,7 +88,7 @@ export async function syncToDocument360(): Promise<void> {
                 apiToken: process.env.DOCUMENT360_API_TOKEN!,
                 projectId: process.env.DOCUMENT360_PROJECT_ID!,
                 baseUrl: baseUrl,
-                timeout: 30000,
+                timeout: 120000,
             },
             sync: {
                 sourcePath: sourcePath,

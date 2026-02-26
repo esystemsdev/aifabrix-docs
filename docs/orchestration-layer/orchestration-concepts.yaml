@@ -1,0 +1,65 @@
+title: "Orchestration Concepts"
+meta_title: "Orchestration Concepts | Governed Tools | AI Fabrix"
+description: "What orchestration means in AI Fabrix — separation from data access and identity-aware tool consumption"
+audience:
+  - developer
+  - architect
+  - admin
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Orchestration Concepts"
+    url: /docs/orchestration-layer/orchestration-concepts/
+  - text: "Orchestration Options"
+    url: /docs/orchestration-layer/orchestration-options/
+  - text: "Agent and Workflow Design"
+    url: /docs/orchestration-layer/agent-and-workflow-design/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Orchestration Layer"
+    - "orchestration concepts"
+    - "governed tools"
+    - "data access separation"
+    - "identity-aware"
+    - "MCP"
+  canonical_url: "https://docs.aifabrix.ai/orchestration-layer/orchestration-concepts/"
+  og_image: "images/orchestration-concepts.png"
+
+document360:
+  category: "Orchestration Layer"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 7

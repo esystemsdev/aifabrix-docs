@@ -1,4 +1,5 @@
 title: "Core Dataplane Services"
+meta_title: "Core Dataplane Services | Metadata, RAG, Vector"
 description: "Shared Dataplane services — metadata model, permission-aware retrieval, vector search, CDC, and secure runtime"
 audience:
   - architect

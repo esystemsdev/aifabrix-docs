@@ -1,0 +1,21 @@
+title: Audit & Observability
+description: Navigation for Audit & Observability section
+items:
+  - title: Audit & Observability
+    url: audit-and-observability
+    order: 999
+  - title: Controller Layer (Miso)
+    url: controller-layer-miso
+    order: 999
+  - title: Environment Lifecycle
+    url: environment-lifecycle
+    order: 999
+  - title: Identity & Access
+    url: identity-and-access
+    order: 999
+  - title: Miso Overview
+    url: miso-overview
+    order: 999
+  - title: Policy & Governance
+    url: policy-and-governance
+    order: 999

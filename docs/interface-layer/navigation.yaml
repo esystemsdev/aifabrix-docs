@@ -1,0 +1,15 @@
+title: Interface Concepts
+description: Navigation for Interface Concepts section
+items:
+  - title: Interface Concepts
+    url: interface-concepts
+    order: 999
+  - title: Interface Layer
+    url: interface-layer
+    order: 999
+  - title: Interface Options
+    url: interface-options
+    order: 999
+  - title: Workspace and Access Models
+    url: workspace-and-access-models
+    order: 999

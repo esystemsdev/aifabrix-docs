@@ -1,4 +1,5 @@
 title: "Interface Layer"
+meta_title: "Interface Layer | AI Fabrix User Surfaces & Portals"
 description: "User interaction surfaces for AI Fabrix, including OpenWebUI, Teams, Copilot, Slack, and custom portals"
 audience:
   - developer
@@ -11,6 +12,14 @@ layout: "doc"
 date: "2026-02-02"
 toc: true
 custom_links:
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Interface Concepts"
+    url: /docs/interface-layer/interface-concepts/
+  - text: "Interface Options"
+    url: /docs/interface-layer/interface-options/
+  - text: "Workspace and Access Models"
+    url: /docs/interface-layer/workspace-and-access-models/
   - text: "Overview"
     url: /docs/overview/
   - text: "Why AI Fabrix Exists"
@@ -23,8 +32,6 @@ custom_links:
     url: /docs/dataplane/
   - text: "Orchestration Layer"
     url: /docs/orchestration-layer/
-  - text: "Interface Layer"
-    url: /docs/interface-layer/
   - text: "Open Standards & Contracts"
     url: /docs/open-standards-contracts/
   - text: "Enterprise Capabilities"

@@ -1,0 +1,63 @@
+title: "Workspace and Access Models"
+meta_title: "Workspace and Access Models | Case-Based Access"
+description: "Case-based access, team and role scoping, and auditability of user interactions"
+audience:
+  - developer
+  - architect
+  - admin
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-19"
+layout: "doc"
+date: "2026-02-19"
+toc: true
+custom_links:
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Interface Concepts"
+    url: /docs/interface-layer/interface-concepts/
+  - text: "Interface Options"
+    url: /docs/interface-layer/interface-options/
+  - text: "Workspace and Access Models"
+    url: /docs/interface-layer/workspace-and-access-models/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Interface Layer"
+    - "workspace"
+    - "case-based access"
+    - "auditability"
+  canonical_url: "https://docs.aifabrix.ai/interface-layer/workspace-and-access-models/"
+  og_image: "images/workspace-and-access-models.png"
+
+document360:
+  category: "Interface Layer"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 10

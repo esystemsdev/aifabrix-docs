@@ -93,108 +93,34 @@
       url: /docs/customer-success/
     - text: Resources
       url: /docs/resources/
-- text: Controller Layer (Miso)
-  url: /docs/controller-layer-miso/
+- text: CIP — Composable Integration Pipelines
+  url: /docs/dataplane/cip-composable-integration-pipelines/
   submenu:
-    - text: Controller Layer (Miso)
-      url: /docs/controller-layer-miso/
+    - text: CIP — Composable Integration Pipelines
+      url: /docs/dataplane/cip-composable-integration-pipelines/
+    - text: Dataplane Overview
+      url: /docs/dataplane/dataplane-overview/
+    - text: Core Dataplane Services
+      url: /docs/dataplane/core-dataplane-services/
     - text: Overview
       url: /docs/overview/
-    - text: Why AI Fabrix Exists
-      url: /docs/why-aifabrix-exists/
-    - text: Architecture Overview
-      url: /docs/architecture-overview/
-    - text: Dataplane
-      url: /docs/dataplane/
-    - text: Orchestration Layer
-      url: /docs/orchestration-layer/
-    - text: Interface Layer
-      url: /docs/interface-layer/
-    - text: Open Standards & Contracts
-      url: /docs/open-standards-contracts/
-    - text: Enterprise Capabilities
-      url: /docs/enterprise-capabilities/
-    - text: Evaluation Guide
-      url: /docs/evaluation-guide/
-    - text: Deployment & Operations
-      url: /docs/deployment-operations/
-    - text: Use Cases
-      url: /docs/use-cases/
-    - text: Customer Success
-      url: /docs/customer-success/
-    - text: Resources
-      url: /docs/resources/
-- text: Dataplane
-  url: /docs/dataplane/
-  submenu:
-    - text: Dataplane
-      url: /docs/dataplane/
-    - text: Overview
-      url: /docs/overview/
-    - text: Why AI Fabrix Exists
-      url: /docs/why-aifabrix-exists/
-    - text: Architecture Overview
-      url: /docs/architecture-overview/
     - text: Controller Layer (Miso)
       url: /docs/controller-layer-miso/
     - text: Orchestration Layer
       url: /docs/orchestration-layer/
-    - text: Interface Layer
-      url: /docs/interface-layer/
-    - text: Open Standards & Contracts
-      url: /docs/open-standards-contracts/
-    - text: Enterprise Capabilities
-      url: /docs/enterprise-capabilities/
-    - text: Evaluation Guide
-      url: /docs/evaluation-guide/
-    - text: Deployment & Operations
-      url: /docs/deployment-operations/
-    - text: Use Cases
-      url: /docs/use-cases/
-    - text: Customer Success
-      url: /docs/customer-success/
     - text: Resources
       url: /docs/resources/
-- text: Orchestration Layer
-  url: /docs/orchestration-layer/
+- text: Interface Concepts
+  url: /docs/interface-layer/interface-concepts/
   submenu:
-    - text: Orchestration Layer
-      url: /docs/orchestration-layer/
+    - text: Interface Concepts
+      url: /docs/interface-layer/interface-concepts/
+    - text: Interface Options
+      url: /docs/interface-layer/interface-options/
+    - text: Workspace and Access Models
+      url: /docs/interface-layer/workspace-and-access-models/
     - text: Overview
       url: /docs/overview/
-    - text: Why AI Fabrix Exists
-      url: /docs/why-aifabrix-exists/
-    - text: Architecture Overview
-      url: /docs/architecture-overview/
-    - text: Controller Layer (Miso)
-      url: /docs/controller-layer-miso/
-    - text: Dataplane
-      url: /docs/dataplane/
-    - text: Interface Layer
-      url: /docs/interface-layer/
-    - text: Open Standards & Contracts
-      url: /docs/open-standards-contracts/
-    - text: Enterprise Capabilities
-      url: /docs/enterprise-capabilities/
-    - text: Evaluation Guide
-      url: /docs/evaluation-guide/
-    - text: Deployment & Operations
-      url: /docs/deployment-operations/
-    - text: Use Cases
-      url: /docs/use-cases/
-    - text: Customer Success
-      url: /docs/customer-success/
-    - text: Resources
-      url: /docs/resources/
-- text: Interface Layer
-  url: /docs/interface-layer/
-  submenu:
-    - text: Interface Layer
-      url: /docs/interface-layer/
-    - text: Overview
-      url: /docs/overview/
-    - text: Why AI Fabrix Exists
-      url: /docs/why-aifabrix-exists/
     - text: Architecture Overview
       url: /docs/architecture-overview/
     - text: Controller Layer (Miso)
@@ -248,6 +174,43 @@
       url: /docs/customer-success/
     - text: Resources
       url: /docs/resources/
+- text: Audit & Observability
+  url: /docs/controller-layer-miso/audit-and-observability/
+  submenu:
+    - text: Audit & Observability
+      url: /docs/controller-layer-miso/audit-and-observability/
+    - text: Miso Overview
+      url: /docs/controller-layer-miso/miso-overview/
+    - text: Identity & Access
+      url: /docs/controller-layer-miso/identity-and-access/
+    - text: Policy & Governance
+      url: /docs/controller-layer-miso/policy-and-governance/
+    - text: Environment Lifecycle
+      url: /docs/controller-layer-miso/environment-lifecycle/
+    - text: Overview
+      url: /docs/overview/
+    - text: Architecture Overview
+      url: /docs/architecture-overview/
+    - text: Dataplane
+      url: /docs/dataplane/
+    - text: Orchestration Layer
+      url: /docs/orchestration-layer/
+    - text: Interface Layer
+      url: /docs/interface-layer/
+    - text: Open Standards & Contracts
+      url: /docs/open-standards-contracts/
+    - text: Enterprise Capabilities
+      url: /docs/enterprise-capabilities/
+    - text: Evaluation Guide
+      url: /docs/evaluation-guide/
+    - text: Deployment & Operations
+      url: /docs/deployment-operations/
+    - text: Use Cases
+      url: /docs/use-cases/
+    - text: Customer Success
+      url: /docs/customer-success/
+    - text: Resources
+      url: /docs/resources/
 - text: Enterprise Capabilities
   url: /docs/enterprise-capabilities/
   submenu:
@@ -269,6 +232,39 @@
       url: /docs/interface-layer/
     - text: Open Standards & Contracts
       url: /docs/open-standards-contracts/
+    - text: Evaluation Guide
+      url: /docs/evaluation-guide/
+    - text: Deployment & Operations
+      url: /docs/deployment-operations/
+    - text: Use Cases
+      url: /docs/use-cases/
+    - text: Customer Success
+      url: /docs/customer-success/
+    - text: Resources
+      url: /docs/resources/
+- text: Agent and Workflow Design
+  url: /docs/orchestration-layer/agent-and-workflow-design/
+  submenu:
+    - text: Agent and Workflow Design
+      url: /docs/orchestration-layer/agent-and-workflow-design/
+    - text: Orchestration Concepts
+      url: /docs/orchestration-layer/orchestration-concepts/
+    - text: Orchestration Options
+      url: /docs/orchestration-layer/orchestration-options/
+    - text: Overview
+      url: /docs/overview/
+    - text: Architecture Overview
+      url: /docs/architecture-overview/
+    - text: Controller Layer (Miso)
+      url: /docs/controller-layer-miso/
+    - text: Dataplane
+      url: /docs/dataplane/
+    - text: Interface Layer
+      url: /docs/interface-layer/
+    - text: Open Standards & Contracts
+      url: /docs/open-standards-contracts/
+    - text: Enterprise Capabilities
+      url: /docs/enterprise-capabilities/
     - text: Evaluation Guide
       url: /docs/evaluation-guide/
     - text: Deployment & Operations

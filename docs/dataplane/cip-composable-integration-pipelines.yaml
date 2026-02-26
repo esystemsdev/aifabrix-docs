@@ -1,4 +1,5 @@
 title: "CIP — Composable Integration Pipelines"
+meta_title: "CIP — Composable Integration Pipelines | AI Fabrix"
 description: "Declarative integration fabric of the Dataplane — OpenAPI, MCP, and governed pipeline execution"
 audience:
   - architect

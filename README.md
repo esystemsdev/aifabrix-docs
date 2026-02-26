@@ -107,6 +107,8 @@ npm run sync-document360
 .\temp\sync-docs.ps1
 ```
 
+**Document360 Article SEO:** The sync pushes **Meta title** and **Meta description** to Document360 from each article’s YAML. Use the top-level `title` and `description` in section YAML files (e.g. `docs/overview/overview.yaml`). Optional `meta_title` sets the browser/SERP title (recommended 50–60 chars); if omitted, `title` is used. Keep `description` concise (~150–160 chars) for best use as the Meta description. Run `npm run sync-document360` after content changes to update Document360.
+
 ## 📝 How It Works
 
 ### 1. Single Source of Truth

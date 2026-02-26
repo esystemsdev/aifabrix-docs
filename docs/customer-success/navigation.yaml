@@ -1,0 +1,6 @@
+title: Customer Success
+description: Navigation for Customer Success section
+items:
+  - title: Customer Success
+    url: customer-success
+    order: 999

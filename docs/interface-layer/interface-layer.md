@@ -1,215 +1,138 @@
 # Interface Layer
 
-**User interaction surfaces**
+User interaction surfaces for governed enterprise AI.
 
-The Interface Layer defines how humans interact with AI Fabrix–powered systems.  
-It is intentionally decoupled from orchestration logic and the Dataplane to ensure security, scalability, and interface flexibility.
+The Interface Layer defines how humans interact with AI Fabrix–powered systems.
 
-The Interface Layer is **not** where integrations run, data is fetched, or policies are enforced.  
-Its responsibility is **interaction, context capture, and identity propagation**.
+It is the visible surface of the platform — but not where the platform's value resides.
 
----
+AI Fabrix value lives below the UI and agent layer:
+in the Control Plane (Miso) and the governed Dataplane (CIP + Retrieval).
 
-## Interface Concepts
-
-### Interface vs Orchestration vs Dataplane
-
-AI Fabrix enforces a strict separation of responsibilities across three layers:
-
-| Layer | Responsibility | What it does *not* do |
-|------|---------------|----------------------|
-| **Interface** | Human interaction, context input, response presentation | No integration logic, no data access |
-| **Orchestration** | Agent logic, reasoning, tool selection | No policy enforcement, no raw system access |
-| **Dataplane** | Data retrieval, normalization, RBAC/ABAC enforcement | No UI, no conversational state |
-
-**Key rule**  
-Interfaces only call orchestration endpoints or MCP tools — never Dataplane APIs directly.
-
-### Identity and Context Propagation
-
-Every interface interaction carries **user identity and execution context** into the system.
-
-1. User authenticates in the interface (e.g. Entra ID, Slack, Teams)
-2. Identity is validated by Miso
-3. A delegated execution token is issued
-4. Orchestration and Dataplane receive user identity, groups, roles, and environment context
-
-This enables:
-- RBAC enforcement at operation level
-- ABAC filtering at data level
-- Full auditability of user actions
-- Consistent access behavior across interfaces
-
-### Human-in-the-Loop Patterns
-
-Interfaces are the anchor point for human-in-the-loop workflows:
-
-- Approval before write operations
-- Review of AI-generated actions
-- Validation of sensitive changes
-- Case escalation to humans
-
-Humans interact through interfaces.  
-Agents execute through orchestration.  
-Policies are enforced in the Dataplane.
+Interfaces are replaceable.
+Governance and data control are not.
 
 ---
 
-## Interface Options
+## Purpose of the Interface Layer
 
-### OpenWebUI (Reference Interface)
+The Interface Layer exists to:
 
-OpenWebUI is the **reference implementation** for AI Fabrix interfaces.
+- Provide secure human interaction surfaces
+- Capture identity and contextual intent
+- Enable human-in-the-loop workflows
+- Present governed responses
 
-Typical use cases:
-- Enterprise chat
-- Case-based AI interactions
-- Multi-step workflows with context persistence
+It does not:
 
-It serves as a blueprint, not a requirement.
+- Execute integrations
+- Enforce policy logic
+- Access enterprise systems directly
+- Store governance rules
 
-### Microsoft Teams
-
-Teams acts as a collaborative conversational interface embedded in daily work.
-
-Use cases include:
-- Team-based AI assistance
-- Contextual actions
-- Notifications and approvals
-
-### Microsoft Copilot UI
-
-The Copilot UI provides a Microsoft-native AI surface integrated with M365 experiences.
-
-It consumes **already-governed** AI Fabrix capabilities and does not bypass policy layers.
-
-### Slack
-
-Slack provides a developer- and operations-friendly conversational interface.
-
-It is well-suited for:
-- Operational workflows
-- Incident handling
-- Event-driven AI interactions
-
-### Custom Enterprise Portals
-
-Custom portals embed AI Fabrix into existing enterprise applications.
-
-They offer:
-- Full UX control
-- Domain-specific workflows
-- Custom approval and validation patterns
-
-All custom portals must still propagate identity and interact only through orchestration or MCP.
+Interfaces are consumers of governed capabilities.
+They do not implement them.
 
 ---
 
-## Workspace and Access Models
+## Position in the Architecture
 
-### Case-Based Access
+AI Fabrix separates responsibilities structurally:
 
-A case represents a bounded interaction context containing:
-- User intent
-- Conversation history
-- Retrieved data references
-- Actions and decisions
-- Audit trail
+- **Miso (Control Plane)** governs identity, policy, lifecycle, and audit.
+- **Dataplane (CIP + Retrieval)** supplies permission-aware, contextual data.
+- **Orchestration** coordinates agent logic using governed tools.
+- **Interface Layer** enables human interaction.
 
-Cases provide isolation, accountability, and auditability.
+The interface calls orchestration.
+Orchestration calls governed tools.
+The Dataplane enforces identity and policy.
+Miso records and governs everything.
 
-### Team and Role Scoping
+This separation ensures that:
 
-Interfaces reflect — but do not define — access rules.
-
-- Teams are resolved via identity providers
-- Roles and permissions are assigned by Miso
-- Interfaces only display what the user is authorized to see
-
-### Auditability of User Interactions
-
-All meaningful interactions are auditable:
-
-- Who initiated the action
-- When it occurred
-- What context was used
-- Which operations were executed
-- What data was accessed or modified
-
-Audit logs are produced by Miso and the Dataplane, not by the interface itself.
+- Changing the UI does not change governance.
+- Introducing new interfaces does not create security risk.
+- AI behavior remains bounded by enterprise policy.
 
 ---
 
-## Interface Layer – Architectural Context
+## Supported Interface Types
 
-The diagram below illustrates the supported execution flow and responsibility boundaries described in this section.
+AI Fabrix does not prescribe a single UI.
 
-```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "fontFamily": "Poppins, Arial Rounded MT Bold, Arial, sans-serif",
-    "fontSize": "15px",
-    "background": "#FFFFFF",
-    "primaryColor": "#F8FAFC",
-    "primaryTextColor": "#0B0E15",
-    "primaryBorderColor": "#E2E8F0",
-    "lineColor": "#E2E8F0",
-    "textColor": "#0B0E15",
-    "subGraphTitleColor": "#64748B",
-    "subGraphTitleFontWeight": "500"
-  }
-}}%%
+Common interface consumers include:
 
-flowchart LR
+- OpenWebUI (reference implementation)
+- Microsoft Teams
+- Microsoft Copilot UI
+- Slack
+- Custom enterprise portals
 
-classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF;
-classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3;
-classDef flow fill:#7C3AED,color:#ffffff,stroke:#5B21B6;
-classDef ui fill:#0D9488,color:#ffffff,stroke:#065F46;
-classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5;
+These are interaction surfaces.
+They are not part of the enforcement boundary.
 
-user([Enterprise User])
+Microsoft and third-party tools are consumers of AI Fabrix capabilities — not competitors and not control planes.
 
-subgraph interface_layer["Interface Layer"]
-  openwebui["OpenWebUI (Reference)"]:::ui
-  teams["Microsoft Teams"]:::ui
-  copilot["Microsoft Copilot UI"]:::ui
-  slack["Slack"]:::ui
-  portal["Custom Enterprise Portals"]:::ui
-end
+---
 
-subgraph orchestration_layer["Orchestration Layer"]
-  agent["Agent Workflows"]:::flow
-end
+## Identity First
 
-subgraph dataplane["Dataplane"]
-  retrieval["Permission-aware Retrieval"]:::core
-  enforcement["RBAC / ABAC Enforcement"]:::core
-  normalization["Normalization & Metadata"]:::core
-end
+Every interface interaction begins with identity.
 
-subgraph miso["Miso (Controller)"]
-  identity["Identity & Context"]:::control
-  policy["Policy & Audit Authority"]:::control
-end
+Users authenticate via enterprise identity providers (e.g., Entra ID).
+Identity context is validated by Miso.
+Delegated execution context flows into orchestration and the Dataplane.
 
-systems["Enterprise Systems"]:::external
+No anonymous paths.
+No service-account substitution.
+No identity drop during execution.
 
-user --> openwebui
-user --> teams
-user --> copilot
-user --> slack
-user --> portal
+Identity is preserved end-to-end.
 
-openwebui --> agent
-teams --> agent
-copilot --> agent
-slack --> agent
-portal --> agent
+---
 
-agent --> retrieval --> enforcement --> normalization --> systems
+## Human-in-the-Loop by Design
 
-identity -->|Delegated execution context| agent
-identity -->|Delegated execution context| retrieval
-policy -->|Policies & audit scope| enforcement
+Enterprise AI requires controlled participation.
+
+Interfaces enable:
+
+- Approval workflows
+- Case-based interactions
+- Review before write operations
+- Escalation and override paths
+
+AI Fabrix treats AI as a governed enterprise actor.
+Humans remain accountable.
+
+---
+
+## What This Means
+
+The Interface Layer is intentionally constrained.
+
+It enables interaction.
+It does not create authority.
+
+Authority lives in:
+
+- Miso (identity and policy governance)
+- The Dataplane (permission-aware data supply)
+
+This ensures that enterprise AI can evolve its interfaces without re-architecting governance.
+
+That separation is structural.
+It is not optional.
+
+---
+
+## Interface Layer sub-articles
+
+* **[Interface Concepts](interface-concepts/)** — Interface vs orchestration vs Dataplane, identity propagation, human-in-the-loop patterns
+* **[Interface Options](interface-options/)** — OpenWebUI, Microsoft Teams, Copilot UI, Slack, custom portals
+* **[Workspace and Access Models](workspace-and-access-models/)** — Case-based access, team and role scoping, auditability
+
+---
+
+**Key takeaway**: Interfaces are replaceable; governance and data control are not. The Interface Layer enables interaction without creating authority.

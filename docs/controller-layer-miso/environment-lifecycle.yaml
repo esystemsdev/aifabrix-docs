@@ -1,0 +1,69 @@
+title: "Environment Lifecycle"
+meta_title: "Environment Lifecycle | Dev to Prod, Rollback"
+description: "Dev to Test to Prod promotion, drift prevention, versioning and rollback, and approval gates"
+audience:
+  - architect
+  - admin
+  - security
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Miso Overview"
+    url: /docs/controller-layer-miso/miso-overview/
+  - text: "Identity & Access"
+    url: /docs/controller-layer-miso/identity-and-access/
+  - text: "Policy & Governance"
+    url: /docs/controller-layer-miso/policy-and-governance/
+  - text: "Environment Lifecycle"
+    url: /docs/controller-layer-miso/environment-lifecycle/
+  - text: "Audit & Observability"
+    url: /docs/controller-layer-miso/audit-and-observability/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Miso"
+    - "environment lifecycle"
+    - "promotion"
+    - "drift"
+    - "rollback"
+    - "approval gates"
+  canonical_url: "https://docs.aifabrix.ai/controller-layer-miso/environment-lifecycle/"
+  og_image: "images/environment-lifecycle.png"
+
+document360:
+  category: "Controller Layer (Miso)"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 8

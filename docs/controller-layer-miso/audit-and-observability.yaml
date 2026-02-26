@@ -1,0 +1,68 @@
+title: "Audit & Observability"
+meta_title: "Audit & Observability | Logs, Cost Attribution"
+description: "Audit trails and evidence, access logs and policy decisions, model usage tracking, and cost attribution"
+audience:
+  - architect
+  - admin
+  - security
+version: "stable"
+owner: "platform-team"
+last_reviewed: "2026-02-13"
+layout: "doc"
+date: "2026-02-13"
+toc: true
+custom_links:
+  - text: "Controller Layer (Miso)"
+    url: /docs/controller-layer-miso/
+  - text: "Miso Overview"
+    url: /docs/controller-layer-miso/miso-overview/
+  - text: "Identity & Access"
+    url: /docs/controller-layer-miso/identity-and-access/
+  - text: "Policy & Governance"
+    url: /docs/controller-layer-miso/policy-and-governance/
+  - text: "Environment Lifecycle"
+    url: /docs/controller-layer-miso/environment-lifecycle/
+  - text: "Audit & Observability"
+    url: /docs/controller-layer-miso/audit-and-observability/
+  - text: "Overview"
+    url: /docs/overview/
+  - text: "Architecture Overview"
+    url: /docs/architecture-overview/
+  - text: "Dataplane"
+    url: /docs/dataplane/
+  - text: "Orchestration Layer"
+    url: /docs/orchestration-layer/
+  - text: "Interface Layer"
+    url: /docs/interface-layer/
+  - text: "Open Standards & Contracts"
+    url: /docs/open-standards-contracts/
+  - text: "Enterprise Capabilities"
+    url: /docs/enterprise-capabilities/
+  - text: "Evaluation Guide"
+    url: /docs/evaluation-guide/
+  - text: "Deployment & Operations"
+    url: /docs/deployment-operations/
+  - text: "Use Cases"
+    url: /docs/use-cases/
+  - text: "Customer Success"
+    url: /docs/customer-success/
+  - text: "Resources"
+    url: /docs/resources/
+
+seo:
+  keywords:
+    - "AI Fabrix"
+    - "Miso"
+    - "audit"
+    - "observability"
+    - "ISO 27001"
+    - "cost attribution"
+  canonical_url: "https://docs.aifabrix.ai/controller-layer-miso/audit-and-observability/"
+  og_image: "images/audit-and-observability.png"
+
+document360:
+  category: "Controller Layer (Miso)"
+  visibility: "public"
+  searchable: true
+  featured: false
+  order: 9

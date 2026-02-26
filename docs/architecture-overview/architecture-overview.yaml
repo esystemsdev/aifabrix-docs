@@ -1,4 +1,5 @@
 title: "Architecture Overview"
+meta_title: "AI Fabrix Architecture | Trust & Identity Flow"
 description: "High-level architecture, trust boundaries, identity flow, and end-to-end request lifecycle of AI Fabrix"
 audience:
   - architect

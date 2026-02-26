@@ -25,11 +25,11 @@ This subsection contains reference diagrams that describe the structural archite
 ```mermaid
 flowchart LR
     User[User / API / AI Agent]
-    UX[UX Layer<br/>(OpenWebUI / Copilot)]
-    Orchestration[Orchestration Layer<br/>(Flowise or equivalent)]
-    Controller[Miso Controller<br/>Identity • Policy • Audit]
-    Dataplane[CIP Dataplane<br/>Integration • Retrieval]
-    Systems[Enterprise Systems<br/>SaaS • Databases • M365]
+    UX[UX Layer - OpenWebUI / Copilot]
+    Orchestration[Orchestration Layer - Flowise or equivalent]
+    Controller[Miso Controller - Identity, Policy, Audit]
+    Dataplane[CIP Dataplane - Integration, Retrieval]
+    Systems[Enterprise Systems - SaaS, Databases, M365]
 
     User --> UX
     UX --> Orchestration
