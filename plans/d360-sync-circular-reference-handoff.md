@@ -47,11 +47,24 @@ So: **"[Circular Reference]"** was from aifabrix-d360’s logger when it stringi
 
 ---
 
-## 3. Quick reference
+## 3. Update (Feb 2026): 405 on fork
+
+Fork-before-update was implemented in d360. A sync run showed:
+
+- **updateArticle** still returns 400 "please fork the article to continue editing" for published articles.
+- The client correctly triggers the fork flow: **getArticle** is called and eventually returns 200 (after long delay; rate limiter timeout may apply).
+- **forkArticle** then fails with **405 Method Not Allowed**.
+
+So the fork request in the d360 client is using the wrong HTTP method or wrong path. The fork endpoint and method must be fixed in aifabrix-d360 (correct Document360 API for forking an article) before sync can update published articles.
+
+---
+
+## 4. Quick reference
 
 | Item | Detail |
 |------|--------|
-| **Real Document360 error** | `400` — `"You cannot update published article content, please fork the article to continue editing"` |
+| **Current blocker** | `405 Method Not Allowed` on **forkArticle** — fix fork endpoint/HTTP method in d360 client (Document360 fork API). |
+| **Real Document360 error (update)** | `400` — `"You cannot update published article content, please fork the article to continue editing"` |
 | **What we saw before** | `"[Circular Reference]"` — from d360 logger when stringifying the axios error object (circular refs), not from Document360 |
 | **Scope** | All 28 articles fail on **updateArticle** (articles are already published in Document360) |
 | **Repo to fix** | aifabrix-d360 (sync tool), not aifabrix-docs |

@@ -118,26 +118,48 @@ Customers retain a clear exit path without losing data, architecture, or governa
 ```mermaid
 flowchart LR
 
+%% ==================================================
+%% Class Definitions (Mandatory) [cite: 68-75]
+%% ==================================================
+classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF
+classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3
+classDef flow fill:#7C3AED,color:#ffffff,stroke:#5B21B6
+classDef ui fill:#0D9488,color:#ffffff,stroke:#065F46
+
+%% Neutralize backgrounds [cite: 7, 144]
+style experience_layer fill:none,stroke:#E2E8F0
+style control_plane_layer fill:none,stroke:#E2E8F0
+style dataplane_layer fill:none,stroke:#E2E8F0
+
+%% ==================================================
+%% Nodes & Subgraphs [cite: 35, 43, 51, 83]
+%% ==================================================
 enterprise_user([Enterprise User])
 
-subgraph experience[Interface & Agent Layer (Replaceable)]
-openwebui[OpenWebUI]
-flowise[Flowise]
+subgraph experience_layer["Interface and Agent Layer"]
+    open_webui["OpenWebUI"]:::ui
+    flowise_engine["Flowise"]:::flow
 end
 
-subgraph control_plane[Miso – Control Plane]
-miso[Miso Controller]
+subgraph control_plane_layer["Miso – Control Plane"]
+    miso_controller["Miso Controller"]:::control
 end
 
-subgraph dataplane[Dataplane – Governed Execution]
-openapi[OpenAPI Contract]
-mcp[MCP Contract]
-exec[Governed Execution]
+subgraph dataplane_layer["Dataplane – Governed Execution"]
+    openapi_contract["OpenAPI Contract"]:::core
+    mcp_contract["MCP Contract"]:::core
+    governed_execution["Governed Execution"]:::core
 end
 
-enterprise_user --> openwebui --> flowise --> mcp --> exec
-openapi --> exec
-miso --> exec
+%% ==================================================
+%% Relationships [cite: 101, 103]
+%% ==================================================
+enterprise_user --> open_webui
+open_webui --> flowise_engine
+flowise_engine --> mcp_contract
+mcp_contract --> governed_execution
+openapi_contract --> governed_execution
+miso_controller --> governed_execution
 ```
 
 ---

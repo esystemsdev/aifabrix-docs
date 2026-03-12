@@ -56,50 +56,67 @@ Business data access and transformation occur only in the **Dataplane execution 
 ```mermaid
 flowchart LR
 
-classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF;
-classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3;
-classDef flow fill:#7C3AED,color:#ffffff,stroke:#5B21B6;
-classDef ui fill:#0D9488,color:#ffffff,stroke:#065F46;
-classDef data fill:#475569,color:#ffffff,stroke:#334155;
-classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5;
+%% ==================================================
+%% Class Definitions (Mandatory) [cite: 68-75]
+%% ==================================================
+classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF
+classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3
+classDef flow fill:#7C3AED,color:#ffffff,stroke:#5B21B6
+classDef ui fill:#0D9488,color:#ffffff,stroke:#065F46
+classDef data fill:#475569,color:#ffffff,stroke:#334155
+classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5
 
+%% Neutralize subgraph backgrounds for architectural neutrality [cite: 144]
+style ux fill:none,stroke:#E2E8F0
+style orchestration fill:none,stroke:#E2E8F0
+style control_plane fill:none,stroke:#E2E8F0
+style data_plane fill:none,stroke:#E2E8F0
+
+%% ==================================================
+%% Nodes & Subgraphs [cite: 83, 91-100]
+%% ==================================================
 user([Enterprise User])
-
-entra["Microsoft Entra ID"]:::external
-monitoring["Monitoring and SIEM - Azure Monitor, Log Analytics"]:::external
+entra_id["Microsoft Entra ID"]:::external
+monitoring["Monitoring and SIEM"]:::external
 
 subgraph ux["User Experience"]
-  interface["Interface Layer"]:::ui
+    interface["Interface Layer"]:::ui
 end
 
 subgraph orchestration["Orchestration"]
-  orchestrator["Orchestration Layer"]:::flow
+    orchestrator["Orchestration Layer"]:::flow
 end
 
-subgraph control_plane["Miso - Control Plane"]
-  miso["Miso Controller"]:::control
-  identity["Identity and Access"]:::control
-  policy["Policy and Governance"]:::control
-  lifecycle["Environment Lifecycle"]:::control
-  audit["Audit and Observability"]:::control
-  audit_store[(Audit Logs and Evidence)]:::data
+subgraph control_plane["Miso – Control Plane"]
+    miso["Miso Controller"]:::control
+    identity["Identity and Access"]:::control
+    policy["Policy and Governance"]:::control
+    lifecycle["Environment Lifecycle"]:::control
+    audit["Audit and Observability"]:::control
+    audit_store[("Audit Logs and Evidence")]:::data
 end
 
-subgraph data_plane["Dataplane - Execution"]
-  dataplane["Dataplane"]:::core
+subgraph data_plane["Dataplane – Execution"]
+    dataplane["Dataplane"]:::core
 end
 
-user --> interface --> orchestrator --> dataplane
+%% ==================================================
+%% Relationships & Flow [cite: 101-107]
+%% ==================================================
+user --> interface
+interface --> orchestrator
+orchestrator --> dataplane
 
-entra --> identity
+entra_id --> identity
 miso --> identity
 miso --> policy
 miso --> lifecycle
 miso --> audit
 
-miso -->|Policies, Quotas| dataplane
-dataplane -->|Usage and Access Events| audit_store
-audit --> audit_store --> monitoring
+miso -->|Policies and Quotas| dataplane
+dataplane -->|Events| audit_store
+audit --> audit_store
+audit_store --> monitoring
 ```
 
 ---

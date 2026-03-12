@@ -220,49 +220,49 @@ Zero-trust AI ensures:
 The diagram below shows how enterprise capabilities are enforced structurally, independent of UI or agent tooling.
 
 ```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "fontFamily": "Poppins, Arial, sans-serif",
-    "fontSize": "15px",
-    "background": "#FFFFFF",
-    "primaryColor": "#F8FAFC",
-    "primaryTextColor": "#0B0E15",
-    "primaryBorderColor": "#E2E8F0",
-    "lineColor": "#E2E8F0",
-    "textColor": "#0B0E15"
-  }
-}}%%
-
 flowchart LR
 
-classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF;
-classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3;
-classDef data fill:#475569,color:#ffffff,stroke:#334155;
-classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5;
+%% ==================================================
+%% Class Definitions (Mandatory) [cite: 68-75]
+%% ==================================================
+classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF
+classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3
+classDef data fill:#475569,color:#ffffff,stroke:#334155
+classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5
 
-user([Authenticated User])
-entra["Microsoft Entra ID"]:::external
-tools["Microsoft & Third-Party Tools"]:::external
+%% Neutralize backgrounds for Enterprise-grade look 
+style miso_subgraph fill:none,stroke:#E2E8F0
+style dataplane_subgraph fill:none,stroke:#E2E8F0
 
-subgraph miso["Miso – Controller"]
-  policy["Policy Evaluation"]:::control
-  audit["Audit & Governance"]:::control
-  quota["Quota & Cost Controls"]:::control
+%% ==================================================
+%% Nodes & Subgraphs [cite: 51, 83-93]
+%% ==================================================
+authenticated_user([Authenticated User])
+entra_id["Microsoft Entra ID"]:::external
+tools_external["Microsoft and Third-Party Tools"]:::external
+
+subgraph miso_subgraph["Miso – Controller"]
+    policy_eval["Policy Evaluation"]:::control
+    audit_gov["Audit and Governance"]:::control
+    quota_cost["Quota and Cost Controls"]:::control
 end
 
-subgraph dataplane["Dataplane"]
-  metadata["Metadata Context"]:::core
-  access["Permission-Aware Access"]:::core
+subgraph dataplane_subgraph["Dataplane"]
+    metadata_context["Metadata Context"]:::core
+    permission_access["Permission-Aware Access"]:::core
 end
 
-enterprise_data[(Enterprise Data)]:::data
+enterprise_data_store[(Enterprise Data)]:::data
 
-user --> entra
-entra --> tools
-tools --> policy
-policy --> access
-policy --> audit
-policy --> quota
-access --> metadata
-metadata --> enterprise_data
+%% ==================================================
+%% Relationships [cite: 101-107]
+%% ==================================================
+authenticated_user --> entra_id
+entra_id --> tools_external
+tools_external --> policy_eval
+policy_eval --> permission_access
+policy_eval --> audit_gov
+policy_eval --> quota_cost
+permission_access --> metadata_context
+metadata_context --> enterprise_data_store
+```

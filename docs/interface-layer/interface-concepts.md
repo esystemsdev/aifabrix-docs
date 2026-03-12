@@ -62,54 +62,72 @@ The diagram below illustrates the supported execution flow and responsibility bo
 ```mermaid
 flowchart LR
 
-classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF;
-classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3;
-classDef flow fill:#7C3AED,color:#ffffff,stroke:#5B21B6;
-classDef ui fill:#0D9488,color:#ffffff,stroke:#065F46;
-classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5;
+%% ==================================================
+%% Class Definitions (Mandatory) [cite: 68-75]
+%% ==================================================
+classDef control fill:#2563EB,color:#ffffff,stroke:#1E40AF
+classDef core fill:#4F46E5,color:#ffffff,stroke:#3730A3
+classDef flow fill:#7C3AED,color:#ffffff,stroke:#5B21B6
+classDef ui fill:#0D9488,color:#ffffff,stroke:#065F46
+classDef external fill:#6B7280,color:#ffffff,stroke-dasharray: 5 5
 
-user([Enterprise User])
+%% Neutralize subgraph backgrounds for architectural neutrality [cite: 83]
+style interface_layer fill:none,stroke:#E2E8F0
+style orchestration_layer fill:none,stroke:#E2E8F0
+style dataplane_layer fill:none,stroke:#E2E8F0
+style miso_controller_layer fill:none,stroke:#E2E8F0
+
+%% ==================================================
+%% Nodes & Subgraphs [cite: 51, 83-93]
+%% ==================================================
+enterprise_user([Enterprise User])
 
 subgraph interface_layer["Interface Layer"]
-  openwebui["OpenWebUI - Reference"]:::ui
-  teams["Microsoft Teams"]:::ui
-  copilot["Microsoft Copilot UI"]:::ui
-  slack["Slack"]:::ui
-  portal["Custom Enterprise Portals"]:::ui
+    open_webui["OpenWebUI Reference"]:::ui
+    ms_teams["Microsoft Teams"]:::ui
+    ms_copilot_ui["Microsoft Copilot UI"]:::ui
+    slack_ui["Slack"]:::ui
+    custom_portals["Custom Enterprise Portals"]:::ui
 end
 
 subgraph orchestration_layer["Orchestration Layer"]
-  agent["Agent Workflows"]:::flow
+    agent_workflows["Agent Workflows"]:::flow
 end
 
-subgraph dataplane["Dataplane"]
-  retrieval["Permission-aware Retrieval"]:::core
-  enforcement["RBAC, ABAC Enforcement"]:::core
-  normalization["Normalization, Metadata"]:::core
+subgraph dataplane_layer["Dataplane"]
+    permission_retrieval["Permission Aware Retrieval"]:::core
+    access_enforcement["RBAC and ABAC Enforcement"]:::core
+    metadata_normalization["Normalization and Metadata"]:::core
 end
 
-subgraph miso["Miso - Controller"]
-  identity["Identity and Context"]:::control
-  policy["Policy and Audit Authority"]:::control
+subgraph miso_controller_layer["Miso – Controller"]
+    identity_context["Identity and Context"]:::control
+    policy_authority["Policy and Audit Authority"]:::control
 end
 
-systems["Enterprise Systems"]:::external
+enterprise_systems["Enterprise Systems"]:::external
 
-user --> openwebui
-user --> teams
-user --> copilot
-user --> slack
-user --> portal
+%% ==================================================
+%% Relationships & Flow [cite: 101-107]
+%% ==================================================
+enterprise_user --> open_webui
+enterprise_user --> ms_teams
+enterprise_user --> ms_copilot_ui
+enterprise_user --> slack_ui
+enterprise_user --> custom_portals
 
-openwebui --> agent
-teams --> agent
-copilot --> agent
-slack --> agent
-portal --> agent
+open_webui --> agent_workflows
+ms_teams --> agent_workflows
+ms_copilot_ui --> agent_workflows
+slack_ui --> agent_workflows
+custom_portals --> agent_workflows
 
-agent --> retrieval --> enforcement --> normalization --> systems
+agent_workflows --> permission_retrieval
+permission_retrieval --> access_enforcement
+access_enforcement --> metadata_normalization
+metadata_normalization --> enterprise_systems
 
-identity -->|Delegated execution context| agent
-identity -->|Delegated execution context| retrieval
-policy -->|Policies and audit scope| enforcement
+identity_context -->|Delegated Context| agent_workflows
+identity_context -->|Delegated Context| permission_retrieval
+policy_authority -->|Policies and Audit Scope| access_enforcement
 ```
