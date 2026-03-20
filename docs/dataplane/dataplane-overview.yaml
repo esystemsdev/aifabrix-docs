@@ -16,6 +16,8 @@ custom_links:
     url: /docs/dataplane/
   - text: "Dataplane Overview"
     url: /docs/dataplane/dataplane-overview/
+  - text: "Dataplane Interface"
+    url: /docs/dataplane/dataplane-interface/
   - text: "CIP — Composable Integration Pipelines"
     url: /docs/dataplane/cip-composable-integration-pipelines/
   - text: "Core Dataplane Services"

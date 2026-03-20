@@ -100,6 +100,8 @@
       url: /docs/dataplane/cip-composable-integration-pipelines/
     - text: Dataplane Overview
       url: /docs/dataplane/dataplane-overview/
+    - text: Dataplane Interface
+      url: /docs/dataplane/dataplane-interface/
     - text: Core Dataplane Services
       url: /docs/dataplane/core-dataplane-services/
     - text: Overview

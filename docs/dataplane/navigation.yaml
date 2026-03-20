@@ -10,6 +10,9 @@ items:
   - title: Dataplane
     url: dataplane
     order: 999
+  - title: Dataplane Interface
+    url: dataplane-interface
+    order: 999
   - title: Dataplane Overview
     url: dataplane-overview
     order: 999

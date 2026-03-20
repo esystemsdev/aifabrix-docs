@@ -11,6 +11,7 @@ The Dataplane exists to ensure that **governance, security, and permission-aware
 ## Dataplane sub-articles
 
 * **[Dataplane Overview](dataplane-overview/)** — What the Dataplane is, execution boundary, security and isolation model
+* **[Dataplane Interface](dataplane-interface/)** — Web-based application to operate and manage the Dataplane: dashboard, external systems, templates, audit logs, administration
 * **[CIP — Composable Integration Pipelines](cip-composable-integration-pipelines/)** — Declarative pipelines, OpenAPI and MCP contracts, governed execution
 * **[Core Dataplane Services](core-dataplane-services/)** — Metadata model, permission-aware retrieval, vector search, CDC, ingestion, and secure runtime
 

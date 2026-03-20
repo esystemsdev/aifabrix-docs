@@ -1,15 +1,14 @@
-title: "CIP — Composable Integration Pipelines"
-meta_title: "CIP — Composable Integration Pipelines | AI Fabrix"
-description: "Declarative integration fabric of the Dataplane — OpenAPI, MCP, and governed pipeline execution"
+title: "Dataplane Interface"
+meta_title: "Dataplane Interface | Web Application | AI Fabrix"
+description: "Web-based application to operate and manage the Dataplane — dashboard, external systems, integration templates, audit logs, document approval, administration, AI Assist"
 audience:
-  - architect
-  - developer
+  - end-user
   - admin
 version: "stable"
 owner: "platform-team"
-last_reviewed: "2026-02-13"
+last_reviewed: "2026-03-06"
 layout: "doc"
-date: "2026-02-13"
+date: "2026-03-06"
 toc: true
 custom_links:
   - text: "Dataplane"
@@ -34,19 +33,19 @@ custom_links:
 seo:
   keywords:
     - "AI Fabrix"
-    - "CIP"
-    - "Composable Integration Pipelines"
-    - "OpenAPI"
-    - "MCP"
-    - "Model Context Protocol"
-    - "declarative pipelines"
     - "Dataplane"
-  canonical_url: "https://docs.aifabrix.ai/dataplane/cip-composable-integration-pipelines/"
-  og_image: "images/cip.png"
+    - "Dataplane Interface"
+    - "dashboard"
+    - "external systems"
+    - "integration templates"
+    - "audit logs"
+    - "document approval"
+  canonical_url: "https://docs.aifabrix.ai/dataplane/dataplane-interface/"
+  og_image: "images/dataplane-interface.png"
 
 document360:
   category: "Dataplane"
   visibility: "public"
   searchable: true
-  featured: true
+  featured: false
   order: 7
