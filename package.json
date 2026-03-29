@@ -11,6 +11,8 @@
     "build-jekyll": "ts-node scripts/build-jekyll.ts",
     "deploy": "ts-node scripts/deploy.ts",
     "sync-document360": "ts-node scripts/sync-document360.ts",
+    "sync-document360:docs": "ts-node scripts/sync-document360.ts docs",
+    "sync-document360:api-docs": "SYNC_SOURCE_PATH=./api-docs ts-node scripts/sync-document360.ts api-docs",
     "remove-frontmatter": "ts-node scripts/remove-frontmatter.ts",
     "dev": "cd site && bundle exec jekyll serve --livereload",
     "build": "npm run build-docs",

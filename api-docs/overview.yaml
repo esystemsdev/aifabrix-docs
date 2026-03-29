@@ -1,0 +1,11 @@
+title: "API reference"
+description: "API reference documentation for AI Fabrix (Document360 api-docs lane)"
+audience:
+  - developer
+  - architect
+version: "stable"
+owner: "engineering"
+last_reviewed: "2026-03-26"
+layout: "doc"
+date: "2026-03-26"
+toc: true

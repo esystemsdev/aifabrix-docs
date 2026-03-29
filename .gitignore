@@ -159,3 +159,7 @@ vendor/
 sync.db
 sync.db-shm
 sync.db-wal
+# aifabrix-d360 default per-target state (./data/sync-docs.db, sync-api-docs.db)
+data/sync-*.db
+data/sync-*.db-shm
+data/sync-*.db-wal

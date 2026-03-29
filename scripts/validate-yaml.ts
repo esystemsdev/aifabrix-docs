@@ -3,7 +3,7 @@
 /**
  * YAML Validation Script
  * 
- * Validates all .yaml files in the docs directory to ensure they have:
+ * Validates all .yaml files under documentation roots (docs + api-docs) to ensure they have:
  * - Required fields (title, description, audience, etc.)
  * - Proper structure
  * - Valid values
@@ -15,7 +15,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as yaml from 'js-yaml';
 
-const DOCS_DIR = 'docs';
+/** Metadata trees validated by `npm run validate` (Jekyll build still uses `docs/` only). */
+const METADATA_ROOTS = ['docs', 'api-docs'] as const;
 
 // Required fields for YAML metadata files
 const REQUIRED_FIELDS = [
@@ -139,9 +140,18 @@ function scanForYamlFiles(dir: string): string[] {
  * Main validation function
  */
 export async function validateYamlFiles(): Promise<void> {
-    console.log(`🔍 Scanning for YAML files in ${DOCS_DIR}...`);
-    
-    const yamlFiles = scanForYamlFiles(DOCS_DIR);
+    console.log(`🔍 Scanning for YAML files in: ${METADATA_ROOTS.join(', ')}...`);
+
+    const yamlFiles: string[] = [];
+    for (const root of METADATA_ROOTS) {
+        if (!fs.existsSync(root)) {
+            console.log(`   ⏭️  Skipping ${root}/ (directory not present)`);
+            continue;
+        }
+        yamlFiles.push(...scanForYamlFiles(root));
+    }
+
+    yamlFiles.sort();
     console.log(`📄 Found ${yamlFiles.length} YAML files to validate`);
     
     let validCount = 0;

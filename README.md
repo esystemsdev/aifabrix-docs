@@ -18,12 +18,13 @@ Welcome to the AI Fabrix documentation hub. This repository contains customer-fa
 
 ```yaml
 aifabrix-docs/
-├── docs/                          # Documentation source files (edit here - single source of truth)
+├── docs/                          # User-facing docs + Jekyll source (single source for the static site)
 │   ├── getting-started/
 │   ├── background/
 │   ├── architecture/
 │   ├── user-guides/
 │   └── api/
+├── api-docs/                      # API reference (Document360 api-docs lane; .md + .yaml like docs/)
 ├── site/                          # Jekyll site configuration
 │   ├── _config.yml                # Jekyll configuration
 │   ├── _data/                     # Jekyll data files (navigation, etc.)
@@ -57,6 +58,8 @@ bundle install
 cd ..
 ```
 
+**Local `aifabrix-d360`:** This repo depends on the sibling package via `file:../aifabrix-d360` in `package.json`. After you change **aifabrix-d360**, run `npm run build` there, then `npm install` in **aifabrix-docs** if the link needs refreshing. Copy `env.example` to `.env` for local and Document360 sync variables (do not commit `.env`).
+
 ### 2. Configure Brand Assets
 
 Copy your eSystems brand assets to `site/assets/images/`:
@@ -77,7 +80,7 @@ cd site && bundle install && cd ..
 npm run dev
 
 # Or run individual steps
-npm run validate          # Validate YAML files
+npm run validate          # Validate YAML under docs/ and api-docs/
 npm run generate-nav      # Generate navigation
 npm run merge-metadata    # Merge YAML into markdown
 npm run build-jekyll      # Build Jekyll site
@@ -99,30 +102,47 @@ npm run deploy
 
 ### Document360 Sync (Separate Process)
 
+The sync tool (`scripts/sync-document360.ts`) uses **`aifabrix-d360`** with two possible **targets** on one API token:
+
+| Target | Local path | Use | npm script |
+|--------|------------|-----|------------|
+| `docs` | `./docs` | User documentation project version (e.g. slug `v1`) | `npm run sync-document360` or `npm run sync-document360:docs` |
+| `api-docs` | `./api-docs` | API reference project version (e.g. slug `v1-api`) | `npm run sync-document360:api-docs` (sets `SYNC_SOURCE_PATH=./api-docs`) |
+
+Set **project version UUIDs** from Document360 `GET /v2/ProjectVersions` in `.env`: `DOCUMENT360_PROJECT_VERSION_ID_DOCS` and `DOCUMENT360_PROJECT_VERSION_ID_API_DOCS`, or use optional slug vars `DOCUMENT360_VERSION_SLUG_DOCS` / `DOCUMENT360_VERSION_SLUG_API_DOCS` if UUIDs are omitted. SQLite state defaults to **`./data/sync-docs.db`** vs **`./data/sync-api-docs.db`** per target unless **`DATABASE_PATH`** overrides both.
+
+The first **`api-docs`** run creates the category/article tree in that version (parallel to `docs`, not mixed into the user-docs version).
+
 ```bash
-# Sync to Document360 (requires API credentials)
+# User-docs lane (default)
 npm run sync-document360
 
-# Or use the PowerShell script (if available)
-.\temp\sync-docs.ps1
+# API-docs lane
+npm run sync-document360:api-docs
 ```
 
-**Document360 Article SEO:** The sync pushes **Meta title** and **Meta description** to Document360 from each article’s YAML. Use the top-level `title` and `description` in section YAML files (e.g. `docs/overview/overview.yaml`). Optional `meta_title` sets the browser/SERP title (recommended 50–60 chars); if omitted, `title` is used. Keep `description` concise (~150–160 chars) for best use as the Meta description. Run `npm run sync-document360` after content changes to update Document360.
+For **reverse sync** or **watch**, use the **same** target, **`SYNC_SOURCE_PATH`**, and database file as forward sync for that lane (e.g. `./docs` for user docs, `./api-docs` for API; see **aifabrix-d360** CLI: `node ../aifabrix-d360/dist/index.js watch docs|api-docs`).
+
+**Smoke test without pushing to Document360:** set `MOCK_MODE=true` and dummy `DOCUMENT360_API_TOKEN` / `DOCUMENT360_PROJECT_ID` per **aifabrix-d360** behavior.
+
+**Document360 Article SEO:** The sync pushes **Meta title** and **Meta description** to Document360 from each article’s YAML. Use the top-level `title` and `description` in section YAML files under **`docs/`** or **`api-docs/`** (e.g. `docs/overview/overview.yaml`). Optional `meta_title` sets the browser/SERP title (recommended 50–60 chars); if omitted, `title` is used. Keep `description` concise (~150–160 chars) for best use as the Meta description. Run the appropriate sync script after content changes.
+
+**Windows:** Inline `SYNC_SOURCE_PATH=...` in npm scripts may not work in `cmd.exe`; set `SYNC_SOURCE_PATH` in `.env` or use a tool such as `cross-env` if you need cross-shell support.
 
 ## 📝 How It Works
 
 ### 1. Single Source of Truth
 
-- **Edit files in `docs/`** - This is your only documentation location
-- **Pure markdown files** - No frontmatter, clean content only
-- **Separate YAML metadata** - Each `.md` file has a corresponding `.yaml` file
-- **TypeScript build pipeline** - Processes and builds everything automatically
+- **`docs/`** — Customer-facing guides and site content; powers **Jekyll** and syncs to Document360 **`docs`** by default
+- **`api-docs/`** — API reference only; validated with the same YAML rules; syncs to Document360 **`api-docs`** (not part of the Jekyll site in the current pipeline)
+- **Pure markdown files** — No frontmatter; each `.md` has a sibling `.yaml` metadata file
+- **TypeScript build pipeline** — Validates **`docs/`** and **`api-docs/`** metadata; processes **`docs/`** for the static site
 
 ### 2. Build Pipeline
 
 The TypeScript build process:
 
-1. **Validate YAML** - Ensures all metadata files are properly structured
+1. **Validate YAML** - Ensures metadata under **`docs/`** and **`api-docs/`** is properly structured
 2. **Generate Navigation** - Creates navigation files for each folder
 3. **Merge Metadata** - Combines YAML metadata into markdown frontmatter for Jekyll
 4. **Build Jekyll** - Generates static site from processed files
@@ -259,7 +279,7 @@ docs/
 npm run build-docs
 
 # Individual steps
-npm run validate          # Validate YAML files
+npm run validate          # Validate YAML under docs/ and api-docs/
 npm run generate-nav      # Generate navigation files
 npm run merge-metadata    # Merge YAML into markdown
 npm run build-jekyll      # Build Jekyll site
@@ -269,14 +289,11 @@ npm run deploy            # Deploy to GitHub Pages
 ### Document360 Sync (Separate Process)
 
 ```bash
-# Sync to Document360
-npm run sync-document360
-
-# Requires environment variables:
-# DOCUMENT360_API_TOKEN
-# DOCUMENT360_PROJECT_ID
-# DOCUMENT360_BASE_URL (optional)
+npm run sync-document360              # docs target (user documentation version)
+npm run sync-document360:api-docs     # api-docs target (API reference version)
 ```
+
+Requires `.env` (see `env.example`): `DOCUMENT360_API_TOKEN`, `DOCUMENT360_PROJECT_ID`, and version IDs or slugs for each lane you use. Optional: `DOCUMENT360_BASE_URL`, `DATABASE_PATH`, `MOCK_MODE=true` for local smoke tests.
 
 ## 🔗 Links
 
@@ -288,4 +305,3 @@ npm run sync-document360
 
 **Maintained by**: eSystems Nordic Oy  
 **Last Updated**: 2024-01-15
-# Trigger deployment

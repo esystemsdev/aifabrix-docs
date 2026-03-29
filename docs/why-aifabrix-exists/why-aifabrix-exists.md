@@ -1,4 +1,4 @@
-# Why AI Fabrix Exists
+## Why AI Fabrix Exists
 
 Enterprise AI does not fail because models are weak.  
 It fails because enterprise constraints are ignored until it is too late.

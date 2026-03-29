@@ -125,7 +125,7 @@ Before installing AI Fabrix, ensure you have:
 2. **Configure Environment**
 
    ```bash
-   cp .env.example .env
+   cp env.example .env
    # Edit .env with your Azure credentials
    ```
 
