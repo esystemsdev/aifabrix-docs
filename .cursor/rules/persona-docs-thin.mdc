@@ -1,0 +1,12 @@
+---
+description: Keep Jekyll persona docs thin; technical truth lives in product anchor-docs.
+globs: docs/**/*.md
+alwaysApply: false
+---
+
+# Persona documentation (aifabrix-docs)
+
+- Do **not** paste full OpenAPI dumps, entire JSON schemas, or exhaustive CLI flag catalogs into `docs/`. Summarize in a few paragraphs and link to **product-repo** `anchor-docs/` (validated via `npm run validate-anchor-docs` from this repo).
+- Prefer `npm run build-persona-docs` to inject the auto-generated “Technical anchor” block into persona pages; do not duplicate that block by hand.
+- When adding navigation entries, ensure `navigation.yaml` items get matching anchors if `scripts/config/anchor-coverage.yml` marks the id as required.
+- Use `[path:...]` only when documenting cross-repo file references inside contributor-facing notes, not as a substitute for user-facing URLs on the Jekyll site.

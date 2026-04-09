@@ -1,0 +1,9 @@
+# Multi-repo layout for anchor-doc validation and persona sync.
+# Override the workspace root with env AIFABRIX_WORK (absolute path).
+# If aifabrixWork is omitted here, scripts default to the parent directory of aifabrix-docs
+# (sibling repos: aifabrix-dataplane, aifabrix-miso, aifabrix-builder).
+
+repos:
+  dataplane: aifabrix-dataplane
+  miso: aifabrix-miso
+  builder: aifabrix-builder

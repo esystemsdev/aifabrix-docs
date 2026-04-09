@@ -1,0 +1,4 @@
+# Phased anchor coverage: when failOnMissingRequired is true, every id listed in
+# requiredAnchorIds must have at least one anchor-doc across product repos.
+failOnMissingRequired: false
+requiredAnchorIds: []

@@ -83,6 +83,24 @@ npm run merge-metadata    # Merge YAML into markdown
 npm run build-jekyll      # Build Jekyll site
 ```
 
+### Product-repo anchor docs (technical truth)
+
+Technical documentation for **Dataplane**, **Miso**, and **Builder** lives in each repo under `anchor-docs/`. Persona pages in `docs/` stay short; summaries and code pointers are synced from anchors when you run:
+
+```bash
+export AIFABRIX_WORK=/absolute/path/to/workspace   # parent of aifabrix-docs + product repos
+npm run docs-sync    # validate anchors → inject persona blocks → regenerate .cursor/Navigation.md
+```
+
+- `npm run validate-anchor-docs` — strict checks (frontmatter, `[path:…]` files exist, `navigation_id` in nav registry).
+- `npm run anchor-coverage` — same as validate with a per–`navigation_id` anchor count report.
+- `npm run build-persona-docs` — updates `<!-- anchor-generated:… -->` sections in matching `docs/**/*.md` files (hash cache under `.cache/`).
+- `npm run generate-cursor-nav` — refreshes `.cursor/Navigation.md` from `docs/*/navigation.yaml`.
+
+Repo layout for resolution is configured in `scripts/config/workspace-root.yml`. Optional: set `scripts/config/anchor-coverage.yml` `failOnMissingRequired` and `requiredAnchorIds` when every listed nav id must have an anchor. Optional owner allowlist: `scripts/config/allowed-anchor-owners.yml`.
+
+When `AIFABRIX_WORK` is set, `npm run build-docs` also runs `docs-sync` before navigation generation.
+
 ### Build for Production
 
 ```bash

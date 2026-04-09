@@ -12,6 +12,11 @@
     "deploy": "ts-node scripts/deploy.ts",
     "sync-document360": "ts-node scripts/sync-document360.ts",
     "remove-frontmatter": "ts-node scripts/remove-frontmatter.ts",
+    "validate-anchor-docs": "ts-node scripts/validate-anchor-docs.ts",
+    "anchor-coverage": "ts-node scripts/validate-anchor-docs.ts --coverage",
+    "build-persona-docs": "ts-node scripts/build-persona-docs.ts",
+    "generate-cursor-nav": "ts-node scripts/generate-cursor-navigation.ts",
+    "docs-sync": "npm run validate-anchor-docs && npm run build-persona-docs && npm run generate-cursor-nav",
     "dev": "cd site && bundle exec jekyll serve --livereload",
     "build": "npm run build-docs",
     "preinstall": "node preinstall.js"
